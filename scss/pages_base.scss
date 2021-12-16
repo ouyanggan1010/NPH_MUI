@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+@import "color";
+@import "style";
+@import "icon";
+
+// 这里放通用的样式
+.base_searchOne {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9.2308vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  .icon-sousuo {
+    font-size: 5.641vw;
+    color: map-get($colors, "white");
+  }
+  .icon-huatong {
+    font-size: 5.641vw;
+    color: #ffffff;
+  }
+  .inp_text {
+    background-color: transparent;
+    border: none;
+    line-height: 5.641vw;
+    height: 5.641vw;
+    margin-bottom: 0;
+    padding: 0 2.5641vw;
+    font-size: 4.1026vw;
+    color: map-get($colors, "white");
+    flex: 1;
+    &::placeholder {
+      color: map-get($colors, "white");
+    }
+  }
+}

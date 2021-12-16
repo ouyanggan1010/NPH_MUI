@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- mui-js -->
+    <script src="../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../fonts/iconfont.css">
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../css/pages_base.css">
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../css/pages_index.css">
+</head>
+
+<body class="index_body">
+    <!-- 通用的搜索框 -->
+    <div class="index_search" id="search_scroll">
+        <div class="base_searchOne">
+            <span class="iconfont icon-sousuo"></span>
+            <input type="text" class="inp_text" placeholder="搜索">
+            <span class="iconfont icon-huatong"></span>
+        </div>
+    </div>
+    <!-- 定位与时间 -->
+    <div class="position_time"></div>
+    <script>
+        mui.plusReady(function () {
+            // ------------获取当前设备的位置信息
+            plus.geolocation.getCurrentPosition(function (p) {
+                console.log("获取当前设备的位置信息---", p)
+            }, function (e) {
+                mui.toast(e.message);
+            })
+        });
+        // 监听滚动事件
+        $(window).scroll(function () {
+            console.log("监听滚动事件", $(this).scrollTop())
+            console.log($("#nav_keleyi_com").offset().top)
+        });
+    </script>
+</body>
+
+</html>

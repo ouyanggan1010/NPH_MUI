@@ -1,0 +1,22 @@
+.index_body {
+  background-color: #f8f8f8;
+  background-image: url(../images/bg_imgs/index_top_bg.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  -o-background-size: 100% auto;
+     background-size: 100% auto;
+}
+
+.index_search {
+  margin-top: 3.5897vw;
+  height: 9.2308vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 3.8462vw;
+}
+
+.position_time {
+  width: 100%;
+  height: 800px;
+  background-color: red;
+}

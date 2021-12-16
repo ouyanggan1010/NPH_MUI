@@ -1,0 +1,343 @@
+@charset "utf-8";
+@include icon("../images/spriteBig.png");
+//定位
+.myicon-dingwei {
+  @include appicon(-1.7949vw, -1.7949vw, 4.8718vw, 5.641vw);
+}
+//更多
+.myicon-morePoint {
+  @include appicon(-8.2051vw, -1.7949vw, 5.8974vw, 6.6667vw);
+}
+//客服
+.myicon-kefu {
+  @include appicon(-15.641vw, -1.7949vw, 5.8974vw, 5.1282vw);
+}
+//新消息
+.myicon-newMesg {
+  @include appicon(-23.0769vw, -1.7949vw, 6.1538vw, 4.6154vw);
+}
+//特价
+.myicon-tejiaRed {
+  @include appicon(-30.7692vw, -1.7949vw, 5.641vw, 4.6154vw);
+}
+//书写内容
+.myicon-shuxieOrange {
+  @include appicon(-45.1282vw, -1.7949vw, 6.1538vw, 6.1538vw);
+}
+//星星
+.myicon-startCnt {
+  @include appicon(-52.8205vw, -1.7949vw, 15.8974vw, 4.1026vw);
+}
+//拍照
+.myicon-paizhao {
+  @include appicon(-70vw, -1.7949vw, 5.3846vw, 4.8718vw);
+}
+//笑脸图标
+.myicon-xiaolianIcon {
+  @include appicon(-76.9231vw, -1.7949vw, 6.1538vw, 6.1538vw);
+}
+//收藏
+.myicon-shoucang {
+  @include appicon(-84.6154vw, -1.7949vw, 5.641vw, 5.3846vw);
+}
+//券
+.myicon-quanOrange {
+  @include appicon(-91.7949vw, -1.7949vw, 7.1795vw, 4.1026vw);
+}
+//限时抢购
+.myicon-xianshiqianggou {
+  @include appicon(-1.7949vw, -8.9744vw, 28.4615vw, 10vw);
+}
+//new
+.myicon-newOrange {
+  @include appicon(-32.0513vw, -8.9744vw, 6.4103vw, 3.3333vw);
+}
+//火
+.myicon-huomiao {
+  @include appicon(-40.7692vw, -8.9744vw, 4.1026vw, 4.1026vw);
+}
+//闹钟
+.myicon-naozhongRed {
+  @include appicon(-47.1795vw, -8.9744vw, 8.4615vw, 4.6154vw);
+}
+//v标
+.myicon-Vbiao {
+  @include appicon(-57.9487vw, -8.9744vw, 6.1538vw, 5.641vw);
+}
+//本子
+.myicon-benzi {
+  @include appicon(-66.4103vw, -9.2308vw, 5.3846vw, 6.1538vw);
+}
+//对话框
+.myicon-duihuaPink {
+  @include appicon(-74.1026vw, -8.9744vw, 6.1538vw, 6.1538vw);
+}
+//蓝色缺角分隔板
+.myicon-bluefenge {
+  @include appicon(-1.7949vw, -19.2308vw, 25.641vw, 26.4103vw);
+}
+//刷新
+.myicon-shuaxinIcon {
+  @include appicon(-32.0513vw, -19.2308vw, 55.1282vw, 48.2051vw);
+}
+//断网
+.myicon-notOnline {
+  @include appicon(-1.7949vw, -71.2821vw, 67.6923vw, 56.9231vw);
+}
+// ---------------------------------------------------------我的
+//我关注的
+.myicon-woguanzhu {
+  @include appicon(-71.7949vw, -71.2821vw, 7.1795vw, 5.8974vw);
+}
+//我收藏的
+.myicon-woshoucnag {
+  @include appicon(-82.0513vw, -71.2821vw, 7.6923vw, 6.6667vw);
+}
+//我发表的
+.myicon-wofabiao {
+  @include appicon(-92.0513vw, -71.0256vw, 7.4359vw, 6.9231vw);
+}
+//我提问的
+.myicon-wotiwen {
+  @include appicon(-72.0513vw, -79.4872vw, 6.9231vw, 6.9231vw);
+}
+//我参与的
+.myicon-wocanyu {
+  @include appicon(-81.5385vw, -79.4872vw, 7.6923vw, 6.4103vw);
+}
+//申请业务
+.myicon-shenqingyewu {
+  @include appicon(-91.7949vw, -79.4872vw, 7.1795vw, 6.4103vw);
+}
+//保险服务
+.myicon-baoxianfuwu {
+  @include appicon(-71.7949vw, -88.7179vw, 7.6923vw, 7.4359vw);
+}
+//同城服务
+.myicon-tongchengfuwu {
+  @include appicon(-82.0513vw, -88.7179vw, 7.1795vw, 6.4103vw);
+}
+//金融服务
+.myicon-jinrfuwu {
+  @include appicon(-91.7949vw, -88.7179vw, 7.4359vw, 6.6667vw);
+}
+//关于我们
+.myicon-guanyuwomen {
+  @include appicon(-72.0513vw, -97.9487vw, 7.4359vw, 6.6667vw);
+}
+//意见反馈
+.myicon-yijianfankui {
+  @include appicon(-82.5641vw, -97.9487vw, 6.9231vw, 7.4359vw);
+}
+// ---------------------------------------------------------农品汇
+//圆-深黄色
+.myicon-radiusYellowS {
+  @include appicon(-1.7949vw, -130vw, 17.9487vw, 15.3846vw);
+}
+//圆-深橙色
+.myicon-radiusOrangeS {
+  @include appicon(-23.5897vw, -130vw, 17.9487vw, 15.3846vw);
+}
+//圆-中橙色
+.myicon-radiusOrangeZ {
+  @include appicon(-45.3846vw, -130vw, 17.9487vw, 15.3846vw);
+}
+//圆-浅粉色
+.myicon-radiusPinkF {
+  @include appicon(-67.1795vw, -130vw, 17.9487vw, 15.3846vw);
+}
+//圆-中粉色
+.myicon-radiusPinkZ {
+  @include appicon(-1.7949vw, -149.4872vw, 17.9487vw, 15.3846vw);
+}
+//圆-中黄色
+.myicon-radiusYellowZ {
+  @include appicon(-23.0769vw, -149.4872vw, 17.9487vw, 15.3846vw);
+}
+//圆-深绿色
+.myicon-radiusGreenS {
+  @include appicon(-44.1026vw, -149.4872vw, 17.9487vw, 15.3846vw);
+}
+//圆-浅蓝色
+.myicon-radiusBlueQ {
+  @include appicon(-67.1795vw, -149.4872vw, 17.9487vw, 15.3846vw);
+}
+// ---------------------------------------------------------底部切换
+//底部-首页灰
+.myicon-footerShouyeG {
+  @include appicon(-17.6923vw, -166.9231vw, 6.1538vw, 6.1538vw);
+}
+//底部-首页蓝
+.myicon-footerShouyeB {
+  @include appicon(-1.7949vw, -175.3846vw, 11.0256vw, 10.7692vw);
+}
+//底部-新农村灰
+.myicon-footerXinnongcunG {
+  @include appicon(-25.8974vw, -166.9231vw, 6.1538vw, 5.3846vw);
+}
+//底部-新农村蓝
+.myicon-footerXinnongcunB {
+  @include appicon(-38.4615vw, -175.3846vw, 10.7692vw, 10.7692vw);
+}
+//底部-农品汇灰
+.myicon-footerNongpinhuiG {
+  @include appicon(-9.4872vw, -166.9231vw, 6.1538vw, 5.8974vw);
+}
+//底部-农品汇蓝
+.myicon-footerNongpinhuiB {
+  @include appicon(-14.1026vw, -175.3846vw, 10.7692vw, 10.7692vw);
+}
+//底部-我的灰
+.myicon-footerWpdeG {
+  @include appicon(-1.7949vw, -166.9231vw, 5.641vw, 6.1538vw);
+}
+//底部-wode蓝
+.myicon-footerWpdeB {
+  @include appicon(-26.4103vw, -175.3846vw, 10.7692vw, 11.0256vw);
+}
+// ---------------------------------------------------------首页
+//综合资讯
+.myicon-zonghezixun {
+  @include appicon(-1.7949vw, -187.9487vw, 7.6923vw, 7.6923vw);
+}
+//农机服务
+.myicon-nongjifuwu {
+  @include appicon(-12.5641vw, -187.9487vw, 8.2051vw, 7.9487vw);
+}
+//农活生产
+.myicon-nonghuoshengchan {
+  @include appicon(-23.8462vw, -187.9487vw, 7.4359vw, 7.1795vw);
+}
+//农务咨询
+.myicon-nongwuzixun {
+  @include appicon(-34.359vw, -187.9487vw, 8.2051vw, 8.2051vw);
+}
+//种植助手
+.myicon-zhongzhizhushou {
+  @include appicon(-45.641vw, -187.9487vw, 8.2051vw, 7.6923vw);
+}
+//数据上报
+.myicon-shujushangbao {
+  @include appicon(-56.9231vw, -187.9487vw, 8.2051vw, 8.2051vw);
+}
+//众筹项目
+.myicon-zhongchouxiangmu {
+  @include appicon(-68.2051vw, -187.9487vw, 7.9487vw, 8.2051vw);
+}
+//金融产品
+.myicon-jinrongchanp {
+  @include appicon(-79.2308vw, -187.9487vw, 7.1795vw, 8.2051vw);
+}
+// ---------------------------------------------------------农品汇
+//咨询中心
+.myicon-zixunzhongxin {
+  @include appicon(-1.7949vw, -200.7692vw, 8.2051vw, 6.9231vw);
+}
+//在线农校
+.myicon-zaixiannongxiao {
+  @include appicon(-12.8205vw, -200.7692vw, 8.2051vw, 7.4359vw);
+}
+//农业医院
+.myicon-nongyeyiyuan {
+  @include appicon(-23.5897vw, -200.7692vw, 5.8974vw, 8.2051vw);
+}
+//土地流转
+.myicon-tudiliuzhuan {
+  @include appicon(-32.3077vw, -200.7692vw, 8.2051vw, 7.9487vw);
+}
+//三农补贴
+.myicon-sannongbutie {
+  @include appicon(-43.0769vw, -200.7692vw, 7.4359vw, 7.4359vw);
+}
+//产品溯源
+.myicon-chanpshuyuan {
+  @include appicon(-53.3333vw, -200.7692vw, 7.6923vw, 7.6923vw);
+}
+//政务咨询
+.myicon-zhengwuzixun {
+  @include appicon(-63.5897vw, -200.7692vw, 6.9231vw, 6.1538vw);
+}
+//异常上报
+.myicon-yichangshangbao {
+  @include appicon(-73.0769vw, -200.7692vw, 7.6923vw, 6.6667vw);
+}
+//美丽乡村
+.myicon-meilixiangcun {
+  @include appicon(-83.3333vw, -200.7692vw, 8.2051vw, 7.1795vw);
+}
+//乡村旅游
+.myicon-xiangcunlvyou {
+  @include appicon(-93.5897vw, -200.7692vw, 5.641vw, 7.6923vw);
+}
+//民宿餐饮
+.myicon-minsucany {
+  @include appicon(-1.7949vw, -212.8205vw, 8.4615vw, 6.6667vw);
+}
+//乡村特产
+.myicon-xiangcuntechan {
+  @include appicon(-12.5641vw, -212.8205vw, 8.2051vw, 7.9487vw);
+}
+//乡村文创
+.myicon-xiangcunwenchuang {
+  @include appicon(-23.0769vw, -212.8205vw, 5.8974vw, 7.6923vw);
+}
+//三务公开
+.myicon-sanwugongkai {
+  @include appicon(-31.5385vw, -212.8205vw, 7.4359vw, 7.4359vw);
+}
+//书记信箱
+.myicon-shujixinxiang {
+  @include appicon(-41.2821vw, -212.8205vw, 7.4359vw, 7.6923vw);
+}
+//民情上报
+.myicon-minqingshangbao {
+  @include appicon(-51.2821vw, -212.8205vw, 9.2308vw, 8.2051vw);
+}
+//文明实践
+.myicon-wenmingshijiang {
+  @include appicon(-62.8205vw, -212.8205vw, 8.2051vw, 6.9231vw);
+}
+//惠农补贴
+.myicon-huinongbutie {
+  @include appicon(-73.5897vw, -212.8205vw, 8.7179vw, 7.4359vw);
+}
+//邻里互助
+.myicon-linlihuzhu {
+  @include appicon(-84.6154vw, -212.8205vw, 9.2308vw, 6.1538vw);
+}
+//我要办事
+.myicon-woyaobanshi {
+  @include appicon(-1.7949vw, -224.1026vw, 7.4359vw, 7.4359vw);
+}
+//随手拍
+.myicon-suishoupai {
+  @include appicon(-12.3077vw, -224.1026vw, 7.6923vw, 6.6667vw);
+}
+//随手问
+.myicon-suishouwen {
+  @include appicon(-22.8205vw, -224.1026vw, 6.9231vw, 7.1795vw);
+}
+//我的村子
+.myicon-wodecunzi {
+  @include appicon(-32.8205vw, -224.1026vw, 9.2308vw, 6.1538vw);
+}
+//农品汇
+.myicon-nongpinhui {
+  @include appicon(-44.8718vw, -224.1026vw, 7.4359vw, 7.4359vw);
+}
+//农产品特价
+.myicon-ncptejia {
+  @include appicon(-55.1282vw, -224.1026vw, 7.4359vw, 6.6667vw);
+}
+//供需信息
+.myicon-gongxuxinxi {
+  @include appicon(-65.641vw, -224.1026vw, 7.4359vw, 6.9231vw);
+}
+//权益流转
+.myicon-quanyiliuzhuan {
+  @include appicon(-75.8974vw, -224.1026vw, 9.2308vw, 7.4359vw);
+}
+//金融保险
+.myicon-jinrongbaoxian {
+  @include appicon(-88.2051vw, -224.1026vw, 8.4615vw, 6.9231vw);
+}
