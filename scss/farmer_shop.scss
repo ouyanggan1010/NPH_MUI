@@ -22,29 +22,67 @@ $paddingLR: 3.8462vw;
     background-image: linear-gradient(#5ecefc, #84d8fb);
   }
 }
-.icon_text_GongGe {
-  width: 100%;
-  box-sizing: border-box;
-  padding: $paddingLR 0;
-}
-.titleCnt_card {
-  width: 100%;
-  > .list {
-    width: 20%;
-    &:nth-child(-n + 5) {
-      margin-top: 0;
-    }
-    .text {
-      font-size: 3.0769vw;
-    }
-  }
-}
 // 内容块
 .cnt_chunk {
   width: 100%;
   box-sizing: border-box;
   padding: 0 $paddingLR;
   padding-top: 1.2821vw;
+  > .pic_card {
+    margin-top: 3.8462vw;
+  }
+  .titleCnt_card {
+    &:nth-child(2) {
+      margin-top: 1.2821vw;
+      background-image: linear-gradient(#fef2eb, #ffffff);
+      .iconFlex_card {
+        > .list {
+          width: 25%;
+          &:nth-child(-n + 4) {
+            margin-top: 0;
+          }
+          .layout {
+            height: 21.5385vw;
+            .img_or_icon {
+              height: 15.3846vw;
+              img {
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      background-image: linear-gradient(#fffef4, #ffffff);
+      .iconFlex_card {
+        > .list {
+          width: 33.33%;
+          &:nth-child(-n + 3) {
+            margin-top: 0;
+          }
+          .layout {
+            height: 28.2051vw;
+            .img_or_icon {
+              height: 20.5128vw;
+              img {
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+          .text {
+            font-size: 4.1026vw;
+            color: map-get($colors, "red_D0");
+            > .small {
+              font-size: 3.0769vw;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 // 轮播
 .shop_swiper {
@@ -65,24 +103,24 @@ $paddingLR: 3.8462vw;
     align-items: center;
     height: 33.3333vw;
     border-radius: 1.2821vw;
-    >img{
+    > img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 1.2821vw;
     }
   }
-  .swiper-pagination{
+  .swiper-pagination {
     bottom: 1.2821vw;
     left: 50%;
     transform: translateX(-50%);
-    .swiper-pagination-bullet{
+    .swiper-pagination-bullet {
       width: 2.0513vw;
       height: 2.0513vw;
       margin: 0 0.7692vw;
     }
-    .swiper-pagination-bullet-active{
-      background-color: map-get($colors,"blue_00");
+    .swiper-pagination-bullet-active {
+      background-color: map-get($colors, "blue_00");
     }
   }
 }

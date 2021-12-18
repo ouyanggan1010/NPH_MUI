@@ -88,11 +88,8 @@ $paddingLR: 3.8462vw;
     }
   }
 }
-.titleCnt_card {
-  width: 100%;
-  box-sizing: border-box;
-  padding: $paddingLR 0;
-  > .list {
+.iconFlex_card {
+  >.list {
     width: 25%;
     &:nth-child(-n + 4) {
       margin-top: 0;

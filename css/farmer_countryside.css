@@ -20,25 +20,15 @@
   background-image: linear-gradient(#5ECEFC, #84D8FB);
 }
 
-.icon_text_GongGe {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 3.8462vw 0;
-}
-
-.titleCnt_card {
-  width: 100%;
-}
-
-.titleCnt_card > .list {
+.iconFlex_card > .list {
   width: 20%;
 }
 
-.titleCnt_card > .list:nth-child(-n + 5) {
+.iconFlex_card > .list:nth-child(-n + 5) {
   margin-top: 0;
 }
 
-.titleCnt_card > .list .text {
+.iconFlex_card > .list .text {
   font-size: 3.0769vw;
 }
 

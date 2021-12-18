@@ -125,6 +125,11 @@ $paddingLR: 3.8462vw;
   background-color: map-get($colors, "white");
   box-shadow: 0vw 0.7692vw 0.7692vw rgba(0, 0, 0, 0.08);
 }
+.titleCnt_card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $paddingLR 0;
+}
 // 图标N宫格
 .iconFlex_card {
   display: flex;
@@ -133,8 +138,11 @@ $paddingLR: 3.8462vw;
   .list {
     text-align: center;
     margin-top: 5.1282vw;
+    font-size: 0;
     > a {
       display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
     }
     .layout {
       display: flex;
@@ -143,6 +151,12 @@ $paddingLR: 3.8462vw;
       align-items: center;
       width: auto;
       height: 14.8718vw;
+      .img_or_icon {
+        height: 9.2308vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .text {
       line-height: 5.1282vw;
@@ -183,6 +197,35 @@ $paddingLR: 3.8462vw;
     > span {
       font-size: 3.0769vw;
       color: map-get($colors, "gray_9B");
+    }
+  }
+  .countdown{
+    display: flex;
+    align-items: center;
+    > .text {
+      color: map-get($colors, "black_28");
+      font-size: 3.5897vw;
+      font-weight: bold;
+      line-height: 5.1282vw;
+      margin-right: 3.0769vw;
+    }
+    >.time_icon{
+      position: relative;
+      border: 0.2564vw solid map-get($colors, "red_D0");
+      height: 4.1026vw;
+      width: 23.0769vw;
+      border-radius: 4.1026vw;
+      box-sizing: border-box;
+      padding-left: 8.7179vw;
+      font-size: 2.5641vw;
+      color: map-get($colors, "red_D0");
+      display: flex;
+      align-items: center;
+      [class^="myicon-"]{
+        position: absolute;
+        top: -0.7692vw;
+        left: -0.5128vw;
+      }
     }
   }
   .more {
@@ -363,9 +406,9 @@ $paddingLR: 3.8462vw;
   width: 100%;
   z-index: 99;
   .left_bar {
-    &.iconfont.icon-icon_arrow_left{
+    &.iconfont.icon-icon_arrow_left {
       font-size: 7.6923vw;
-      color: map-get($colors,"gray_4A");
+      color: map-get($colors, "gray_4A");
       line-height: 7.6923vw;
     }
   }
@@ -374,7 +417,7 @@ $paddingLR: 3.8462vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: map-get($colors,"black");
+    color: map-get($colors, "black");
     font-size: 4.1026vw;
   }
 }

@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "19710551",
+      "name": "切换皮肤",
+      "font_class": "qiehuanpifu",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
       "icon_id": "12774798",
       "name": "钱包",
       "font_class": "qianbao",

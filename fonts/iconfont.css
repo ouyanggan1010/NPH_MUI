@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3021638 */
-  src: url('//at.alicdn.com/t/font_3021638_ybgak2e4lz.woff2?t=1639816023515') format('woff2'),
-       url('//at.alicdn.com/t/font_3021638_ybgak2e4lz.woff?t=1639816023515') format('woff'),
-       url('//at.alicdn.com/t/font_3021638_ybgak2e4lz.ttf?t=1639816023515') format('truetype');
+  src: url('iconfont.woff2?t=1639831769574') format('woff2'),
+       url('iconfont.woff?t=1639831769574') format('woff'),
+       url('iconfont.ttf?t=1639831769574') format('truetype');
 }
 
 .iconfont {
@@ -264,3 +264,4 @@
 .icon-quanpingmu:before {
   content: "\e725";
 }
+

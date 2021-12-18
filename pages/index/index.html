@@ -60,70 +60,88 @@
         </a>
       </div>
       <!-- 图标八宫格 -->
-      <div class="pic_card titleCnt_card iconFlex_card">
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-zonghezixun"></span>
-              <div class="text">综合资讯</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-nongjifuwu"></span>
-              <div class="text">农机服务</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-nonghuoshengchan"></span>
-              <div class="text">农活生产</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-nongwuzixun"></span>
-              <div class="text">农务咨询</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-zhongzhizhushou"></span>
-              <div class="text">种植助手</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-shujushangbao"></span>
-              <div class="text">数据上报</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-zhongchouxiangmu"></span>
-              <div class="text">众筹项目</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <span class="myicon-jinrongchanp"></span>
-              <div class="text">金融产品</div>
-            </div>
-          </a>
+      <div class="pic_card titleCnt_card">
+        <div class="iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-zonghezixun"></span>
+                </div>
+                <div class="text">综合资讯</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-nongjifuwu"></span>
+                </div>
+                <div class="text">农机服务</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-nonghuoshengchan"></span>
+                </div>
+                <div class="text">农活生产</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-nongwuzixun"></span>
+                </div>
+                <div class="text">农务咨询</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-zhongzhizhushou"></span>
+                </div>
+                <div class="text">种植助手</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-shujushangbao"></span>
+                </div>
+                <div class="text">数据上报</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-zhongchouxiangmu"></span>
+                </div>
+                <div class="text">众筹项目</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-jinrongchanp"></span>
+                </div>
+                <div class="text">金融产品</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <!-- 益农信息社 -->
@@ -426,11 +444,11 @@
     <!-- 公用的尾部 -->
     <div id="footer"></div>
     <script>
-        $("#footer").load("../../components/footer.html", function () {
-            var nowFoot = $(this).find(".footer_index>.list").eq(0);
-            nowFoot.addClass("active");
-            nowFoot.siblings(".list").removeClass("active");
-        })
+      $("#footer").load("../../components/footer.html", function () {
+        var nowFoot = $(this).find(".footer_index>.list").eq(0);
+        nowFoot.addClass("active");
+        nowFoot.siblings(".list").removeClass("active");
+      });
     </script>
     <script>
       // 获取当前位置的城市的坐标点

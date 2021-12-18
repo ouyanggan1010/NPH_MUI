@@ -20,33 +20,75 @@
   background-image: linear-gradient(#5ecefc, #84d8fb);
 }
 
-.icon_text_GongGe {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 3.8462vw 0;
-}
-
-.titleCnt_card {
-  width: 100%;
-}
-
-.titleCnt_card > .list {
-  width: 20%;
-}
-
-.titleCnt_card > .list:nth-child(-n + 5) {
-  margin-top: 0;
-}
-
-.titleCnt_card > .list .text {
-  font-size: 3.0769vw;
-}
-
 .cnt_chunk {
   width: 100%;
   box-sizing: border-box;
   padding: 0 3.8462vw;
   padding-top: 1.2821vw;
+}
+
+.cnt_chunk > .pic_card {
+  margin-top: 3.8462vw;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(2) {
+  margin-top: 1.2821vw;
+  background-image: linear-gradient(#fef2eb, #ffffff);
+}
+
+.cnt_chunk .titleCnt_card:nth-child(2) .iconFlex_card > .list {
+  width: 25%;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(2) .iconFlex_card > .list:nth-child(-n + 4) {
+  margin-top: 0;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(2) .iconFlex_card > .list .layout {
+  height: 21.5385vw;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(2) .iconFlex_card > .list .layout .img_or_icon {
+  height: 15.3846vw;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(2) .iconFlex_card > .list .layout .img_or_icon img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) {
+  background-image: linear-gradient(#fffef4, #ffffff);
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list {
+  width: 33.33%;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list:nth-child(-n + 3) {
+  margin-top: 0;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list .layout {
+  height: 28.2051vw;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list .layout .img_or_icon {
+  height: 20.5128vw;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list .layout .img_or_icon img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list .text {
+  font-size: 4.1026vw;
+  color: #d0021b;
+}
+
+.cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list .text > .small {
+  font-size: 3.0769vw;
 }
 
 .shop_swiper {

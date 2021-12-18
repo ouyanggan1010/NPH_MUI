@@ -727,6 +727,12 @@ a:link, a:visited, a:hover, a:active {
   box-shadow: 0vw 0.7692vw 0.7692vw rgba(0, 0, 0, 0.08);
 }
 
+.titleCnt_card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3.8462vw 0;
+}
+
 .iconFlex_card {
   display: flex;
   align-items: center;
@@ -736,10 +742,13 @@ a:link, a:visited, a:hover, a:active {
 .iconFlex_card .list {
   text-align: center;
   margin-top: 5.1282vw;
+  font-size: 0;
 }
 
 .iconFlex_card .list > a {
   display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .iconFlex_card .list .layout {
@@ -749,6 +758,13 @@ a:link, a:visited, a:hover, a:active {
   align-items: center;
   width: auto;
   height: 14.8718vw;
+}
+
+.iconFlex_card .list .layout .img_or_icon {
+  height: 9.2308vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .iconFlex_card .list .text {
@@ -795,6 +811,39 @@ a:link, a:visited, a:hover, a:active {
 .card_title .brand > span {
   font-size: 3.0769vw;
   color: #9b9b9b;
+}
+
+.card_title .countdown {
+  display: flex;
+  align-items: center;
+}
+
+.card_title .countdown > .text {
+  color: #282828;
+  font-size: 3.5897vw;
+  font-weight: bold;
+  line-height: 5.1282vw;
+  margin-right: 3.0769vw;
+}
+
+.card_title .countdown > .time_icon {
+  position: relative;
+  border: 0.2564vw solid #d0021b;
+  height: 4.1026vw;
+  width: 23.0769vw;
+  border-radius: 4.1026vw;
+  box-sizing: border-box;
+  padding-left: 8.7179vw;
+  font-size: 2.5641vw;
+  color: #d0021b;
+  display: flex;
+  align-items: center;
+}
+
+.card_title .countdown > .time_icon [class^="myicon-"] {
+  position: absolute;
+  top: -0.7692vw;
+  left: -0.5128vw;
 }
 
 .card_title .more {

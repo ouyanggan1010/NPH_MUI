@@ -95,17 +95,11 @@
   text-shadow: 0vw 0.7692vw 1.5385vw rgba(251, 148, 81, 0.6);
 }
 
-.titleCnt_card {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 3.8462vw 0;
-}
-
-.titleCnt_card > .list {
+.iconFlex_card > .list {
   width: 25%;
 }
 
-.titleCnt_card > .list:nth-child(-n + 4) {
+.iconFlex_card > .list:nth-child(-n + 4) {
   margin-top: 0;
 }
 

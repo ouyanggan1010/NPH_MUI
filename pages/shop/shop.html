@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>农品汇</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!-- mui-js -->
@@ -25,80 +27,219 @@
     <link rel="stylesheet" href="../../css/farmer_shop.css" />
     <!-- 声明所有连接都在当前窗口打开 -->
     <base target="_self" />
-</head>
+  </head>
 
-<body class="countryside_body">
+  <body class="countryside_body">
     <!-- 通用的搜索框 -->
     <div class="countryside_search" id="search_scroll">
-        <div class="icons_city_weather">
-            <div class="city_weather">
-                <span class="iconfont icon-ditu_dingwei_o"></span>
-                <span>海口·晴 34℃</span>
-            </div>
-            <div class="icons">
-                <!-- 如果需要红点，则在span标签加上class=my-badge -->
-                <a href="#"><span class="iconfont icon-duihua my-badge"></span></a>
-                <a href="#"><span class="iconfont icon-gouwuche my-badge"></span></a>
-            </div>
+      <div class="icons_city_weather">
+        <div class="city_weather">
+          <span class="iconfont icon-ditu_dingwei_o"></span>
+          <span>海口·晴 34℃</span>
         </div>
-        <!-- 输入框 -->
-        <div class="base_search_btn">
-            <div class="base_searchOne">
-                <span class="iconfont icon-sousuo"></span>
-                <input type="text" class="inp_text" placeholder="搜索" />
-            </div>
-            <button type="button" class="btn">搜索</button>
+        <div class="icons">
+          <!-- 如果需要红点，则在span标签加上class=my-badge -->
+          <a href="#"><span class="iconfont icon-duihua my-badge"></span></a>
+          <a href="#"><span class="iconfont icon-gouwuche my-badge"></span></a>
         </div>
+      </div>
+      <!-- 输入框 -->
+      <div class="base_search_btn">
+        <div class="base_searchOne">
+          <span class="iconfont icon-sousuo"></span>
+          <input type="text" class="inp_text" placeholder="搜索" />
+        </div>
+        <button type="button" class="btn">搜索</button>
+      </div>
     </div>
     <!-- 内容块 -->
     <div class="cnt_chunk">
-        <!-- 轮播 -->
-        <div class="shop_swiper">
-            <div class="swiper-container swiper-container-horizontal">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                </div>
+      <!-- 轮播 -->
+      <div class="shop_swiper">
+        <div class="swiper-container swiper-container-horizontal">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
             </div>
-            <!-- Add Pagination -->
-            <div class="
+            <div class="swiper-slide">
+              <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div
+          class="
             swiper-pagination
             swiper-pagination-clickable
             swiper-pagination-bullets
-          ">
-                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
-                    class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
-            </div>
+          "
+        >
+          <span class="swiper-pagination-bullet"></span>
+          <span class="swiper-pagination-bullet"></span>
+          <span class="swiper-pagination-bullet"></span>
         </div>
-        <!-- 这个是底线 -->
-        <div class="dead_line">没有更多内容啦</div>
+      </div>
+      <!-- 产品分类 -->
+      <div class="pic_card titleCnt_card">
+        <div class="iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/rqd.png" alt="" />
+                </div>
+                <div class="text">肉禽蛋</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/slsg.png" alt="" />
+                </div>
+                <div class="text">时令水果</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/scdl.png" alt="" />
+                </div>
+                <div class="text">蔬菜豆类</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/hxsc.png" alt="" />
+                </div>
+                <div class="text">海鲜水产</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/nfcp.png" alt="" />
+                </div>
+                <div class="text">牛副产品</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/zfcp.png" alt="" />
+                </div>
+                <div class="text">猪副产品</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/jm.png" alt="" />
+                </div>
+                <div class="text">鸡苗</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/sl.png" alt="" />
+                </div>
+                <div class="text">饲料</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 限时抢购 -->
+      <div class="pic_card titleCnt_card">
+        <!-- title -->
+        <div class="card_title">
+          <div class="countdown">
+            <div class="text">限时抢购</div>
+            <div class="time_icon">
+                <span class="myicon-naozhongRed"></span>
+                <div>00:15:12</div>
+            </div>
+          </div>
+        </div>
+        <!-- N宫格 -->
+        <div class="iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/rqd.png" alt="" />
+                </div>
+                <div class="text"><span class="small">¥</span>19.6</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/slsg.png" alt="" />
+                </div>
+                <div class="text"><span class="small">¥</span>19.6</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <img src="../../images/content_imgs/scdl.png" alt="" />
+                </div>
+                <div class="text"><span class="small">¥</span>19.6</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 这个是底线 -->
+      <div class="dead_line">没有更多内容啦</div>
     </div>
     <!-- 公用的尾部 -->
     <div id="footer"></div>
     <script>
-        $("#footer").load("../../components/footer.html", function () {
-            var nowFoot = $(this).find(".footer_index>.list").eq(2);
-            nowFoot.addClass("active");
-            nowFoot.siblings(".list").removeClass("active");
-        });
+      $("#footer").load("../../components/footer.html", function () {
+        var nowFoot = $(this).find(".footer_index>.list").eq(2);
+        nowFoot.addClass("active");
+        nowFoot.siblings(".list").removeClass("active");
+      });
     </script>
     <script>
-        // 监听滚动事件
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 0) {
-                $("#search_scroll").addClass("fixed");
-            } else {
-                $("#search_scroll").removeClass("fixed");
-            }
-        });
-        // 轮播
-        var swiper = new Swiper(".swiper-container", {
-            pagination: ".swiper-pagination",
-            loop : true,
-            autoplay : 3000,
-        });
+      // 监听滚动事件
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+          $("#search_scroll").addClass("fixed");
+        } else {
+          $("#search_scroll").removeClass("fixed");
+        }
+      });
+      // 轮播
+      var swiper = new Swiper(".swiper-container", {
+        pagination: ".swiper-pagination",
+        loop: true,
+        autoplay: 3000,
+      });
     </script>
-</body>
-
+  </body>
 </html>
