@@ -125,6 +125,7 @@
   bottom: 1.2821vw;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 .shop_swiper .swiper-pagination .swiper-pagination-bullet {
