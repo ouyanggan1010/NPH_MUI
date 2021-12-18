@@ -1,19 +1,40 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3021638 */
-  src: url("//at.alicdn.com/t/font_3021638_9zm9fqq9uoi.woff2?t=1639646722933")
-      format("woff2"),
-    url("//at.alicdn.com/t/font_3021638_9zm9fqq9uoi.woff?t=1639646722933")
-      format("woff"),
-    url("//at.alicdn.com/t/font_3021638_9zm9fqq9uoi.ttf?t=1639646722933")
-      format("truetype");
+  src: url("iconfont.woff2?t=1639729026539") format("woff2"),
+    url("iconfont.woff?t=1639729026539") format("woff"),
+    url("iconfont.ttf?t=1639729026539") format("truetype");
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
+  /* font-size: 16px; */
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-qianbao:before {
+  content: "\e829";
+}
+
+.icon-paichu1:before {
+  content: "\e65c";
+}
+
+.icon-youhuiquan:before {
+  content: "\e63c";
+}
+
+.icon-icon_arrow_left:before {
+  content: "\e62f";
+}
+
+.icon-icon_arrow_right:before {
+  content: "\e631";
+}
+
+.icon-ditu_dingwei_o:before {
+  content: "\ebbb";
 }
 
 .icon-sousuo:before {

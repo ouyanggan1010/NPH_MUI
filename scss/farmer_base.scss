@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+@import "_color";
+@import "_style";
+@import "_icon";
+
+$paddingLR: 3.8462vw;
+
+// 这里放通用的样式
+.base_searchOne {
+  width: 100%;
+  height: 9.2308vw;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9.2308vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  .icon-sousuo {
+    font-size: 5.641vw;
+    color: map-get($colors, "white");
+  }
+  .icon-huatong {
+    font-size: 7.1795vw;
+    color: map-get($colors, "white");
+  }
+  .inp_text {
+    background-color: transparent;
+    border: none;
+    line-height: 5.641vw;
+    height: 5.641vw;
+    margin-bottom: 0;
+    padding: 0 2.5641vw;
+    font-size: 4.1026vw;
+    color: map-get($colors, "white");
+    flex: 1;
+    &::placeholder {
+      color: map-get($colors, "white");
+    }
+  }
+}
+// 白色卡片
+.pic_card {
+  border-radius: 1.2821vw;
+  background-color: map-get($colors, "white");
+  box-shadow: 0vw 0.7692vw 0.7692vw rgba(0, 0, 0, 0.08);
+}
+// 图标N宫格
+.iconFlex_card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .list {
+    text-align: center;
+    margin-top: 5.1282vw;
+    > a {
+      display: inline-block;
+    }
+    .layout {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: auto;
+      height: 14.8718vw;
+    }
+    .text {
+      line-height: 5.1282vw;
+      font-size: 3.5897vw;
+      color: map-get($colors, "black_28");
+    }
+  }
+}
+.card_title {
+  box-sizing: border-box;
+  padding: 0 $paddingLR;
+  margin-bottom: $paddingLR;
+  display: flex;
+  justify-content: space-between;
+  .only {
+    line-height: 5.1282vw;
+    font-size: 3.5897vw;
+    color: map-get($colors, "black_28");
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    line-height: 8.4615vw;
+    > .text {
+      background: linear-gradient(#f9ea0b, #fb9451);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 6.4103vw;
+      font-weight: bold;
+    }
+    > .line {
+      width: 0.3846vw;
+      height: 5.1282vw;
+      background-color: map-get($colors, "gray_9B");
+      margin: 0 2.5641vw;
+    }
+    > span {
+      font-size: 3.0769vw;
+      color: map-get($colors, "gray_9B");
+    }
+  }
+  .more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: map-get($colors, "gray_9B");
+    line-height: 5.1282vw;
+    .iconfont {
+      font-size: 3.8462vw;
+    }
+  }
+}
+// 文字图片列表
+.text_img_lists {
+  width: 100%;
+  .list {
+    display: block;
+    margin-top: 3.8462vw;
+    &:first-child {
+      margin-top: 0;
+    }
+    > .imgs_top {
+      width: 100%;
+      margin-bottom: 3.0769vw;
+    }
+    > .text_oneImg {
+      display: flex;
+      justify-content: space-between;
+      > .div_text {
+        flex: 1;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        > .div_title {
+          font-size: 3.5897vw;
+          color: map-get($colors, "black_28");
+          line-height: 5.641vw;
+          @include overelMore(2);
+        }
+        > .div_tips {
+          font-size: 3.0769vw;
+          color: map-get($colors, "gray_9B");
+          display: flex;
+          align-items: center;
+          margin-top: 2.5641vw;
+          .redText {
+            color: map-get($colors, "red_D0");
+          }
+          > span:nth-child(n + 2) {
+            margin-left: 2.5641vw;
+          }
+        }
+      }
+      > .div_oneImg {
+        margin-left: 1.2821vw;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// 底线
+.dead_line {
+  font-size: 3.0769vw;
+  color: map-get($colors, "gray_9B");
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5.1282vw 0;
+}
+// 共用尾部
+.footer_index {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15.3846vw;
+  background-color: map-get($colors, "white");
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9;
+  border-top: 0.2564vw solid map-get($colors, "gray_f6");
+  > .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > .icon_pos {
+      width: 6.1538vw;
+      height: 6.1538vw;
+      position: relative;
+      > [class^="myicon-"] {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &[class$="B"] {
+          transform: translate(-44%, -48%);
+          display: none;
+        }
+        &[class$="G"] {
+          display: inline-block;
+        }
+      }
+    }
+    > .text {
+      font-size: 3.0769vw;
+      color: map-get($colors, "gray_9B");
+      line-height: 3.8462vw;
+      margin-top: 1.2821vw;
+    }
+    &.active {
+      > .icon_pos {
+        width: 6.1538vw;
+        height: 6.1538vw;
+        position: relative;
+        > [class^="myicon-"] {
+          &[class$="B"] {
+            display: inline-block;
+          }
+          &[class$="G"] {
+            display: none;
+          }
+        }
+      }
+      > .text {
+        color: map-get($colors, "blue_00");
+      }
+    }
+  }
+}
