@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3021638 */
-  src: url("iconfont.woff2?t=1639729026539") format("woff2"),
-    url("iconfont.woff?t=1639729026539") format("woff"),
-    url("iconfont.ttf?t=1639729026539") format("truetype");
+  src: url('//at.alicdn.com/t/font_3021638_ybgak2e4lz.woff2?t=1639816023515') format('woff2'),
+       url('//at.alicdn.com/t/font_3021638_ybgak2e4lz.woff?t=1639816023515') format('woff'),
+       url('//at.alicdn.com/t/font_3021638_ybgak2e4lz.ttf?t=1639816023515') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-qiehuanpifu:before {
+  content: "\e62b";
 }
 
 .icon-qianbao:before {

@@ -1,0 +1,54 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+
+.countryside_body {
+  background-color: map-get($colors, "body_bg");
+  background-image: url(../images/bg_imgs/countryside_top_bg.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  box-sizing: border-box;
+  padding-bottom: 15.3846vw;
+}
+// 搜索框
+.countryside_search {
+  box-sizing: border-box;
+  padding: $paddingLR $paddingLR 2.5641vw $paddingLR;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  &.fixed {
+    background-image: linear-gradient( #5ECEFC, #84D8FB);
+  }
+}
+.icon_text_GongGe{
+  width: 100%;
+  box-sizing: border-box;
+  padding: $paddingLR 0;
+}
+.titleCnt_card {
+  width: 100%;
+  > .list {
+    width: 20%;
+    &:nth-child(-n + 5) {
+      margin-top: 0;
+    }
+    .text{
+      font-size: 3.0769vw;
+    }
+  }
+}
+// 内容块
+.cnt_chunk {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 $paddingLR;
+  padding-top: 1.2821vw;
+  > .pic_card {
+    margin-top: 3.8462vw;
+    &:nth-child(1){
+      margin-top: 0;
+    }
+  }
+}

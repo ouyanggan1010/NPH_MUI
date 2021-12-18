@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>农品汇</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../js/mui.min.js"></script>
+    <!-- swiper-js -->
+    <script src="../../js/swiper.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <!-- swiper-css -->
+    <link rel="stylesheet" href="../../css/swiper.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../css/farmer_shop.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body class="countryside_body">
+    <!-- 通用的搜索框 -->
+    <div class="countryside_search" id="search_scroll">
+        <div class="icons_city_weather">
+            <div class="city_weather">
+                <span class="iconfont icon-ditu_dingwei_o"></span>
+                <span>海口·晴 34℃</span>
+            </div>
+            <div class="icons">
+                <!-- 如果需要红点，则在span标签加上class=my-badge -->
+                <a href="#"><span class="iconfont icon-duihua my-badge"></span></a>
+                <a href="#"><span class="iconfont icon-gouwuche my-badge"></span></a>
+            </div>
+        </div>
+        <!-- 输入框 -->
+        <div class="base_search_btn">
+            <div class="base_searchOne">
+                <span class="iconfont icon-sousuo"></span>
+                <input type="text" class="inp_text" placeholder="搜索" />
+            </div>
+            <button type="button" class="btn">搜索</button>
+        </div>
+    </div>
+    <!-- 内容块 -->
+    <div class="cnt_chunk">
+        <!-- 轮播 -->
+        <div class="shop_swiper">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide">Slide 5</div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="
+            swiper-pagination
+            swiper-pagination-clickable
+            swiper-pagination-bullets
+          ">
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
+                    class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+            </div>
+        </div>
+        <!-- 这个是底线 -->
+        <div class="dead_line">没有更多内容啦</div>
+    </div>
+    <!-- 公用的尾部 -->
+    <div id="footer"></div>
+    <script>
+        $("#footer").load("../../components/footer.html", function () {
+            var nowFoot = $(this).find(".footer_index>.list").eq(2);
+            nowFoot.addClass("active");
+            nowFoot.siblings(".list").removeClass("active");
+        });
+    </script>
+    <script>
+        // 监听滚动事件
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $("#search_scroll").addClass("fixed");
+            } else {
+                $("#search_scroll").removeClass("fixed");
+            }
+        });
+        // 轮播
+        var swiper = new Swiper(".swiper-container", {
+            pagination: ".swiper-pagination",
+            loop : true,
+            autoplay : 3000,
+        });
+    </script>
+</body>
+
+</html>

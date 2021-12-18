@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>新农村</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../css/farmer_countryside.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+  </head>
+
+  <body class="countryside_body">
+    <!-- 通用的搜索框 -->
+    <div class="countryside_search" id="search_scroll">
+      <div class="icons_city_weather">
+        <div class="city_weather">
+          <span class="iconfont icon-ditu_dingwei_o"></span>
+          <span>海口·晴 34℃</span>
+        </div>
+      </div>
+      <!-- 输入框 -->
+      <div class="base_search_btn">
+        <div class="base_searchOne">
+          <span class="iconfont icon-sousuo"></span>
+          <input type="text" class="inp_text" placeholder="搜索" />
+        </div>
+        <button type="button" class="btn">搜索</button>
+      </div>
+    </div>
+    <!-- 内容块 -->
+    <div class="cnt_chunk">
+      <!-- 益农信息社 -->
+      <div class="pic_card icon_text_GongGe">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">益农信息社</div>
+        </div>
+        <!-- 图标十宫格 -->
+        <div class="titleCnt_card iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-zixunzhongxin"></span>
+                <div class="text">咨询中心</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-zaixiannongxiao"></span>
+                <div class="text">在线农校</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-zhongzhizhushou"></span>
+                <div class="text">种植助手</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-shujushangbao"></span>
+                <div class="text">数据上报</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-nongyeyiyuan"></span>
+                <div class="text">农业医院</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-tudiliuzhuan"></span>
+                <div class="text">土地流转</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-sannongbutie"></span>
+                <div class="text">三农补贴</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-chanpshuyuan"></span>
+                <div class="text">产品溯源</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-zhengwuzixun"></span>
+                <div class="text">政务咨询</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-yichangshangbao"></span>
+                <div class="text">异常上报</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 乡村文旅 -->
+      <div class="pic_card icon_text_GongGe">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">乡村文旅</div>
+        </div>
+        <!-- 图标十宫格 -->
+        <div class="titleCnt_card iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-meilixiangcun"></span>
+                <div class="text">美丽乡村</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-xiangcunlvyou"></span>
+                <div class="text">乡村旅游</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-minsucany"></span>
+                <div class="text">民宿餐饮</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-xiangcuntechan"></span>
+                <div class="text">乡村特产</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-xiangcunwenchuang"></span>
+                <div class="text">乡村文创</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 掌上村务 -->
+      <div class="pic_card icon_text_GongGe">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">掌上村务</div>
+        </div>
+        <!-- 图标十宫格 -->
+        <div class="titleCnt_card iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-sanwugongkai"></span>
+                <div class="text">三务公开</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-shujixinxiang"></span>
+                <div class="text">书记信箱</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-minqingshangbao"></span>
+                <div class="text">民情上报</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-wenmingshijiang"></span>
+                <div class="text">文明实践</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-huinongbutie"></span>
+                <div class="text">惠农补贴</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-linlihuzhu"></span>
+                <div class="text">邻里互助</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-woyaobanshi"></span>
+                <div class="text">我要办事</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-suishoupai"></span>
+                <div class="text">随手拍</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-suishouwen"></span>
+                <div class="text">随手问</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-wodecunzi"></span>
+                <div class="text">我的村子</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 市场流通 -->
+      <div class="pic_card icon_text_GongGe">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">市场流通</div>
+        </div>
+        <!-- 图标十宫格 -->
+        <div class="titleCnt_card iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-nongpinhui"></span>
+                <div class="text">农品汇</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-ncptejia"></span>
+                <div class="text">农产品特价</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-gongxuxinxi"></span>
+                <div class="text">供需信息</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-quanyiliuzhuan"></span>
+                <div class="text">权益流转</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <span class="myicon-jinrongbaoxian"></span>
+                <div class="text">金融保险</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 这个是底线 -->
+      <div class="dead_line">没有更多内容啦</div>
+    </div>
+    <!-- 公用的尾部 -->
+    <div id="footer"></div>
+    <script>
+      $("#footer").load("../../components/footer.html", function () {
+        var nowFoot = $(this).find(".footer_index>.list").eq(1);
+        nowFoot.addClass("active");
+        nowFoot.siblings(".list").removeClass("active");
+      });
+    </script>
+    <script>
+      // 监听滚动事件
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+          $("#search_scroll").addClass("fixed");
+        } else {
+          $("#search_scroll").removeClass("fixed");
+        }
+      });
+    </script>
+  </body>
+</html>

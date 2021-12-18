@@ -1,0 +1,159 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+
+.personal_body {
+  background-color: map-get($colors, "white");
+  box-sizing: border-box;
+  padding-bottom: 15.3846vw;
+}
+// 头部
+.nav_bar{
+  background-color: map-get($colors, "white");
+  border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
+  display: none;
+}
+// 放置用户信息的顶部
+.personal_top {
+  background-image: url(../images/bg_imgs/personal_top_bg.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  width: 100%;
+  height: 82.0513vw;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 15.3846vw;
+  > .icons {
+    position: absolute;
+    top: 3.8462vw;
+    right: 3.8462vw;
+    .iconfont {
+      font-size: 6.1538vw;
+      color: map-get($colors, "white");
+      &:nth-child(1) {
+        margin-right: 3.3333vw;
+      }
+    }
+  }
+  > .pic_user_msg {
+    width: 100%;
+    text-align: center;
+    > a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      display: inline-block;
+      > .pic_img {
+        width: 100%;
+        height: 30.7692vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 30.7692vw;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+      > .user_name {
+        font-size: 4.6154vw;
+        font-weight: bold;
+        color: map-get($colors, "white");
+        margin-top: 3.8462vw;
+      }
+      > .account_phone {
+        font-size: 3.0769vw;
+        color: map-get($colors, "white");
+      }
+    }
+  }
+  >.vip_card{
+    width: 100%;
+    height: 15.3846vw;
+    box-sizing: border-box;
+    padding: 0 $paddingLR;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+// 内容块
+.cnt_chunk {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 $paddingLR;
+  padding-top: 6.4103vw;
+  >.card_link{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      >.list{
+        width: 28.2051vw;
+        height: 19.2308vw;
+        border-radius: 2.5641vw;
+        background-color: red;
+        border-top-right-radius: 12.8205vw;
+        color: map-get($colors,"white");
+        box-sizing: border-box;
+        padding-left: 3.8462vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        >[class^="myicon-"]{
+          position: relative;
+        }
+        >div{
+          font-size: 3.5897vw;
+          margin-top: 1.2821vw;
+          line-height: 5.1282vw;
+        }
+        &:nth-child(1){
+          background-image: linear-gradient( #27D5FF, #0091FF);
+        }
+        &:nth-child(2){
+          background-image: linear-gradient( #C1A5FF, #6A29D5);
+        }
+        &:nth-child(3){
+          background-image: linear-gradient( #F9EA0B, #FB9451);
+        }
+      }
+  }
+  >.link_text_lists{
+    margin-top: 3.8462vw;
+    >.list{
+      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 3.5897vw 0;
+      border-top: 0.2564vw solid map-get($colors, "gray_f6");
+      line-height: 7.6923vw;
+      &:nth-child(1){
+        border-top:none;
+      }
+      >.title_icon{
+        font-size: 3.5897vw;
+        color: map-get($colors, "black_28");
+        display: flex;
+        align-items: center;
+        >div{
+          margin-left: 2.5641vw;
+        }
+      }
+      >.right_icon_text{
+        display: flex;
+        align-items: center;
+        font-size: 6.4103vw;
+        color: map-get($colors, "gray_9B");
+        >.tip{
+          font-size: 3.0769vw;
+        }
+      }
+    }
+  }
+}
