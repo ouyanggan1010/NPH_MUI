@@ -27,11 +27,14 @@
 
   <body class="index_body">
     <!-- 通用的搜索框 -->
-    <div class="index_search" id="search_scroll">
-      <div class="base_searchOne">
-        <span class="iconfont icon-sousuo"></span>
-        <input type="text" class="inp_text" placeholder="搜索" />
-        <span class="iconfont icon-huatong"></span>
+    <div class="search_box" id="search_scroll">
+      <div class="mui-input-row mui-search mui-plus-visible">
+        <input
+          id="search"
+          type="search"
+          class="mui-input-speech mui-input-clear"
+          placeholder="搜索"
+        />
       </div>
     </div>
     <!-- 定位与时间 -->
@@ -42,7 +45,26 @@
       <span class="iconfont icon-ditu_dingwei_o"></span>
     </div>
     <!-- 天气 -->
-    <div class="weather"></div>
+    <div class="weather">
+      <div class="pic_img">
+        <img src="../../images/content_imgs/whear.png" alt="" />
+      </div>
+      <div class="text_list">
+        <div class="quality">
+          <div>阴&nbsp;21 ~ 30℃</div>
+        </div>
+        <div>南风3级&nbsp;&nbsp;湿度：58%</div>
+        <div>气压：1010hpa</div>
+      </div>
+      <div class="text_list">
+        <div class="quality">
+          <div>空气质量：</div>
+          <div class="mark">优</div>
+        </div>
+        <div>PM2.5</div>
+        <div>水温：20℃</div>
+      </div>
+    </div>
     <!-- 内容块 -->
     <div class="cnt_chunk">
       <div class="pic_card index_textNum">
@@ -457,10 +479,51 @@
       $(function () {
         showDate();
       });
+      // ---------------------------mui
+      mui.init({
+        gestureConfig: {
+          longtap: true, //默认为false
+        },
+      });
       // ---------------------------使用H5+APP的API
       mui.plusReady(function () {
         getLocation();
+        initNativeObjects();
+        showSoftInput();
       });
+      //语音识别完成事件
+      document
+        .getElementById("search")
+        .addEventListener("recognized", function (e) {
+          console.log("语音识别完成事件-----", e.detail.value);
+        });
+      var nativeWebview, imm, InputMethodManager;
+      var initNativeObjects = function () {
+        if (mui.os.android) {
+          var main = plus.android.runtimeMainActivity();
+          var Context = plus.android.importClass("android.content.Context");
+          InputMethodManager = plus.android.importClass(
+            "android.view.inputmethod.InputMethodManager"
+          );
+          imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
+        } else {
+          nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
+        }
+      };
+      var showSoftInput = function () {
+        if (mui.os.android) {
+          imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+        } else {
+          nativeWebview.plusCallMethod({
+            setKeyboardDisplayRequiresUserAction: false,
+          });
+        }
+        // setTimeout(function () {
+        //   var inputElem = document.querySelector("input");
+        //   inputElem.focus();
+        //   inputElem.parentNode.classList.add("mui-active"); //第一个是search，加上激活样式
+        // }, 200);
+      };
 
       // 监听滚动事件
       $(window).scroll(function () {

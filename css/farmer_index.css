@@ -17,7 +17,10 @@
 }
 
 .index_search.fixed {
-  background-image: linear-gradient(to right, #27d5ff, #0091ff);
+  background-image: linear-gradient(to bottom right, #27d5ff, #0091ff);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% 72.0513vw;
 }
 
 .position_time {
@@ -49,6 +52,59 @@
   width: 100%;
   height: 17.4359vw;
   margin-top: 5.1282vw;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather > .pic_img {
+  width: 14.8718vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather > .pic_img > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.weather > .text_list {
+  line-height: 5.1282vw;
+  font-size: 3.5897vw;
+  color: #fff;
+}
+
+.weather > .text_list:last-child {
+  border-left: 0.2564vw solid #fff;
+  box-sizing: border-box;
+  padding-left: 5.1282vw;
+}
+
+.weather > .text_list > div {
+  margin-top: 1.2821vw;
+}
+
+.weather > .text_list > div:nth-child(1) {
+  margin-top: 0;
+}
+
+.weather > .text_list .quality {
+  display: flex;
+}
+
+.weather > .text_list .quality > .mark {
+  padding: 0 1.2821vw;
+  height: 5.1282vw;
+  min-width: 7.6923vw;
+  background-color: #f5a623;
+  font-size: 3.0769vw;
+  color: #fff;
+  border-radius: 1.2821vw;
+  text-align: center;
 }
 
 .cnt_chunk {
@@ -352,98 +408,6 @@
   box-shadow: 0 0.7692vw 1.5385vw rgba(251, 86, 10, 0.3);
 }
 
-.aiticle_text_img .features_agricultural {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.aiticle_text_img .features_agricultural > .list {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  border-bottom: 0.2564vw solid #f6f6f6;
-  border-right: 0.2564vw solid #f6f6f6;
-  box-sizing: border-box;
-  padding: 2.5641vw;
-}
-
-.aiticle_text_img .features_agricultural > .list:nth-last-child(1), .aiticle_text_img .features_agricultural > .list:nth-child(odd):nth-last-child(2) {
-  border-bottom: 0.0625rem solid #fff;
-}
-
-.aiticle_text_img .features_agricultural > .list:nth-child(even) {
-  border-right: 0.0625rem solid #fff;
-}
-
-.aiticle_text_img .features_agricultural > .list .div_img {
-  width: 100%;
-  height: 30.7692vw;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.aiticle_text_img .features_agricultural > .list .div_img > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.aiticle_text_img .features_agricultural > .list .price_title_tips {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-}
-
-.aiticle_text_img .features_agricultural > .list .title {
-  font-size: 4.1026vw;
-  color: #282828;
-  margin-top: 2.5641vw;
-  line-height: 5.641vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* autoprefixer: off */
-  -webkit-box-orient: vertical;
-  /* autoprefixer: on */
-}
-
-.aiticle_text_img .features_agricultural > .list .tips {
-  font-size: 3.0769vw;
-}
-
-.aiticle_text_img .features_agricultural > .list .tips.font_red {
-  color: #d0021b;
-}
-
-.aiticle_text_img .features_agricultural > .list .tips.font_blue {
-  color: #0091ff;
-}
-
-.aiticle_text_img .features_agricultural > .list .price_weight {
-  margin-top: 2.5641vw;
-  display: flex;
-  align-items: flex-end;
-}
-
-.aiticle_text_img .features_agricultural > .list .price_weight .price {
-  font-size: 4.1026vw;
-  color: #d0021b;
-}
-
-.aiticle_text_img .features_agricultural > .list .price_weight .line {
-  font-size: 4.1026vw;
-  color: #9b9b9b;
-}
-
-.aiticle_text_img .features_agricultural > .list .price_weight .weight {
-  font-size: 3.0769vw;
-  color: #9b9b9b;
-}
-
 .aiticle_text_img .financial_services {
   box-sizing: border-box;
   padding: 0 3.8462vw;
@@ -549,4 +513,69 @@
   font-size: 2.5641vw;
   color: #4a4a4a;
   line-height: 4.6154vw;
+}
+
+.search_box {
+  box-sizing: border-box;
+  padding: 3.8462vw 3.8462vw 2.5641vw 3.8462vw;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.search_box .mui-active:before {
+  font-size: 5.1282vw;
+  left: 1.2821vw !important;
+  color: #ffffff !important;
+  transform: translateY(-50%);
+}
+
+.search_box .mui-input-row {
+  flex: 1 !important;
+}
+
+.search_box .mui-plus-visible {
+  display: block !important;
+}
+
+.search_box input[type="search"] {
+  margin-bottom: 0;
+  height: 9.2308vw;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9.2308vw;
+  color: #ffffff !important;
+  font-size: 4.1026vw !important;
+}
+
+.search_box .mui-placeholder,
+.search_box .mui-icon {
+  color: #ffffff !important;
+}
+
+.search_box .mui-placeholder {
+  font-size: 4.1026vw !important;
+  height: 9.2308vw;
+  top: 50% !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 9.2308vw;
+}
+
+.search_box .mui-icon-speech {
+  width: auto !important;
+  height: auto !important;
+  top: 50% !important;
+  right: 2.5641vw !important;
+  transform: translateY(-50%);
+}
+
+.search_box .mui-icon {
+  font-size: 5.1282vw !important;
+}
+
+.search_box.fixed {
+  background-image: linear-gradient(to bottom right, #27d5ff, #0091ff);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% 72.0513vw;
 }

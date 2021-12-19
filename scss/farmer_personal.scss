@@ -8,7 +8,7 @@ $paddingLR: 3.8462vw;
   padding-bottom: 15.3846vw;
 }
 // 头部
-.nav_bar{
+.nav_bar {
   background-color: map-get($colors, "white");
   border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
   display: none;
@@ -71,7 +71,7 @@ $paddingLR: 3.8462vw;
       }
     }
   }
-  >.vip_card{
+  > .vip_card {
     width: 100%;
     height: 15.3846vw;
     box-sizing: border-box;
@@ -79,6 +79,40 @@ $paddingLR: 3.8462vw;
     position: absolute;
     bottom: 0;
     left: 0;
+    .bg_img {
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/bg_imgs/personal_vip.png);
+      background-repeat: no-repeat;
+      background-position: top left;
+      background-size: 100% auto;
+      box-sizing: border-box;
+      padding-left: 15.3846vw;
+      padding-right: 5.1282vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .text{
+        display: inline-block;
+        font-size: 3.0769vw;
+        color: map-get($colors, "yellow_C2");
+        line-height: 5.1282vw;
+      }
+      .immediately{
+        display: block;
+        border: none;
+        background-color: map-get($colors,"yellow_C8");
+        font-size: 3.0769vw;
+        color: map-get($colors, "white");
+        height: 6.1538vw;
+        min-width: 20.5128vw;
+        line-height: 6.1538vw;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 0 2.5641vw;
+        border-radius: 6.1538vw;
+      }
+    }
   }
 }
 // 内容块
@@ -87,44 +121,44 @@ $paddingLR: 3.8462vw;
   box-sizing: border-box;
   padding: 0 $paddingLR;
   padding-top: 6.4103vw;
-  >.card_link{
+  > .card_link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > .list {
+      width: 28.2051vw;
+      height: 19.2308vw;
+      border-radius: 2.5641vw;
+      background-color: red;
+      border-top-right-radius: 12.8205vw;
+      color: map-get($colors, "white");
+      box-sizing: border-box;
+      padding-left: 3.8462vw;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      >.list{
-        width: 28.2051vw;
-        height: 19.2308vw;
-        border-radius: 2.5641vw;
-        background-color: red;
-        border-top-right-radius: 12.8205vw;
-        color: map-get($colors,"white");
-        box-sizing: border-box;
-        padding-left: 3.8462vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        >[class^="myicon-"]{
-          position: relative;
-        }
-        >div{
-          font-size: 3.5897vw;
-          margin-top: 1.2821vw;
-          line-height: 5.1282vw;
-        }
-        &:nth-child(1){
-          background-image: linear-gradient( #27D5FF, #0091FF);
-        }
-        &:nth-child(2){
-          background-image: linear-gradient( #C1A5FF, #6A29D5);
-        }
-        &:nth-child(3){
-          background-image: linear-gradient( #F9EA0B, #FB9451);
-        }
+      flex-direction: column;
+      justify-content: center;
+      > [class^="myicon-"] {
+        position: relative;
       }
+      > div {
+        font-size: 3.5897vw;
+        margin-top: 1.2821vw;
+        line-height: 5.1282vw;
+      }
+      &:nth-child(1) {
+        background-image: linear-gradient(#27d5ff, #0091ff);
+      }
+      &:nth-child(2) {
+        background-image: linear-gradient(#c1a5ff, #6a29d5);
+      }
+      &:nth-child(3) {
+        background-image: linear-gradient(#f9ea0b, #fb9451);
+      }
+    }
   }
-  >.link_text_lists{
+  > .link_text_lists {
     margin-top: 3.8462vw;
-    >.list{
+    > .list {
       display: block;
       display: flex;
       justify-content: space-between;
@@ -133,24 +167,24 @@ $paddingLR: 3.8462vw;
       padding: 3.5897vw 0;
       border-top: 0.2564vw solid map-get($colors, "gray_f6");
       line-height: 7.6923vw;
-      &:nth-child(1){
-        border-top:none;
+      &:nth-child(1) {
+        border-top: none;
       }
-      >.title_icon{
+      > .title_icon {
         font-size: 3.5897vw;
         color: map-get($colors, "black_28");
         display: flex;
         align-items: center;
-        >div{
+        > div {
           margin-left: 2.5641vw;
         }
       }
-      >.right_icon_text{
+      > .right_icon_text {
         display: flex;
         align-items: center;
         font-size: 6.4103vw;
         color: map-get($colors, "gray_9B");
-        >.tip{
+        > .tip {
           font-size: 3.0769vw;
         }
       }

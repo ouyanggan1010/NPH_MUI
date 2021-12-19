@@ -4,10 +4,10 @@ $paddingLR: 3.8462vw;
 
 .countryside_body {
   background-color: map-get($colors, "body_bg");
-  background-image: url(../images/bg_imgs/countryside_top_bg.png);
+  background-image: linear-gradient(#19bcff, #f6f6f6);
   background-repeat: no-repeat;
   background-position: top left;
-  background-size: 100% auto;
+  background-size: 100% 58.9744vw;
   box-sizing: border-box;
   padding-bottom: 15.3846vw;
 }
@@ -19,7 +19,10 @@ $paddingLR: 3.8462vw;
   top: 0;
   z-index: 9;
   &.fixed {
-    background-image: linear-gradient( #5ECEFC, #84D8FB);
+    background-image: linear-gradient(#19bcff, #f6f6f6);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% 58.9744vw;
   }
 }
 .iconFlex_card {
@@ -28,7 +31,7 @@ $paddingLR: 3.8462vw;
     &:nth-child(-n + 5) {
       margin-top: 0;
     }
-    .text{
+    .text {
       font-size: 3.0769vw;
     }
   }
@@ -41,7 +44,7 @@ $paddingLR: 3.8462vw;
   padding-top: 1.2821vw;
   > .pic_card {
     margin-top: 3.8462vw;
-    &:nth-child(1){
+    &:nth-child(1) {
       margin-top: 0;
     }
   }

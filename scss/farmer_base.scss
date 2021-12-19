@@ -1,4 +1,13 @@
 @charset "utf-8";
+/* 载入字体 */
+@font-face {
+  font-family: ds-digital;
+  src: url("../fonts/ds-digital.ttf");
+}
+@font-face {
+  font-family: ds-digital-bold;
+  src: url("../fonts/ds-digital-bold.ttf");
+}
 
 @import "_color";
 @import "_style";
@@ -199,7 +208,7 @@ $paddingLR: 3.8462vw;
       color: map-get($colors, "gray_9B");
     }
   }
-  .countdown{
+  .countdown {
     display: flex;
     align-items: center;
     > .text {
@@ -209,7 +218,7 @@ $paddingLR: 3.8462vw;
       line-height: 5.1282vw;
       margin-right: 3.0769vw;
     }
-    >.time_icon{
+    > .time_icon {
       position: relative;
       border: 0.2564vw solid map-get($colors, "red_D0");
       height: 4.1026vw;
@@ -221,7 +230,7 @@ $paddingLR: 3.8462vw;
       color: map-get($colors, "red_D0");
       display: flex;
       align-items: center;
-      [class^="myicon-"]{
+      [class^="myicon-"] {
         position: absolute;
         top: -0.7692vw;
         left: -0.5128vw;
@@ -329,6 +338,14 @@ $paddingLR: 3.8462vw;
   text-align: center;
   box-sizing: border-box;
   padding: 5.1282vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .mui-spinner {
+    margin-right: 2.5641vw;
+    width: 6.1538vw;
+    height: 6.1538vw;
+  }
 }
 // 共用尾部
 .footer_index {
@@ -419,5 +436,292 @@ $paddingLR: 3.8462vw;
     transform: translate(-50%, -50%);
     color: map-get($colors, "black");
     font-size: 4.1026vw;
+  }
+}
+
+.features_agricultural {
+  display: flex;
+  flex-wrap: wrap;
+  > .list {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
+    border-right: 0.2564vw solid map-get($colors, "gray_f6");
+    box-sizing: border-box;
+    padding: 2.5641vw;
+    &:nth-last-child(1),
+    &:nth-child(odd):nth-last-child(2) {
+      border-bottom: 0.0625rem solid map-get($colors, "white");
+    }
+    &:nth-child(even) {
+      border-right: 0.0625rem solid map-get($colors, "white");
+    }
+    .div_img {
+      width: 100%;
+      height: 30.7692vw;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .price_title_tips {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+    }
+    .title {
+      font-size: 4.1026vw;
+      color: map-get($colors, "black_28");
+      margin-top: 2.5641vw;
+      line-height: 5.641vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      /* autoprefixer: off */
+      -webkit-box-orient: vertical;
+      /* autoprefixer: on */
+    }
+    .tips {
+      font-size: 3.0769vw;
+      &.font_red {
+        color: map-get($colors, "red_D0");
+      }
+      &.font_blue {
+        color: map-get($colors, "blue_00");
+      }
+    }
+    .price_weight {
+      margin-top: 2.5641vw;
+      display: flex;
+      align-items: flex-end;
+      .price {
+        font-size: 4.1026vw;
+        color: map-get($colors, "red_D0");
+      }
+      .line {
+        font-size: 4.1026vw;
+        color: map-get($colors, "gray_9B");
+      }
+      .weight {
+        font-size: 3.0769vw;
+        color: map-get($colors, "gray_9B");
+      }
+    }
+  }
+}
+
+// 通用的商品列表
+.shop_goods_lists {
+  width: 100%;
+  margin-top: 3.8462vw;
+  box-sizing: border-box;
+  padding: 0;
+  .tabs_switch {
+    padding: 0 3.8462vw;
+    box-sizing: border-box;
+  }
+  .shop_lists_box {
+    padding: 0 2.5641vw;
+    box-sizing: border-box;
+  }
+  .shop_slide {
+    width: 100%;
+    position: relative;
+    @include clearfix;
+    margin-top: 3.8462vw;
+    > .box {
+      width: 50%;
+      height: auto;
+      box-sizing: border-box;
+      padding: 1.2821vw;
+      float: left;
+      > .item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: map-get($colors, "white");
+        box-shadow: 0 0.7692vw 1.5385vw rgba(0, 0, 0, 0.05);
+        border-radius: 1.2821vw;
+        overflow: hidden;
+        .div_img {
+          width: 100%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-top-right-radius: 1.2821vw;
+          border-top-left-radius: 1.2821vw;
+          > img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .price_title_tips {
+          box-sizing: border-box;
+          padding: 3.3333vw 2.5641vw 4.1026vw 2.5641vw;
+          display: flex;
+          flex-direction: column;
+        }
+        .title_tips {
+          margin-bottom: 2.5641vw;
+          .title {
+            font-size: 4.1026vw;
+            color: map-get($colors, "black_28");
+            line-height: 5.641vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* autoprefixer: off */
+            -webkit-box-orient: vertical;
+            /* autoprefixer: on */
+          }
+        }
+        .mark {
+          display: flex;
+          align-items: center;
+        }
+        .price_num_cart {
+          display: flex;
+          justify-content: space-between;
+          > .price_num {
+            position: relative;
+            display: flex;
+            align-items: center;
+            .small_red {
+              font-size: 3.0769vw;
+              color: map-get($colors, "red_D0");
+            }
+            .big_red {
+              font-size: 4.1026vw;
+              color: map-get($colors, "red_D0");
+            }
+            .big_gray {
+              font-size: 4.1026vw;
+              color: map-get($colors, "gray_9B");
+            }
+            .small_gray {
+              font-size: 3.0769vw;
+              color: map-get($colors, "gray_9B");
+              text-decoration: line-through;
+              margin-left: 1.2821vw;
+            }
+          }
+          > .shop_cart_btn {
+            width: 6.1538vw;
+            height: 6.1538vw;
+            border-radius: 50%;
+            background-image: linear-gradient(#27d5ff, #0091ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .iconfont {
+              font-size: 4.1026vw;
+              color: map-get($colors, "white");
+            }
+          }
+        }
+        .add_cut_btn {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          margin-top: 1.2821vw;
+          display: none;
+          .add,
+          .cut {
+            width: 3.8462vw;
+            height: 3.8462vw;
+            border-radius: 0.7692vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .iconfont {
+              font-size: 2.5641vw;
+              color: map-get($colors, "black");
+            }
+          }
+          .add {
+            background-color: map-get($colors, "blue_00");
+            .iconfont {
+              color: map-get($colors, "white");
+            }
+          }
+          .cut {
+            border: 0.2564vw solid map-get($colors, "blue_00");
+          }
+          .num{
+            font-size: 3.0769vw;
+            box-sizing: border-box;
+            padding: 0 1.2821vw;
+            min-width: 10.2564vw;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+// 商品列表加载中
+.loading_data {
+  font-size: 4.1026vw;
+  color: map-get($colors, "gray_9B");
+  text-align: center;
+  box-sizing: border-box;
+  padding: 6.4103vw 0;
+  display: none;
+  > span {
+    width: 12.8205vw;
+    height: 12.8205vw;
+    margin-bottom: 2.5641vw;
+  }
+}
+// 切换卡片
+.tabs_switch {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  height: 100%;
+  .tab {
+    box-sizing: border-box;
+    padding: 0 1.2821vw;
+    display: inline-block;
+    width: auto;
+    height: 100%;
+    line-height: 9.4872vw;
+    position: relative;
+    cursor: pointer;
+    > p {
+      font-size: 3.5897vw;
+      color: map-get($colors, "black");
+    }
+    .line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: map-get($colors, "blue_00");
+      height: 0.7692vw;
+      width: 100%;
+      box-shadow: 0 0.7692vw 1.5385vw rgba(39, 213, 255, 0.4);
+      display: none;
+    }
+    &.active {
+      font-size: 4.1026vw;
+      font-weight: bold;
+      color: map-get($colors, "black");
+      .line {
+        display: block;
+      }
+    }
   }
 }

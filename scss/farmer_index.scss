@@ -19,7 +19,10 @@ $paddingLR: 3.8462vw;
   top: 0;
   z-index: 9;
   &.fixed {
-    background-image: linear-gradient(to right, #27d5ff, #0091ff);
+    background-image: linear-gradient(to bottom right, #27d5ff, #0091ff);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% 72.0513vw;
   }
 }
 // 定位于时间
@@ -50,6 +53,51 @@ $paddingLR: 3.8462vw;
   width: 100%;
   height: 17.4359vw;
   margin-top: 5.1282vw;
+  box-sizing: border-box;
+  padding: 0 $paddingLR;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > .pic_img {
+    width: 14.8718vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  > .text_list {
+    line-height: 5.1282vw;
+    font-size: 3.5897vw;
+    color: map-get($colors, "white");
+    &:last-child {
+      border-left: 0.2564vw solid map-get($colors, "white");
+      box-sizing: border-box;
+      padding-left: 5.1282vw;
+    }
+    > div {
+      margin-top: 1.2821vw;
+      &:nth-child(1) {
+        margin-top: 0;
+      }
+    }
+    .quality {
+      display: flex;
+      > .mark {
+        padding: 0 1.2821vw;
+        height: 5.1282vw;
+        min-width: 7.6923vw;
+        background-color: #f5a623;
+        font-size: 3.0769vw;
+        color: map-get($colors, "white");
+        border-radius: 1.2821vw;
+        text-align: center;
+      }
+    }
+  }
 }
 // 内容块
 .cnt_chunk {
@@ -89,7 +137,7 @@ $paddingLR: 3.8462vw;
   }
 }
 .iconFlex_card {
-  >.list {
+  > .list {
     width: 25%;
     &:nth-child(-n + 4) {
       margin-top: 0;
@@ -323,84 +371,6 @@ $paddingLR: 3.8462vw;
       }
     }
   }
-  .features_agricultural {
-    display: flex;
-    flex-wrap: wrap;
-    > .list {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
-      border-right: 0.2564vw solid map-get($colors, "gray_f6");
-      box-sizing: border-box;
-      padding: 2.5641vw;
-      &:nth-last-child(1),
-      &:nth-child(odd):nth-last-child(2) {
-        border-bottom: 0.0625rem solid map-get($colors, "white");
-      }
-      &:nth-child(even) {
-        border-right: 0.0625rem solid map-get($colors, "white");
-      }
-      .div_img {
-        width: 100%;
-        height: 30.7692vw;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        > img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-      .price_title_tips {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex: 1;
-      }
-      .title {
-        font-size: 4.1026vw;
-        color: map-get($colors, "black_28");
-        margin-top: 2.5641vw;
-        line-height: 5.641vw;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        /* autoprefixer: off */
-        -webkit-box-orient: vertical;
-        /* autoprefixer: on */
-      }
-      .tips {
-        font-size: 3.0769vw;
-        &.font_red {
-          color: map-get($colors, "red_D0");
-        }
-        &.font_blue {
-          color: map-get($colors, "blue_00");
-        }
-      }
-      .price_weight {
-        margin-top: 2.5641vw;
-        display: flex;
-        align-items: flex-end;
-        .price {
-          font-size: 4.1026vw;
-          color: map-get($colors, "red_D0");
-        }
-        .line {
-          font-size: 4.1026vw;
-          color: map-get($colors, "gray_9B");
-        }
-        .weight {
-          font-size: 3.0769vw;
-          color: map-get($colors, "gray_9B");
-        }
-      }
-    }
-  }
   .financial_services {
     box-sizing: border-box;
     padding: 0 $paddingLR;
@@ -492,5 +462,60 @@ $paddingLR: 3.8462vw;
         }
       }
     }
+  }
+}
+.search_box {
+  box-sizing: border-box;
+  padding: $paddingLR $paddingLR 2.5641vw $paddingLR;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  .mui-active:before {
+    font-size: 5.1282vw;
+    left: 1.2821vw !important;
+    color: #ffffff !important;
+    transform: translateY(-50%);
+  }
+  .mui-input-row {
+    flex: 1 !important;
+  }
+  .mui-plus-visible {
+    display: block !important;
+  }
+  input[type="search"] {
+    margin-bottom: 0;
+    height: 9.2308vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 9.2308vw;
+    color: #ffffff !important;
+    font-size: 4.1026vw !important;
+  }
+  .mui-placeholder,
+  .mui-icon {
+    color: #ffffff !important;
+  }
+  .mui-placeholder {
+    font-size: 4.1026vw !important;
+    height: 9.2308vw;
+    top: 50% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 9.2308vw;
+  }
+  .mui-icon-speech {
+    width: auto !important;
+    height: auto !important;
+    top: 50% !important;
+    right: 2.5641vw !important;
+    transform: translateY(-50%);
+  }
+  .mui-icon {
+    font-size: 5.1282vw !important;
+  }
+  &.fixed {
+    background-image: linear-gradient(to bottom right, #27d5ff, #0091ff);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% 72.0513vw;
   }
 }

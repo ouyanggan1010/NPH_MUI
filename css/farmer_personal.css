@@ -88,6 +88,43 @@
   left: 0;
 }
 
+.personal_top > .vip_card .bg_img {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/bg_imgs/personal_vip.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  box-sizing: border-box;
+  padding-left: 15.3846vw;
+  padding-right: 5.1282vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.personal_top > .vip_card .bg_img .text {
+  display: inline-block;
+  font-size: 3.0769vw;
+  color: #C28C20;
+  line-height: 5.1282vw;
+}
+
+.personal_top > .vip_card .bg_img .immediately {
+  display: block;
+  border: none;
+  background-color: #C8A869;
+  font-size: 3.0769vw;
+  color: #fff;
+  height: 6.1538vw;
+  min-width: 20.5128vw;
+  line-height: 6.1538vw;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 2.5641vw;
+  border-radius: 6.1538vw;
+}
+
 .cnt_chunk {
   width: 100%;
   box-sizing: border-box;
@@ -126,15 +163,15 @@
 }
 
 .cnt_chunk > .card_link > .list:nth-child(1) {
-  background-image: linear-gradient(#27D5FF, #0091FF);
+  background-image: linear-gradient(#27d5ff, #0091ff);
 }
 
 .cnt_chunk > .card_link > .list:nth-child(2) {
-  background-image: linear-gradient(#C1A5FF, #6A29D5);
+  background-image: linear-gradient(#c1a5ff, #6a29d5);
 }
 
 .cnt_chunk > .card_link > .list:nth-child(3) {
-  background-image: linear-gradient(#F9EA0B, #FB9451);
+  background-image: linear-gradient(#f9ea0b, #fb9451);
 }
 
 .cnt_chunk > .link_text_lists {
