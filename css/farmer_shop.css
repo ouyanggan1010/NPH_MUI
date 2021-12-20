@@ -1,21 +1,15 @@
 .shop_body {
   background-color: #f8f8f8;
-  background-image: -webkit-linear-gradient(#19bcff, #f6f6f6);
-  background-image: -moz-linear-gradient(#19bcff, #f6f6f6);
-  background-image: -o-linear-gradient(#19bcff, #f6f6f6);
   background-image: linear-gradient(#19bcff, #f6f6f6);
   background-repeat: no-repeat;
   background-position: top left;
-  -o-background-size: 100% 58.9744vw;
-     background-size: 100% 58.9744vw;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  background-size: 100% 58.9744vw;
+  box-sizing: border-box;
   padding-bottom: 15.3846vw;
 }
 
 .shop_search {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 3.8462vw 3.8462vw 2.5641vw 3.8462vw;
   position: sticky;
   top: 0;
@@ -23,14 +17,10 @@
 }
 
 .shop_search.fixed {
-  background-image: -webkit-linear-gradient(#19bcff, #f6f6f6);
-  background-image: -moz-linear-gradient(#19bcff, #f6f6f6);
-  background-image: -o-linear-gradient(#19bcff, #f6f6f6);
   background-image: linear-gradient(#19bcff, #f6f6f6);
   background-repeat: no-repeat;
   background-position: top left;
-  -o-background-size: 100% 58.9744vw;
-     background-size: 100% 58.9744vw;
+  background-size: 100% 58.9744vw;
 }
 
 .shop_search .my-badge-num {
@@ -41,8 +31,7 @@
 
 .cnt_chunk {
   width: 100%;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 3.8462vw;
   padding-top: 1.2821vw;
 }
@@ -53,9 +42,6 @@
 
 .cnt_chunk .titleCnt_card:nth-child(2) {
   margin-top: 1.2821vw;
-  background-image: -webkit-linear-gradient(#fef2eb, #ffffff);
-  background-image: -moz-linear-gradient(#fef2eb, #ffffff);
-  background-image: -o-linear-gradient(#fef2eb, #ffffff);
   background-image: linear-gradient(#fef2eb, #ffffff);
 }
 
@@ -77,14 +63,10 @@
 
 .cnt_chunk .titleCnt_card:nth-child(2) .iconFlex_card > .list .layout .img_or_icon img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .cnt_chunk .titleCnt_card:nth-child(3) {
-  background-image: -webkit-linear-gradient(#fffef4, #ffffff);
-  background-image: -moz-linear-gradient(#fffef4, #ffffff);
-  background-image: -o-linear-gradient(#fffef4, #ffffff);
   background-image: linear-gradient(#fffef4, #ffffff);
 }
 
@@ -106,8 +88,7 @@
 
 .cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list .layout .img_or_icon img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .cnt_chunk .titleCnt_card:nth-child(3) .iconFlex_card > .list .text {
@@ -122,8 +103,7 @@
 .shop_swiper {
   width: 100%;
   position: relative;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding-bottom: 7.1795vw;
 }
 
@@ -136,41 +116,26 @@
   width: 100%;
   text-align: center;
   font-size: 18px;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 33.3333vw;
   border-radius: 1.2821vw;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 0.2564vw;
 }
 
 .shop_swiper .swiper-slide > img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 1.2821vw;
 }
 
 .shop_swiper .swiper-pagination {
   bottom: 1.2821vw;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-     -moz-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-       -o-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   z-index: 1;
 }
 
