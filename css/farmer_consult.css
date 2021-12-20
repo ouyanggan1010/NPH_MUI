@@ -1,0 +1,358 @@
+body {
+  background-color: #fff;
+  padding-top: 11.5385vw;
+  padding-bottom: 12.8205vw;
+}
+
+.nav_bar {
+  background-color: #fff;
+}
+
+.nav_bar .right_bar {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 0.2564vw solid #dddddd;
+  height: 7.6923vw;
+  border-radius: 1.2821vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 1.2821vw;
+}
+
+.nav_bar .right_bar > .iconfont {
+  font-size: 5.641vw;
+  color: #707070;
+  margin-right: 0.7692vw;
+}
+
+.nav_bar .right_bar > p {
+  font-size: 3.0769vw;
+  color: #000;
+}
+
+.consult_cnt {
+  width: 100%;
+}
+
+.plate_num {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 3.8462vw;
+  padding-top: 1.2821vw;
+}
+
+.plate_num .color_block {
+  background-color: #f4f4f4;
+  box-shadow: 0rem 0.1563rem 0.625rem #f4f4f4;
+  border-radius: 2.5641vw;
+  height: 25.1282vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+.plate_num .color_block .cnt_block {
+  text-align: center;
+}
+
+.plate_num .color_block .cnt_block span {
+  font-size: 6.6667vw;
+  font-weight: bold;
+}
+
+.plate_num .color_block .cnt_block span.color_gray {
+  color: #9b9b9b;
+}
+
+.plate_num .color_block .cnt_block span.color_blue {
+  color: #0091ff;
+}
+
+.plate_num .color_block .cnt_block span.color_red {
+  color: #d0021b;
+}
+
+.plate_num .color_block .cnt_block p {
+  margin-top: 1.2821vw;
+  font-size: 3.5897vw;
+  color: #9b9b9b;
+}
+
+.cnt_list {
+  width: 100%;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 3.8462vw;
+}
+
+.cnt_list li {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cnt_list li > .times {
+  color: #9b9b9b;
+  text-align: center;
+  width: 10.2564vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+.cnt_list li > .times .day {
+  font-size: 6.1538vw;
+  font-weight: bold;
+}
+
+.cnt_list li > .times .month_year {
+  font-size: 3.0769vw;
+}
+
+.cnt_list .leave_back {
+  border-left: 0.2564vw solid #d8d8d8;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-left: 5.1282vw;
+  margin-left: 1.2821vw;
+  position: relative;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  box-sizing: border-box;
+  padding-bottom: 5.1282vw;
+}
+
+.cnt_list .leave_back .division {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 2.5641vw 0;
+  background-color: #fff;
+  position: absolute;
+  left: -1.2821vw;
+  top: -1.2821vw;
+}
+
+.cnt_list .leave_back .division .radius {
+  border-radius: 50%;
+  border: 0.5128vw solid #bfbfbf;
+  width: 2.5641vw;
+  height: 2.5641vw;
+}
+
+.cnt_list .leave_back .right_cnt .mark {
+  height: 6.1538vw;
+  line-height: 6.1538vw;
+  font-size: 3.5897vw;
+  color: #ffffff;
+  border-radius: 2.0513vw;
+  text-align: center;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 1.2821vw;
+}
+
+.cnt_list .leave_back .right_cnt .type {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+     -moz-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.cnt_list .leave_back .right_cnt .type .mark {
+  background-image: -webkit-linear-gradient(#f9ea0b, #fb9451);
+  background-image: -moz-linear-gradient(#f9ea0b, #fb9451);
+  background-image: -o-linear-gradient(#f9ea0b, #fb9451);
+  background-image: linear-gradient(#f9ea0b, #fb9451);
+  margin-right: 2.5641vw;
+}
+
+.cnt_list .leave_back .right_cnt .type .text {
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  line-height: 6.1538vw;
+  font-size: 4.1026vw;
+  color: #000;
+}
+
+.cnt_list .leave_back .right_cnt .question {
+  margin-top: 2.5641vw;
+}
+
+.cnt_list .leave_back .right_cnt .question > p {
+  line-height: 6.1538vw;
+  font-size: 3.5897vw;
+  color: #000;
+}
+
+.cnt_list .leave_back .right_cnt .question .user_info {
+  margin-top: 2.5641vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt_list .leave_back .right_cnt .question .user_info .message {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt_list .leave_back .right_cnt .question .user_info .message p {
+  font-size: 3.0769vw;
+  color: #bfbfbf;
+  line-height: 5.1282vw;
+}
+
+.cnt_list .leave_back .right_cnt .question .user_info .message .ml-20 {
+  margin-left: 5.1282vw;
+}
+
+.cnt_list .leave_back .right_cnt .question .user_info .message .user_pic {
+  margin-right: 1.2821vw;
+  width: 5.1282vw;
+  height: 5.1282vw;
+  border-radius: 50%;
+}
+
+.cnt_list .leave_back .right_cnt .question .user_info .message .user_pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.cnt_list .leave_back .right_cnt .question .user_info .mark {
+  background-color: #d0021b;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg {
+  background-color: #f6f6f6;
+  border-radius: 2.5641vw;
+  margin-top: 2.5641vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 2.5641vw;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .state {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .state .mark {
+  background-image: -webkit-linear-gradient(#27d5ff, #0091ff);
+  background-image: -moz-linear-gradient(#27d5ff, #0091ff);
+  background-image: -o-linear-gradient(#27d5ff, #0091ff);
+  background-image: linear-gradient(#27d5ff, #0091ff);
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .state .time {
+  font-size: 3.0769vw;
+  color: #6d7278;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
+  line-height: 6.1538vw;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .state .ml-10 {
+  margin-left: 2.5641vw;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .text {
+  font-size: 4.1026vw;
+  color: #6d7278;
+  text-indent: 2em;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 2.5641vw 0;
+  line-height: 6.4103vw;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .bottom_div {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .bottom_div .nums {
+  color: #6d7278;
+  font-size: 3.0769vw;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .bottom_div .nums > span {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 1.2821vw;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .bottom_div .iconfont {
+  font-size: 5.1282vw;
+  color: #6d7278;
+  cursor: pointer;
+}

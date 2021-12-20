@@ -12,19 +12,23 @@ $paddingLR: 3.8462vw;
   padding-bottom: 15.3846vw;
 }
 // 搜索框
-.index_search {
-  box-sizing: border-box;
-  padding: $paddingLR $paddingLR 2.5641vw $paddingLR;
-  position: sticky;
-  top: 0;
-  z-index: 9;
-  &.fixed {
-    background-image: linear-gradient(to bottom right, #27d5ff, #0091ff);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 72.0513vw;
-  }
-}
+// .index_search {
+//   box-sizing: border-box;
+//   padding: $paddingLR $paddingLR 2.5641vw $paddingLR;
+//   position: sticky;
+//   top: 0;
+//   z-index: 9;
+//   &.fixed {
+//     background-image: linear-gradient(to bottom right, #27d5ff, #0091ff);
+//     background-repeat: no-repeat;
+//     background-position: top left;
+//     background-size: 100% 72.0513vw;
+//   }
+// }
+// <!-- <div class="base_searchOne">
+//           <span class="iconfont icon-sousuo"></span>
+//           <input type="text" class="inp_text" placeholder="搜索" />
+//         </div> -->
 // 定位于时间
 .position_time {
   margin-top: 1.0256vw;
@@ -462,60 +466,5 @@ $paddingLR: 3.8462vw;
         }
       }
     }
-  }
-}
-.search_box {
-  box-sizing: border-box;
-  padding: $paddingLR $paddingLR 2.5641vw $paddingLR;
-  position: sticky;
-  top: 0;
-  z-index: 9;
-  .mui-active:before {
-    font-size: 5.1282vw;
-    left: 1.2821vw !important;
-    color: #ffffff !important;
-    transform: translateY(-50%);
-  }
-  .mui-input-row {
-    flex: 1 !important;
-  }
-  .mui-plus-visible {
-    display: block !important;
-  }
-  input[type="search"] {
-    margin-bottom: 0;
-    height: 9.2308vw;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 9.2308vw;
-    color: #ffffff !important;
-    font-size: 4.1026vw !important;
-  }
-  .mui-placeholder,
-  .mui-icon {
-    color: #ffffff !important;
-  }
-  .mui-placeholder {
-    font-size: 4.1026vw !important;
-    height: 9.2308vw;
-    top: 50% !important;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 9.2308vw;
-  }
-  .mui-icon-speech {
-    width: auto !important;
-    height: auto !important;
-    top: 50% !important;
-    right: 2.5641vw !important;
-    transform: translateY(-50%);
-  }
-  .mui-icon {
-    font-size: 5.1282vw !important;
-  }
-  &.fixed {
-    background-image: linear-gradient(to bottom right, #27d5ff, #0091ff);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 72.0513vw;
   }
 }

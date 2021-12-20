@@ -1,6 +1,7 @@
 .personal_body {
   background-color: #fff;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-bottom: 15.3846vw;
 }
 
@@ -14,11 +15,13 @@
   background-image: url(../images/bg_imgs/personal_top_bg.png);
   background-repeat: no-repeat;
   background-position: top left;
-  background-size: 100% auto;
+  -o-background-size: 100% auto;
+     background-size: 100% auto;
   width: 100%;
   height: 82.0513vw;
   position: relative;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-top: 15.3846vw;
 }
 
@@ -43,10 +46,23 @@
 }
 
 .personal_top > .pic_user_msg > a {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: inline-block;
 }
 
@@ -54,16 +70,26 @@
   width: 100%;
   height: 30.7692vw;
   border-radius: 50%;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .personal_top > .pic_user_msg > a > .pic_img img {
   width: 30.7692vw;
   height: 100%;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .personal_top > .pic_user_msg > a > .user_name {
@@ -81,7 +107,8 @@
 .personal_top > .vip_card {
   width: 100%;
   height: 15.3846vw;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 3.8462vw;
   position: absolute;
   bottom: 0;
@@ -94,48 +121,70 @@
   background-image: url(../images/bg_imgs/personal_vip.png);
   background-repeat: no-repeat;
   background-position: top left;
-  background-size: 100% auto;
-  box-sizing: border-box;
+  -o-background-size: 100% auto;
+     background-size: 100% auto;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-left: 15.3846vw;
   padding-right: 5.1282vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .personal_top > .vip_card .bg_img .text {
   display: inline-block;
   font-size: 3.0769vw;
-  color: #C28C20;
+  color: #c28c20;
   line-height: 5.1282vw;
 }
 
 .personal_top > .vip_card .bg_img .immediately {
   display: block;
   border: none;
-  background-color: #C8A869;
+  background-color: #c8a869;
   font-size: 3.0769vw;
   color: #fff;
   height: 6.1538vw;
   min-width: 20.5128vw;
   line-height: 6.1538vw;
   text-align: center;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 2.5641vw;
   border-radius: 6.1538vw;
 }
 
 .cnt_chunk {
   width: 100%;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 3.8462vw;
   padding-top: 6.4103vw;
 }
 
 .cnt_chunk > .card_link {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .cnt_chunk > .card_link > .list {
@@ -145,11 +194,22 @@
   background-color: red;
   border-top-right-radius: 12.8205vw;
   color: #fff;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-left: 3.8462vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cnt_chunk > .card_link > .list > [class^="myicon-"] {
@@ -163,14 +223,23 @@
 }
 
 .cnt_chunk > .card_link > .list:nth-child(1) {
+  background-image: -webkit-linear-gradient(#27d5ff, #0091ff);
+  background-image: -moz-linear-gradient(#27d5ff, #0091ff);
+  background-image: -o-linear-gradient(#27d5ff, #0091ff);
   background-image: linear-gradient(#27d5ff, #0091ff);
 }
 
 .cnt_chunk > .card_link > .list:nth-child(2) {
+  background-image: -webkit-linear-gradient(#c1a5ff, #6a29d5);
+  background-image: -moz-linear-gradient(#c1a5ff, #6a29d5);
+  background-image: -o-linear-gradient(#c1a5ff, #6a29d5);
   background-image: linear-gradient(#c1a5ff, #6a29d5);
 }
 
 .cnt_chunk > .card_link > .list:nth-child(3) {
+  background-image: -webkit-linear-gradient(#f9ea0b, #fb9451);
+  background-image: -moz-linear-gradient(#f9ea0b, #fb9451);
+  background-image: -o-linear-gradient(#f9ea0b, #fb9451);
   background-image: linear-gradient(#f9ea0b, #fb9451);
 }
 
@@ -180,10 +249,20 @@
 
 .cnt_chunk > .link_text_lists > .list {
   display: block;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 3.5897vw 0;
   border-top: 0.2564vw solid #f6f6f6;
   line-height: 7.6923vw;
@@ -196,8 +275,14 @@
 .cnt_chunk > .link_text_lists > .list > .title_icon {
   font-size: 3.5897vw;
   color: #282828;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cnt_chunk > .link_text_lists > .list > .title_icon > div {
@@ -205,8 +290,14 @@
 }
 
 .cnt_chunk > .link_text_lists > .list > .right_icon_text {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 6.4103vw;
   color: #9b9b9b;
 }

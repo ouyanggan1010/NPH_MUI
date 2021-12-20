@@ -3,7 +3,7 @@ function waterFall(id) {
   var w = $boxs.eq(0).outerWidth();
   var cols = 2;
   var hArr = [];
-  $boxs.each(function (index, value) {
+  $boxs.each(function (index) {
     var h = $(this).outerHeight();
     if (index < cols) {
       hArr[index] = h;
@@ -19,7 +19,7 @@ function waterFall(id) {
     }
   });
   // 计算div的总高度
-  $(`#${id}`).height(Math.max.apply(null, hArr) + "px");
+  $(`#${id}`).height(Math.min.apply(null, hArr) + 5 + "px");
 }
 // 绑定事件
 function bindingEvent({ id, callback1 }) {

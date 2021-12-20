@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>搜索</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../../css/mui.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../../css/farmer_search.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <!-- header -->
+    <div class="nav_bar">
+        <div class="center_cnt">
+            <!-- 搜索框 -->
+            <div class="mui-input-row mui-search mui-plus-visible">
+                <input id="search" type="search" class="mui-input-speech mui-input-clear" placeholder="搜索" />
+            </div>
+            <!-- 取消 -->
+            <button type="button" onclick="history.back()" class="font_black4A font_14">取消</button>
+        </div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="search_cnt">
+        <!-- 搜索历史 -->
+        <div class="search_lists" id="history">
+            <div class="title_icon">
+                <p>搜索历史</p>
+                <span class="iconfont icon-shanchu" id="delete"></span>
+            </div>
+            <ul class="history_list">
+                <li>
+                    <a href="#">政务咨询</a>
+                </li>
+                <li>
+                    <a href="#">政务咨询</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 热门搜索 -->
+        <div class="search_lists">
+            <div class="title_icon">
+                <p>热门搜索</p>
+            </div>
+            <ul class="history_list">
+                <li>
+                    <a href="#">政务咨询</a>
+                </li>
+                <li>
+                    <a href="#">政务咨询2222222</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        //语音识别完成事件 
+        document.getElementById("search").addEventListener('recognized', function (e) {
+            console.log(e.detail.value);
+        });
+        var nativeWebview, imm, InputMethodManager;
+        var initNativeObjects = function () {
+            if (mui.os.android) {
+                var main = plus.android.runtimeMainActivity();
+                var Context = plus.android.importClass("android.content.Context");
+                InputMethodManager = plus.android.importClass("android.view.inputmethod.InputMethodManager");
+                imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
+            } else {
+                nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
+            }
+        };
+        var showSoftInput = function () {
+            if (mui.os.android) {
+                imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+            } else {
+                nativeWebview.plusCallMethod({
+                    "setKeyboardDisplayRequiresUserAction": false
+                });
+            }
+            setTimeout(function () {
+                var inputElem = document.querySelector('input');
+                inputElem.focus();
+                inputElem.parentNode.classList.add('mui-active'); //第一个是search，加上激活样式
+            }, 200);
+        };
+        mui.plusReady(function () {
+            initNativeObjects();
+            showSoftInput();
+        });
+        // 点击删除按钮
+        $("#delete").click(function () {
+            mui.confirm("确定要删除历史记录吗？", function (res) {
+                if (res.index == 1) {
+                    console.log("点击确定事件")
+                    $("#history").hide();
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

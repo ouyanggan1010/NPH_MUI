@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>信息详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../../css/mui.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../../css/farmer_informationDetail.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <!-- header -->
+    <div class="nav_bar">
+        <a href="#" class="left_bar">
+            <span class="iconfont icon-icon_arrow_left"></span>
+        </a>
+        <!-- <div class="right_bar iconfont icon-31shoucang" id="collection"></div> -->
+        <div class="right_bar iconfont icon-31shoucangxuanzhong" id="collection"></div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="article_cnt nav_yes">
+        <div class="title">市农技中心在三江镇调查槟榔异常情况并开展技术指导</div>
+        <div class="tips">
+            <div>分类：种子信息</div>
+            <div>用途：详细介绍</div>
+            <div>发表时间：2021-04-18</div>
+        </div>
+        <div class="detail_cnt">
+            <p>空格三江镇农业服务中心来电反映，有农户种植的槟榔出现异常及死株现象，请求上级技术部门帮助。接到信息后，2021年2月3日，
+                海口市农业技术推广中心派技术人员和特聘农技员陈玉俊高级农艺师前往三江镇进行调查并开展技术指导。</p>
+            <img src="../../../images/content_imgs/Bitmap-1.png" alt="">
+            <p>空格在三江镇农业服务中心工作人员的带领下，技术人员一行来到三江镇茄苪村委会朝新村欧饴章的槟榔园。种植户介绍，他分几块地种植槟榔进行介绍。在三江镇农业服务中心工作人员的带领下，技术人员一行来到三江镇茄苪村委会朝新村欧饴章的槟榔园。种植户介绍，他分几块地种植槟榔进行介绍。
+            </p>
+            <p>空格三江镇农业服务中心来电反映，有农户种植的槟榔出现异常及死株现象，请求上级技术部门帮助。接到信息后，2021年2月3日，
+                海口市农业技术推广中心派技术人员和特聘农技员陈玉俊高级农艺师前往三江镇进行调查并开展技术指导。</p>
+            <img src="../../../images/content_imgs/Bitmap-1.png" alt="">
+            <p>空格在三江镇农业服务中心工作人员的带领下，技术人员一行来到三江镇茄苪村委会朝新村欧饴章的槟榔园。种植户介绍，他分几块地种植槟榔进行介绍。在三江镇农业服务中心工作人员的带领下，技术人员一行来到三江镇茄苪村委会朝新村欧饴章的槟榔园。种植户介绍，他分几块地种植槟榔进行介绍。
+            </p>
+            <p>空格三江镇农业服务中心来电反映，有农户种植的槟榔出现异常及死株现象，请求上级技术部门帮助。接到信息后，2021年2月3日，
+                海口市农业技术推广中心派技术人员和特聘农技员陈玉俊高级农艺师前往三江镇进行调查并开展技术指导。</p>
+            <img src="../../../images/content_imgs/Bitmap-1.png" alt="">
+            <p>空格在三江镇农业服务中心工作人员的带领下，技术人员一行来到三江镇茄苪村委会朝新村欧饴章的槟榔园。种植户介绍，他分几块地种植槟榔进行介绍。在三江镇农业服务中心工作人员的带领下，技术人员一行来到三江镇茄苪村委会朝新村欧饴章的槟榔园。种植户介绍，他分几块地种植槟榔进行介绍。
+            </p>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="bottom_icon">
+        <div>
+            <span class="iconfont icon-31shoucang"></span>
+            <p>2154</p>
+        </div>
+        <div>
+            <span class="iconfont icon-yanjing-zhengyan"></span>
+            <p>2154</p>
+        </div>
+    </div>
+    <script>
+        // 点击收藏
+        $("#collection").click(function () {
+            var _this = this;
+            // 先判断当前是否收藏了
+            if ($(this).hasClass("icon-31shoucang")) {
+                mui.confirm("确定要收藏该篇文章吗？", function (res) {
+                    if (res.index == 1) {
+                        $(_this).removeClass("icon-31shoucang");
+                        $(_this).addClass("icon-31shoucangxuanzhong");
+                    }
+                });
+            } else {
+                console.log("10000")
+                $(this).removeClass("icon-31shoucangxuanzhong");
+                $(this).addClass("icon-31shoucang");
+            }
+        });
+    </script>
+</body>
+
+</html>

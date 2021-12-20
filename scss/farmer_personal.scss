@@ -92,16 +92,16 @@ $paddingLR: 3.8462vw;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      .text{
+      .text {
         display: inline-block;
         font-size: 3.0769vw;
         color: map-get($colors, "yellow_C2");
         line-height: 5.1282vw;
       }
-      .immediately{
+      .immediately {
         display: block;
         border: none;
-        background-color: map-get($colors,"yellow_C8");
+        background-color: map-get($colors, "yellow_C8");
         font-size: 3.0769vw;
         color: map-get($colors, "white");
         height: 6.1538vw;

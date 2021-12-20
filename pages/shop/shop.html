@@ -1,270 +1,263 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>农品汇</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <!-- mui-js -->
-    <script src="../../js/mui.min.js"></script>
-    <!-- swiper-js -->
-    <script src="../../js/swiper.min.js"></script>
-    <!-- 引入jQuery -->
-    <script src="../../js/jquery-3.1.1.min.js"></script>
-    <!-- 瀑布流-js -->
-    <script src="../../js/waterfall.js"></script>
-    <!-- mui-css -->
-    <link rel="stylesheet" href="../../css/mui.min.css" />
-    <!-- swiper-css -->
-    <link rel="stylesheet" href="../../css/swiper.min.css" />
-    <!-- 字体图标 -->
-    <link rel="stylesheet" href="../../fonts/iconfont.css" />
-    <!-- 一些通用的样式 -->
-    <link rel="stylesheet" href="../../css/farmer_base.css" />
-    <!-- 本页面的css -->
-    <link rel="stylesheet" href="../../css/farmer_shop.css" />
-    <!-- 声明所有连接都在当前窗口打开 -->
-    <base target="_self" />
-  </head>
 
-  <body class="shop_body">
-    <!-- 通用的搜索框 -->
-    <div class="shop_search" id="search_scroll">
-      <div class="icons_city_weather">
-        <div class="city_weather">
-          <span class="iconfont icon-ditu_dingwei_o"></span>
-          <span>海口·晴 34℃</span>
-        </div>
-        <div class="icons">
-          <!-- 如果需要红点，则在span标签加上class=my-badge -->
-          <a href="#"><span class="iconfont icon-duihua my-badge"></span></a>
-          <a href="#"
-            ><span class="iconfont icon-gouwuche" id="gouwuche_badge"></span
-          ></a>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <title>农品汇</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- mui-js -->
+  <script src="../../js/mui.min.js"></script>
+  <!-- swiper-js -->
+  <script src="../../js/swiper.min.js"></script>
+  <!-- 引入jQuery -->
+  <script src="../../js/jquery-3.1.1.min.js"></script>
+  <!-- 瀑布流-js -->
+  <script src="../../js/waterfall.js"></script>
+  <!-- mui-css -->
+  <link rel="stylesheet" href="../../css/mui.min.css" />
+  <!-- swiper-css -->
+  <link rel="stylesheet" href="../../css/swiper.min.css" />
+  <!-- 字体图标 -->
+  <link rel="stylesheet" href="../../fonts/iconfont.css" />
+  <!-- 一些通用的样式 -->
+  <link rel="stylesheet" href="../../css/farmer_base.css" />
+  <!-- 本页面的css -->
+  <link rel="stylesheet" href="../../css/farmer_shop.css" />
+  <!-- 声明所有连接都在当前窗口打开 -->
+  <base target="_self" />
+</head>
+
+<body class="shop_body">
+  <!-- 通用的搜索框 -->
+  <div class="shop_search" id="search_scroll">
+    <div class="icons_city_weather">
+      <div class="city_weather">
+        <span class="iconfont icon-ditu_dingwei_o"></span>
+        <span>海口·晴 34℃</span>
       </div>
-      <!-- 输入框 -->
-      <div class="base_search_btn">
-        <div class="base_searchOne">
-          <span class="iconfont icon-sousuo"></span>
-          <input type="text" class="inp_text" placeholder="搜索" />
-        </div>
-        <button type="button" class="btn">搜索</button>
+      <div class="icons">
+        <!-- 如果只需要需要红点，则在span标签加上class=my-badge -->
+        <a href="#"><span class="iconfont icon-duihua my-badge"></span></a>
+        <a href="#" id="gouwuche_badge">
+          <span class="iconfont icon-gouwuche"></span>
+          <span class="my-badge-num">1</span>
+        </a>
       </div>
     </div>
-    <!-- 内容块 -->
-    <div class="cnt_chunk">
-      <!-- 轮播 -->
-      <div class="shop_swiper">
-        <div class="swiper-container swiper-container-horizontal">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
-            </div>
-            <div class="swiper-slide">
-              <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
-            </div>
+    <!-- 输入框 -->
+    <div class="base_search_btn">
+      <div class="mui-input-row mui-search mui-plus-visible">
+        <input id="search" type="search" class="mui-input-clear" placeholder="搜索" />
+      </div>
+      <button type="button" class="btn">搜索</button>
+    </div>
+  </div>
+  <!-- 内容块 -->
+  <div class="cnt_chunk">
+    <!-- 轮播 -->
+    <div class="shop_swiper">
+      <div class="swiper-container swiper-container-horizontal">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
           </div>
         </div>
-        <!-- Add Pagination -->
-        <div
-          class="
+      </div>
+      <!-- Add Pagination -->
+      <div class="
             swiper-pagination
             swiper-pagination-clickable
             swiper-pagination-bullets
-          "
-        >
-          <span class="swiper-pagination-bullet"></span>
-          <span class="swiper-pagination-bullet"></span>
-          <span class="swiper-pagination-bullet"></span>
-        </div>
+          ">
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
+        <span class="swiper-pagination-bullet"></span>
       </div>
-      <!-- 产品分类 -->
-      <div class="pic_card titleCnt_card">
-        <div class="iconFlex_card">
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/rqd.png" alt="" />
-                </div>
-                <div class="text">肉禽蛋</div>
+    </div>
+    <!-- 产品分类 -->
+    <div class="pic_card titleCnt_card">
+      <div class="iconFlex_card">
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/rqd.png" alt="" />
               </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/slsg.png" alt="" />
-                </div>
-                <div class="text">时令水果</div>
-              </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/scdl.png" alt="" />
-                </div>
-                <div class="text">蔬菜豆类</div>
-              </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/hxsc.png" alt="" />
-                </div>
-                <div class="text">海鲜水产</div>
-              </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/nfcp.png" alt="" />
-                </div>
-                <div class="text">牛副产品</div>
-              </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/zfcp.png" alt="" />
-                </div>
-                <div class="text">猪副产品</div>
-              </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/jm.png" alt="" />
-                </div>
-                <div class="text">鸡苗</div>
-              </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/sl.png" alt="" />
-                </div>
-                <div class="text">饲料</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- 限时抢购 -->
-      <div class="pic_card titleCnt_card">
-        <!-- title -->
-        <div class="card_title">
-          <div class="countdown">
-            <div class="text">限时抢购</div>
-            <div class="time_icon">
-              <span class="myicon-naozhongRed"></span>
-              <div>00:15:12</div>
+              <div class="text">肉禽蛋</div>
             </div>
-          </div>
+          </a>
         </div>
-        <!-- N宫格 -->
-        <div class="iconFlex_card">
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/rqd.png" alt="" />
-                </div>
-                <div class="text"><span class="small">¥</span>19.6</div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/slsg.png" alt="" />
               </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/slsg.png" alt="" />
-                </div>
-                <div class="text"><span class="small">¥</span>19.6</div>
+              <div class="text">时令水果</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/scdl.png" alt="" />
               </div>
-            </a>
-          </div>
-          <div class="list">
-            <a href="#">
-              <div class="layout">
-                <div class="img_or_icon">
-                  <img src="../../images/content_imgs/scdl.png" alt="" />
-                </div>
-                <div class="text"><span class="small">¥</span>19.6</div>
+              <div class="text">蔬菜豆类</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/hxsc.png" alt="" />
               </div>
-            </a>
-          </div>
+              <div class="text">海鲜水产</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/nfcp.png" alt="" />
+              </div>
+              <div class="text">牛副产品</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/zfcp.png" alt="" />
+              </div>
+              <div class="text">猪副产品</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/jm.png" alt="" />
+              </div>
+              <div class="text">鸡苗</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/sl.png" alt="" />
+              </div>
+              <div class="text">饲料</div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
+    <!-- 限时抢购 -->
+    <div class="pic_card titleCnt_card">
+      <!-- title -->
+      <div class="card_title">
+        <div class="countdown">
+          <div class="text">限时抢购</div>
+          <div class="time_icon">
+            <span class="myicon-naozhongRed"></span>
+            <div>00:15:12</div>
+          </div>
+        </div>
+      </div>
+      <!-- N宫格 -->
+      <div class="iconFlex_card">
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/rqd.png" alt="" />
+              </div>
+              <div class="text"><span class="small">¥</span>19.6</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/slsg.png" alt="" />
+              </div>
+              <div class="text"><span class="small">¥</span>19.6</div>
+            </div>
+          </a>
+        </div>
+        <div class="list">
+          <a href="#">
+            <div class="layout">
+              <div class="img_or_icon">
+                <img src="../../images/content_imgs/scdl.png" alt="" />
+              </div>
+              <div class="text"><span class="small">¥</span>19.6</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 商品列表 -->
+  <div class="shop_goods_lists" id="good_lists">
+    <!-- tab -->
+    <div class="tabs_switch" id="tabSwitch">
+      <div class="tab active">
+        <p>全部</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>海产品</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>渔产品</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>瓜果</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>畜禽</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>花卉</p>
+        <div class="line"></div>
+      </div>
+    </div>
     <!-- 商品列表 -->
-    <div class="shop_goods_lists" id="good_lists">
-      <!-- tab -->
-      <div class="tabs_switch" id="tabSwitch">
-        <div class="tab active">
-          <p>全部</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>海产品</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>渔产品</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>瓜果</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>畜禽</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>花卉</p>
-          <div class="line"></div>
-        </div>
-      </div>
-      <!-- 加载中 -->
-      <div class="loading_data" id="loading">
-        <span class="mui-spinner"></span>
-        <div>加载中...</div>
-      </div>
-      <!-- 商品列表 -->
-      <div class="shop_lists_box">
+    <div class="shop_lists_box" id="refreshContainer">
+      <div class="pull_dowm_lists">
         <div class="shop_slide" id="shop_box_content">
           <div class="box" id="id_001">
             <a href="#" class="item">
+              <!-- 图片 -->
               <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
               </div>
               <div class="price_title_tips">
                 <!-- 标题 -->
                 <div class="title_tips">
                   <p class="title">
-                    猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    1猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
                   </p>
                 </div>
                 <!-- 特价 -->
@@ -284,16 +277,6 @@
                     <span class="iconfont icon-gouwuche"></span>
                   </div>
                 </div>
-                <!-- 显示加减按钮 -->
-                <div class="add_cut_btn">
-                  <div class="cut">
-                    <span class="iconfont icon-jianhao_o"></span>
-                  </div>
-                  <div class="num">0</div>
-                  <div class="add">
-                    <span class="iconfont icon-jiahao_o"></span>
-                  </div>
-                </div>
               </div>
             </a>
           </div>
@@ -306,7 +289,7 @@
                 <!-- 标题 -->
                 <div class="title_tips">
                   <p class="title">
-                    猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    2猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
                   </p>
                 </div>
                 <!-- 特价 -->
@@ -337,7 +320,7 @@
                 <!-- 标题 -->
                 <div class="title_tips">
                   <p class="title">
-                    猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    3猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
                   </p>
                 </div>
                 <!-- 特价 -->
@@ -362,18 +345,18 @@
           <div class="box" id="id_004">
             <a href="#" class="item">
               <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
               </div>
             </a>
           </div>
-          <div class="box">
+          <div class="box" id="id_005">
             <a href="#" class="item">
               <div class="div_img">
                 <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
               </div>
             </a>
           </div>
-          <div class="box">
+          <div class="box" id="id_006">
             <a href="#" class="item">
               <div class="div_img">
                 <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
@@ -381,7 +364,7 @@
               <div class="price_title_tips">
                 <!-- 标题 -->
                 <div class="title_tips">
-                  <p class="title">猕猴桃</p>
+                  <p class="title">6猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃</p>
                 </div>
                 <!-- 特价 -->
                 <div class="mark">
@@ -402,7 +385,7 @@
               </div>
             </a>
           </div>
-          <div class="box" id="id_005">
+          <div class="box" id="id_007">
             <a href="#" class="item">
               <div class="div_img">
                 <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
@@ -411,7 +394,7 @@
                 <!-- 标题 -->
                 <div class="title_tips">
                   <p class="title">
-                    猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    7猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
                   </p>
                 </div>
                 <!-- 价格与购物车 -->
@@ -431,72 +414,197 @@
           </div>
         </div>
       </div>
+      <!-- 数据为空 -->
+      <div class="data_not">
+        <div>
+          <span class="iconfont icon-kongshuju1"></span>
+          <div>暂无数据</div>
+        </div>
+      </div>
+      <!-- 加载中 -->
+      <div class="loading_data" id="loading">
+        <span class="mui-spinner"></span>
+        <div>加载中...</div>
+      </div>
     </div>
-    <!-- 这个是底线---没有更多内容啦 -->
-    <div class="dead_line" id="cnt_loading">
-      <!-- <span class="mui-spinner"></span>
-      <div>加载中...</div> -->
-      没有更多内容啦
-    </div>
-    <!-- 公用的尾部 -->
-    <div id="footer"></div>
-    <script>
-      $("#footer").load("../../components/footer.html", function () {
-        var nowFoot = $(this).find(".footer_index>.list").eq(2);
-        nowFoot.addClass("active");
-        nowFoot.siblings(".list").removeClass("active");
+  </div>
+  <!-- 定位图片 -->
+  <div class="add_cart_pos_img">
+    <img src="../../images/content_imgs/scdl.png" alt="">
+  </div>
+  <!-- 公用的尾部 -->
+  <div id="footer"></div>
+  <script>
+    $("#footer").load("../../components/footer.html", function () {
+      var nowFoot = $(this).find(".footer_index>.list").eq(2);
+      nowFoot.addClass("active");
+      nowFoot.siblings(".list").removeClass("active");
+    });
+  </script>
+  <script>
+    // 加载事件
+    $(window).on("load", function () {
+      // 瀑布流函数
+      waterFall("shop_box_content");
+    });
+    // 商品列表切换
+    $("#good_lists #tabSwitch>.tab").click(function () {
+      // 防止重复点击
+      if ($(this).hasClass("active")) {
+        console.log("重复点击");
+      } else {
+        $(this).addClass("active");
+        $(this).siblings(".tab").removeClass("active");
+        // 每一次切换都重新请求列表数据
+        // 打开加载loading
+        $("#good_lists #loading").show();
+        // 关闭存放数据的div
+        $("#good_lists .pull_dowm_lists").hide();
+        // 将存放数据的div设置为空
+        $("#shop_box_content").html("");
+        // 关闭暂无数据图标
+        $("#refreshContainer .data_not").hide();
+        // 重置pageIndex
+        pageIndex = 1;
+        // 关闭上拉加载
+        mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
+        // 这里模拟请求数据
+        setTimeout(function () {
+          initAjax();
+        }, 1000);
+      }
+    });
+    // 初始购物车数量
+    var cart_num = 0;
+    // 商品列表点击购物车按钮
+    $("#shop_box_content .shop_cart_btn").click(function () {
+      var imgSrc = $(this).parents(".box").find(".div_img>img").attr("src");
+      var Pw = $(this).width() / 2;
+      var Cw = $(".add_cart_pos_img").width() / 2;
+      var top = $(this).offset().top - $(window).scrollTop() + 2;
+      var right = $(window).width() - $(this).offset().left - Cw - Pw;
+      $(".add_cart_pos_img>img").attr("src", imgSrc);
+      $(".add_cart_pos_img").css({
+        top,
+        right,
+        opacity: 1
       });
-    </script>
-    <script>
-      // 加载事件
-      $(window).on("load", function () {
-        // 瀑布流函数
-        waterFall("shop_box_content");
-        // 绑定商品列表的事件：tab切换，点击购物车图标，点击加号减号
-        bindingEvent({
-          id: "good_lists",
-          callback1: function (data) {
-            console.log("2222", data);
-          },
-        });
+      $(".add_cart_pos_img").show();
+      $(".add_cart_pos_img").animate({
+        top: "3.8462vw",
+        right: "3.8462vw",
+        opacity: 0
+      }, "slow", function () {
+        cart_num++;
+        $("#gouwuche_badge>.my-badge-num").html(cart_num);
+        $("#gouwuche_badge>.my-badge-num").show();
+        $(".add_cart_pos_img").hide();
       });
-      // 监听滚动事件
-      $(window).scroll(function () {
-        var scrollTop = $(this).scrollTop();
-        var scrollHeight = $(document).height();
-        var windowHeight = $(this).height();
-        console.log("滚动的高度----", $(this).scrollTop());
-        console.log("document的高度----", scrollHeight);
-        console.log("windowHeight的高度----", windowHeight);
-        // 搜索框
-        var tabTop =
+      console.log("点击加入购物车按钮----",)
+      return false;
+    });
+    // 监听滚动事件
+    $(window).scroll(function () {
+      var scrollTop = $(this).scrollTop();
+      var scrollHeight = $(document).height();
+      var windowHeight = $(this).height();
+      // 搜索框
+      var tabTop =
+        $(".shop_goods_lists").offset().top -
+        $("#search_scroll").outerHeight();
+      if (scrollTop > 0) {
+        $("#search_scroll").addClass("fixed");
+      } else {
+        $("#search_scroll").removeClass("fixed");
+      }
+      // 商品列表分类头部
+      if (scrollTop > tabTop) {
+        $("#tabSwitch").addClass("fixed");
+      } else {
+        tabTop =
           $(".shop_goods_lists").offset().top -
           $("#search_scroll").outerHeight();
-        if (scrollTop > 0) {
-          $("#search_scroll").addClass("fixed");
-        } else {
-          $("#search_scroll").removeClass("fixed");
+        $("#tabSwitch").removeClass("fixed");
+      }
+      // 判断滚动到底部了
+      if (scrollTop + windowHeight >= scrollHeight) {
+        console.log("已经滚动到底部了");
+      }
+    });
+    // 图片轮播
+    var swiper_img = new Swiper(".shop_swiper .swiper-container", {
+      pagination: ".swiper-pagination",
+      loop: true,
+      autoplay: 3000,
+    });
+    // --------------------------------------------------------上拉加载
+    mui.init({
+      pullRefresh: {
+        container: "#refreshContainer",
+        up: {
+          contentrefresh: "正在加载...",
+          contentnomore: '没有更多内容啦',
+          callback: pullup
         }
-        // 商品列表分类头部
-        if (scrollTop > tabTop) {
-          $("#tabSwitch").addClass("fixed");
-        } else {
-          tabTop =
-            $(".shop_goods_lists").offset().top -
-            $("#search_scroll").outerHeight();
-          $("#tabSwitch").removeClass("fixed");
+      }
+    });
+    // 每页请求的条数
+    var pageSize = 10;
+    // 请求的页数
+    var pageIndex = 1;
+    // 总的数据条数
+    var pageCount = 30;
+    // 上拉加载
+    function pullup() {
+      setTimeout(() => {
+        // 当总请求条数已经请求完毕
+        if ((pageIndex - 1) * pageSize >= pageCount) {
+          this.endPullupToRefresh(true);//没有数据
+          return;
         }
-        // 判断滚动到底部了
-        if(scrollTop+windowHeight>=scrollHeight){
-          console.log("已经滚动到底部了");
-        }
-      });
-      // 图片轮播
-      var swiper_img = new Swiper(".shop_swiper .swiper-container", {
-        pagination: ".swiper-pagination",
-        loop: true,
-        autoplay: 3000,
-      });
-    </script>
-  </body>
+        /*执行请求*/
+        initAjax();
+        this.endPullupToRefresh(false)
+      }, 1000)
+    }
+    // 初始化请求----这里是请求函数
+    function initAjax() {
+      // 关闭加载loading
+      $("#good_lists #loading").hide();
+      // 如果初始化请求没有一条数据的情况，显示暂无数据
+      if (pageCount <= 0) {
+        $(".pull_dowm_lists").hide();
+        $("#refreshContainer .data_not").show();
+        // 关闭上拉加载
+        setTimeout(function () {
+          mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
+        }, 1000);
+        return;
+      }
+      // 这里模拟请求
+      for (var i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {
+        // dom模板
+        var str = '<div class="box" id="id_001"><a href="#" class="item"><div class="div_img">' +
+          '<img src="../../images/content_imgs/Bitmap-3.png" alt="" /></div><div class="price_title_tips">' +
+          '<div class="title_tips"><p class="title">猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃</p></div><div class="mark">' +
+          '<span class="myicon-tejiaRed"></span></div><div class="price_num_cart"><div class="price_num"><span class="small_red">¥</span>' +
+          '<span class="big_red">39.00</span><span class="big_gray">/箱</span><span class="small_gray">¥59.9</span></div>' +
+          '<div class="shop_cart_btn"><span class="iconfont icon-gouwuche"></span></div></div></div></a></div>';
+        $("#shop_box_content").append($(str));
+      }
+      pageIndex++;
+      $(".pull_dowm_lists").show();
+      $("#refreshContainer .data_not").hide();
+      // 重新执行瀑布流函数
+      waterFall("shop_box_content");
+      // 开启上拉加载
+      mui('#refreshContainer').pullRefresh().enablePullupToRefresh();
+    }
+    // 执行初始化请求函数
+    mui.ready(function () {
+      initAjax();
+    });
+  </script>
+</body>
+
 </html>

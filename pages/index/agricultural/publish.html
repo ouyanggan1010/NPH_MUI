@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>发表</title>
+    <!-- 引用mui基础脚本 -->
+    <script src="../../../js/mui.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- 引用mui基础样式 -->
+    <link href="../../../css/mui.css" rel="stylesheet" />
+    <!-- 引用整个app公共基础样式 -->
+    <link href="../../../css/farmer_base.css" rel="stylesheet" />
+    <!-- 引入首页独立样式 -->
+    <link href="../../../css/farmer_publish.css" rel="stylesheet" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <div class="nav_bar flex_justSB">
+        <a href="javascript:history.back();" class="left_bar font_14 font_gray9B">取消</a>
+        <p class="center_cnt font_16 font_black00">发表留言</p>
+        <button type="button" class="right_bar">提交</button>
+    </div>
+    <!-- 内容部分 -->
+    <div class="consult_cnt">
+        <form action="">
+            <!-- 主题 -->
+            <textarea name="" id="" class="theme" rows="1" placeholder="说说你想留言的主题…"></textarea>
+            <!-- 分割线 -->
+            <div class="line"></div>
+            <!-- 发表的内容 -->
+            <textarea name="" id="" class="detail_cnt" rows="1" placeholder="更详细地讲讲…"></textarea>
+        </form>
+    </div>
+    <!-- 底部按钮 -->
+    <div class="bottom_btns">
+        <div class="d_flex flex_justFE flex_alignC font_12 font_gray9B event_icon">
+            <div>
+                <img class="where" src="../../../images/index/icon-libs.png" alt="">
+                <span>你在哪里？</span>
+            </div>
+            <div class="ml-15">
+                <img class="msg" src="../../../images/index/Shape.png" alt="">
+                <span>种子信息</span>
+            </div>
+        </div>
+        <div class="btns">
+            <img src="../../../images/index/Combined-Shape.png" alt="">
+            <img src="../../../images/index/album.png" alt="">
+            <img src="../../../images/index/Combined-Shape-2.png" alt="">
+            <img src="../../../images/index/emoji.png" alt="">
+            <img src="../../../images/index/more.png" alt="">
+        </div>
+    </div>
+    <script>
+        $(".consult_cnt textarea").on("input", function (e) {
+            $(this).css("height", e.target.scrollHeight + 'px');
+        })
+    </script>
+</body>
+
+</html>
