@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "833290",
+      "name": "删除",
+      "font_class": "shanchu1",
+      "unicode": "e8b6",
+      "unicode_decimal": 59574
+    },
+    {
+      "icon_id": "4551252",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "10635092",
+      "name": "照相机",
+      "font_class": "camera",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "666884",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
       "icon_id": "19710551",
       "name": "切换皮肤",
       "font_class": "qiehuanpifu",

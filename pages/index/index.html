@@ -484,13 +484,13 @@
       }
     };
     var showSoftInput = function () {
-      if (mui.os.android) {
-        imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
-      } else {
-        nativeWebview.plusCallMethod({
-          setKeyboardDisplayRequiresUserAction: false,
-        });
-      }
+      // if (mui.os.android) {
+      //   imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+      // } else {
+      //   nativeWebview.plusCallMethod({
+      //     setKeyboardDisplayRequiresUserAction: false,
+      //   });
+      // }
       // setTimeout(function () {
       //   var inputElem = document.querySelector("input");
       //   inputElem.focus();

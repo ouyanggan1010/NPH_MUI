@@ -11,14 +11,12 @@
     <script src="../../../js/mui.min.js"></script>
     <!-- mui-picker -->
     <script src="../../../js/mui.picker.min.js"></script>
-    <script src="../../../js/mui.poppicker.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
     <!-- mui-css -->
     <link rel="stylesheet" href="../../../css/mui.min.css" />
     <!-- mui-picker -->
     <link href="../../../css/mui.picker.min.css" rel="stylesheet" />
-    <link href="../../../css/mui.poppicker.css" rel="stylesheet" />
     <!-- 字体图标 -->
     <link rel="stylesheet" href="../../../fonts/iconfont.css" />
     <!-- 一些通用的样式 -->
@@ -120,6 +118,8 @@
             $("#refreshContainer .pull_lists").html("");
             // 重置pageIndex
             pageIndex = 1;
+            // 关闭上拉加载
+            mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
             // 请求数据
             setTimeout(function () {
                 initAjax();
@@ -127,18 +127,22 @@
         });
         // 时间弹框
         mui(".select_time").on("tap", "input", function (e) {
+            mui("#refreshContainer").pullRefresh().setStopped(true);
             var _this = this;
-            if ($("#startDate").val()) var startDate = new Date($("#startDate").val());
-            var endDate = $("#endDate").val() ? new Date($("#endDate").val()) : new Date();
             var dtPicker = new mui.DtPicker({
                 "type": "date",
-                beginDate: startDate,
-                endDate: endDate,
+                endDate: new Date(),
             });
             dtPicker.show(function (selectItems) {
                 $(_this).val(selectItems.text);
                 startDate = selectItems.text;
-            });
+            },
+          function () {
+            mui('#refreshContainer').pullRefresh().setStopped(false);
+            // 关闭上拉加载
+            mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+            console.log("关闭函数====");
+          });
         });
         // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
         mui.init({
