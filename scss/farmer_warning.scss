@@ -27,6 +27,9 @@ body {
   }
 }
 .tabs_switch {
+  box-sizing: border-box;
+  padding-left: 15.3846vw;
+  padding-right: 15.3846vw;
   .tab {
     > p {
       color: map-get($colors, "gray_9B");
@@ -60,7 +63,7 @@ body {
     justify-content: space-between;
     margin-top: 5.1282vw;
     margin-bottom: 0;
-    min-height: 30.5128vw;
+    min-height: 43.2051vw;
     &:first-child {
       margin-top: 0;
     }

@@ -3,28 +3,22 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>种植助手</title>
+    <title>资讯中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!-- mui-js -->
     <script src="../../../js/mui.min.js"></script>
-    <!-- mui-picker -->
-    <script src="../../../js/mui.picker.min.js"></script>
-    <script src="../../../js/mui.poppicker.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
     <!-- mui-css -->
     <link rel="stylesheet" href="../../../css/mui.min.css" />
-    <!-- mui-picker -->
-    <link href="../../../css/mui.picker.min.css" rel="stylesheet" />
-    <link href="../../../css/mui.poppicker.css" rel="stylesheet" />
     <!-- 字体图标 -->
     <link rel="stylesheet" href="../../../fonts/iconfont.css" />
     <!-- 一些通用的样式 -->
     <link rel="stylesheet" href="../../../css/farmer_base.css" />
     <!-- 本页面的css -->
-    <link rel="stylesheet" href="../../../css/farmer_warning.css" />
+    <link rel="stylesheet" href="../../../css/farmer_consultingCenter.css" />
     <!-- 声明所有连接都在当前窗口打开 -->
     <base target="_self" />
 </head>
@@ -34,49 +28,63 @@
         <a href="javascript:history.back();" class="left_bar">
             <span class="iconfont icon-icon_arrow_left"></span>
         </a>
-        <div class="center_cnt">种植助手</div>
-    </div>
-    <!-- 任务时间/切换栏 -->
-    <div class="time_and_switch">
-        <!-- 任务时间 -->
-        <div class="select_time">
-            <p>任务时间：</p>
-            <div class="input_text">
-                <input type="text" readonly id="startDate" placeholder="开始时间" value="">
-                <div>-</div>
-                <input type="text" readonly id="endDate" placeholder="结束时间" value="">
-            </div>
-        </div>
-        <!-- 切换栏 -->
-        <div class="tabs_switch" id="tabSwitch">
+        <div class="center_cnt tabs_switch" id="tabSwitch">
             <div class="tab active">
-                <p>未处理</p>
+                <p>综合</p>
                 <div class="line"></div>
             </div>
             <div class="tab">
-                <p>已处理</p>
+                <p>政务</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>公告</p>
                 <div class="line"></div>
             </div>
         </div>
+        <a href="javascript:history.back();" class="right_bar">
+            <span class="iconfont icon-sousuo"></span>
+        </a>
     </div>
     <!-- 内容部分 -->
     <div class="consult_cnt" id="refreshContainer">
         <div class="task_lists">
-            <div class="pull_lists">
+            <div class="text_img_lists">
                 <!-- 循环列表 -->
-                <a href="#" class="task_chunk pic_card">
-                    <div class="task_btn">
-                        <div class="time_text">
-                            <p class="time">2021-05-29&nbsp;14:30:29</p>
-                            <p class="text">任务要求：采购10斤采购10斤采购10斤采购10斤采购10斤采购10斤</p>
-                        </div>
-                        <button type="button" class="status blue">未处理</button>
-                        <!-- <button type="button" class="status white">已处理</button> -->
+                <a href="#" class="list">
+                    <div class="imgs_top">
+                        <img src="../../../images/content_imgs/Bitmap-1.png" alt="" />
+                        <img src="../../../images/content_imgs/Bitmap-2.png" alt="" />
+                        <img src="../../../images/content_imgs/Bitmap-3.png" alt="" />
                     </div>
-                    <div class="text_list">
-                        <p>所属区域：荔枝-生产地块</p>
-                        <p>设备编号：HMTR-11</p>
-                        <p>异常数据类型：土壤肥力数据异常</p>
+                    <div class="text_oneImg">
+                        <div class="div_text">
+                            <div class="div_title">
+                                市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                            </div>
+                            <div class="div_tips">
+                                <div class="text_mark">
+                                    <span>[访谈]农机设备信息</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list">
+                    <div class="text_oneImg">
+                        <div class="div_text">
+                            <div class="div_title">
+                                市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                            </div>
+                            <div class="div_tips">
+                                <div class="text_mark">
+                                    <span>[访谈]农机设备信息</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="div_oneImg">
+                            <img src="../../../images/content_imgs/Bitmap-4.png" alt="" />
+                        </div>
                     </div>
                 </a>
             </div>
@@ -94,15 +102,6 @@
             <div>加载中...</div>
         </div>
     </div>
-    <!-- 公用的尾部 -->
-    <div id="footer"></div>
-    <script>
-        $("#footer").load("../../../components/footer_zzzs.html", function () {
-            var nowFoot = $(this).find(".zzzs_foot_switch>.list").eq(1);
-            nowFoot.addClass("active");
-            nowFoot.siblings(".list").removeClass("active");
-        });
-    </script>
     <script>
         // tab切换
         mui("#tabSwitch").on("tap", ".tab", function (e) {
@@ -110,35 +109,18 @@
             $(this).siblings(".tab").removeClass("active");
             // ---------------------需要使用的数据
             var index = $(this).index();
-            var startDate = $("#startDate").val();
-            var endDate = $("#endDate").val();
             // 隐藏数据列表
             $(".task_lists").hide();
             // 打开loading
             $("#loading").show();
             // 将存放数据的div设置为空
-            $("#refreshContainer .pull_lists").html("");
+            $("#refreshContainer .text_img_lists").html("");
             // 重置pageIndex
             pageIndex = 1;
             // 请求数据
             setTimeout(function () {
                 initAjax();
             }, 1000);
-        });
-        // 时间弹框
-        mui(".select_time").on("tap", "input", function (e) {
-            var _this = this;
-            if ($("#startDate").val()) var startDate = new Date($("#startDate").val());
-            var endDate = $("#endDate").val() ? new Date($("#endDate").val()) : new Date();
-            var dtPicker = new mui.DtPicker({
-                "type": "date",
-                beginDate: startDate,
-                endDate: endDate,
-            });
-            dtPicker.show(function (selectItems) {
-                $(_this).val(selectItems.text);
-                startDate = selectItems.text;
-            });
         });
         // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
         mui.init({
@@ -169,7 +151,7 @@
                 mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
                 // 重置请求的页数
                 pageIndex = 1;
-                $("#refreshContainer .pull_lists").html("");
+                $("#refreshContainer .text_img_lists").html("");
                 /*执行请求*/
                 initAjax();
                 // 关闭上拉加载
@@ -202,11 +184,11 @@
             $("#loading").hide();
             // 打开数据列表
             $(".task_lists").show();
-            $("#refreshContainer .pull_lists").show();
+            $("#refreshContainer .text_img_lists").show();
             $("#refreshContainer .data_not").hide();
             // 如果初始化请求没有一条数据的情况，显示暂无数据
             if (pageCount <= 0) {
-                $("#refreshContainer .pull_lists").hide();
+                $("#refreshContainer .text_img_lists").hide();
                 $("#refreshContainer .data_not").show();
                 // 关闭上拉加载
                 setTimeout(function () {
@@ -219,17 +201,16 @@
             // 这里模拟请求
             for (var i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {
                 // dom模板
-                var str = '<a href="#" class="task_chunk pic_card"><div class="task_btn"><div class="time_text">' +
-                    '<p class="time">2021-05-29&nbsp;14:30:29</p><p class="text">任务要求：采购10斤</p></div>' +
-                    '<button type="button" class="status white">已处理</button></div><div class="text_list">' +
-                    '<p>所属区域：荔枝-生产地块</p><p>设备编号：HMTR-11</p><p>异常数据类型：土壤肥力数据异常</p></div></a>';
-                $("#refreshContainer .pull_lists").append($(str));
+                var str = '<a href="#" class="list"><div class="text_oneImg"><div class="div_text"><div class="div_title">市农业农村局召开迎接农村集体产权' +
+                    '</div><div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span></div></div></div><div class="div_oneImg">' +
+                    '<img src="../../../images/content_imgs/Bitmap-4.png" alt="" /></div></div></a>';
+                $("#refreshContainer .text_img_lists").append($(str));
             }
             pageIndex++;
         }
         // 执行初始化请求函数
         mui.ready(function () {
-            // initAjax();
+            initAjax();
         })
     </script>
 </body>

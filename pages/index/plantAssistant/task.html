@@ -37,14 +37,36 @@
         <div class="center_cnt">种植助手</div>
     </div>
     <!-- 任务时间/切换栏 -->
-    <div id="switch_time"></div>
-    <script>
-        $("#switch_time").load("../../../components/taskTab_zzzs.html", function () {
-            var nowFoot = $(this).find("#tabSwitch>.tab").eq(0);
-            nowFoot.addClass("active");
-            nowFoot.siblings(".tab").removeClass("active");
-        });
-    </script>
+    <div class="time_and_switch">
+        <!-- 任务时间 -->
+        <div class="select_time">
+            <p>任务时间：</p>
+            <div class="input_text">
+                <input type="text" readonly id="startDate" placeholder="开始时间" value="">
+                <div>-</div>
+                <input type="text" readonly id="endDate" placeholder="结束时间" value="">
+            </div>
+        </div>
+        <!-- 切换栏 -->
+        <div class="tabs_switch" id="tabSwitch">
+            <div class="tab active">
+                <p>全部任务</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>领取任务</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>进行中</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>已办结</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
     <!-- 内容部分 -->
     <div class="consult_cnt" id="refreshContainer">
         <div class="task_lists">
@@ -91,10 +113,14 @@
         });
     </script>
     <script>
-        // 切换tab标签需要执行的函数
-        function funSwitchTab(obj) {
-            var { index, startDate, startDate } = obj;
-            console.log(obj)
+        // tab切换
+        mui("#tabSwitch").on("tap", ".tab", function (e) {
+            $(this).addClass("active");
+            $(this).siblings(".tab").removeClass("active");
+            // ---------------------需要使用的数据
+            var index = $(this).index();
+            var startDate = $("#startDate").val();
+            var endDate = $("#endDate").val();
             // 隐藏数据列表
             $(".task_lists").hide();
             // 打开loading
@@ -107,7 +133,22 @@
             setTimeout(function () {
                 initAjax();
             }, 1000);
-        }
+        });
+        // 时间弹框
+        mui(".select_time").on("tap", "input", function (e) {
+            var _this = this;
+            if ($("#startDate").val()) var startDate = new Date($("#startDate").val());
+            var endDate = $("#endDate").val() ? new Date($("#endDate").val()) : new Date();
+            var dtPicker = new mui.DtPicker({
+                "type": "date",
+                beginDate: startDate,
+                endDate: endDate,
+            });
+            dtPicker.show(function (selectItems) {
+                $(_this).val(selectItems.text);
+                startDate = selectItems.text;
+            });
+        });
         // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
         mui.init({
             pullRefresh: {
@@ -180,7 +221,9 @@
                 setTimeout(function () {
                     mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
                 }, 1000)
-                return;
+            } else {
+                mui('#refreshContainer').pullRefresh().enablePullupToRefresh();
+                mui('#refreshContainer').pullRefresh().endPullupToRefresh();
             }
             // 这里模拟请求
             for (var i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {

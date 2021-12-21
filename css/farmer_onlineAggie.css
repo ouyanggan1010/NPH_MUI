@@ -1,0 +1,125 @@
+body {
+  padding-top: 11.5385vw;
+  position: relative;
+  background-color: #fff;
+}
+
+.nav_bar {
+  background-color: #fff;
+}
+
+.nav_bar .right_bar {
+  display: block;
+  width: 6.1538vw;
+  height: 6.1538vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav_bar .right_bar .iconfont {
+  font-size: 6.1538vw;
+  color: #757575;
+}
+
+.nav_bar .center_cnt {
+  height: 100%;
+  width: 80%;
+}
+
+.nav_bar .center_cnt .tab {
+  line-height: 10.7692vw;
+}
+
+.nav_bar .center_cnt .tab > p {
+  font-size: 4.1026vw;
+  color: #282828;
+}
+
+.nav_bar .center_cnt .tab.active {
+  font-weight: normal;
+}
+
+.nav_bar .center_cnt .tab.active > p {
+  color: #282828;
+}
+
+.nav_bar .center_cnt .tab.active .line {
+  display: block;
+}
+
+.consult_cnt {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 3.8462vw;
+  position: relative;
+}
+
+.data_not {
+  background-color: #fff;
+}
+
+.text_img_lists {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-top: 3.8462vw;
+  background-color: #fff;
+}
+
+.text_img_lists .imgs_top {
+  width: 100%;
+  height: 20.5128vw;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.text_img_lists .imgs_top > img {
+  width: 32%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.2821vw;
+}
+
+.text_img_lists > .list {
+  display: block;
+  margin-top: 3.8462vw;
+  border-bottom: 0.2564vw solid #ededed;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-bottom: 2.5641vw;
+}
+
+.text_img_lists > .list:first-child {
+  margin-top: 0;
+}
+
+.text_img_lists .div_oneImg {
+  width: 30.7692vw;
+  height: 20.5128vw;
+  border-radius: 1.2821vw;
+}
+
+.text_img_lists .div_oneImg > img {
+  border-radius: 1.2821vw;
+}

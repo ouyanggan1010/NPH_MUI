@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+
+body {
+  padding-top: 11.5385vw;
+  position: relative;
+  background-color: map-get($colors, "white");
+}
+.nav_bar {
+  background-color: map-get($colors, "white");
+  .right_bar {
+    display: block;
+    width: 6.1538vw;
+    height: 6.1538vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .iconfont {
+      font-size: 6.1538vw;
+      color: map-get($colors, "gray_75");
+    }
+  }
+  .center_cnt {
+    height: 100%;
+    width: 60%;
+    .tab {
+      line-height: 10.7692vw;
+      > p {
+        font-size: 4.1026vw;
+        color: map-get($colors, "black_28");
+      }
+      &.active {
+        font-weight: normal;
+        > p {
+          color: map-get($colors, "black_28");
+        }
+        .line {
+          display: block;
+        }
+      }
+    }
+  }
+}
+// 内容
+.consult_cnt {
+  box-sizing: border-box;
+  padding: 0 $paddingLR;
+  position: relative;
+}
+.data_not {
+  background-color: map-get($colors, "white");
+}
+// 图片文字列表
+.text_img_lists {
+  box-sizing: border-box;
+  padding-top: $paddingLR;
+  background-color: map-get($colors, "white");
+  .imgs_top {
+    width: 100%;
+    height: 20.5128vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > img {
+      width: 32%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1.2821vw;
+    }
+  }
+  > .list {
+    display: block;
+    margin-top: $paddingLR;
+    border-bottom: 0.2564vw solid map-get($colors, "gray_ED");
+    box-sizing: border-box;
+    padding-bottom: 2.5641vw;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .div_oneImg {
+    width: 30.7692vw;
+    height: 20.5128vw;
+    border-radius: 1.2821vw;
+    > img {
+      border-radius: 1.2821vw;
+    }
+  }
+}

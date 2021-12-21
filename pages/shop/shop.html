@@ -585,7 +585,9 @@
         setTimeout(function () {
           mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
         }, 1000);
-        return;
+      } else {
+        mui('#refreshContainer').pullRefresh().enablePullupToRefresh();
+        mui('#refreshContainer').pullRefresh().endPullupToRefresh();
       }
       // 这里模拟请求
       for (

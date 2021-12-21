@@ -409,6 +409,15 @@ $paddingLR: 3.8462vw;
               font-size: 3.8462vw;
             }
           }
+          .icon_delete {
+            font-size: 5.1282vw;
+            color: map-get($colors, "gray_9B");
+            height: 5.1282vw;
+            width: 5.1282vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
       }
       > .div_oneImg {
@@ -558,6 +567,8 @@ $paddingLR: 3.8462vw;
   .left_bar {
     display: block;
     position: relative;
+    min-width: 5.1282vw;
+    min-height: 7.6923vw;
     .iconfont.icon-icon_arrow_left {
       position: absolute;
       top: 50%;
@@ -857,11 +868,15 @@ $paddingLR: 3.8462vw;
       width: 100%;
       box-shadow: 0 0.7692vw 1.5385vw rgba(39, 213, 255, 0.4);
       display: none;
+      border-radius: 0.7692vw;
     }
     &.active {
       font-size: 4.1026vw;
       font-weight: bold;
       color: map-get($colors, "black");
+      > p {
+        color: map-get($colors, "black");
+      }
       .line {
         display: block;
       }

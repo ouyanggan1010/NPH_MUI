@@ -27,6 +27,9 @@ body {
   }
 }
 .tabs_switch {
+  box-sizing: border-box;
+  padding-left: 7.6923vw;
+  padding-right: 7.6923vw;
   .tab {
     > p {
       color: map-get($colors, "gray_9B");

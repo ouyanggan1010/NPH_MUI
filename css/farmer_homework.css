@@ -25,6 +25,13 @@ body {
   line-height: 10vw;
 }
 
+.tabs_switch {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-left: 7.6923vw;
+  padding-right: 7.6923vw;
+}
+
 .tabs_switch .tab > p {
   color: #9b9b9b;
 }

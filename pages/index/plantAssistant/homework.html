@@ -2,209 +2,135 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="utf-8" />
     <title>种植助手</title>
-    <!-- 引用mui基础脚本 -->
-    <script src="../../../js/mui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../../js/mui.min.js"></script>
+    <!-- mui-picker -->
     <script src="../../../js/mui.picker.min.js"></script>
     <script src="../../../js/mui.poppicker.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
-    <!-- 引用mui基础样式 -->
-    <link href="../../../css/mui.css" rel="stylesheet" />
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../../css/mui.min.css" />
     <!-- mui-picker -->
     <link href="../../../css/mui.picker.min.css" rel="stylesheet" />
     <link href="../../../css/mui.poppicker.css" rel="stylesheet" />
-    <!-- 引用整个app公共基础样式 -->
-    <link href="../../../css/farmer_base.css" rel="stylesheet" />
-    <!-- 引入首页独立样式 -->
-    <link href="../../../css/farmer_task.css" rel="stylesheet" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../../css/farmer_homework.css" />
     <!-- 声明所有连接都在当前窗口打开 -->
     <base target="_self" />
 </head>
 
 <body>
-    <div class="nav_bar flex_justSB">
-        <a href="javascript:history.back();" class="left_bar d_flex flex_alignC"><img class="back"
-                src="../../../images/index/back.png" alt=""></a>
-        <p class="center_cnt font_16 font_black00">种植助手</p>
+    <div class="nav_bar">
+        <a href="javascript:history.back();" class="left_bar">
+            <span class="iconfont icon-icon_arrow_left"></span>
+        </a>
+        <div class="center_cnt">种植助手</div>
     </div>
-    <!-- 任务时间 -->
-    <div class="select_time">
-        <p class="font_14 font_black">任务时间：</p>
-        <div class="input_text">
-            <input type="text" readonly id="startDate" placeholder="开始时间" value="">
-            <div>-</div>
-            <input type="text" readonly id="endDate" placeholder="结束时间" value="">
+    <!-- 任务时间/切换栏 -->
+    <div class="time_and_switch">
+        <!-- 任务时间 -->
+        <div class="select_time">
+            <p>任务时间：</p>
+            <div class="input_text">
+                <input type="text" readonly id="startDate" placeholder="开始时间" value="">
+                <div>-</div>
+                <input type="text" readonly id="endDate" placeholder="结束时间" value="">
+            </div>
         </div>
-    </div>
-    <!-- 切换栏 -->
-    <div class="tabs_switch flex_justSA" id="tabSwitch">
-        <div class="tab active">
-            <p>全部任务</p>
-            <div class="line"></div>
-        </div>
-        <div class="tab">
-            <p>未读</p>
-            <div class="line"></div>
-        </div>
-        <div class="tab">
-            <p>已读</p>
-            <div class="line"></div>
+        <!-- 切换栏 -->
+        <div class="tabs_switch" id="tabSwitch">
+            <div class="tab active">
+                <p>全部任务</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>已读</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>未读</p>
+                <div class="line"></div>
+            </div>
         </div>
     </div>
     <!-- 内容部分 -->
-    <div class="consult_cnt">
-        <!-- 全部任务 -->
-        <div class="task_lists active">
-            <div>
-                <div class="pull_lists">
-                    <!-- 循环列表 -->
-                    <a href="#" class="task_chunk currency_card">
-                        <div class="d_flex flex_alignC mt-10 mb-20">
-                            <div class="flex_1">
-                                <p class="font_14">2021-05-29&nbsp;14:30:29</p>
-                                <p class="font_16 lineH-24 hiddenTwo">任务要求：打扫卫生</p>
-                            </div>
-                            <button type="button" class="status blue">领取</button>
-                            <!-- <button type="button" class="status white">已读</button> -->
-                        </div>
-                        <div class="time_slot">
-                            <p>2021-05-29&nbsp;19:00&nbsp;开始</p>
-                            <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
-                        </div>
-                    </a>
-                    <a href="#" class="task_chunk currency_card">
-                        <div class="d_flex flex_alignC mt-10 mb-20">
-                            <div class="flex_1">
-                                <p class="font_14">2021-05-29&nbsp;14:30:29</p>
-                                <p class="font_16 lineH-24 hiddenTwo">任务要求：浇水</p>
-                            </div>
-                            <!-- <button type="button" class="status blue">领取</button> -->
-                            <button type="button" class="status white">已读</button>
-                        </div>
-                        <div class="time_slot">
-                            <p>2021-05-29&nbsp;19:00&nbsp;开始</p>
-                            <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- 这个是底线-----演示完后删除 -->
-                <div class="dead_line font_12 font_gray">
-                    没有更多内容啦
-                </div>
-                <!-- 后台请求没有数据 -->
-                <div class="data_not">
-                    <span class="mui-icon mui-icon mui-icon-home"></span>
-                    <P>暂无数据</P>
-                </div>
-            </div>
-        </div>
-        <!-- 未读 -->
+    <div class="consult_cnt" id="refreshContainer">
         <div class="task_lists">
-            <div>
-                <div class="pull_lists">
-                    <!-- 循环列表 -->
-                    <a href="#" class="task_chunk currency_card">
-                        <div class="d_flex flex_alignC mt-10 mb-20">
-                            <div class="flex_1">
-                                <p class="font_14">2021-05-29&nbsp;14:30:29</p>
-                                <p class="font_16 lineH-24 hiddenTwo">任务要求：打扫卫生</p>
-                            </div>
-                            <button type="button" class="status blue">领取</button>
-                            <!-- <button type="button" class="status white">已读</button> -->
+            <div class="pull_lists">
+                <!-- 循环列表 -->
+                <a href="#" class="task_chunk pic_card">
+                    <div class="task_btn">
+                        <div class="time_text">
+                            <p class="time">2021-05-29&nbsp;14:30:29</p>
+                            <p class="text">任务要求：采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝</p>
                         </div>
-                        <div class="time_slot">
-                            <p>2021-05-29&nbsp;19:00&nbsp;开始</p>
-                            <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- 这个是底线-----演示完后删除 -->
-                <div class="dead_line font_12 font_gray">
-                    没有更多内容啦
-                </div>
-                <!-- 后台请求没有数据 -->
-                <div class="data_not">
-                    <span class="mui-icon mui-icon mui-icon-home"></span>
-                    <P>暂无数据</P>
+                        <!-- <button type="button" class="status blue">领取</button> -->
+                        <button type="button" class="status white">已读</button>
+                    </div>
+                    <div class="time_slot">
+                        <p>2021-05-29&nbsp;19:00&nbsp;开始</p>
+                        <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
+                    </div>
+                </a>
+            </div>
+            <!-- 数据为空 -->
+            <div class="data_not">
+                <div>
+                    <span class="iconfont icon-kongshuju1"></span>
+                    <div>暂无数据</div>
                 </div>
             </div>
         </div>
-        <!-- 已读 -->
-        <div class="task_lists" id="refreshContainer_three">
-            <div>
-                <div class="pull_lists">
-                    <!-- 循环列表 -->
-                    <a href="#" class="task_chunk currency_card">
-                        <div class="d_flex flex_alignC mt-10 mb-20">
-                            <div class="flex_1">
-                                <p class="font_14">2021-05-29&nbsp;14:30:29</p>
-                                <p class="font_16 lineH-24 hiddenTwo">任务要求：浇水</p>
-                            </div>
-                            <!-- <button type="button" class="status blue">领取</button> -->
-                            <button type="button" class="status white">已读</button>
-                        </div>
-                        <div class="time_slot">
-                            <p>2021-05-29&nbsp;19:00&nbsp;开始</p>
-                            <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- 这个是底线-----演示完后删除 -->
-                <div class="dead_line font_12 font_gray">
-                    没有更多内容啦
-                </div>
-                <!-- 后台请求没有数据 -->
-                <div class="data_not">
-                    <span class="mui-icon mui-icon mui-icon-home"></span>
-                    <P>暂无数据</P>
-                </div>
-            </div>
+        <!-- 加载中 -->
+        <div class="loading_data" id="loading">
+            <span class="mui-spinner"></span>
+            <div>加载中...</div>
         </div>
     </div>
-    <!-- 底部切换 -->
-    <div class="foot_switch">
-        <a href="javascript:location.replace('./task.html');" class="tab">
-            <img class="img_not" src="../../../images/index/renwu.png" alt="">
-            <img class="img_active" src="../../../images/index/renwu_active.png" alt="">
-            <p>任务</p>
-        </a>
-        <a href="javascript:location.replace('./warning.html');" class="tab">
-            <img class="img_not" src="../../../images/index/yujing.png" alt="">
-            <img class="img_active" src="../../../images/index/yujing_active.png" alt="">
-            <p>预警</p>
-        </a>
-        <a href="javascript:location.replace('./homework.html');" class="tab active">
-            <img class="img_not" src="../../../images/index/zuoye.png" alt="">
-            <img class="img_active" src="../../../images/index/zuoye_active.png" alt="">
-            <p>作业</p>
-        </a>
-    </div>
+    <!-- 公用的尾部 -->
+    <div id="footer"></div>
+    <script>
+        $("#footer").load("../../../components/footer_zzzs.html", function () {
+            var nowFoot = $(this).find(".zzzs_foot_switch>.list").eq(2);
+            nowFoot.addClass("active");
+            nowFoot.siblings(".list").removeClass("active");
+        });
+    </script>
     <script>
         // tab切换
-        $("#tabSwitch>.tab").click(function () {
-            var index = $(this).index();
-            var cnt = $(".consult_cnt>.task_lists").eq(index);
+        mui("#tabSwitch").on("tap", ".tab", function (e) {
             $(this).addClass("active");
             $(this).siblings(".tab").removeClass("active");
-            cnt.addClass("active");
-            cnt.siblings(".task_lists").removeClass("active");
+            // ---------------------需要使用的数据
+            var index = $(this).index();
+            var startDate = $("#startDate").val();
+            var endDate = $("#endDate").val();
+            // 隐藏数据列表
+            $(".task_lists").hide();
+            // 打开loading
+            $("#loading").show();
+            // 将存放数据的div设置为空
+            $("#refreshContainer .pull_lists").html("");
+            // 重置pageIndex
+            pageIndex = 1;
+            // 请求数据
+            setTimeout(function () {
+                initAjax();
+            }, 1000);
         });
         // 时间弹框
-        $("#startDate").click(function () {
+        mui(".select_time").on("tap", "input", function (e) {
             var _this = this;
-            muiPickerDate(_this);
-        });
-        $("#endDate").click(function () {
-            var _this = this;
-            muiPickerDate(_this);
-        });
-        function muiPickerDate(_this) {
             if ($("#startDate").val()) var startDate = new Date($("#startDate").val());
             var endDate = $("#endDate").val() ? new Date($("#endDate").val()) : new Date();
             var dtPicker = new mui.DtPicker({
@@ -216,18 +142,19 @@
                 $(_this).val(selectItems.text);
                 startDate = selectItems.text;
             });
-        }
+        });
         // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
         mui.init({
             pullRefresh: {
-                container: "#refreshContainer_one",
+                container: "#refreshContainer",
                 down: {
                     style: 'circle',
+                    color: '#0091ff',
                     callback: pulldown
                 },
                 up: {
                     contentrefresh: "正在加载...",
-                    contentnomore: '没有更多数据了',
+                    contentnomore: '没有更多内容啦',
                     callback: pullup
                 }
             }
@@ -242,19 +169,19 @@
         function pulldown() {
             console.log("下拉刷新")
             setTimeout(() => {
-                mui('#refreshContainer_one').pullRefresh().endPulldownToRefresh();
+                mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
                 // 重置请求的页数
                 pageIndex = 1;
-                $("#refreshContainer_one .pull_lists").html("");
+                $("#refreshContainer .pull_lists").html("");
                 /*执行请求*/
                 initAjax();
                 // 关闭上拉加载
-                mui('#refreshContainer_one').pullRefresh().disablePullupToRefresh();
+                mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
                 setTimeout(function () {
                     // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
                     if (pageCount > 0) {
-                        mui('#refreshContainer_one').pullRefresh().enablePullupToRefresh();
-                        mui('#refreshContainer_one').pullRefresh().endPullupToRefresh();
+                        mui('#refreshContainer').pullRefresh().enablePullupToRefresh();
+                        mui('#refreshContainer').pullRefresh().endPullupToRefresh();
                     }
                 }, 1000)
             }, 1000)
@@ -274,32 +201,38 @@
         }
         // 初始化请求----这里是请求函数
         function initAjax() {
+            // 关闭loading
+            $("#loading").hide();
+            // 打开数据列表
+            $(".task_lists").show();
+            $("#refreshContainer .pull_lists").show();
+            $("#refreshContainer .data_not").hide();
+            // 如果初始化请求没有一条数据的情况，显示暂无数据
+            if (pageCount <= 0) {
+                $("#refreshContainer .pull_lists").hide();
+                $("#refreshContainer .data_not").show();
+                // 关闭上拉加载
+                setTimeout(function () {
+                    mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
+                }, 1000)
+            } else {
+                mui('#refreshContainer').pullRefresh().enablePullupToRefresh();
+                mui('#refreshContainer').pullRefresh().endPullupToRefresh();
+            }
             // 这里模拟请求
             for (var i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {
                 // dom模板
-                var str = '<a href="#" class="task_chunk currency_card"><div class="d_flex flex_alignC mt-10 mb-20"><div class="flex_1">' +
-                    '<p class="font_14">2021-05-29&nbsp;14:30:29</p><p class="font_16 lineH-24 hiddenTwo">任务要求：全部任务' + i + '-采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝</p>' +
-                    '</div><button type="button" class="status blue">领取</button></div><div class="time_slot">' +
+                var str = '<a href="#" class="task_chunk pic_card"><div class="task_btn"><div class="time_text">' +
+                    '<p class="time">2021-05-29&nbsp;14:30:29</p><p class="text">任务要求：采购10斤荔枝</p></div>' +
+                    '<button type="button" class="status white">已被领取</button></div><div class="time_slot">' +
                     '<p>2021-05-29&nbsp;19:00&nbsp;开始</p><p>2021-05-29&nbsp;19:00&nbsp;结束</p></div></a>';
-                $("#refreshContainer_one .pull_lists").append($(str));
+                $("#refreshContainer .pull_lists").append($(str));
             }
             pageIndex++;
-            // 如果初始化请求没有一条数据的情况，显示暂无数据
-            if (pageCount <= 0) {
-                $("#refreshContainer_one .pull_lists").hide();
-                $("#refreshContainer_one .data_not").show();
-                // 关闭上拉加载
-                setTimeout(function () {
-                    mui('#refreshContainer_one').pullRefresh().disablePullupToRefresh();
-                }, 1000)
-            } else {
-                $("#refreshContainer_one .pull_lists").show();
-                $("#refreshContainer_one .data_not").hide();
-            }
         }
         // 执行初始化请求函数
         mui.ready(function () {
-            initAjax();
+            // initAjax();
         })
     </script>
 </body>
