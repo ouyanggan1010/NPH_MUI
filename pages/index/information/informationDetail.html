@@ -29,11 +29,10 @@
         <a href="#" class="left_bar">
             <span class="iconfont icon-icon_arrow_left"></span>
         </a>
-        <!-- <div class="right_bar iconfont icon-31shoucang" id="collection"></div> -->
         <div class="right_bar iconfont icon-31shoucangxuanzhong" id="collection"></div>
     </div>
     <!-- 内容部分 -->
-    <div class="article_cnt nav_yes">
+    <div class="article_cnt">
         <div class="title">市农技中心在三江镇调查槟榔异常情况并开展技术指导</div>
         <div class="tips">
             <div>分类：种子信息</div>
@@ -71,7 +70,7 @@
     </div>
     <script>
         // 点击收藏
-        $("#collection").click(function () {
+        mui(".nav_bar").on("tap", "#collection", function (e) {
             var _this = this;
             // 先判断当前是否收藏了
             if ($(this).hasClass("icon-31shoucang")) {
@@ -86,7 +85,7 @@
                 $(this).removeClass("icon-31shoucangxuanzhong");
                 $(this).addClass("icon-31shoucang");
             }
-        });
+        })
     </script>
 </body>
 

@@ -2,30 +2,31 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="utf-8" />
     <title>发表</title>
-    <!-- 引用mui基础脚本 -->
-    <script src="../../../js/mui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../../js/mui.min.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
-    <!-- 引用mui基础样式 -->
-    <link href="../../../css/mui.css" rel="stylesheet" />
-    <!-- 引用整个app公共基础样式 -->
-    <link href="../../../css/farmer_base.css" rel="stylesheet" />
-    <!-- 引入首页独立样式 -->
-    <link href="../../../css/farmer_publish.css" rel="stylesheet" />
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../../css/mui.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../../css/farmer_publish.css" />
     <!-- 声明所有连接都在当前窗口打开 -->
     <base target="_self" />
 </head>
 
 <body>
-    <div class="nav_bar flex_justSB">
+    <div class="nav_bar">
         <a href="javascript:history.back();" class="left_bar font_14 font_gray9B">取消</a>
-        <p class="center_cnt font_16 font_black00">发表留言</p>
+        <div class="center_cnt">发表留言</div>
         <button type="button" class="right_bar">提交</button>
     </div>
     <!-- 内容部分 -->
@@ -41,25 +42,26 @@
     </div>
     <!-- 底部按钮 -->
     <div class="bottom_btns">
-        <div class="d_flex flex_justFE flex_alignC font_12 font_gray9B event_icon">
+        <div class="event_icon">
             <div>
-                <img class="where" src="../../../images/index/icon-libs.png" alt="">
+                <span class="iconfont icon-ditu_dingwei_o"></span>
                 <span>你在哪里？</span>
             </div>
-            <div class="ml-15">
-                <img class="msg" src="../../../images/index/Shape.png" alt="">
+            <div>
+                <span class="iconfont icon-wangluo"></span>
                 <span>种子信息</span>
             </div>
         </div>
         <div class="btns">
-            <img src="../../../images/index/Combined-Shape.png" alt="">
-            <img src="../../../images/index/album.png" alt="">
-            <img src="../../../images/index/Combined-Shape-2.png" alt="">
-            <img src="../../../images/index/emoji.png" alt="">
-            <img src="../../../images/index/more.png" alt="">
+            <span class="iconfont icon-camera"></span>
+            <span class="iconfont icon-tupian"></span>
+            <span class="iconfont icon-iconjing"></span>
+            <span class="iconfont icon-xiaolianchenggong"></span>
+            <span class="iconfont icon-jiahao"></span>
         </div>
     </div>
     <script>
+        // 监听输入事件
         $(".consult_cnt textarea").on("input", function (e) {
             $(this).css("height", e.target.scrollHeight + 'px');
         })

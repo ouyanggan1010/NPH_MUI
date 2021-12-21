@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+
+<body>
+    <div class="time_and_switch">
+        <!-- 任务时间 -->
+        <div class="select_time">
+            <p>任务时间：</p>
+            <div class="input_text">
+                <input type="text" readonly id="startDate" placeholder="开始时间" value="">
+                <div>-</div>
+                <input type="text" readonly id="endDate" placeholder="结束时间" value="">
+            </div>
+        </div>
+        <!-- 切换栏 -->
+        <div class="tabs_switch" id="tabSwitch">
+            <div class="tab active">
+                <p>全部任务</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>领取任务</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>进行中</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>已办结</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // tab切换
+        mui("#tabSwitch").on("tap", ".tab", function (e) {
+            var index = $(this).index();
+            $(this).addClass("active");
+            $(this).siblings(".tab").removeClass("active");
+            funSwitchTab({ index, startDate: $("#startDate").val(), endDate: $("#endDate").val() });
+        });
+        // 时间弹框
+        mui(".select_time").on("tap", "input", function (e) {
+            if ($("#startDate").val()) var startDate = new Date($("#startDate").val());
+            var endDate = $("#endDate").val() ? new Date($("#endDate").val()) : new Date();
+            var dtPicker = new mui.DtPicker({
+                "type": "date",
+                beginDate: startDate,
+                endDate: endDate,
+            });
+            dtPicker.show(function (selectItems) {
+                $(_this).val(selectItems.text);
+                startDate = selectItems.text;
+            });
+        });
+    </script>
+</body>
+
+</html>

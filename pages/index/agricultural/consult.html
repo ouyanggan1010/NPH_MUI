@@ -28,7 +28,7 @@
         <a href="#" class="left_bar">
             <span class="iconfont icon-icon_arrow_left"></span>
         </a>
-        <p class="center_cnt">农务咨询</p>
+        <div class="center_cnt">农务咨询</div>
         <a href="#" class="right_bar">
             <span class="iconfont icon-xiexin"></span>
             <p>我要咨询</p>
@@ -77,7 +77,7 @@
                                     <div class="user_pic">
                                         <img src="../../../images/content_imgs/Bitmap-2.png" alt="">
                                     </div>
-                                    <p>13518814469</p>
+                                    <p>135****4469</p>
                                     <p class="ml-20">15:00</p>
                                 </div>
                                 <div class="mark">未回复</div>
@@ -108,7 +108,7 @@
                                     <div class="user_pic">
                                         <img src="../../../images/content_imgs/Bitmap-2.png" alt="">
                                     </div>
-                                    <p>13518814469</p>
+                                    <p>135****4469</p>
                                     <p class="ml-20">15:00</p>
                                 </div>
                             </div>
@@ -132,6 +132,20 @@
             </li>
         </ul>
     </div>
+    <script>
+        // 点击爱心
+        mui(".consult_cnt .back_msg>.bottom_div").on("tap", ".iconfont", function (e) {
+            if ($(this).hasClass("icon-jushoucang")) {
+                console.log("未点爱心")
+                $(this).addClass("icon-jushoucanggift");
+                $(this).removeClass("icon-jushoucang");
+            } else {
+                console.log("已点爱心")
+                $(this).addClass("icon-jushoucang");
+                $(this).removeClass("icon-jushoucanggift");
+            }
+        })
+    </script>
 </body>
 
 </html>

@@ -53,7 +53,7 @@ body {
 
 .plate_num .color_block {
   background-color: #f4f4f4;
-  box-shadow: 0rem 0.1563rem 0.625rem #f4f4f4;
+  box-shadow: 0 0.7692vw 1.5385vw #f4f4f4;
   border-radius: 2.5641vw;
   height: 25.1282vw;
   display: -webkit-flex;
@@ -163,7 +163,7 @@ body {
   height: 6.1538vw;
   line-height: 6.1538vw;
   font-size: 3.5897vw;
-  color: #ffffff;
+  color: #fff;
   border-radius: 2.0513vw;
   text-align: center;
   -moz-box-sizing: border-box;
@@ -355,4 +355,8 @@ body {
   font-size: 5.1282vw;
   color: #6d7278;
   cursor: pointer;
+}
+
+.cnt_list .leave_back .right_cnt .back_msg > .bottom_div .iconfont.icon-jushoucanggift {
+  color: #d0021b;
 }

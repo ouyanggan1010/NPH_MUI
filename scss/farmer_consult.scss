@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import "_color";
-$paddingLR: 15.0002px;
+$paddingLR: 3.8462vw;
 body {
   background-color: map-get($colors, "white");
   padding-top: 11.5385vw;
@@ -39,8 +39,8 @@ body {
   padding: 0 3.8462vw;
   padding-top: 1.2821vw;
   .color_block {
-    background-color: #f4f4f4;
-    box-shadow: 0rem 0.1563rem 0.625rem #f4f4f4;
+    background-color: map-get($colors, "gray_f4");
+    box-shadow: 0 0.7692vw 1.5385vw map-get($colors, "gray_f4");
     border-radius: 2.5641vw;
     height: 25.1282vw;
     display: flex;
@@ -52,19 +52,19 @@ body {
         font-size: 6.6667vw;
         font-weight: bold;
         &.color_gray {
-          color: #9b9b9b;
+          color: map-get($colors, "gray_9B");
         }
         &.color_blue {
-          color: #0091ff;
+          color: map-get($colors, "blue_00");
         }
         &.color_red {
-          color: #d0021b;
+          color: map-get($colors, "red_D0");
         }
       }
       p {
         margin-top: 1.2821vw;
         font-size: 3.5897vw;
-        color: #9b9b9b;
+        color: map-get($colors, "gray_9B");
       }
     }
   }
@@ -77,7 +77,7 @@ body {
   li {
     display: flex;
     > .times {
-      color: #9b9b9b;
+      color: map-get($colors, "gray_9B");
       text-align: center;
       width: 10.2564vw;
       box-sizing: border-box;
@@ -91,7 +91,7 @@ body {
     }
   }
   .leave_back {
-    border-left: 0.2564vw solid #d8d8d8;
+    border-left: 0.2564vw solid map-get($colors, "gray_d8");
     box-sizing: border-box;
     padding-left: 5.1282vw;
     margin-left: 1.2821vw;
@@ -102,13 +102,13 @@ body {
     .division {
       box-sizing: border-box;
       padding: 2.5641vw 0;
-      background-color: #fff;
+      background-color: map-get($colors, "white");
       position: absolute;
       left: -1.2821vw;
       top: -1.2821vw;
       .radius {
         border-radius: 50%;
-        border: 0.5128vw solid #bfbfbf;
+        border: 0.5128vw solid map-get($colors, "gray_bf");
         width: 2.5641vw;
         height: 2.5641vw;
       }
@@ -118,7 +118,7 @@ body {
         height: 6.1538vw;
         line-height: 6.1538vw;
         font-size: 3.5897vw;
-        color: #ffffff;
+        color: map-get($colors, "white");
         border-radius: 2.0513vw;
         text-align: center;
         box-sizing: border-box;
@@ -156,7 +156,7 @@ body {
             align-items: center;
             p {
               font-size: 3.0769vw;
-              color: #bfbfbf;
+              color: map-get($colors, "gray_bf");
               line-height: 5.1282vw;
             }
             .ml-20 {
@@ -175,12 +175,12 @@ body {
             }
           }
           .mark {
-            background-color: #d0021b;
+            background-color: map-get($colors, "red_D0");
           }
         }
       }
       .back_msg {
-        background-color: #f6f6f6;
+        background-color: map-get($colors, "gray_f6");
         border-radius: 2.5641vw;
         margin-top: 2.5641vw;
         box-sizing: border-box;
@@ -194,7 +194,7 @@ body {
           }
           .time {
             font-size: 3.0769vw;
-            color: #6d7278;
+            color: map-get($colors, "gray_6d");
             display: flex;
             align-items: center;
             width: auto;
@@ -206,7 +206,7 @@ body {
         }
         > .text {
           font-size: 4.1026vw;
-          color: #6d7278;
+          color: map-get($colors, "gray_6d");
           text-indent: 2em;
           box-sizing: border-box;
           padding: 2.5641vw 0;
@@ -217,7 +217,7 @@ body {
           justify-content: space-between;
           align-items: center;
           .nums {
-            color: #6d7278;
+            color: map-get($colors, "gray_6d");
             font-size: 3.0769vw;
             > span {
               box-sizing: border-box;
@@ -226,8 +226,11 @@ body {
           }
           .iconfont {
             font-size: 5.1282vw;
-            color: #6d7278;
+            color: map-get($colors, "gray_6d");
             cursor: pointer;
+            &.icon-jushoucanggift {
+              color: map-get($colors, "red_D0");
+            }
           }
         }
       }

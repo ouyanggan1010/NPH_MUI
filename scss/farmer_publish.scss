@@ -1,0 +1,104 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+body {
+  padding-top: 11.5385vw;
+  padding-bottom: 24.359vw;
+  background-color: map-get($colors, "white");
+  position: relative;
+}
+.nav_bar {
+  background-color: map-get($colors, "gray_ef");
+  .left_bar {
+    font-size: 3.5897vw;
+    color: map-get($colors, "gray_9B");
+  }
+  .center_cnt {
+    font-size: 4.1026vw;
+    color: map-get($colors, "black");
+  }
+  .right_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.2564vw solid map-get($colors, "gray_cc");
+    height: 7.6923vw;
+    border-radius: 1.2821vw;
+    box-sizing: border-box;
+    padding: 0 2.5641vw;
+    color: map-get($colors, "gray_aa");
+    font-size: 3.5897vw;
+  }
+}
+// 内容部分
+.consult_cnt {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  padding-top: 3.8462vw;
+  .theme,
+  .detail_cnt {
+    font-size: 3.5897vw;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+  }
+  .line {
+    height: 0.2564vw;
+    width: 100%;
+    background-color: map-get($colors, "gray_d8");
+    margin-bottom: 3.8462vw;
+    margin-top: 1.2821vw;
+  }
+  .detail_cnt {
+    max-height: 91.5385vw;
+  }
+}
+// 底部按钮
+.bottom_btns {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .event_icon {
+    box-sizing: border-box;
+    padding: 2.5641vw 3.8462vw;
+    font-size: 3.0769vw;
+    color: map-get($colors, "gray_9B");
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    > div {
+      background-color: map-get($colors, "gray_ef");
+      height: 6.4103vw;
+      box-sizing: border-box;
+      padding: 0 2.5641vw;
+      border-radius: 6.4103vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:nth-child(-n + 2) {
+        margin-left: 3.8462vw;
+      }
+    }
+    .iconfont {
+      font-size: 3.8462vw;
+      color: map-get($colors, "gray_9B");
+      margin-right: 1.2821vw;
+    }
+  }
+  .btns {
+    background-color: map-get($colors, "white_f7");
+    height: 12.8205vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 0 3.8462vw;
+    .iconfont {
+      font-size: 6.1538vw;
+      color: map-get($colors, "gray_9B");
+    }
+  }
+}
