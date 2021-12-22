@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "13617007",
+      "name": "删除",
+      "font_class": "shanchu4",
+      "unicode": "e7ca",
+      "unicode_decimal": 59338
+    },
+    {
+      "icon_id": "1488900",
+      "name": "删除",
+      "font_class": "shanchu2",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "4651932",
+      "name": "删除3",
+      "font_class": "shanchu3",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
       "icon_id": "833290",
       "name": "删除",
       "font_class": "shanchu1",

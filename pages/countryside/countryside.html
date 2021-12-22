@@ -389,7 +389,7 @@
   <div id="footer"></div>
   <script>
     $("#footer").load("../../components/footer.html", function () {
-      var nowFoot = $(this).find(".footer_index>.list").eq(1);
+      let nowFoot = $(this).find(".footer_index>.list").eq(1);
       nowFoot.addClass("active");
       nowFoot.siblings(".list").removeClass("active");
     });

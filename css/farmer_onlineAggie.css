@@ -1,7 +1,7 @@
 body {
   padding-top: 11.5385vw;
   position: relative;
-  background-color: #fff;
+  background-color: #f6f6f6;
 }
 
 .nav_bar {
@@ -60,24 +60,22 @@ body {
 .consult_cnt {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
-  padding: 0 3.8462vw;
   position: relative;
 }
 
 .data_not {
-  background-color: #fff;
+  background-color: #f6f6f6;
 }
 
 .text_img_lists {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
-  padding-top: 3.8462vw;
-  background-color: #fff;
+  padding-top: 2.5641vw;
+  background-color: #f6f6f6;
 }
 
 .text_img_lists .imgs_top {
   width: 100%;
-  height: 20.5128vw;
   overflow: hidden;
   display: -webkit-flex;
   display: -moz-box;
@@ -91,23 +89,26 @@ body {
      -moz-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 1.2821vw !important;
 }
 
 .text_img_lists .imgs_top > img {
-  width: 32%;
+  width: 33%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 1.2821vw;
+}
+
+.text_img_lists .imgs_top > .one_big_img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .text_img_lists > .list {
   display: block;
-  margin-top: 3.8462vw;
-  border-bottom: 0.2564vw solid #ededed;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
-  padding-bottom: 2.5641vw;
+  margin-top: 2.5641vw;
+  background-color: #fff;
 }
 
 .text_img_lists > .list:first-child {
@@ -116,10 +117,11 @@ body {
 
 .text_img_lists .div_oneImg {
   width: 30.7692vw;
-  height: 20.5128vw;
-  border-radius: 1.2821vw;
+  height: 24.8718vw;
 }
 
-.text_img_lists .div_oneImg > img {
-  border-radius: 1.2821vw;
+.text_img_lists .div_text {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 1.2821vw 2.5641vw;
 }

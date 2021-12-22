@@ -29,6 +29,11 @@ body {
     padding: 0 2.5641vw;
     color: map-get($colors, "gray_aa");
     font-size: 3.5897vw;
+    &.active {
+      color: map-get($colors, "white");
+      border: 0.2564vw solid map-get($colors, "white");
+      background-color: map-get($colors, "blue_00");
+    }
   }
 }
 // 内容部分
@@ -54,6 +59,46 @@ body {
   }
   .detail_cnt {
     max-height: 91.5385vw;
+  }
+  .push_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1.2821vw 0;
+    > div {
+      display: inline-block;
+      font-size: 0;
+      position: relative;
+      border-radius: 0.7692vw;
+      box-sizing: border-box;
+      border: 0.5128vw solid map-get($colors, "white");
+      .iconfont {
+        position: absolute;
+        right: -3.0769vw;
+        top: -3.0769vw;
+        font-size: 6.1538vw;
+        line-height: 6.1538vw;
+        color: map-get($colors, "blue_00");
+        cursor: pointer;
+        display: none;
+        background-color: map-get($colors, "white");
+        border-radius: 50%;
+      }
+    }
+    &.active {
+      > div {
+        border: 0.5128vw solid map-get($colors, "blue_00");
+        .iconfont {
+          display: inline-block;
+        }
+      }
+    }
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 0.7692vw;
+    }
   }
 }
 // 底部按钮
@@ -99,7 +144,17 @@ body {
     padding: 0 3.8462vw;
     .iconfont {
       font-size: 6.1538vw;
+      line-height: 6.1538vw;
       color: map-get($colors, "gray_9B");
+      position: relative;
+    }
+    .inp_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6.1538vw;
+      height: 6.1538vw;
+      opacity: 0;
     }
   }
 }

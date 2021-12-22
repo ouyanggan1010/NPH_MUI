@@ -71,7 +71,7 @@
     <script>
         // 点击收藏
         mui(".nav_bar").on("tap", "#collection", function (e) {
-            var _this = this;
+            let _this = this;
             // 先判断当前是否收藏了
             if ($(this).hasClass("icon-31shoucang")) {
                 mui.confirm("确定要收藏该篇文章吗？", function (res) {

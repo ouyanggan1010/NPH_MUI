@@ -43,6 +43,12 @@ body {
   font-size: 3.5897vw;
 }
 
+.nav_bar .right_bar.active {
+  color: #fff;
+  border: 0.2564vw solid #fff;
+  background-color: #0091ff;
+}
+
 .consult_cnt {
   width: 100%;
   -moz-box-sizing: border-box;
@@ -71,6 +77,59 @@ body {
 
 .consult_cnt .detail_cnt {
   max-height: 91.5385vw;
+}
+
+.consult_cnt .push_img {
+  width: 100%;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 1.2821vw 0;
+}
+
+.consult_cnt .push_img > div {
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  border-radius: 0.7692vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  border: 0.5128vw solid #fff;
+}
+
+.consult_cnt .push_img > div .iconfont {
+  position: absolute;
+  right: -3.0769vw;
+  top: -3.0769vw;
+  font-size: 6.1538vw;
+  line-height: 6.1538vw;
+  color: #0091ff;
+  cursor: pointer;
+  display: none;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.consult_cnt .push_img.active > div {
+  border: 0.5128vw solid #0091ff;
+}
+
+.consult_cnt .push_img.active > div .iconfont {
+  display: inline-block;
+}
+
+.consult_cnt .push_img img {
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0.7692vw;
 }
 
 .bottom_btns {
@@ -152,5 +211,16 @@ body {
 
 .bottom_btns .btns .iconfont {
   font-size: 6.1538vw;
+  line-height: 6.1538vw;
   color: #9b9b9b;
+  position: relative;
+}
+
+.bottom_btns .btns .inp_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6.1538vw;
+  height: 6.1538vw;
+  opacity: 0;
 }

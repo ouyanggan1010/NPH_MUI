@@ -1,90 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>种植助手</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <!-- mui-js -->
-    <script src="../../../js/mui.min.js"></script>
-    <!-- mui-picker -->
-    <script src="../../../js/mui.picker.min.js"></script>
-    <!-- 引入jQuery -->
-    <script src="../../../js/jquery-3.1.1.min.js"></script>
-    <!-- mui-css -->
-    <link rel="stylesheet" href="../../../css/mui.min.css" />
-    <!-- mui-picker -->
-    <link href="../../../css/mui.picker.min.css" rel="stylesheet" />
-    <!-- 字体图标 -->
-    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
-    <!-- 一些通用的样式 -->
-    <link rel="stylesheet" href="../../../css/farmer_base.css" />
-    <!-- 本页面的css -->
-    <link rel="stylesheet" href="../../../css/farmer_task.css" />
-    <!-- 声明所有连接都在当前窗口打开 -->
-    <base target="_self" />
-  </head>
 
-  <body>
-    <div class="nav_bar">
-      <a href="javascript:history.back();" class="left_bar">
-        <span class="iconfont icon-icon_arrow_left"></span>
-      </a>
-      <div class="center_cnt">种植助手</div>
-    </div>
-    <!-- 任务时间/切换栏 -->
-    <div class="time_and_switch">
-      <!-- 任务时间 -->
-      <div class="select_time">
-        <p>任务时间：</p>
-        <div class="input_text">
-          <input
-            type="text"
-            readonly
-            id="startDate"
-            placeholder="开始时间"
-            value=""
-          />
-          <div>-</div>
-          <input
-            type="text"
-            readonly
-            id="endDate"
-            placeholder="结束时间"
-            value=""
-          />
-        </div>
-      </div>
-      <!-- 切换栏 -->
-      <div class="tabs_switch" id="tabSwitch">
-        <div class="tab active">
-          <p>全部任务</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>领取任务</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>进行中</p>
-          <div class="line"></div>
-        </div>
-        <div class="tab">
-          <p>已办结</p>
-          <div class="line"></div>
-        </div>
+<head>
+  <meta charset="utf-8" />
+  <title>种植助手</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- mui-js -->
+  <script src="../../../js/mui.min.js"></script>
+  <!-- mui-picker -->
+  <script src="../../../js/mui.picker.min.js"></script>
+  <!-- 引入jQuery -->
+  <script src="../../../js/jquery-3.1.1.min.js"></script>
+  <!-- mui-css -->
+  <link rel="stylesheet" href="../../../css/mui.min.css" />
+  <!-- mui-picker -->
+  <link href="../../../css/mui.picker.min.css" rel="stylesheet" />
+  <!-- 字体图标 -->
+  <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+  <!-- 一些通用的样式 -->
+  <link rel="stylesheet" href="../../../css/farmer_base.css" />
+  <!-- 本页面的css -->
+  <link rel="stylesheet" href="../../../css/farmer_task.css" />
+  <!-- 声明所有连接都在当前窗口打开 -->
+  <base target="_self" />
+</head>
+
+<body>
+  <div class="nav_bar">
+    <a href="javascript:history.back();" class="left_bar">
+      <span class="iconfont icon-icon_arrow_left"></span>
+    </a>
+    <div class="center_cnt">种植助手</div>
+  </div>
+  <!-- 任务时间/切换栏 -->
+  <div class="time_and_switch">
+    <!-- 任务时间 -->
+    <div class="select_time">
+      <p>任务时间：</p>
+      <div class="input_text">
+        <input type="text" readonly id="startDate" placeholder="开始时间" value="" />
+        <div>-</div>
+        <input type="text" readonly id="endDate" placeholder="结束时间" value="" />
       </div>
     </div>
-    <!-- 内容部分 -->
-    <div class="consult_cnt" id="refreshContainer">
-      <div class="task_lists">
-        <div class="pull_lists">
-          <!-- 循环列表 -->
-          <!-- <a href="#" class="task_chunk pic_card">
+    <!-- 切换栏 -->
+    <div class="tabs_switch" id="tabSwitch">
+      <div class="tab active">
+        <p>全部任务</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>领取任务</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>进行中</p>
+        <div class="line"></div>
+      </div>
+      <div class="tab">
+        <p>已办结</p>
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+  <!-- 内容部分 -->
+  <div class="consult_cnt" id="refreshContainer">
+    <div class="task_lists">
+      <div class="pull_lists">
+        <!-- 循环列表 -->
+        <!-- <a href="#" class="task_chunk pic_card">
                     <div class="task_btn">
                         <div class="time_text">
                             <p class="time">2021-05-29&nbsp;14:30:29</p>
@@ -100,173 +86,174 @@
                         <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
                     </div>
                 </a> -->
-        </div>
-        <!-- 数据为空 -->
-        <div class="data_not">
-          <div>
-            <span class="iconfont icon-kongshuju1"></span>
-            <div>暂无数据</div>
-          </div>
-        </div>
       </div>
-      <!-- 加载中 -->
-      <div class="loading_data" id="loading">
-        <span class="mui-spinner"></span>
-        <div>加载中...</div>
+      <!-- 数据为空 -->
+      <div class="data_not">
+        <div>
+          <span class="iconfont icon-kongshuju1"></span>
+          <div>暂无数据</div>
+        </div>
       </div>
     </div>
-    <!-- 公用的尾部 -->
-    <div id="footer"></div>
-    <script>
-      $("#footer").load("../../../components/footer_zzzs.html", function () {
-        var nowFoot = $(this).find(".zzzs_foot_switch>.list").eq(0);
-        nowFoot.addClass("active");
-        nowFoot.siblings(".list").removeClass("active");
+    <!-- 加载中 -->
+    <div class="loading_data" id="loading">
+      <span class="mui-spinner"></span>
+      <div>加载中...</div>
+    </div>
+  </div>
+  <!-- 公用的尾部 -->
+  <div id="footer"></div>
+  <script>
+    $("#footer").load("../../../components/footer_zzzs.html", function () {
+      let nowFoot = $(this).find(".zzzs_foot_switch>.list").eq(0);
+      nowFoot.addClass("active");
+      nowFoot.siblings(".list").removeClass("active");
+    });
+  </script>
+  <script>
+    // tab切换
+    mui("#tabSwitch").on("tap", ".tab", function (e) {
+      $(this).addClass("active");
+      $(this).siblings(".tab").removeClass("active");
+      // ---------------------需要使用的数据
+      let index = $(this).index();
+      let startDate = $("#startDate").val();
+      let endDate = $("#endDate").val();
+      // 隐藏数据列表
+      $(".task_lists").hide();
+      // 打开loading
+      $("#loading").show();
+      // 将存放数据的div设置为空
+      $("#refreshContainer .pull_lists").html("");
+      // 重置pageIndex
+      pageIndex = 1;
+      // 关闭上拉加载
+      mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+      // 请求数据
+      setTimeout(function () {
+        initAjax();
+      }, 1000);
+    });
+    // 时间弹框
+    mui(".select_time").on("tap", "input", function (e) {
+      mui("#refreshContainer").pullRefresh().setStopped(true);
+      let _this = this;
+      let dtPicker = new mui.DtPicker({
+        type: "date",
+        endDate: new Date(),
       });
-    </script>
-    <script>
-      // tab切换
-      mui("#tabSwitch").on("tap", ".tab", function (e) {
-        $(this).addClass("active");
-        $(this).siblings(".tab").removeClass("active");
-        // ---------------------需要使用的数据
-        var index = $(this).index();
-        var startDate = $("#startDate").val();
-        var endDate = $("#endDate").val();
-        // 隐藏数据列表
-        $(".task_lists").hide();
-        // 打开loading
-        $("#loading").show();
-        // 将存放数据的div设置为空
-        $("#refreshContainer .pull_lists").html("");
-        // 重置pageIndex
-        pageIndex = 1;
-        // 关闭上拉加载
-        mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-        // 请求数据
-        setTimeout(function () {
-          initAjax();
-        }, 1000);
-      });
-      // 时间弹框
-      mui(".select_time").on("tap", "input", function (e) {
-        mui("#refreshContainer").pullRefresh().setStopped(true);
-        var _this = this;
-        var dtPicker = new mui.DtPicker({
-          type: "date",
-          endDate: new Date(),
-        });
-        dtPicker.show(
-          function (selectItems) {
-            console.log("55555555555");
-            mui("#refreshContainer").pullRefresh().setStopped(false);
-            $(_this).val(selectItems.text);
-            startDate = selectItems.text;
-          },
-          function () {
-            mui("#refreshContainer").pullRefresh().setStopped(false);
-            // 关闭上拉加载
-            mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-            console.log("关闭函数====");
-          }
-        );
-      });
-      // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
-      mui.init({
-        pullRefresh: {
-          container: "#refreshContainer",
-          down: {
-            style: "circle",
-            color: "#0091ff",
-            callback: pulldown,
-          },
-          up: {
-            contentrefresh: "正在加载...",
-            contentnomore: "没有更多内容啦",
-            callback: pullup,
-          },
+      dtPicker.show(
+        function (selectItems) {
+          console.log("55555555555");
+          mui("#refreshContainer").pullRefresh().setStopped(false);
+          $(_this).val(selectItems.text);
+          startDate = selectItems.text;
         },
-      });
-      // 每页请求的条数
-      var pageSize = 10;
-      // 请求的页数
-      var pageIndex = 1;
-      // 总的数据条数
-      var pageCount = 0;
-      // 下拉刷新
-      function pulldown() {
-        console.log("下拉刷新");
-        setTimeout(() => {
-          mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
-          // 重置请求的页数
-          pageIndex = 1;
-          $("#refreshContainer .pull_lists").html("");
-          /*执行请求*/
-          initAjax();
+        function () {
+          mui("#refreshContainer").pullRefresh().setStopped(false);
           // 关闭上拉加载
           mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-          setTimeout(function () {
-            // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
-            if (pageCount > 0) {
-              mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
-              mui("#refreshContainer").pullRefresh().endPullupToRefresh();
-            }
-          }, 1000);
-        }, 1000);
-      }
-      // 上拉加载
-      function pullup() {
-        setTimeout(() => {
-          // 当总请求条数已经请求完毕
-          if ((pageIndex - 1) * pageSize >= pageCount) {
-            this.endPullupToRefresh(true); //没有数据
-            return;
-          }
-          /*执行请求*/
-          initAjax();
-          this.endPullupToRefresh(false);
-        }, 1000);
-      }
-      // 初始化请求----这里是请求函数
-      function initAjax() {
-        // 关闭loading
-        $("#loading").hide();
-        // 打开数据列表
-        $(".task_lists").show();
-        $("#refreshContainer .pull_lists").show();
-        $("#refreshContainer .data_not").hide();
-        // 如果初始化请求没有一条数据的情况，显示暂无数据
-        if (pageCount <= 0) {
-          $("#refreshContainer .pull_lists").hide();
-          $("#refreshContainer .data_not").show();
-          // 关闭上拉加载
-          setTimeout(function () {
-            mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-          }, 1000);
-        } else {
-          mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
-          mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+          console.log("关闭函数====");
         }
-        // 这里模拟请求
-        for (
-          var i = (pageIndex - 1) * pageSize;
-          i < pageIndex * pageSize;
-          i++
-        ) {
-          // dom模板
-          var str =
-            '<a href="#" class="task_chunk pic_card"><div class="task_btn"><div class="time_text">' +
-            '<p class="time">2021-05-29&nbsp;14:30:29</p><p class="text">任务要求：采购10斤荔枝</p></div>' +
-            '<button type="button" class="status white">已被领取</button></div><div class="time_slot">' +
-            "<p>2021-05-29&nbsp;19:00&nbsp;开始</p><p>2021-05-29&nbsp;19:00&nbsp;结束</p></div></a>";
-          $("#refreshContainer .pull_lists").append($(str));
-        }
-        pageIndex++;
-      }
-      // 执行初始化请求函数
-      mui.ready(function () {
+      );
+    });
+    // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+    mui.init({
+      pullRefresh: {
+        container: "#refreshContainer",
+        down: {
+          style: "circle",
+          color: "#0091ff",
+          callback: pulldown,
+        },
+        up: {
+          contentrefresh: "正在加载...",
+          contentnomore: "没有更多内容啦",
+          callback: pullup,
+        },
+      },
+    });
+    // 每页请求的条数
+    let pageSize = 10;
+    // 请求的页数
+    let pageIndex = 1;
+    // 总的数据条数
+    let pageCount = 0;
+    // 下拉刷新
+    function pulldown() {
+      console.log("下拉刷新");
+      setTimeout(() => {
+        mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+        // 重置请求的页数
+        pageIndex = 1;
+        $("#refreshContainer .pull_lists").html("");
+        /*执行请求*/
         initAjax();
-      });
-    </script>
-  </body>
+        // 关闭上拉加载
+        mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+        setTimeout(function () {
+          // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
+          if (pageCount > 0) {
+            mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+            mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+          }
+        }, 1000);
+      }, 1000);
+    }
+    // 上拉加载
+    function pullup() {
+      setTimeout(() => {
+        // 当总请求条数已经请求完毕
+        if ((pageIndex - 1) * pageSize >= pageCount) {
+          this.endPullupToRefresh(true); //没有数据
+          return;
+        }
+        /*执行请求*/
+        initAjax();
+        this.endPullupToRefresh(false);
+      }, 1000);
+    }
+    // 初始化请求----这里是请求函数
+    function initAjax() {
+      // 关闭loading
+      $("#loading").hide();
+      // 打开数据列表
+      $(".task_lists").show();
+      $("#refreshContainer .pull_lists").show();
+      $("#refreshContainer .data_not").hide();
+      // 如果初始化请求没有一条数据的情况，显示暂无数据
+      if (pageCount <= 0) {
+        $("#refreshContainer .pull_lists").hide();
+        $("#refreshContainer .data_not").show();
+        // 关闭上拉加载
+        setTimeout(function () {
+          mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+        }, 1000);
+      } else {
+        mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+        mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+      }
+      // 这里模拟请求
+      for (
+        let i = (pageIndex - 1) * pageSize;
+        i < pageIndex * pageSize;
+        i++
+      ) {
+        // dom模板
+        let str =
+          '<a href="#" class="task_chunk pic_card"><div class="task_btn"><div class="time_text">' +
+          '<p class="time">2021-05-29&nbsp;14:30:29</p><p class="text">任务要求：采购10斤荔枝</p></div>' +
+          '<button type="button" class="status white">已被领取</button></div><div class="time_slot">' +
+          "<p>2021-05-29&nbsp;19:00&nbsp;开始</p><p>2021-05-29&nbsp;19:00&nbsp;结束</p></div></a>";
+        $("#refreshContainer .pull_lists").append($(str));
+      }
+      pageIndex++;
+    }
+    // 执行初始化请求函数
+    mui.ready(function () {
+      initAjax();
+    });
+  </script>
+</body>
+
 </html>

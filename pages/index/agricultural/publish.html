@@ -27,18 +27,24 @@
     <div class="nav_bar">
         <a href="javascript:history.back();" class="left_bar">取消</a>
         <div class="center_cnt">发表留言</div>
-        <button type="button" class="right_bar">提交</button>
+        <button type="button" class="right_bar" id="submitBtn">提交</button>
     </div>
     <!-- 内容部分 -->
     <div class="consult_cnt">
-        <form action="">
-            <!-- 主题 -->
-            <textarea name="" id="" class="theme" rows="1" placeholder="说说你想留言的主题…"></textarea>
-            <!-- 分割线 -->
-            <div class="line"></div>
+        <!-- 主题 -->
+        <textarea name="" id="titleText" class="theme" rows="1" placeholder="说说你想留言的主题…"></textarea>
+        <!-- 分割线 -->
+        <div class="line"></div>
+        <div id="parentTextImg">
             <!-- 发表的内容 -->
-            <textarea name="" id="" class="detail_cnt" rows="1" placeholder="更详细地讲讲…"></textarea>
-        </form>
+            <textarea name="" class="detail_cnt text_img" rows="1" placeholder="更详细地讲讲…"></textarea>
+            <!-- <div class="push_img">
+                <div class="text_img">
+                    <img src="../../../images/content_imgs/Bitmap-3.png" alt="">
+                    <span class="iconfont icon-shanchu3"></span>
+                </div>
+            </div> -->
+        </div>
     </div>
     <!-- 底部按钮 -->
     <div class="bottom_btns">
@@ -54,17 +60,99 @@
         </div>
         <div class="btns">
             <span class="iconfont icon-camera"></span>
-            <span class="iconfont icon-tupian"></span>
+            <span class="iconfont icon-tupian">
+                <input type="file" accept="image/*" multiple="multiple" class="inp_img" onchange="getFileImg(this)">
+            </span>
             <span class="iconfont icon-iconjing"></span>
             <span class="iconfont icon-xiaolianchenggong"></span>
             <span class="iconfont icon-jiahao"></span>
         </div>
     </div>
     <script>
+        // 提交按钮的样式
+        function submitClass() {
+            // 判断标题栏是否为空，如果为空则表示不能提交
+            let bool = false;
+            $("#parentTextImg textarea").each(function () {
+                if ($(this).val()) { return bool = true; }
+            });
+            let len = $("#parentTextImg .push_img").length;
+            if ($("#titleText").val() && (bool || len > 0)) {
+                $("#submitBtn").addClass("active");
+            } else {
+                $("#submitBtn").removeClass("active");
+            }
+        }
         // 监听输入事件
-        $(".consult_cnt textarea").on("input", function (e) {
-            $(this).css("height", e.target.scrollHeight + 'px');
-        })
+        $(".consult_cnt").on('input', "textarea", function (e) {
+            let $obj = $(e.target);
+            $obj.css({ height: $obj.attr('initAttrH'), 'overflow-y': 'hidden' }).height(e.target.scrollHeight);
+            if (!$(this).attr('initAttrH')) {
+                $(this).attr('initAttrH', $(this).outerHeight());
+            }
+            submitClass();
+        });
+        // 监听textarea获取焦点
+        $(".consult_cnt").on('focus', "textarea", function (e) {
+            $(".push_img").removeClass("active");
+        });
+        // 图片input file选中事件
+        let fileImg = [];
+        function getFileImg(_this) {
+            for (let i = 0; i < _this.files.length; i++) {
+                fileImg.push(_this.files[i]);
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    let str = '<div class="push_img"><div class="text_img"><img src="' + this.result + '" alt="">' +
+                        '<span class="iconfont icon-shanchu3"></span></div></div>';
+                    console.log("=========",)
+                    let textarea = $("#parentTextImg .detail_cnt:last-child");
+                    if (textarea && textarea.val() == "") {
+                        textarea.before(str);
+                    } else {
+                        $("#parentTextImg").append(str + '<textarea name="" class="detail_cnt text_img" rows="1" placeholder="更详细地讲讲…"></textarea>');
+                    }
+                    submitClass();
+                }
+                reader.readAsDataURL(_this.files[i]);
+            }
+        }
+        // 点击图片
+        mui("#parentTextImg").on("tap", ".push_img", function (e) {
+            $(this).toggleClass("active");
+            $(this).siblings(".push_img").removeClass("active");
+        });
+        // 点击图片的删除按钮
+        mui("#parentTextImg").on("tap", ".push_img .iconfont", function (e) {
+            let parent = $(this).parents(".push_img");
+            let i = parent.index();
+            mui.confirm("确定要要删除该图片吗？", function (res) {
+                if (res.index == 1) {
+                    parent.remove();
+                    fileImg.splice(i, 1);
+                }
+            });
+        });
+        // 点击提交按钮
+        mui("body").on("tap", "#submitBtn.active", function (e) {
+            $(".push_img").removeClass("active");
+            let str = "";
+            $("#parentTextImg .text_img").each(function () {
+                if ($(this).is('textarea') && $(this).val()) {
+                    console.log("文本")
+                    str += `<p>${$(this).val()}</p>`;
+                }
+                if ($(this).is('div') && $(this).find("img").attr("src")) {
+                    console.log("图片")
+                    str += `<center><img src='${$(this).find("img").attr("src")}'/></center>`;
+                }
+            });
+            let obj = {
+                title: $("#titleText").val(),
+                content: str
+            }
+            console.log(obj)
+        });
     </script>
 </body>
 

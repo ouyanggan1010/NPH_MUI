@@ -440,14 +440,14 @@
   <div id="footer"></div>
   <script>
     $("#footer").load("../../components/footer.html", function () {
-      var nowFoot = $(this).find(".footer_index>.list").eq(0);
+      let nowFoot = $(this).find(".footer_index>.list").eq(0);
       nowFoot.addClass("active");
       nowFoot.siblings(".list").removeClass("active");
     });
   </script>
   <script>
     // 获取当前位置的城市的坐标点
-    var la, lo;
+    let la, lo;
     // ---------------------------页面加载完成
     $(function () {
       showDate();
@@ -470,11 +470,11 @@
       .addEventListener("recognized", function (e) {
         console.log("语音识别完成事件-----", e.detail.value);
       });
-    var nativeWebview, imm, InputMethodManager;
-    var initNativeObjects = function () {
+    let nativeWebview, imm, InputMethodManager;
+    let initNativeObjects = function () {
       if (mui.os.android) {
-        var main = plus.android.runtimeMainActivity();
-        var Context = plus.android.importClass("android.content.Context");
+        let main = plus.android.runtimeMainActivity();
+        let Context = plus.android.importClass("android.content.Context");
         InputMethodManager = plus.android.importClass(
           "android.view.inputmethod.InputMethodManager"
         );
@@ -483,7 +483,7 @@
         nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
       }
     };
-    var showSoftInput = function () {
+    let showSoftInput = function () {
       // if (mui.os.android) {
       //   imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
       // } else {
@@ -492,7 +492,7 @@
       //   });
       // }
       // setTimeout(function () {
-      //   var inputElem = document.querySelector("input");
+      //   let inputElem = document.querySelector("input");
       //   inputElem.focus();
       //   inputElem.parentNode.classList.add("mui-active"); //第一个是search，加上激活样式
       // }, 200);
@@ -526,13 +526,13 @@
     }
     // ------------获取当前设备的日期
     function showDate() {
-      var dDate = new Date(); /*获取手机的当前日期*/
+      let dDate = new Date(); /*获取手机的当前日期*/
       // 格式化日期
-      var year = dDate.getFullYear();
-      var month = dDate.getMonth() + 1;
-      var date = dDate.getDate();
-      var day = dDate.getDay();
-      var weekArr = [
+      let year = dDate.getFullYear();
+      let month = dDate.getMonth() + 1;
+      let date = dDate.getDate();
+      let day = dDate.getDay();
+      let weekArr = [
         "星期天",
         "星期一",
         "星期二",
@@ -541,7 +541,7 @@
         "星期五",
         "星期六",
       ];
-      var full = `${year}.${month < 10 ? "0" + month : month}.${date < 10 ? "0" + date : date
+      let full = `${year}.${month < 10 ? "0" + month : month}.${date < 10 ? "0" + date : date
         } ${weekArr[day]}`;
       $("#date_week").html(full);
       console.log("获取当前设备的日期=========", full);

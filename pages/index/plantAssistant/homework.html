@@ -99,7 +99,7 @@
     <div id="footer"></div>
     <script>
         $("#footer").load("../../../components/footer_zzzs.html", function () {
-            var nowFoot = $(this).find(".zzzs_foot_switch>.list").eq(2);
+            let nowFoot = $(this).find(".zzzs_foot_switch>.list").eq(2);
             nowFoot.addClass("active");
             nowFoot.siblings(".list").removeClass("active");
         });
@@ -110,9 +110,9 @@
             $(this).addClass("active");
             $(this).siblings(".tab").removeClass("active");
             // ---------------------需要使用的数据
-            var index = $(this).index();
-            var startDate = $("#startDate").val();
-            var endDate = $("#endDate").val();
+            let index = $(this).index();
+            let startDate = $("#startDate").val();
+            let endDate = $("#endDate").val();
             // 隐藏数据列表
             $(".task_lists").hide();
             // 打开loading
@@ -131,8 +131,8 @@
         // 时间弹框
         mui(".select_time").on("tap", "input", function (e) {
             mui("#refreshContainer").pullRefresh().setStopped(true);
-            var _this = this;
-            var dtPicker = new mui.DtPicker({
+            let _this = this;
+            let dtPicker = new mui.DtPicker({
                 "type": "date",
                 endDate: new Date(),
             });
@@ -140,12 +140,12 @@
                 $(_this).val(selectItems.text);
                 startDate = selectItems.text;
             },
-          function () {
-            mui('#refreshContainer').pullRefresh().setStopped(false);
-            // 关闭上拉加载
-            mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-            console.log("关闭函数====");
-          });
+                function () {
+                    mui('#refreshContainer').pullRefresh().setStopped(false);
+                    // 关闭上拉加载
+                    mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                    console.log("关闭函数====");
+                });
         });
         // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
         mui.init({
@@ -164,11 +164,11 @@
             }
         });
         // 每页请求的条数
-        var pageSize = 10;
+        let pageSize = 10;
         // 请求的页数
-        var pageIndex = 1;
+        let pageIndex = 1;
         // 总的数据条数
-        var pageCount = 30;
+        let pageCount = 30;
         // 下拉刷新
         function pulldown() {
             console.log("下拉刷新")
@@ -225,9 +225,9 @@
                 mui('#refreshContainer').pullRefresh().endPullupToRefresh();
             }
             // 这里模拟请求
-            for (var i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {
+            for (let i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {
                 // dom模板
-                var str = '<a href="#" class="task_chunk pic_card"><div class="task_btn"><div class="time_text">' +
+                let str = '<a href="#" class="task_chunk pic_card"><div class="task_btn"><div class="time_text">' +
                     '<p class="time">2021-05-29&nbsp;14:30:29</p><p class="text">任务要求：采购10斤荔枝</p></div>' +
                     '<button type="button" class="status white">已被领取</button></div><div class="time_slot">' +
                     '<p>2021-05-29&nbsp;19:00&nbsp;开始</p><p>2021-05-29&nbsp;19:00&nbsp;结束</p></div></a>';

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>农品汇</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!-- mui-js -->
+  <script src="../../js/mui.min.js"></script>
+  <!-- swiper-js -->
+  <!-- <script src="../../js/swiper.min.js"></script> -->
+  <script src="../../js/swiper.min.5.js"></script>
+  <!-- 引入jQuery -->
+  <script src="../../js/jquery-3.1.1.min.js"></script>
+  <!-- 瀑布流-js -->
+  <script src="../../js/waterfall.js"></script>
+  <!-- mui-css -->
+  <!-- <link rel="stylesheet" href="../../css/mui.min.css" /> -->
+  <!-- swiper-css -->
+  <!-- <link rel="stylesheet" href="../../css/swiper.min.css" /> -->
+  <link rel="stylesheet" href="../../css/swiper.min.5.css">
+  <!-- 字体图标 -->
+  <!-- <link rel="stylesheet" href="../../fonts/iconfont.css" /> -->
+  <!-- 一些通用的样式 -->
+  <!-- <link rel="stylesheet" href="../../css/farmer_base.css" /> -->
+  <!-- 本页面的css -->
+  <!-- <link rel="stylesheet" href="../../css/farmer_shop.css" /> -->
+  <!-- 声明所有连接都在当前窗口打开 -->
+  <base target="_self" />
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      height: 100px;
+      line-height: 100px;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .refresh {
+      position: absolute;
+      line-height: 100px;
+      bottom: 100%;
+      text-align: center;
+      width: 100%;
+    }
+
+    .loadmore {
+      position: absolute;
+      line-height: 20px;
+      top: 100%;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="shop_body">
+  <div class="swiper-container swiper-container-initialized swiper-container-vertical swiper-container-free-mode">
+    <div class="swiper-wrapper">
+      <div class="refresh">释放刷新</div>
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide swiper-slide-prev">Slide 3</div>
+      <div class="swiper-slide swiper-slide-active">Slide 4</div>
+      <div class="swiper-slide swiper-slide-next">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+      <div class="swiper-slide">Slide 11</div>
+      <div class="swiper-slide">Slide 12</div>
+      <div class="swiper-slide">Slide 13</div>
+      <div class="swiper-slide">Slide 14</div>
+      <div class="swiper-slide">Slide 15</div>
+      <div class="swiper-slide">Slide 16</div>
+      <div class="swiper-slide">Slide 17</div>
+      <div class="swiper-slide">Slide 18</div>
+      <div class="swiper-slide">Slide 19</div>
+      <div class="swiper-slide">Slide 20</div>
+      <div class="loadmore">加载更多</div>
+    </div>
+    <div class="swiper-scrollbar">
+      <div class="swiper-scrollbar-drag"></div>
+    </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>
+  <script>
+
+    refreshEnd = false;
+    times = 0;//加载次数
+    oriSpeed = 300
+    var swiper = new Swiper('.swiper-container', {
+      speed: oriSpeed,
+      slidesPerView: 'auto',
+      freeMode: true,
+      direction: 'vertical',
+      setWrapperSize: true,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      on: {
+        //下拉释放刷新
+        touchEnd: function () {
+          swiper = this
+          refreshText = swiper.$el.find('.refresh')
+          if (this.translate > 100) {
+            swiper.setTransition(this.params.speed);
+            swiper.setTranslate(100);
+            swiper.touchEventsData.isTouched = false;//跳过touchEnd事件后面的跳转(4.0.5)
+            refreshText.html('刷新中')
+
+            swiper.allowTouchMove = false;
+            setTimeout(function () {//模仿AJAX
+              swiper.removeAllSlides();
+              for (i = 0; i < 20; i++) {
+                swiper.appendSlide('<div class="swiper-slide">New Slide' + (i + 1) + '</div>');
+                refreshText.html('刷新完成');
+                refreshEnd = true;
+                swiper.allowTouchMove = true;
+              }
+            }, 1000)
+
+          }
+
+        },
+        touchStart: function () {
+          if (refreshEnd == true) {
+            this.$el.find('.refresh').html('释放刷新');
+            refreshEnd = false;
+          }
+        },
+
+        //加载更多
+        momentumBounce: function () {//非正式反弹回调函数，上拉释放加载更多可参考上例
+          swiper = this
+          //slidesheight=0;
+          //for(h=0;h<swiper.slides.length;h++){
+          //	slidesheight+=swiper.slides[h].offsetHeight;
+          //}
+          //endTranslate=this.height-slidesheight-20
+          //if(this.translate < endTranslate){}
+          if (swiper.translate < -100) {
+
+            swiper.allowTouchMove = false;//禁止触摸
+            swiper.params.virtualTranslate = true;//定住不给回弹
+            setTimeout(function () {//模仿AJAX
+              for (m = 0; m < 20; m++) {
+                swiper.appendSlide('<div class="swiper-slide">moreSlide' + (times * 20 + m + 1) + '</div>');
+              }
+              swiper.params.virtualTranslate = false;
+              swiper.allowTouchMove = true;
+              times++
+            }, 1000)
+
+          }
+        },
+      }
+    });
+  </script>
+</body>
+
+</html>
