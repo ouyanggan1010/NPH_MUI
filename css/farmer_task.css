@@ -15,8 +15,7 @@ body {
   top: 11.5385vw;
   width: 100%;
   z-index: 2;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 3.8462vw;
   background-color: #fff;
 }
@@ -30,8 +29,7 @@ body {
 }
 
 .consult_cnt {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 3.8462vw;
   position: relative;
 }
@@ -42,36 +40,23 @@ body {
 
 .task_lists {
   width: 100%;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding-top: 5.1282vw;
   background-color: #f6f6f6;
 }
 
 .task_lists .pull_lists {
   padding-bottom: 1.2821vw;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .task_lists .task_chunk {
   padding: 2.5641vw 3.8462vw;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   color: #282828;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 5.1282vw;
   margin-bottom: 0;
   min-height: 30.5128vw;
@@ -82,21 +67,12 @@ body {
 }
 
 .task_lists .task_chunk .task_btn {
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .task_lists .task_chunk .task_btn .time_text {
-  -webkit-flex: 1;
-     -moz-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   width: 0;
 }
 
@@ -133,9 +109,6 @@ body {
 }
 
 .task_lists .task_chunk .status.blue {
-  background-image: -webkit-linear-gradient(#27d5ff, #0091ff);
-  background-image: -moz-linear-gradient(#27d5ff, #0091ff);
-  background-image: -o-linear-gradient(#27d5ff, #0091ff);
   background-image: linear-gradient(#27d5ff, #0091ff);
   color: #fff;
 }
@@ -148,9 +121,6 @@ body {
 }
 
 .task_lists .task_chunk .status.orange {
-  background-image: -webkit-linear-gradient(#f9ea0b, #fb9451);
-  background-image: -moz-linear-gradient(#f9ea0b, #fb9451);
-  background-image: -o-linear-gradient(#f9ea0b, #fb9451);
   background-image: linear-gradient(#f9ea0b, #fb9451);
   color: #fff;
 }
@@ -161,14 +131,8 @@ body {
 }
 
 .task_lists .time_slot {
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: #9b9b9b;
   font-size: 3.0769vw;
   margin-top: 1.2821vw;

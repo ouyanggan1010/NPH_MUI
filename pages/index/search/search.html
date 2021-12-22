@@ -103,7 +103,7 @@
         });
         // 点击删除按钮
         mui(".title_icon").on("tap", "#delete", function (e) {
-            mui.confirm("确定要删除历史记录吗？", function (res) {
+            mui.confirm("确定要删除历史记录吗？","提示",["取消","确定"], function (res) {
                 if (res.index == 1) {
                     console.log("点击确定事件")
                     $("#history").hide();

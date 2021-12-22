@@ -161,11 +161,11 @@
     mui.init({
       pullRefresh: {
         container: "#refreshContainer",
-        down: {
-          style: "circle",
-          color: "#0091ff",
-          callback: pulldown,
-        },
+        // down: {
+        //   style: "circle",
+        //   color: "#0091ff",
+        //   callback: pulldown,
+        // },
         up: {
           contentrefresh: "正在加载...",
           contentnomore: "没有更多内容啦",
@@ -178,7 +178,7 @@
     // 请求的页数
     let pageIndex = 1;
     // 总的数据条数
-    let pageCount = 0;
+    let pageCount = 30;
     // 下拉刷新
     function pulldown() {
       console.log("下拉刷新");
