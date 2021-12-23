@@ -70,8 +70,7 @@
     </div>
     <script>
         // 点击收藏
-        mui(".nav_bar").on("tap", "#collection", function (e) {
-            let _this = this;
+        $("#collection").click(function () {
             // 先判断当前是否收藏了
             if ($(this).hasClass("icon-31shoucang")) {
                 mui.confirm("确定要收藏该篇文章吗？", function (res) {
@@ -81,11 +80,10 @@
                     }
                 });
             } else {
-                console.log("10000")
                 $(this).removeClass("icon-31shoucangxuanzhong");
                 $(this).addClass("icon-31shoucang");
             }
-        })
+        });
     </script>
 </body>
 

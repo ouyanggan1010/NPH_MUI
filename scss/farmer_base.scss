@@ -388,6 +388,10 @@ $paddingLR: 3.8462vw;
               margin-left: 2.5641vw;
             }
           }
+          .text_price {
+            font-size: 4.1026vw;
+            color: map-get($colors, "red_D0");
+          }
           .text_aixin {
             display: flex;
             align-items: center;

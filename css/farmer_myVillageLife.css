@@ -1,0 +1,116 @@
+body {
+  padding-top: 11.5385vw;
+  position: relative;
+  background-color: #f6f6f6;
+}
+
+.nav_bar {
+  background-color: #fff;
+  border-bottom: 0.2564vw solid #f6f6f6;
+}
+
+.nav_bar .center_cnt {
+  height: 100%;
+  width: 60%;
+}
+
+.nav_bar .center_cnt .tab {
+  line-height: 10.7692vw;
+}
+
+.nav_bar .center_cnt .tab > p {
+  font-size: 4.1026vw;
+  color: #282828;
+}
+
+.nav_bar .center_cnt .tab .line {
+  background-color: #fb9451;
+  box-shadow: 0 0.2564vw 0.5128vw #fb9451;
+}
+
+.nav_bar .center_cnt .tab.active {
+  font-weight: normal;
+}
+
+.nav_bar .center_cnt .tab.active > p {
+  color: #282828;
+}
+
+.nav_bar .center_cnt .tab.active .line {
+  display: block;
+}
+
+.consult_cnt {
+  position: relative;
+}
+
+.recommend_list {
+  width: 100%;
+}
+
+.recommend_list .text_img_lists {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-top: 2.5641vw;
+  background-color: #f6f6f6;
+}
+
+.recommend_list .text_img_lists .imgs_top {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.2821vw !important;
+  position: relative;
+}
+
+.recommend_list .text_img_lists .imgs_top > .one_big_img {
+  width: 100%;
+  height: 46.1538vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recommend_list .text_img_lists .imgs_top .mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 20.5128vw;
+  height: 6.9231vw;
+  line-height: 6.9231vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 2.5641vw;
+  font-size: 3.5897vw;
+  color: #ffffff;
+  background-color: rgba(255, 153, 102, 0.75);
+  text-align: center;
+  border-top-left-radius: 2.5641vw;
+  border-bottom-right-radius: 2.5641vw;
+}
+
+.recommend_list .text_img_lists > .list {
+  display: block;
+  background-color: #fff;
+  margin-top: 2.5641vw;
+}
+
+.recommend_list .text_img_lists > .list:nth-child(1) {
+  margin-top: 0;
+}
+
+.recommend_list .text_img_lists .div_text {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 1.2821vw 3.8462vw;
+}

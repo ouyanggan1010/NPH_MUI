@@ -6,7 +6,7 @@ body {
 
 .nav_bar {
   background-color: #fff;
-  border-bottom: 0.0625rem solid #f6f6f6;
+  border-bottom: 0.2564vw solid #f6f6f6;
 }
 
 .nav_bar .center_cnt {
@@ -25,7 +25,7 @@ body {
 
 .nav_bar .center_cnt .tab .line {
   background-color: #fb9451;
-  box-shadow: 0 0.0625rem 0.125rem #fb9451;
+  box-shadow: 0 0.2564vw 0.5128vw #fb9451;
 }
 
 .nav_bar .center_cnt .tab.active {
@@ -47,30 +47,51 @@ body {
 .consult_cnt .focus_not,
 .consult_cnt .focus_yes {
   border: none;
-  height: 1.875rem;
-  min-width: 3.75rem;
-  box-sizing: border-box;
-  padding: 0 0.625rem;
-  font-size: 0.875rem;
-  border-radius: 1.875rem;
-  line-height: 1.875rem;
+  height: 7.6923vw;
+  min-width: 15.3846vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 2.5641vw;
+  font-size: 3.5897vw;
+  border-radius: 7.6923vw;
+  line-height: 7.1795vw;
   cursor: pointer;
+  text-align: center;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.consult_cnt .focus_not .mui-spinner,
+.consult_cnt .focus_yes .mui-spinner {
+  width: 3.8462vw;
+  height: 3.8462vw;
 }
 
 .consult_cnt .focus_not {
   background-color: #ff9966;
-  color: #ffffff;
+  color: #fff;
 }
 
 .consult_cnt .focus_yes {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #4a4a4a;
-  border: 0.0625rem solid #4a4a4a;
+  border: 0.2564vw solid #4a4a4a;
 }
 
 .recommend_you {
-  background-color: #ffffff;
-  box-sizing: border-box;
+  background-color: #fff;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 3.8462vw;
   padding-top: 7.6923vw;
 }
@@ -82,14 +103,17 @@ body {
 
 .div_scroll {
   width: 100%;
-  box-sizing: border-box;
-  padding: 0.625rem 0;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 2.5641vw 0;
+  padding-bottom: 3.8462vw;
 }
 
 .div_scroll.swiper-container {
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-right: 0.2564vw;
 }
 
@@ -97,13 +121,27 @@ body {
   border-radius: 1.2821vw;
   border: 0.2564vw solid #f6f6f6;
   height: 46.1538vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-left: 2.5641vw;
   width: 32.0513vw;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-top: 2.5641vw;
   padding-bottom: 3.8462vw;
 }
@@ -126,7 +164,8 @@ body {
   width: 15.8974vw;
   height: 100%;
   border-radius: 50%;
-  object-fit: fill;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .div_scroll .swiper-slide .user_info p {
@@ -141,17 +180,31 @@ body {
 }
 
 .recommend_list .text_img_lists {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-top: 2.5641vw;
-  background-color: #fff;
+  background-color: #f6f6f6;
+}
+
+.recommend_list .text_img_lists:nth-child(1) {
+  padding-top: 0;
 }
 
 .recommend_list .text_img_lists .imgs_top {
   width: 100%;
   overflow: hidden;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1.2821vw !important;
   position: relative;
 }
@@ -159,22 +212,22 @@ body {
 .recommend_list .text_img_lists .imgs_top > img {
   width: 33%;
   height: 24.8718vw;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recommend_list .text_img_lists .imgs_top > .one_big_img {
   width: 100%;
   height: 46.1538vw;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recommend_list .text_img_lists > .list {
   display: block;
-  margin-top: 2.5641vw;
-}
-
-.recommend_list .text_img_lists > .list:first-child {
-  margin-top: 0;
+  padding-top: 2.5641vw;
+  background-color: #fff;
+  margin-top: 0 !important;
 }
 
 .recommend_list .text_img_lists .div_oneImg {
@@ -184,21 +237,40 @@ body {
 }
 
 .recommend_list .text_img_lists .div_text {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 1.2821vw 3.8462vw;
 }
 
 .recommend_list .text_img_lists > .top {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 3.8462vw;
+  padding-top: 3.8462vw;
+  background-color: #fff;
 }
 
 .recommend_list .text_img_lists > .top > .user {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .recommend_list .text_img_lists > .top > .user .div_img {
@@ -215,9 +287,19 @@ body {
 }
 
 .recommend_list .text_img_lists > .top > .user > .text {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .recommend_list .text_img_lists > .top > .user > .text p {

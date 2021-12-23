@@ -28,106 +28,182 @@
 </head>
 
 <body>
-    <div class="nav_bar">
-        <a href="javascript:history.back();" class="left_bar">
-            <span class="iconfont icon-icon_arrow_left"></span>
-        </a>
-        <div class="center_cnt tabs_switch" id="tabSwitch">
-            <div class="tab active">
-                <p>关注</p>
-                <div class="line"></div>
-            </div>
-            <div class="tab">
-                <p>集市</p>
-                <div class="line"></div>
-            </div>
-            <div class="tab">
-                <p>生活</p>
-                <div class="line"></div>
-            </div>
-            <div class="tab">
-                <p>村子</p>
-                <div class="line"></div>
-            </div>
-        </div>
-    </div>
+    <!-- 公用的尾部 -->
+    <div id="header"></div>
+    <script>
+        $("#header").load("../../../components/header_wdcz.html", function () {
+            let nowHead = $(this).find("#tabSwitch .tab").eq(0);
+            nowHead.addClass("active");
+            nowHead.siblings(".list").removeClass("active");
+        });
+    </script>
     <!-- 内容部分 -->
-    <div class="consult_cnt">
-        <!-- 为你推荐 -->
-        <div class="recommend_you">
-            <div class="card_title">
-                <div class="only">为你推荐</div>
-                <a href="#" class="more"><span>更多用户</span><span class="iconfont icon-icon_arrow_right"></span></a>
-            </div>
-            <div class="div_scroll swiper-container swiper-container-horizontal">
-                <div class="swiper-wrapper">
-                    <a href="#" class="swiper-slide">
-                        <div class="user_info">
-                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-1.png" alt=""></div>
-                            <p>狗哥杰克苏</p>
-                        </div>
-                        <button type="button" class="focus_not">关注</button>
-                    </a>
-                    <a href="#" class="swiper-slide">
-                        <div class="user_info">
-                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-2.png" alt=""></div>
-                            <p>吾聊诗社官方吾聊诗社官方吾聊</p>
-                        </div>
-                        <button type="button" class="focus_not">关注</button>
-                    </a>
-                    <a href="#" class="swiper-slide">
-                        <div class="user_info">
-                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
-                            <p>壁咚大明</p>
-                        </div>
-                        <button type="button" class="focus_not">关注</button>
-                    </a>
-                    <a href="#" class="swiper-slide">
-                        <div class="user_info">
-                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-4.png" alt=""></div>
-                            <p>用户名</p>
-                        </div>
-                        <button type="button" class="focus_not">关注</button>
-                    </a>
+    <div class="consult_cnt" id="refreshContainer">
+        <div id="content_list">
+            <!-- 为你推荐 -->
+            <div class="recommend_you">
+                <div class="card_title">
+                    <div class="only">为你推荐</div>
+                    <a href="#" class="more"><span>更多用户</span><span class="iconfont icon-icon_arrow_right"></span></a>
                 </div>
-                <!-- Add Scrollbar -->
-                <div class="swiper-scrollbar">
-                    <div class="swiper-scrollbar-drag"></div>
-                </div>
-            </div>
-        </div>
-        <!-- 推荐列表 -->
-        <div class="recommend_list">
-            <div class="task_lists">
-                <div class="text_img_lists">
-                    <div class="top">
-                        <div class="user">
-                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
-                            <div class="text">
-                                <p>色影无忌</p>
-                                <span>玩摄影的都在这里！</span>
+                <div class="div_scroll swiper-container swiper-container-horizontal">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide">
+                            <div class="user_info">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-1.png" alt=""></div>
+                                <p>狗哥杰克苏</p>
                             </div>
-                        </div>
-                        <button type="button" class="focus_not">关注</button>
-                        <!-- <button type="button" class="focus_yes">已关注</button> -->
+                            <div class="focus_not">关注</div>
+                            <!-- <div class="focus_not">
+                                <span class="mui-spinner"></span>
+                            </div> -->
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <div class="user_info">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-2.png" alt=""></div>
+                                <p>吾聊诗社官方吾聊诗社官方吾聊</p>
+                            </div>
+                            <div class="focus_not">关注</div>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <div class="user_info">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                                <p>壁咚大明</p>
+                            </div>
+                            <div class="focus_not">关注</div>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <div class="user_info">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-4.png" alt=""></div>
+                                <p>用户名</p>
+                            </div>
+                            <div class="focus_not">关注</div>
+                        </a>
                     </div>
-                    <a href="#" class="list">
-                        <div class="text_oneImg">
-                            <div class="div_text">
-                                <div class="div_title">
-                                    市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                    <!-- Add Scrollbar -->
+                    <div class="swiper-scrollbar">
+                        <div class="swiper-scrollbar-drag"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 推荐列表 -->
+            <div class="recommend_list">
+                <div class="task_lists">
+                    <div class="text_img_lists">
+                        <div class="top">
+                            <div class="user">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                                <div class="text">
+                                    <p>色影无忌</p>
+                                    <span>玩摄影的都在这里！</span>
                                 </div>
-                                <div class="div_tips">
-                                    <div class="text_mark">
-                                        <span>[访谈]农机设备信息</span>
+                            </div>
+                            <div class="focus_not">关注</div>
+                        </div>
+                        <a href="../../index/information/informationDetail.html" class="list">
+                            <div class="text_oneImg">
+                                <div class="div_text">
+                                    <div class="div_title">
+                                        2市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                                    </div>
+                                    <div class="div_tips">
+                                        <div class="text_mark">
+                                            <span>[访谈]农机设备信息</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="div_oneImg">
+                                    <img src="../../../images/content_imgs/Bitmap-4.png" alt="" />
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="text_img_lists">
+                        <div class="top">
+                            <div class="user">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                                <div class="text">
+                                    <p>色影无忌</p>
+                                    <span>玩摄影的都在这里！</span>
+                                </div>
+                            </div>
+                            <div class="focus_not">关注</div>
+                        </div>
+                        <a href="#" class="list">
+                            <div class="text_oneImg">
+                                <div class="div_text">
+                                    <div class="div_title">
+                                        市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                                    </div>
+                                    <div class="div_tips">
+                                        <div class="text_mark">
+                                            <span>[访谈]农机设备信息</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="div_oneImg">
-                                <img src="../../../images/content_imgs/Bitmap-4.png" alt="" />
+                        </a>
+                    </div>
+                    <div class="text_img_lists">
+                        <div class="top">
+                            <div class="user">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                                <div class="text">
+                                    <p>色影无忌</p>
+                                    <span>玩摄影的都在这里！</span>
+                                </div>
                             </div>
+                            <div class="focus_not">关注</div>
                         </div>
-                    </a>
+                        <a href="#" class="list">
+                            <div class="imgs_top">
+                                <img src="../../../images/content_imgs/Bitmap-4.png" class="one_big_img" alt="" />
+                            </div>
+                            <div class="text_oneImg">
+                                <div class="div_text">
+                                    <div class="div_title">
+                                        市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                                    </div>
+                                    <div class="div_tips">
+                                        <div class="text_mark">
+                                            <span>[访谈]农机设备信息</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="text_img_lists">
+                        <div class="top">
+                            <div class="user">
+                                <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                                <div class="text">
+                                    <p>色影无忌</p>
+                                    <span>玩摄影的都在这里！</span>
+                                </div>
+                            </div>
+                            <div class="focus_not">关注</div>
+                        </div>
+                        <a href="#" class="list">
+                            <div class="imgs_top">
+                                <img src="../../../images/content_imgs/Bitmap-1.png" alt="" />
+                                <img src="../../../images/content_imgs/Bitmap-1.png" alt="" />
+                                <img src="../../../images/content_imgs/Bitmap-1.png" alt="" />
+                            </div>
+                            <div class="text_oneImg">
+                                <div class="div_text">
+                                    <div class="div_title">
+                                        市农业农村局召开迎接农村
+                                    </div>
+                                    <div class="div_tips">
+                                        <div class="text_mark">
+                                            <span>[访谈]农机设备信息</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <!-- 数据为空 -->
                 <div class="data_not">
@@ -138,15 +214,142 @@
                 </div>
             </div>
         </div>
+        <!-- 加载中 -->
+        <div class="loading_data" id="loading">
+            <span class="mui-spinner"></span>
+            <div>加载中...</div>
+        </div>
     </div>
     <script>
+        // 给关注按钮绑定点击事件
+        mui("#content_list").on("tap", ".focus_not", function () {
+            console.log(25544)
+            $(this).html('<span class="mui-spinner"></span>');
+            let _this = this;
+            setTimeout(function () {
+                $(_this).html("已关注");
+                $(_this).removeClass("focus_not");
+                $(_this).addClass("focus_yes");
+            }, 500);
+        });
+        //监听tab事件，解决a标签不能跳转的问题
+        mui('body').on('tap', 'a', function () {
+            document.location.href = this.href;
+        });
         // 列表横向滚动
         var swiper = new Swiper('.swiper-container', {
             scrollbar: '.swiper-scrollbar',
             scrollbarHide: true,
             slidesPerView: 'auto',
             centeredSlides: false,
-        });</script>
+        });
+        // 初始化数据
+        mui.ready(function () {
+            // 隐藏数据列表
+            $("#content_list").hide();
+            // 打开loading
+            $("#loading").show();
+            // 将存放数据的div设置为空
+            // $("#refreshContainer .task_lists").html("");
+            // 重置pageIndex
+            pageIndex = 1;
+            // 请求数据
+            setTimeout(function () {
+                initAjax();
+            }, 1000);
+        });
+        // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+        mui.init({
+            pullRefresh: {
+                container: "#refreshContainer",
+                down: {
+                    style: "circle",
+                    color: "#0091ff",
+                    callback: pulldown,
+                },
+                up: {
+                    contentrefresh: "正在加载...",
+                    contentnomore: "没有更多内容啦",
+                    callback: pullup,
+                },
+            },
+        });
+        // 每页请求的条数
+        let pageSize = 10;
+        // 请求的页数
+        let pageIndex = 1;
+        // 总的数据条数
+        let pageCount = 30;
+        // 下拉刷新
+        function pulldown() {
+            console.log("下拉刷新");
+            setTimeout(() => {
+                mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+                // 重置请求的页数
+                pageIndex = 1;
+                $("#content_list .task_lists").html("");
+                /*执行请求*/
+                initAjax();
+                // 关闭上拉加载
+                mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                setTimeout(function () {
+                    // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
+                    if (pageCount > 0) {
+                        mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                        mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+                    }
+                }, 1000);
+            }, 1000);
+        }
+        // 上拉加载
+        function pullup() {
+            setTimeout(() => {
+                // 当总请求条数已经请求完毕
+                if ((pageIndex - 1) * pageSize >= pageCount) {
+                    this.endPullupToRefresh(true); //没有数据
+                    return;
+                }
+                /*执行请求*/
+                initAjax();
+                this.endPullupToRefresh(false);
+            }, 1000);
+        }
+        // 初始化请求----这里是请求函数
+        function initAjax() {
+            // 关闭loading
+            $("#loading").hide();
+            // 打开数据列表
+            $("#content_list").show();
+            $("#refreshContainer .data_not").hide();
+            // 如果初始化请求没有一条数据的情况，显示暂无数据
+            if (pageCount <= 0) {
+                $("#content_list").hide();
+                $("#refreshContainer .data_not").show();
+                // 关闭上拉加载
+                setTimeout(function () {
+                    mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                }, 1000);
+            } else {
+                mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+            }
+            // 这里模拟请求
+            for (
+                let i = (pageIndex - 1) * pageSize;
+                i < pageIndex * pageSize;
+                i++
+            ) {
+                // dom模板
+                let str = '<div class="text_img_lists"><div class="top"><div class="user"><div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>' +
+                    '<div class="text"><p>色影无忌</p><span>玩摄影的都在这里！</span></div></div><div class="focus_not">关注</div></div><a href="#" class="list">' +
+                    '<div class="imgs_top"><img src="../../../images/content_imgs/Bitmap-1.png" alt="" /><img src="../../../images/content_imgs/Bitmap-1.png" alt="" />' +
+                    '<img src="../../../images/content_imgs/Bitmap-1.png" alt="" /></div><div class="text_oneImg"><div class="div_text"><div class="div_title">市农业农村局召开迎接农村</div>' +
+                    '<div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span></div></div></div></div></a></div>';
+                $("#content_list .task_lists").append($(str));
+            }
+            pageIndex++;
+        }
+    </script>
 </body>
 
 </html>

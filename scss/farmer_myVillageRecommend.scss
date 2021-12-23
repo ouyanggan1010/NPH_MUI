@@ -8,7 +8,7 @@ body {
 }
 .nav_bar {
   background-color: map-get($colors, "white");
-  border-bottom: 0.0625rem solid map-get($colors, "gray_f6");
+  border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
   .center_cnt {
     height: 100%;
     width: 60%;
@@ -20,7 +20,7 @@ body {
       }
       .line {
         background-color: map-get($colors, "orange_fb");
-        box-shadow: 0 0.0625rem 0.125rem map-get($colors, "orange_fb");
+        box-shadow: 0 0.2564vw 0.5128vw map-get($colors, "orange_fb");
       }
       &.active {
         font-weight: normal;
@@ -40,27 +40,35 @@ body {
   .focus_not,
   .focus_yes {
     border: none;
-    height: 1.875rem;
-    min-width: 3.75rem;
+    height: 7.6923vw;
+    min-width: 15.3846vw;
     box-sizing: border-box;
-    padding: 0 0.625rem;
-    font-size: 0.875rem;
-    border-radius: 1.875rem;
-    line-height: 1.875rem;
+    padding: 0 2.5641vw;
+    font-size: 3.5897vw;
+    border-radius: 7.6923vw;
+    line-height: 7.1795vw;
     cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mui-spinner {
+      width: 3.8462vw;
+      height: 3.8462vw;
+    }
   }
   .focus_not {
-    background-color: #ff9966;
-    color: #ffffff;
+    background-color: map-get($colors, "orange_ff");
+    color: map-get($colors, "white");
   }
   .focus_yes {
-    background-color: #ffffff;
-    color: #4a4a4a;
-    border: 0.0625rem solid #4a4a4a;
+    background-color: map-get($colors, "white");
+    color: map-get($colors, "gray_4A");
+    border: 0.2564vw solid map-get($colors, "gray_4A");
   }
 }
 .recommend_you {
-  background-color: #ffffff;
+  background-color: map-get($colors, "white");
   box-sizing: border-box;
   padding: 0 3.8462vw;
   padding-top: 7.6923vw;
@@ -73,7 +81,8 @@ body {
 .div_scroll {
   width: 100%;
   box-sizing: border-box;
-  padding: 0.625rem 0;
+  padding: 2.5641vw 0;
+  padding-bottom: 3.8462vw;
   &.swiper-container {
     width: 100%;
     height: 100%;
@@ -82,7 +91,7 @@ body {
   }
   .swiper-slide {
     border-radius: 1.2821vw;
-    border: 0.2564vw solid #f6f6f6;
+    border: 0.2564vw solid map-get($colors, "gray_f6");
     height: 46.1538vw;
     display: flex;
     flex-direction: column;
@@ -111,7 +120,7 @@ body {
       }
       p {
         font-size: 3.5897vw;
-        color: #4a4a4a;
+        color: map-get($colors, "gray_4A");
         line-height: 5.641vw;
         margin-top: 1.2821vw;
       }
@@ -124,7 +133,10 @@ body {
   .text_img_lists {
     box-sizing: border-box;
     padding-top: 2.5641vw;
-    background-color: map-get($colors, "white");
+    background-color: map-get($colors, "gray_f6");
+    &:nth-child(1) {
+      padding-top: 0;
+    }
     .imgs_top {
       width: 100%;
       overflow: hidden;
@@ -146,10 +158,9 @@ body {
     }
     > .list {
       display: block;
-      margin-top: 2.5641vw;
-      &:first-child {
-        margin-top: 0;
-      }
+      padding-top: 2.5641vw;
+      background-color: map-get($colors, "white");
+      margin-top: 0 !important;
     }
     .div_oneImg {
       width: 30.7692vw;
@@ -166,10 +177,12 @@ body {
       justify-content: space-between;
       box-sizing: border-box;
       padding: 0 3.8462vw;
+      padding-top: 3.8462vw;
+      background-color: map-get($colors, "white");
       > .user {
         display: flex;
         align-items: center;
-        .div_img{
+        .div_img {
           border-radius: 50%;
           width: 7.6923vw;
           height: 7.6923vw;
@@ -186,11 +199,11 @@ body {
           justify-content: center;
           p {
             font-size: 3.5897vw;
-            color: #4a4a4a;
+            color: map-get($colors, "gray_4A");
           }
           span {
             font-size: 3.0769vw;
-            color: #9b9b9b;
+            color: map-get($colors, "gray_9B");
           }
         }
       }
