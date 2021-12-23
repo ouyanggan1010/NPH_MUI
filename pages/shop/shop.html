@@ -564,6 +564,10 @@
         }, 1000);
       }
     });
+    // 执行初始化请求函数
+    mui.ready(function () {
+      initAjax();
+    });
     // --------------------------------------------------------上拉加载
     mui.init({
       pullRefresh: {
@@ -634,10 +638,6 @@
       // 重新执行瀑布流函数
       waterFall("shop_box_content");
     }
-    // 执行初始化请求函数
-    mui.ready(function () {
-      // initAjax();
-    });
   </script>
 </body>
 

@@ -30,13 +30,6 @@
 <body>
     <!-- 公用的尾部 -->
     <div id="header"></div>
-    <script>
-        $("#header").load("../../../components/header_wdcz.html", function () {
-            let nowHead = $(this).find("#tabSwitch .tab").eq(0);
-            nowHead.addClass("active");
-            nowHead.siblings(".list").removeClass("active");
-        });
-    </script>
     <!-- 内容部分 -->
     <div class="consult_cnt" id="refreshContainer">
         <div id="content_list">
@@ -214,13 +207,20 @@
                 </div>
             </div>
         </div>
-        <!-- 加载中 -->
-        <div class="loading_data" id="loading">
-            <span class="mui-spinner"></span>
-            <div>加载中...</div>
-        </div>
+    </div>
+    <!-- 加载中 -->
+    <div class="loading_data" id="loading">
+        <span class="mui-spinner"></span>
+        <div>加载中...</div>
     </div>
     <script>
+        let topH = "";
+        $("#header").load("../../../components/header_wdcz.html", function () {
+            let nowHead = $(this).find("#tabSwitch .tab").eq(0);
+            nowHead.addClass("active");
+            nowHead.siblings(".list").removeClass("active");
+            let topH = $(".nav_bar").outerHeight();
+        });
         // 给关注按钮绑定点击事件
         mui("#content_list").on("tap", ".focus_not", function () {
             console.log(25544)
@@ -246,11 +246,11 @@
         // 初始化数据
         mui.ready(function () {
             // 隐藏数据列表
-            $("#content_list").hide();
+            $(".consult_cnt").hide();
             // 打开loading
             $("#loading").show();
             // 将存放数据的div设置为空
-            // $("#refreshContainer .task_lists").html("");
+            $("#refreshContainer .task_lists").html("");
             // 重置pageIndex
             pageIndex = 1;
             // 请求数据
@@ -259,12 +259,14 @@
             }, 1000);
         });
         // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+        console.log("----------------8888",topH)
         mui.init({
             pullRefresh: {
                 container: "#refreshContainer",
                 down: {
                     style: "circle",
                     color: "#0091ff",
+                    offset: topH,
                     callback: pulldown,
                 },
                 up: {
@@ -319,6 +321,7 @@
             // 关闭loading
             $("#loading").hide();
             // 打开数据列表
+            $(".consult_cnt").show();
             $("#content_list").show();
             $("#refreshContainer .data_not").hide();
             // 如果初始化请求没有一条数据的情况，显示暂无数据

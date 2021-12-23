@@ -96,21 +96,17 @@
                 </div>
             </div>
         </div>
-        <!-- 加载中 -->
-        <div class="loading_data" id="loading">
-            <span class="mui-spinner"></span>
-            <div>加载中...</div>
-        </div>
+    </div>
+    <!-- 加载中 -->
+    <div class="loading_data" id="loading">
+        <span class="mui-spinner"></span>
+        <div>加载中...</div>
     </div>
     <script>
-        // tab切换
-        mui("#tabSwitch").on("tap", ".tab", function (e) {
-            $(this).addClass("active");
-            $(this).siblings(".tab").removeClass("active");
-            // ---------------------需要使用的数据
-            let index = $(this).index();
+        function initData(index) {
+            console.log(6666)
             // 隐藏数据列表
-            $(".task_lists").hide();
+            $(".consult_cnt").hide();
             // 打开loading
             $("#loading").show();
             // 将存放数据的div设置为空
@@ -121,16 +117,26 @@
             setTimeout(function () {
                 initAjax();
             }, 1000);
+        }
+        // tab切换
+        mui("#tabSwitch").on("tap", ".tab", function (e) {
+            $(this).addClass("active");
+            $(this).siblings(".tab").removeClass("active");
+            // ---------------------需要使用的数据
+            let index = $(this).index();
+            initData(index);
         });
         // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+        let topH = $(".nav_bar").outerHeight();
         mui.init({
             pullRefresh: {
                 container: "#refreshContainer",
-                // down: {
-                //     style: 'circle',
-                //     color: '#0091ff',
-                //     callback: pulldown
-                // },
+                down: {
+                    style: 'circle',
+                    color: '#0091ff',
+                    offset: topH,
+                    callback: pulldown
+                },
                 up: {
                     contentrefresh: "正在加载...",
                     contentnomore: '没有更多内容啦',
@@ -183,7 +189,7 @@
             // 关闭loading
             $("#loading").hide();
             // 打开数据列表
-            $(".task_lists").show();
+            $(".consult_cnt").show();
             $("#refreshContainer .text_img_lists").show();
             $("#refreshContainer .data_not").hide();
             // 如果初始化请求没有一条数据的情况，显示暂无数据
@@ -192,11 +198,11 @@
                 $("#refreshContainer .data_not").show();
                 // 关闭上拉加载
                 setTimeout(function () {
-                    mui('#refreshContainer').pullRefresh().disablePullupToRefresh();
-                }, 1000)
+                    mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                }, 1000);
             } else {
-                mui('#refreshContainer').pullRefresh().enablePullupToRefresh();
-                mui('#refreshContainer').pullRefresh().endPullupToRefresh();
+                mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                mui("#refreshContainer").pullRefresh().endPullupToRefresh();
             }
             // 这里模拟请求
             for (let i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {
@@ -210,8 +216,8 @@
         }
         // 执行初始化请求函数
         mui.ready(function () {
-            initAjax();
-        })
+            initData(0)
+        });
     </script>
 </body>
 
