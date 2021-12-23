@@ -55,6 +55,41 @@ body {
   box-sizing: border-box;
   padding-top: 2.5641vw;
   background-color: map-get($colors, "gray_f6");
+  .video_and_pic{
+    width: 100%;
+    margin-bottom: 1.2821vw !important;
+  }
+  .imgs_top_bg{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 51.2821vw;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .myicon-pladyBtn{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      cursor: pointer;
+    }
+  }
+  .video_play{
+    width: 100%;
+    height: 51.2821vw;
+    display: none;
+    video{
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
   .imgs_top {
     width: 100%;
     overflow: hidden;
@@ -62,14 +97,24 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1.2821vw !important;
+    position: relative;
     > img {
       width: 33%;
-      height: 100%;
+      height: 24.8718vw;
       object-fit: cover;
     }
     > .one_big_img {
       width: 100%;
+      height: 46.1538vw;
       object-fit: cover;
+    }
+    .myicon-zhiboTips{
+      color: map-get($colors, "white");
+      font-size: 3.0769vw;
+      position: absolute;
+      top: 0;
+      left: 2.5641vw;
+      text-align: center;
     }
   }
   > .list {
@@ -83,6 +128,7 @@ body {
   .div_oneImg {
     width: 30.7692vw;
     height: 24.8718vw;
+    margin-left: 0 !important;
   }
   .div_text {
     box-sizing: border-box;

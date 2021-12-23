@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>我的村子</title>
+    <!-- 引用mui基础脚本 -->
+    <script src="../../../js/mui.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- swiper -->
+    <script src="../../../js/swiper.min.js"></script>
+    <!-- 引用mui基础样式 -->
+    <link href="../../../css/mui.css" rel="stylesheet" />
+    <!-- swiper -->
+    <link href="../../../css/swiper.min.css" rel="stylesheet">
+    <!-- 引用整个app公共基础样式 -->
+    <link href="../../../css/farmer_base.css" rel="stylesheet" />
+    <!-- 引入首页独立样式 -->
+    <link href="../../../css/farmer_myVillageBazaar.css" rel="stylesheet" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <div class="nav_bar flex_justSB">
+        <a href="javascript:history.back();" class="left_bar d_flex flex_alignC"><img class="back"
+                src="../../../images/index/back.png" alt=""></a>
+        <div class="center_cnt tabs_switch" id="tabSwitch">
+            <a href="javascript:location.replace('./myVillage_recommend.html');" class="tab">
+                <p>关注</p>
+                <div class="line"></div>
+            </a>
+            <a href="javascript:location.replace('./myVillage_bazaar.html');" class="tab active">
+                <p>集市</p>
+                <div class="line"></div>
+            </a>
+            <a href="javascript:location.replace('./myVillage_life.html');" class="tab">
+                <p>生活</p>
+                <div class="line"></div>
+            </a>
+            <a href="javascript:location.replace('./myVillage_village.html');" class="tab">
+                <p>村子</p>
+                <div class="line"></div>
+            </a>
+        </div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="consult_cnt">
+        <!-- 轮播 -->
+        <div class="swiper_imgs">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="swiper-cnt">
+                            <img src="../../../images/contents/Rectangle.png" alt="">
+                            <p>它是南海最新最靠海的海岛，也是我国陆地的最南端</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="swiper-cnt">
+                            <img src="../../../images/contents/Rectangle-1.png" alt="">
+                            <p>它是南海最新最靠海的海岛，也是我国陆地的最南端</p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="swiper-cnt">
+                            <img src="../../../images/contents/Rectangle-2.png" alt="">
+                            <p>它是南海最新最靠海的海岛，也是我国陆地的最南端</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 文章列表 -->
+        <div class="article_list">
+            <!-- 海口24小时 -->
+            <div class="list_for_article">
+                <!-- 大图 -->
+                <div class="big_img">
+                    <div class="link_text_more">
+                        <div class="title">海口24小时</div>
+                        <a href="#" class="link_more">
+                            <span>更多</span>
+                            <span class="mui-icon mui-icon-arrowright"></span>
+                        </a>
+                    </div>
+                    <a href="#" class="imgText">
+                        <img src="../../../images/contents/6.jpeg" alt="">
+                        <p>骑楼老街新面貌，一个你重新认识的海口骑楼老街新面貌，一个你重新认识的海口</p>
+                    </a>
+                </div>
+                <!-- 文章 -->
+                <div class="lists">
+                    <a href="#" class="link_text_img">
+                        <div class="text_cnt">
+                            <div class="div_text">
+                                <p class="title hiddenTwo">综合-市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议</p>
+                                <div class="font_12 font_black88 mt-5">
+                                    <span class="font_redD0 mr-5">热门</span>
+                                    <span>阳光海南</span>
+                                    <span>1988跟帖</span>
+                                </div>
+                            </div>
+                            <img class="div_img" src="../../../images/contents/3.jpeg" alt="">
+                        </div>
+                    </a>
+                    <a href="#" class="link_text_img">
+                        <div class="text_cnt">
+                            <div class="div_text">
+                                <p class="title hiddenTwo">综合-市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议</p>
+                                <div class="font_12 font_black88 mt-5">
+                                    <span class="font_redD0 mr-5">热门</span>
+                                    <span>阳光海南</span>
+                                    <span>1988跟帖</span>
+                                </div>
+                            </div>
+                            <img class="div_img" src="../../../images/contents/3.jpeg" alt="">
+                        </div>
+                    </a>
+                    <a href="#" class="link_text_img">
+                        <div class="text_cnt">
+                            <div class="div_text">
+                                <p class="title hiddenTwo">综合-市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议</p>
+                                <div class="font_12 font_black88 mt-5">
+                                    <span class="font_redD0 mr-5">热门</span>
+                                    <span>阳光海南</span>
+                                    <span>1988跟帖</span>
+                                </div>
+                            </div>
+                            <img class="div_img" src="../../../images/contents/3.jpeg" alt="">
+                        </div>
+                    </a>
+                    <a href="#" class="link_text_img">
+                        <div class="text_cnt">
+                            <div class="div_text">
+                                <p class="title hiddenTwo">综合-市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议</p>
+                                <div class="font_12 font_black88 mt-5">
+                                    <span class="font_redD0 mr-5">热门</span>
+                                    <span>阳光海南</span>
+                                    <span>1988跟帖</span>
+                                </div>
+                            </div>
+                            <img class="div_img" src="../../../images/contents/3.jpeg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!-- 更多文章 -->
+                <div class="more_article">
+                    <div class="font_12 font_black88">余下6篇</div>
+                    <span class="mui-icon mui-icon-arrowdown font_16 font_black88"></span>
+                </div>
+            </div>
+            <!-- 国际旅游岛 -->
+            <div class="list_for_article">
+                <!-- 大图 -->
+                <div class="big_img">
+                    <div class="link_text_more">
+                        <div class="title">国际旅游岛</div>
+                        <a href="#" class="link_more">
+                            <span>更多</span>
+                            <span class="mui-icon mui-icon-arrowright"></span>
+                        </a>
+                    </div>
+                    <a href="#" class="imgText">
+                        <img src="../../../images/contents/shop_ad2.png" alt="">
+                        <p>骑楼老街新面貌，一个你重新认识的海口骑楼老街新面貌，一个你重新认识的海口</p>
+                    </a>
+                </div>
+                <!-- 文章 -->
+                <div class="lists">
+                    <a href="#" class="link_text_img">
+                        <div class="text_cnt">
+                            <div class="div_text">
+                                <p class="title hiddenTwo">综合-市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议</p>
+                                <div class="font_12 font_black88 mt-5">
+                                    <span class="font_redD0 mr-5">热门</span>
+                                    <span>阳光海南</span>
+                                    <span>1988跟帖</span>
+                                </div>
+                            </div>
+                            <img class="div_img" src="../../../images/contents/slider2.jpg" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!-- 更多文章 -->
+                <div class="more_article">
+                    <div class="font_12 font_black88">余下6篇</div>
+                    <span class="mui-icon mui-icon-arrowdown font_16 font_black88"></span>
+                </div>
+            </div>
+        </div>
+        <!-- 这个是底线 -->
+        <div class="dead_line font_12 font_gray">
+            没有更多内容啦
+        </div>
+    </div>
+    <script>
+        // swiper-头部轮播
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            loop: true,
+            loopedSlides: 8,
+        });
+        // 隐藏多出的文章列表
+        $(".list_for_article").each(function () {
+            var text = $(this).find(".lists>.link_text_img");
+            var size = text.length;
+            if (size > 1) {
+                text.eq(0).siblings(".link_text_img").hide();
+            } else {
+                $(this).find(".more_article").hide();
+            }
+        });
+        $(".more_article").click(function () {
+            $(this).siblings(".lists").find(".link_text_img").fadeIn();
+            $(this).hide();
+        })
+    </script>
+</body>
+
+</html>

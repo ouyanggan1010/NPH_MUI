@@ -1,0 +1,199 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+body {
+  padding-top: 11.5385vw;
+  position: relative;
+  background-color: map-get($colors, "gray_f6");
+}
+.nav_bar {
+  background-color: map-get($colors, "white");
+  border-bottom: 0.0625rem solid map-get($colors, "gray_f6");
+  .center_cnt {
+    height: 100%;
+    width: 60%;
+    .tab {
+      line-height: 10.7692vw;
+      > p {
+        font-size: 4.1026vw;
+        color: map-get($colors, "black_28");
+      }
+      .line {
+        background-color: map-get($colors, "orange_fb");
+        box-shadow: 0 0.0625rem 0.125rem map-get($colors, "orange_fb");
+      }
+      &.active {
+        font-weight: normal;
+        > p {
+          color: map-get($colors, "black_28");
+        }
+        .line {
+          display: block;
+        }
+      }
+    }
+  }
+}
+// 内容
+.consult_cnt {
+  position: relative;
+  .focus_not,
+  .focus_yes {
+    border: none;
+    height: 1.875rem;
+    min-width: 3.75rem;
+    box-sizing: border-box;
+    padding: 0 0.625rem;
+    font-size: 0.875rem;
+    border-radius: 1.875rem;
+    line-height: 1.875rem;
+    cursor: pointer;
+  }
+  .focus_not {
+    background-color: #ff9966;
+    color: #ffffff;
+  }
+  .focus_yes {
+    background-color: #ffffff;
+    color: #4a4a4a;
+    border: 0.0625rem solid #4a4a4a;
+  }
+}
+.recommend_you {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  padding-top: 7.6923vw;
+  .card_title {
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+// 列表横向滚动
+.div_scroll {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.625rem 0;
+  &.swiper-container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-right: 0.2564vw;
+  }
+  .swiper-slide {
+    border-radius: 1.2821vw;
+    border: 0.2564vw solid #f6f6f6;
+    height: 46.1538vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2.5641vw;
+    width: 32.0513vw;
+    box-sizing: border-box;
+    padding-top: 2.5641vw;
+    padding-bottom: 3.8462vw;
+    &:first-child {
+      margin-left: 0;
+    }
+    .user_info {
+      text-align: center;
+      .div_img {
+        height: 15.8974vw;
+        border-radius: 50%;
+        text-align: center;
+        img {
+          width: 15.8974vw;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: fill;
+        }
+      }
+      p {
+        font-size: 3.5897vw;
+        color: #4a4a4a;
+        line-height: 5.641vw;
+        margin-top: 1.2821vw;
+      }
+    }
+  }
+}
+.recommend_list {
+  width: 100%;
+  // 图片文字列表
+  .text_img_lists {
+    box-sizing: border-box;
+    padding-top: 2.5641vw;
+    background-color: map-get($colors, "white");
+    .imgs_top {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2821vw !important;
+      position: relative;
+      > img {
+        width: 33%;
+        height: 24.8718vw;
+        object-fit: cover;
+      }
+      > .one_big_img {
+        width: 100%;
+        height: 46.1538vw;
+        object-fit: cover;
+      }
+    }
+    > .list {
+      display: block;
+      margin-top: 2.5641vw;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    .div_oneImg {
+      width: 30.7692vw;
+      height: 24.8718vw;
+      margin-left: 0 !important;
+    }
+    .div_text {
+      box-sizing: border-box;
+      padding: 1.2821vw 3.8462vw;
+    }
+    > .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 0 3.8462vw;
+      > .user {
+        display: flex;
+        align-items: center;
+        .div_img{
+          border-radius: 50%;
+          width: 7.6923vw;
+          height: 7.6923vw;
+          margin-right: 2.5641vw;
+          img {
+            border-radius: 50%;
+            width: 7.6923vw;
+            height: 7.6923vw;
+          }
+        }
+        > .text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          p {
+            font-size: 3.5897vw;
+            color: #4a4a4a;
+          }
+          span {
+            font-size: 3.0769vw;
+            color: #9b9b9b;
+          }
+        }
+      }
+    }
+  }
+}

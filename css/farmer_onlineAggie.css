@@ -12,18 +12,9 @@ body {
   display: block;
   width: 6.1538vw;
   height: 6.1538vw;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav_bar .right_bar .iconfont {
@@ -58,8 +49,7 @@ body {
 }
 
 .consult_cnt {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -68,41 +58,81 @@ body {
 }
 
 .text_img_lists {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding-top: 2.5641vw;
   background-color: #f6f6f6;
+}
+
+.text_img_lists .video_and_pic {
+  width: 100%;
+  margin-bottom: 1.2821vw !important;
+}
+
+.text_img_lists .imgs_top_bg {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 51.2821vw;
+}
+
+.text_img_lists .imgs_top_bg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text_img_lists .imgs_top_bg .myicon-pladyBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.text_img_lists .video_play {
+  width: 100%;
+  height: 51.2821vw;
+  display: none;
+}
+
+.text_img_lists .video_play video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
 .text_img_lists .imgs_top {
   width: 100%;
   overflow: hidden;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 1.2821vw !important;
+  position: relative;
 }
 
 .text_img_lists .imgs_top > img {
   width: 33%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 24.8718vw;
+  object-fit: cover;
 }
 
 .text_img_lists .imgs_top > .one_big_img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 46.1538vw;
+  object-fit: cover;
+}
+
+.text_img_lists .imgs_top .myicon-zhiboTips {
+  color: #fff;
+  font-size: 3.0769vw;
+  position: absolute;
+  top: 0;
+  left: 2.5641vw;
+  text-align: center;
 }
 
 .text_img_lists > .list {
@@ -118,10 +148,10 @@ body {
 .text_img_lists .div_oneImg {
   width: 30.7692vw;
   height: 24.8718vw;
+  margin-left: 0 !important;
 }
 
 .text_img_lists .div_text {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 1.2821vw 2.5641vw;
 }

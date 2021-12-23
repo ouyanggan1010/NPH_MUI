@@ -84,6 +84,14 @@
 .myicon-notOnline {
   @include appicon(-1.7949vw, -71.2821vw, 67.6923vw, 56.9231vw);
 }
+//播放按钮
+.myicon-pladyBtn {
+  @include appicon(-1.7949vw, -47.9487vw, 12.8205vw, 12.8205vw);
+}
+//直播tips
+.myicon-zhiboTips {
+  @include appicon(-17.6923vw, -47.9487vw, 11.5385vw, 5.8974vw);
+}
 // ---------------------------------------------------------我的
 //我关注的
 .myicon-woguanzhu {

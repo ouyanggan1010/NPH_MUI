@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>我的村子</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- swiper -->
+    <script src="../../../js/swiper.min.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../../css/mui.min.css" />
+    <!-- swiper -->
+    <link href="../../../css/swiper.min.css" rel="stylesheet">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../../css/farmer_myVillageRecommend.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <div class="nav_bar">
+        <a href="javascript:history.back();" class="left_bar">
+            <span class="iconfont icon-icon_arrow_left"></span>
+        </a>
+        <div class="center_cnt tabs_switch" id="tabSwitch">
+            <div class="tab active">
+                <p>关注</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>集市</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>生活</p>
+                <div class="line"></div>
+            </div>
+            <div class="tab">
+                <p>村子</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="consult_cnt">
+        <!-- 为你推荐 -->
+        <div class="recommend_you">
+            <div class="card_title">
+                <div class="only">为你推荐</div>
+                <a href="#" class="more"><span>更多用户</span><span class="iconfont icon-icon_arrow_right"></span></a>
+            </div>
+            <div class="div_scroll swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <a href="#" class="swiper-slide">
+                        <div class="user_info">
+                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-1.png" alt=""></div>
+                            <p>狗哥杰克苏</p>
+                        </div>
+                        <button type="button" class="focus_not">关注</button>
+                    </a>
+                    <a href="#" class="swiper-slide">
+                        <div class="user_info">
+                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-2.png" alt=""></div>
+                            <p>吾聊诗社官方吾聊诗社官方吾聊</p>
+                        </div>
+                        <button type="button" class="focus_not">关注</button>
+                    </a>
+                    <a href="#" class="swiper-slide">
+                        <div class="user_info">
+                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                            <p>壁咚大明</p>
+                        </div>
+                        <button type="button" class="focus_not">关注</button>
+                    </a>
+                    <a href="#" class="swiper-slide">
+                        <div class="user_info">
+                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-4.png" alt=""></div>
+                            <p>用户名</p>
+                        </div>
+                        <button type="button" class="focus_not">关注</button>
+                    </a>
+                </div>
+                <!-- Add Scrollbar -->
+                <div class="swiper-scrollbar">
+                    <div class="swiper-scrollbar-drag"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 推荐列表 -->
+        <div class="recommend_list">
+            <div class="task_lists">
+                <div class="text_img_lists">
+                    <div class="top">
+                        <div class="user">
+                            <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                            <div class="text">
+                                <p>色影无忌</p>
+                                <span>玩摄影的都在这里！</span>
+                            </div>
+                        </div>
+                        <button type="button" class="focus_not">关注</button>
+                        <!-- <button type="button" class="focus_yes">已关注</button> -->
+                    </div>
+                    <a href="#" class="list">
+                        <div class="text_oneImg">
+                            <div class="div_text">
+                                <div class="div_title">
+                                    市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                                </div>
+                                <div class="div_tips">
+                                    <div class="text_mark">
+                                        <span>[访谈]农机设备信息</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div_oneImg">
+                                <img src="../../../images/content_imgs/Bitmap-4.png" alt="" />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 数据为空 -->
+                <div class="data_not">
+                    <div>
+                        <span class="iconfont icon-kongshuju1"></span>
+                        <div>暂无数据</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 列表横向滚动
+        var swiper = new Swiper('.swiper-container', {
+            scrollbar: '.swiper-scrollbar',
+            scrollbarHide: true,
+            slidesPerView: 'auto',
+            centeredSlides: false,
+        });</script>
+</body>
+
+</html>

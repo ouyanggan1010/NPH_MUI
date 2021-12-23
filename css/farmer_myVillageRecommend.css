@@ -1,0 +1,225 @@
+body {
+  padding-top: 11.5385vw;
+  position: relative;
+  background-color: #f6f6f6;
+}
+
+.nav_bar {
+  background-color: #fff;
+  border-bottom: 0.0625rem solid #f6f6f6;
+}
+
+.nav_bar .center_cnt {
+  height: 100%;
+  width: 60%;
+}
+
+.nav_bar .center_cnt .tab {
+  line-height: 10.7692vw;
+}
+
+.nav_bar .center_cnt .tab > p {
+  font-size: 4.1026vw;
+  color: #282828;
+}
+
+.nav_bar .center_cnt .tab .line {
+  background-color: #fb9451;
+  box-shadow: 0 0.0625rem 0.125rem #fb9451;
+}
+
+.nav_bar .center_cnt .tab.active {
+  font-weight: normal;
+}
+
+.nav_bar .center_cnt .tab.active > p {
+  color: #282828;
+}
+
+.nav_bar .center_cnt .tab.active .line {
+  display: block;
+}
+
+.consult_cnt {
+  position: relative;
+}
+
+.consult_cnt .focus_not,
+.consult_cnt .focus_yes {
+  border: none;
+  height: 1.875rem;
+  min-width: 3.75rem;
+  box-sizing: border-box;
+  padding: 0 0.625rem;
+  font-size: 0.875rem;
+  border-radius: 1.875rem;
+  line-height: 1.875rem;
+  cursor: pointer;
+}
+
+.consult_cnt .focus_not {
+  background-color: #ff9966;
+  color: #ffffff;
+}
+
+.consult_cnt .focus_yes {
+  background-color: #ffffff;
+  color: #4a4a4a;
+  border: 0.0625rem solid #4a4a4a;
+}
+
+.recommend_you {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  padding-top: 7.6923vw;
+}
+
+.recommend_you .card_title {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.div_scroll {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.625rem 0;
+}
+
+.div_scroll.swiper-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-right: 0.2564vw;
+}
+
+.div_scroll .swiper-slide {
+  border-radius: 1.2821vw;
+  border: 0.2564vw solid #f6f6f6;
+  height: 46.1538vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2.5641vw;
+  width: 32.0513vw;
+  box-sizing: border-box;
+  padding-top: 2.5641vw;
+  padding-bottom: 3.8462vw;
+}
+
+.div_scroll .swiper-slide:first-child {
+  margin-left: 0;
+}
+
+.div_scroll .swiper-slide .user_info {
+  text-align: center;
+}
+
+.div_scroll .swiper-slide .user_info .div_img {
+  height: 15.8974vw;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.div_scroll .swiper-slide .user_info .div_img img {
+  width: 15.8974vw;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.div_scroll .swiper-slide .user_info p {
+  font-size: 3.5897vw;
+  color: #4a4a4a;
+  line-height: 5.641vw;
+  margin-top: 1.2821vw;
+}
+
+.recommend_list {
+  width: 100%;
+}
+
+.recommend_list .text_img_lists {
+  box-sizing: border-box;
+  padding-top: 2.5641vw;
+  background-color: #fff;
+}
+
+.recommend_list .text_img_lists .imgs_top {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2821vw !important;
+  position: relative;
+}
+
+.recommend_list .text_img_lists .imgs_top > img {
+  width: 33%;
+  height: 24.8718vw;
+  object-fit: cover;
+}
+
+.recommend_list .text_img_lists .imgs_top > .one_big_img {
+  width: 100%;
+  height: 46.1538vw;
+  object-fit: cover;
+}
+
+.recommend_list .text_img_lists > .list {
+  display: block;
+  margin-top: 2.5641vw;
+}
+
+.recommend_list .text_img_lists > .list:first-child {
+  margin-top: 0;
+}
+
+.recommend_list .text_img_lists .div_oneImg {
+  width: 30.7692vw;
+  height: 24.8718vw;
+  margin-left: 0 !important;
+}
+
+.recommend_list .text_img_lists .div_text {
+  box-sizing: border-box;
+  padding: 1.2821vw 3.8462vw;
+}
+
+.recommend_list .text_img_lists > .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+}
+
+.recommend_list .text_img_lists > .top > .user {
+  display: flex;
+  align-items: center;
+}
+
+.recommend_list .text_img_lists > .top > .user > img {
+  border-radius: 50%;
+  width: 7.6923vw;
+  height: 7.6923vw;
+  margin-right: 2.5641vw;
+}
+
+.recommend_list .text_img_lists > .top > .user > .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recommend_list .text_img_lists > .top > .user > .text p {
+  font-size: 3.5897vw;
+  color: #4a4a4a;
+}
+
+.recommend_list .text_img_lists > .top > .user > .text span {
+  font-size: 3.0769vw;
+  color: #9b9b9b;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>我的村子</title>
+    <!-- 引用mui基础脚本 -->
+    <script src="../../../js/mui.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- 引用mui基础样式 -->
+    <link href="../../../css/mui.css" rel="stylesheet" />
+    <!-- 引用整个app公共基础样式 -->
+    <link href="../../../css/farmer_base.css" rel="stylesheet" />
+    <!-- 引入首页独立样式 -->
+    <link href="../../../css/farmer_myVillageLife.css" rel="stylesheet" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <div class="nav_bar flex_justSB">
+        <a href="javascript:history.back();" class="left_bar d_flex flex_alignC"><img class="back"
+                src="../../../images/index/back.png" alt=""></a>
+        <div class="center_cnt tabs_switch" id="tabSwitch">
+            <a href="javascript:location.replace('./myVillage_recommend.html');" class="tab">
+                <p>关注</p>
+                <div class="line"></div>
+            </a>
+            <a href="javascript:location.replace('./myVillage_bazaar.html');" class="tab">
+                <p>集市</p>
+                <div class="line"></div>
+            </a>
+            <a href="javascript:location.replace('./myVillage_life.html');" class="tab active">
+                <p>生活</p>
+                <div class="line"></div>
+            </a>
+            <a href="javascript:location.replace('./myVillage_village.html');" class="tab">
+                <p>村子</p>
+                <div class="line"></div>
+            </a>
+        </div>
+    </div>
+    <!-- 内容部分-id="refreshContainer_one" -->
+    <div class="consult_cnt">
+        <div>
+            <div class="pull_lists">
+                <!-- 循环列表 -->
+                <a href="#" class="task_chunk">
+                    <div class="mark_bgimg">
+                        <img src="../../../images/contents/shuijiao.jpg" alt="">
+                        <div class="mark">
+                            <span>周末去哪</span>
+                        </div>
+                    </div>
+                    <div class="title hiddenTwo">七夕SAY LOVE ！ 日月广场水晶之恋手工体验课七夕SAY LOVE ！ 日月广场水晶之恋手工体验课七夕SAY
+                        LOVE日月广场水晶之恋手工体验课</div>
+                    <div class="text_tips">
+                        <div class="address_time">
+                            <div class="icon_text">
+                                <img src="../../../images/index/icon-libs.png" alt="">
+                                <span>海口日月广场</span>
+                            </div>
+                            <p>截止2022年3月1日</p>
+                        </div>
+                        <!-- 价格 -->
+                        <!-- <div class="price">
+                            ¥<span>128</span>起
+                        </div> -->
+                        <!-- 点赞人数 -->
+                        <div class="give_like">
+                            <span>1234人</span>
+                            <img src="../../../images/index/icon-favor.png" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="task_chunk">
+                    <div class="mark_bgimg">
+                        <img src="../../../images/contents/6.jpeg" alt="">
+                        <div class="mark">
+                            <span>农家乐</span>
+                        </div>
+                    </div>
+                    <div class="title hiddenTwo">七夕SAY LOVE ！ 日月广场水晶之恋手工体验课七夕SAY LOVE ！ 日月广场水晶之恋手工体验课七夕SAY
+                        LOVE日月广场水晶之恋手工体验课</div>
+                    <div class="text_tips">
+                        <div class="address_time">
+                            <div class="icon_text">
+                                <img src="../../../images/index/icon-libs.png" alt="">
+                                <span>海口日月广场</span>
+                            </div>
+                            <p>截止2022年3月1日</p>
+                        </div>
+                        <!-- 价格 -->
+                        <!-- <div class="price">
+                            ¥<span>128</span>起
+                        </div> -->
+                        <!-- 点赞人数 -->
+                        <div class="give_like">
+                            <span>1234人</span>
+                            <img src="../../../images/index/icon-favor.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- 这个是底线 -->
+            <div class="dead_line font_12 font_gray">
+                没有更多内容啦
+            </div>
+            <!-- 后台请求没有数据 -->
+            <div class="data_not">
+                <span class="mui-icon mui-icon mui-icon-home"></span>
+                <P>暂无数据</P>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+        mui.init({
+            pullRefresh: {
+                container: "#refreshContainer_one",
+                down: {
+                    style: 'circle',
+                    callback: pulldown
+                },
+                up: {
+                    contentrefresh: "正在加载...",
+                    contentnomore: '没有更多数据了',
+                    callback: pullup
+                }
+            }
+        });
+        // 每页请求的条数
+        var pageSize = 10;
+        // 请求的页数
+        var pageIndex = 1;
+        // 总的数据条数
+        var pageCount = 30;
+        // 下拉刷新
+        function pulldown() {
+            console.log("下拉刷新")
+            setTimeout(() => {
+                mui('#refreshContainer_one').pullRefresh().endPulldownToRefresh();
+                // 重置请求的页数
+                pageIndex = 1;
+                $("#refreshContainer_one .pull_lists").html("");
+                /*执行请求*/
+                initAjax();
+                // 关闭上拉加载
+                mui('#refreshContainer_one').pullRefresh().disablePullupToRefresh();
+                setTimeout(function () {
+                    // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
+                    if (pageCount > 0) {
+                        mui('#refreshContainer_one').pullRefresh().enablePullupToRefresh();
+                        mui('#refreshContainer_one').pullRefresh().endPullupToRefresh();
+                    }
+                }, 1000)
+            }, 1000)
+        }
+        // 上拉加载
+        function pullup() {
+            setTimeout(() => {
+                // 当总请求条数已经请求完毕
+                if ((pageIndex - 1) * pageSize >= pageCount) {
+                    this.endPullupToRefresh(true);//没有数据
+                    return;
+                }
+                /*执行请求*/
+                initAjax();
+                this.endPullupToRefresh(false)
+            }, 1000)
+        }
+        // 初始化请求----这里是请求函数
+        function initAjax() {
+            // 这里模拟请求
+            for (var i = (pageIndex - 1) * pageSize; i < pageIndex * pageSize; i++) {
+                // dom模板
+                var str = '<a href="#" class="task_chunk"><div class="mark_bgimg"><img src="../../../images/contents/6.jpeg" alt=""><div class="mark"><span>农家乐</span></div></div>' +
+                    '<div class="title hiddenTwo">七夕SAY LOVE ！ 日月广场水晶之恋手工体验课七夕SAY LOVE ！ 日月广场水晶之恋手工体验课七夕SAYLOVE日月广场水晶之恋手工体验课</div>' +
+                    '<div class="text_tips"><div class="address_time"><div class="icon_text"><img src="../../../images/index/icon-libs.png" alt=""><span>海口日月广场</span></div>' +
+                    '<p>截止2022年3月1日</p></div><div class="give_like"><span>1234人</span><img src="../../../images/index/icon-favor.png" alt=""></div></div></a>';
+                $("#refreshContainer_one .pull_lists").append($(str));
+            }
+            pageIndex++;
+            // 如果初始化请求没有一条数据的情况，显示暂无数据
+            if (pageCount <= 0) {
+                $("#refreshContainer_one .pull_lists").hide();
+                $("#refreshContainer_one .data_not").show();
+                // 关闭上拉加载
+                setTimeout(function () {
+                    mui('#refreshContainer_one').pullRefresh().disablePullupToRefresh();
+                }, 1000)
+            } else {
+                $("#refreshContainer_one .pull_lists").show();
+                $("#refreshContainer_one .data_not").hide();
+            }
+        }
+        // 执行初始化请求函数
+        mui.ready(function () {
+            initAjax();
+        })
+    </script>
+</body>
+
+</html>
