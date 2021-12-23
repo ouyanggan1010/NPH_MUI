@@ -201,11 +201,17 @@ body {
   align-items: center;
 }
 
-.recommend_list .text_img_lists > .top > .user > img {
+.recommend_list .text_img_lists > .top > .user .div_img {
   border-radius: 50%;
   width: 7.6923vw;
   height: 7.6923vw;
   margin-right: 2.5641vw;
+}
+
+.recommend_list .text_img_lists > .top > .user .div_img img {
+  border-radius: 50%;
+  width: 7.6923vw;
+  height: 7.6923vw;
 }
 
 .recommend_list .text_img_lists > .top > .user > .text {
