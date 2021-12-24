@@ -11,6 +11,8 @@
     <script src="../../../js/mui.min.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../../js/mycommon.js"></script>
     <!-- mui-css -->
     <link rel="stylesheet" href="../../../css/mui.min.css" />
     <!-- 字体图标 -->
@@ -25,11 +27,11 @@
 
 <body>
     <div class="nav_bar">
-        <a href="javascript:history.back();" class="left_bar">
+        <div onclick="mui.back()" class="left_bar">
             <span class="iconfont icon-icon_arrow_left"></span>
-        </a>
+        </div>
         <div class="center_cnt">农务咨询</div>
-        <a href="./publish.html" class="right_bar">
+        <a href="./publish.html" windowId="publish" class="right_bar">
             <span class="iconfont icon-xiexin"></span>
             <p>我要咨询</p>
         </a>
@@ -133,6 +135,14 @@
         </ul>
     </div>
     <script>
+        console.log("农务咨询====")
+        // 绑定a标签的跳转事件
+        mui("body").on("tap", "a", function () {
+            mui.openWindow({
+                url: this.href,
+                id: this.windowId,
+            })
+        });
         // 点击爱心
         mui(".consult_cnt .back_msg>.bottom_div").on("tap", ".iconfont", function (e) {
             if ($(this).hasClass("icon-jushoucang")) {

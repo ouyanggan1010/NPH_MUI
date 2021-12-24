@@ -13,6 +13,8 @@
   <script src="../../js/swiper.min.js"></script>
   <!-- 引入jQuery -->
   <script src="../../js/jquery-3.1.1.min.js"></script>
+  <!-- 公用的js -->
+  <script src="../../js/mycommon.js"></script>
   <!-- 瀑布流-js -->
   <script src="../../js/waterfall.js"></script>
   <!-- mui-css -->
@@ -244,182 +246,184 @@
       </div>
     </div>
     <!-- 商品列表 -->
-    <div class="shop_lists_box" id="refreshContainer">
-      <div class="pull_dowm_lists">
-        <div class="shop_slide" id="shop_box_content">
-          <div class="box" id="id_001">
-            <a href="#" class="item">
-              <!-- 图片 -->
-              <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
-              </div>
-              <div class="price_title_tips">
-                <!-- 标题 -->
-                <div class="title_tips">
-                  <p class="title">
-                    1猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                  </p>
+    <div class="shop_lists_box">
+      <div id="refreshContainer">
+        <div class="pull_dowm_lists">
+          <div class="shop_slide" id="shop_box_content">
+            <div class="box" id="id_001">
+              <a href="#" class="item">
+                <!-- 图片 -->
+                <div class="div_img">
+                  <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
                 </div>
-                <!-- 特价 -->
-                <div class="mark">
-                  <span class="myicon-tejiaRed"></span>
-                </div>
-                <!-- 价格与购物车 -->
-                <div class="price_num_cart">
-                  <div class="price_num">
-                    <span class="small_red">¥</span>
-                    <span class="big_red">39.00</span>
-                    <span class="big_gray">/箱</span>
-                    <span class="small_gray">¥59.9</span>
+                <div class="price_title_tips">
+                  <!-- 标题 -->
+                  <div class="title_tips">
+                    <p class="title">
+                      1猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    </p>
                   </div>
-                  <!-- 显示购物车按钮 -->
-                  <div class="shop_cart_btn">
-                    <span class="iconfont icon-gouwuche"></span>
+                  <!-- 特价 -->
+                  <div class="mark">
+                    <span class="myicon-tejiaRed"></span>
+                  </div>
+                  <!-- 价格与购物车 -->
+                  <div class="price_num_cart">
+                    <div class="price_num">
+                      <span class="small_red">¥</span>
+                      <span class="big_red">39.00</span>
+                      <span class="big_gray">/箱</span>
+                      <span class="small_gray">¥59.9</span>
+                    </div>
+                    <!-- 显示购物车按钮 -->
+                    <div class="shop_cart_btn">
+                      <span class="iconfont icon-gouwuche"></span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </div>
+            <div class="box" id="id_002">
+              <a href="#" class="item">
+                <div class="div_img">
+                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                </div>
+                <div class="price_title_tips">
+                  <!-- 标题 -->
+                  <div class="title_tips">
+                    <p class="title">
+                      2猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    </p>
+                  </div>
+                  <!-- 特价 -->
+                  <div class="mark">
+                    <span class="myicon-tejiaRed"></span>
+                  </div>
+                  <!-- 价格与购物车 -->
+                  <div class="price_num_cart">
+                    <div class="price_num">
+                      <span class="small_red">¥</span>
+                      <span class="big_red">39.00</span>
+                      <span class="big_gray">/箱</span>
+                      <span class="small_gray">¥59.9</span>
+                    </div>
+                    <div class="shop_cart_btn">
+                      <span class="iconfont icon-gouwuche"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="box" id="id_003">
+              <a href="#" class="item">
+                <div class="div_img">
+                  <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
+                </div>
+                <div class="price_title_tips">
+                  <!-- 标题 -->
+                  <div class="title_tips">
+                    <p class="title">
+                      3猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    </p>
+                  </div>
+                  <!-- 特价 -->
+                  <div class="mark">
+                    <span class="myicon-tejiaRed"></span>
+                  </div>
+                  <!-- 价格与购物车 -->
+                  <div class="price_num_cart">
+                    <div class="price_num">
+                      <span class="small_red">¥</span>
+                      <span class="big_red">39.00</span>
+                      <span class="big_gray">/箱</span>
+                      <span class="small_gray">¥59.9</span>
+                    </div>
+                    <div class="shop_cart_btn">
+                      <span class="iconfont icon-gouwuche"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="box" id="id_004">
+              <a href="#" class="item">
+                <div class="div_img">
+                  <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
+                </div>
+              </a>
+            </div>
+            <div class="box" id="id_005">
+              <a href="#" class="item">
+                <div class="div_img">
+                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                </div>
+              </a>
+            </div>
+            <div class="box" id="id_006">
+              <a href="#" class="item">
+                <div class="div_img">
+                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                </div>
+                <div class="price_title_tips">
+                  <!-- 标题 -->
+                  <div class="title_tips">
+                    <p class="title">
+                      6猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    </p>
+                  </div>
+                  <!-- 特价 -->
+                  <div class="mark">
+                    <span class="myicon-tejiaRed"></span>
+                  </div>
+                  <!-- 价格与购物车 -->
+                  <div class="price_num_cart">
+                    <div class="price_num">
+                      <span class="small_red">¥</span>
+                      <span class="big_red">39.00</span>
+                      <span class="big_gray">/箱</span>
+                      <span class="small_gray">¥59.9</span>
+                    </div>
+                    <div class="shop_cart_btn">
+                      <span class="iconfont icon-gouwuche"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="box" id="id_007">
+              <a href="#" class="item">
+                <div class="div_img">
+                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                </div>
+                <div class="price_title_tips">
+                  <!-- 标题 -->
+                  <div class="title_tips">
+                    <p class="title">
+                      7猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                    </p>
+                  </div>
+                  <!-- 价格与购物车 -->
+                  <div class="price_num_cart">
+                    <div class="price_num">
+                      <span class="small_red">¥</span>
+                      <span class="big_red">39.00</span>
+                      <span class="big_gray">/箱</span>
+                      <span class="small_gray">¥59.9</span>
+                    </div>
+                    <div class="shop_cart_btn">
+                      <span class="iconfont icon-gouwuche"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="box" id="id_002">
-            <a href="#" class="item">
-              <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
-              </div>
-              <div class="price_title_tips">
-                <!-- 标题 -->
-                <div class="title_tips">
-                  <p class="title">
-                    2猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                  </p>
-                </div>
-                <!-- 特价 -->
-                <div class="mark">
-                  <span class="myicon-tejiaRed"></span>
-                </div>
-                <!-- 价格与购物车 -->
-                <div class="price_num_cart">
-                  <div class="price_num">
-                    <span class="small_red">¥</span>
-                    <span class="big_red">39.00</span>
-                    <span class="big_gray">/箱</span>
-                    <span class="small_gray">¥59.9</span>
-                  </div>
-                  <div class="shop_cart_btn">
-                    <span class="iconfont icon-gouwuche"></span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="box" id="id_003">
-            <a href="#" class="item">
-              <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
-              </div>
-              <div class="price_title_tips">
-                <!-- 标题 -->
-                <div class="title_tips">
-                  <p class="title">
-                    3猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                  </p>
-                </div>
-                <!-- 特价 -->
-                <div class="mark">
-                  <span class="myicon-tejiaRed"></span>
-                </div>
-                <!-- 价格与购物车 -->
-                <div class="price_num_cart">
-                  <div class="price_num">
-                    <span class="small_red">¥</span>
-                    <span class="big_red">39.00</span>
-                    <span class="big_gray">/箱</span>
-                    <span class="small_gray">¥59.9</span>
-                  </div>
-                  <div class="shop_cart_btn">
-                    <span class="iconfont icon-gouwuche"></span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="box" id="id_004">
-            <a href="#" class="item">
-              <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
-              </div>
-            </a>
-          </div>
-          <div class="box" id="id_005">
-            <a href="#" class="item">
-              <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
-              </div>
-            </a>
-          </div>
-          <div class="box" id="id_006">
-            <a href="#" class="item">
-              <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
-              </div>
-              <div class="price_title_tips">
-                <!-- 标题 -->
-                <div class="title_tips">
-                  <p class="title">
-                    6猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                  </p>
-                </div>
-                <!-- 特价 -->
-                <div class="mark">
-                  <span class="myicon-tejiaRed"></span>
-                </div>
-                <!-- 价格与购物车 -->
-                <div class="price_num_cart">
-                  <div class="price_num">
-                    <span class="small_red">¥</span>
-                    <span class="big_red">39.00</span>
-                    <span class="big_gray">/箱</span>
-                    <span class="small_gray">¥59.9</span>
-                  </div>
-                  <div class="shop_cart_btn">
-                    <span class="iconfont icon-gouwuche"></span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="box" id="id_007">
-            <a href="#" class="item">
-              <div class="div_img">
-                <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
-              </div>
-              <div class="price_title_tips">
-                <!-- 标题 -->
-                <div class="title_tips">
-                  <p class="title">
-                    7猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                  </p>
-                </div>
-                <!-- 价格与购物车 -->
-                <div class="price_num_cart">
-                  <div class="price_num">
-                    <span class="small_red">¥</span>
-                    <span class="big_red">39.00</span>
-                    <span class="big_gray">/箱</span>
-                    <span class="small_gray">¥59.9</span>
-                  </div>
-                  <div class="shop_cart_btn">
-                    <span class="iconfont icon-gouwuche"></span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- 数据为空 -->
-        <div class="data_not">
-          <div>
-            <span class="iconfont icon-kongshuju1"></span>
-            <div>暂无数据</div>
+          <!-- 数据为空 -->
+          <div class="data_not">
+            <div>
+              <span class="iconfont icon-kongshuju1"></span>
+              <div>暂无数据</div>
+            </div>
           </div>
         </div>
       </div>
@@ -456,10 +460,6 @@
       let h = windowHeight - searchHeight - tabHeight - footHeight;
       $("#loading").outerHeight(h);
       $(".data_not").outerHeight(h);
-      console.log("windowHeight=========", windowHeight);
-      console.log("searchHeight=========", searchHeight);
-      console.log("footHeight=========", footHeight);
-      console.log("=========", h)
     });
     // 初始购物车数量
     let cart_num = 0;
@@ -547,27 +547,25 @@
       } else {
         $(this).addClass("active");
         $(this).siblings(".tab").removeClass("active");
+        let index = $(this).index();
         // 每一次切换都重新请求列表数据
-        // 打开加载loading
-        $("#good_lists #loading").show();
-        // 关闭存放数据的div
-        $("#good_lists .pull_dowm_lists").hide();
-        // 将存放数据的div设置为空
-        $("#shop_box_content").html("");
-        // 重置pageIndex
-        pageIndex = 1;
-        // 关闭上拉加载
-        mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-        // 这里模拟请求数据
-        setTimeout(function () {
-          initAjax();
-        }, 1000);
+        initData(index);
       }
     });
-    // 执行初始化请求函数
-    mui.ready(function () {
-      initAjax();
-    });
+    function initData(index) {
+      // 打开加载loading
+      $("#good_lists #loading").show();
+      // 关闭存放数据的div
+      $("#refreshContainer").hide();
+      // 将存放数据的div设置为空
+      $("#shop_box_content").html("");
+      // 重置pageIndex
+      pageIndex = 1;
+      // 这里模拟请求数据
+      setTimeout(function () {
+        initAjax();
+      }, 1000);
+    }
     // --------------------------------------------------------上拉加载
     mui.init({
       pullRefresh: {
@@ -584,7 +582,7 @@
     // 请求的页数
     let pageIndex = 1;
     // 总的数据条数
-    let pageCount = 0;
+    let pageCount = 30;
     // 上拉加载
     function pullup() {
       setTimeout(() => {
@@ -603,7 +601,7 @@
       // 关闭加载loading
       $("#good_lists #loading").hide();
       // 开启数据列表区域
-      $(".pull_dowm_lists").show();
+      $("#refreshContainer").show();
       $("#shop_box_content").show();
       $("#refreshContainer .data_not").hide();
       // 如果初始化请求没有一条数据的情况，显示暂无数据
@@ -638,6 +636,10 @@
       // 重新执行瀑布流函数
       waterFall("shop_box_content");
     }
+    // 执行初始化请求函数
+    mui.ready(function () {
+      initData(0);
+    });
   </script>
 </body>
 

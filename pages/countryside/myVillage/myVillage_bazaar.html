@@ -13,6 +13,8 @@
     <script src="../../../js/jquery-3.1.1.min.js"></script>
     <!-- swiper -->
     <script src="../../../js/swiper.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../../js/mycommon.js"></script>
     <!-- mui-css -->
     <link rel="stylesheet" href="../../../css/mui.min.css" />
     <!-- swiper -->
@@ -30,13 +32,6 @@
 <body>
     <!-- 公用的尾部 -->
     <div id="header"></div>
-    <script>
-        $("#header").load("../../../components/header_wdcz.html", function () {
-            let nowHead = $(this).find("#tabSwitch .tab").eq(1);
-            nowHead.addClass("active");
-            nowHead.siblings(".list").removeClass("active");
-        });
-    </script>
     <!-- 内容部分 -->
     <div class="consult_cnt" id="refreshContainer">
         <div id="content_list">
@@ -182,166 +177,177 @@
                     </div>
                 </div>
                 <!-- 数据为空 -->
-                <div class="data_not">
+                <!-- <div class="data_not">
                     <div>
                         <span class="iconfont icon-kongshuju1"></span>
                         <div>暂无数据</div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-        <!-- 加载中 -->
-        <div class="loading_data" id="loading">
-            <span class="mui-spinner"></span>
-            <div>加载中...</div>
-        </div>
+    </div>
+    <!-- 加载中 -->
+    <div class="loading_data" id="loading">
+        <span class="mui-spinner"></span>
+        <div>加载中...</div>
     </div>
     <script>
-        // 隐藏多出的文章列表
-        function hideMore() {
-            $(".recommend_list .cnt_imgs").each(function () {
-                console.log("=======",)
-                let cssDisplay = $(this).find(".more_article").css("display");
-                if (cssDisplay != "none") {
-                    let text = $(this).find(".text_img_lists>.list");
-                    let size = text.length;
-                    if (size > 1) {
-                        text.eq(0).siblings(".list").hide();
-                    } else {
-                        $(this).find(".more_article").hide();
+        $("#header").load("../../../components/header_wdcz.html", function () {
+            let nowHead = $(this).find("#tabSwitch .tab").eq(1);
+            nowHead.addClass("active");
+            nowHead.siblings(".list").removeClass("active");
+            let topH = $(".nav_bar").outerHeight();
+            initData(topH);
+        });
+        function initData(topH) {
+            // 隐藏多出的文章列表
+            function hideMore() {
+                $(".recommend_list .cnt_imgs").each(function () {
+                    console.log("=======",)
+                    let cssDisplay = $(this).find(".more_article").css("display");
+                    if (cssDisplay != "none") {
+                        let text = $(this).find(".text_img_lists>.list");
+                        let size = text.length;
+                        if (size > 1) {
+                            text.eq(0).siblings(".list").hide();
+                        } else {
+                            $(this).find(".more_article").hide();
+                        }
                     }
-                }
+                });
+            }
+            // 点击更多显示隐藏的列表
+            mui(".task_lists").on("tap", ".more_article", function () {
+                $(this).siblings(".text_img_lists").find(".list").fadeIn();
+                $(this).hide();
             });
-        }
-        // 点击更多显示隐藏的列表
-        mui(".task_lists").on("tap", ".more_article", function () {
-            $(this).siblings(".text_img_lists").find(".list").fadeIn();
-            $(this).hide();
-        });
-        //监听tap事件，解决a标签不能跳转的问题
-        mui('body').on('tap', 'a', function () {
-            document.location.href = this.href;
-        });
-        // swiper-头部轮播
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-            loop: true,
-            loopedSlides: 8,
-        });
-        // 初始化数据
-        mui.ready(function () {
-            // 隐藏数据列表
-            $("#content_list").hide();
-            // 打开loading
-            $("#loading").show();
-            // 将存放数据的div设置为空
-            $("#refreshContainer .task_lists").html("");
-            // 重置pageIndex
-            pageIndex = 1;
-            // 请求数据
-            setTimeout(function () {
-                initAjax();
-            }, 1000);
-        });
-        // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
-        mui.init({
-            pullRefresh: {
-                container: "#refreshContainer",
-                down: {
-                    style: "circle",
-                    color: "#0091ff",
-                    callback: pulldown,
+            //监听tap事件，解决a标签不能跳转的问题
+            mui('body').on('tap', 'a', function () {
+                document.location.href = this.href;
+            });
+            // swiper-头部轮播
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                loop: true,
+                loopedSlides: 8,
+            });
+            // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+            mui.init({
+                pullRefresh: {
+                    container: "#refreshContainer",
+                    down: {
+                        style: "circle",
+                        color: "#0091ff",
+                        height: refreshH,
+                        offset: topH,
+                        callback: pulldown,
+                    },
+                    up: {
+                        contentrefresh: "正在加载...",
+                        contentnomore: "没有更多内容啦",
+                        callback: pullup,
+                    },
                 },
-                up: {
-                    contentrefresh: "正在加载...",
-                    contentnomore: "没有更多内容啦",
-                    callback: pullup,
-                },
-            },
-        });
-        // 每页请求的条数
-        let pageSize = 10;
-        // 请求的页数
-        let pageIndex = 1;
-        // 总的数据条数
-        let pageCount = 30;
-        // 下拉刷新
-        function pulldown() {
-            console.log("下拉刷新");
-            setTimeout(() => {
-                mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
-                // 重置请求的页数
-                pageIndex = 1;
-                $("#content_list .task_lists").html("");
-                /*执行请求*/
-                initAjax();
-                // 关闭上拉加载
-                mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-                setTimeout(function () {
-                    // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
-                    if (pageCount > 0) {
-                        mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
-                        mui("#refreshContainer").pullRefresh().endPullupToRefresh();
-                    }
-                }, 1000);
-            }, 1000);
-        }
-        // 上拉加载
-        function pullup() {
-            setTimeout(() => {
-                // 当总请求条数已经请求完毕
-                if ((pageIndex - 1) * pageSize >= pageCount) {
-                    this.endPullupToRefresh(true); //没有数据
-                    return;
-                }
-                /*执行请求*/
-                initAjax();
-                this.endPullupToRefresh(false);
-            }, 1000);
-        }
-        // 初始化请求----这里是请求函数
-        function initAjax() {
-            // 关闭loading
-            $("#loading").hide();
-            // 打开数据列表
-            $("#content_list").show();
-            $("#refreshContainer .data_not").hide();
-            // 如果初始化请求没有一条数据的情况，显示暂无数据
-            if (pageCount <= 0) {
-                $("#content_list").hide();
-                $("#refreshContainer .data_not").show();
-                // 关闭上拉加载
-                setTimeout(function () {
+            });
+            // 每页请求的条数
+            let pageSize = 10;
+            // 请求的页数
+            let pageIndex = 1;
+            // 总的数据条数
+            let pageCount = 30;
+            // 下拉刷新
+            function pulldown() {
+                console.log("下拉刷新");
+                setTimeout(() => {
+                    mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+                    // 重置请求的页数
+                    pageIndex = 1;
+                    $("#content_list .task_lists").html("");
+                    /*执行请求*/
+                    initAjax();
+                    // 关闭上拉加载
                     mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                    setTimeout(function () {
+                        // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
+                        if (pageCount > 0) {
+                            mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                            mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+                        }
+                    }, 1000);
                 }, 1000);
-            } else {
-                mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
-                mui("#refreshContainer").pullRefresh().endPullupToRefresh();
             }
-            // 这里模拟请求
-            for (
-                let i = (pageIndex - 1) * pageSize;
-                i < pageIndex * pageSize;
-                i++
-            ) {
-                // dom模板
-                let str = '<div class="cnt_imgs"><div class="big_img"><div class="card_title"><div class="only">海口24小时</div><a href="#" class="more"><span>更多</span>' +
-                    '<span class="iconfont icon-icon_arrow_right"></span></a></div><a href="#" class="imgText"><img src="../../../images/content_imgs/Bitmap-3.png" alt="">' +
-                    '<p>骑楼老街新面貌，一个你重新认识的海口骑楼老街新面貌，一个你重新认识的海口</p></a></div><div class="text_img_lists">' +
-                    '<a href="../../index/information/informationDetail.html" class="list"><div class="text_oneImg"><div class="div_text"><div class="div_title">市农业农村局召开迎接农村集体产权制度改' +
-                    '</div><div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span></div></div></div><div class="div_oneImg">' +
-                    '<img src="../../../images/content_imgs/Bitmap-1.png" alt="" /></div></div></a><a href="../../index/information/informationDetail.html" class="list">' +
-                    '<div class="text_oneImg"><div class="div_text"><div class="div_title">市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议' +
-                    '</div><div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span></div></div></div><div class="div_oneImg"><img src="../../../images/content_imgs/Bitmap-2.png" alt="" />' +
-                    '</div></div></a><a href="../../index/information/informationDetail.html" class="list"><div class="text_oneImg"><div class="div_text"><div class="div_title">' +
-                    '市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议</div><div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span>' +
-                    '</div></div></div><div class="div_oneImg"><img src="../../../images/content_imgs/Bitmap-3.png" alt="" /></div></div></a></div><div class="more_article">' +
-                    '<div>余下6篇</div><span class="mui-icon mui-icon-arrowdown"></span></div></div>';
-                $("#content_list .task_lists").append($(str));
+            // 上拉加载
+            function pullup() {
+                setTimeout(() => {
+                    // 当总请求条数已经请求完毕
+                    if ((pageIndex - 1) * pageSize >= pageCount) {
+                        this.endPullupToRefresh(true); //没有数据
+                        return;
+                    }
+                    /*执行请求*/
+                    initAjax();
+                    this.endPullupToRefresh(false);
+                }, 1000);
             }
-            pageIndex++;
-            hideMore();
+            // 初始化请求----这里是请求函数
+            function initAjax() {
+                // 关闭loading
+                $("#loading").hide();
+                // 打开数据列表
+                $(".consult_cnt").show();
+                // $("#refreshContainer .data_not").hide();
+                // 如果初始化请求没有一条数据的情况，显示暂无数据
+                if (pageCount <= 0) {
+                    $("#content_list .task_lists").hide();
+                    // $("#refreshContainer .data_not").show();
+                    // 关闭上拉加载
+                    setTimeout(function () {
+                        mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                    }, 1000);
+                } else {
+                    mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                    mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+                }
+                // 这里模拟请求
+                for (
+                    let i = (pageIndex - 1) * pageSize;
+                    i < pageIndex * pageSize;
+                    i++
+                ) {
+                    // dom模板
+                    let str = '<div class="cnt_imgs"><div class="big_img"><div class="card_title"><div class="only">海口24小时</div><a href="#" class="more"><span>更多</span>' +
+                        '<span class="iconfont icon-icon_arrow_right"></span></a></div><a href="#" class="imgText"><img src="../../../images/content_imgs/Bitmap-3.png" alt="">' +
+                        '<p>骑楼老街新面貌，一个你重新认识的海口骑楼老街新面貌，一个你重新认识的海口</p></a></div><div class="text_img_lists">' +
+                        '<a href="../../index/information/informationDetail.html" class="list"><div class="text_oneImg"><div class="div_text"><div class="div_title">市农业农村局召开迎接农村集体产权制度改' +
+                        '</div><div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span></div></div></div><div class="div_oneImg">' +
+                        '<img src="../../../images/content_imgs/Bitmap-1.png" alt="" /></div></div></a><a href="../../index/information/informationDetail.html" class="list">' +
+                        '<div class="text_oneImg"><div class="div_text"><div class="div_title">市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议' +
+                        '</div><div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span></div></div></div><div class="div_oneImg"><img src="../../../images/content_imgs/Bitmap-2.png" alt="" />' +
+                        '</div></div></a><a href="../../index/information/informationDetail.html" class="list"><div class="text_oneImg"><div class="div_text"><div class="div_title">' +
+                        '市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议</div><div class="div_tips"><div class="text_mark"><span>[访谈]农机设备信息</span>' +
+                        '</div></div></div><div class="div_oneImg"><img src="../../../images/content_imgs/Bitmap-3.png" alt="" /></div></div></a></div><div class="more_article">' +
+                        '<div>余下6篇</div><span class="mui-icon mui-icon-arrowdown"></span></div></div>';
+                    $("#content_list .task_lists").append($(str));
+                }
+                pageIndex++;
+                hideMore();
+            }
+            // 初始化数据
+            mui.ready(function () {
+                // 隐藏数据列表
+                $(".consult_cnt").hide();
+                // 打开loading
+                $("#loading").show();
+                // 将存放数据的div设置为空
+                $("#refreshContainer .task_lists").html("");
+                // 重置pageIndex
+                pageIndex = 1;
+                // 请求数据
+                setTimeout(function () {
+                    initAjax();
+                }, 1000);
+            });
         }
     </script>
 </body>

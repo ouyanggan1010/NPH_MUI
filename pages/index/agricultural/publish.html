@@ -11,6 +11,8 @@
     <script src="../../../js/mui.min.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../../js/mycommon.js"></script>
     <!-- mui-css -->
     <link rel="stylesheet" href="../../../css/mui.min.css" />
     <!-- 字体图标 -->
@@ -25,7 +27,7 @@
 
 <body>
     <div class="nav_bar">
-        <a href="javascript:history.back();" class="left_bar">取消</a>
+        <div onclick="mui.back()" class="left_bar">取消</div>
         <div class="center_cnt">发表留言</div>
         <button type="button" class="right_bar" id="submitBtn">提交</button>
     </div>
@@ -69,6 +71,7 @@
         </div>
     </div>
     <script>
+        console.log("发表留言====")
         // 提交按钮的样式
         function submitClass() {
             // 判断标题栏是否为空，如果为空则表示不能提交
@@ -126,7 +129,7 @@
         mui("#parentTextImg").on("tap", ".push_img .iconfont", function (e) {
             let parent = $(this).parents(".push_img");
             let i = parent.index();
-            mui.confirm("确定要要删除该图片吗？","提示",["取消","确定"], function (res) {
+            mui.confirm("确定要要删除该图片吗？", "提示", ["取消", "确定"], function (res) {
                 if (res.index == 1) {
                     parent.remove();
                     fileImg.splice(i, 1);
@@ -134,8 +137,8 @@
             });
         });
         // 点击提交按钮
-        $("#submitBtn").click(function(e){
-            if(!$(this).hasClass("active"))return;
+        $("#submitBtn").click(function (e) {
+            if (!$(this).hasClass("active")) return;
             $(".push_img").removeClass("active");
             let str = "";
             $("#parentTextImg .text_img").each(function () {

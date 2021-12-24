@@ -13,6 +13,8 @@
     <script src="../../../js/jquery-3.1.1.min.js"></script>
     <!-- swiper -->
     <script src="../../../js/swiper.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../../js/mycommon.js"></script>
     <!-- mui-css -->
     <link rel="stylesheet" href="../../../css/mui.min.css" />
     <!-- swiper -->
@@ -30,13 +32,6 @@
 <body>
     <!-- 公用的尾部 -->
     <div id="header"></div>
-    <script>
-        $("#header").load("../../../components/header_wdcz.html", function () {
-            let nowHead = $(this).find("#tabSwitch .tab").eq(3);
-            nowHead.addClass("active");
-            nowHead.siblings(".list").removeClass("active");
-        });
-    </script>
     <!-- 内容部分" -->
     <div class="consult_cnt" id="refreshContainer">
         <div id="content_list">
@@ -124,123 +119,149 @@
                 </div>
             </div>
         </div>
-        <!-- 加载中 -->
-        <div class="loading_data" id="loading">
-            <span class="mui-spinner"></span>
-            <div>加载中...</div>
-        </div>
+    </div>
+    <!-- 加载中 -->
+    <div class="loading_data" id="loading">
+        <span class="mui-spinner"></span>
+        <div>加载中...</div>
     </div>
     <script>
-        // 列表横向滚动
-        var swiper = new Swiper('.swiper-container', {
-            scrollbar: '.swiper-scrollbar',
-            scrollbarHide: true,
-            slidesPerView: 'auto',
-            centeredSlides: false,
+        $("#header").load("../../../components/header_wdcz.html", function () {
+            let nowHead = $(this).find("#tabSwitch .tab").eq(3);
+            nowHead.addClass("active");
+            nowHead.siblings(".list").removeClass("active");
+            let topH = $(".nav_bar").outerHeight();
+            initData(topH);
         });
-        // 初始化数据
-        mui.ready(function () {
-            // 隐藏数据列表
-            $("#content_list").hide();
-            // 打开loading
-            $("#loading").show();
-            // 将存放数据的div设置为空
-            // $("#refreshContainer .village_lists").html("");
-            // 重置pageIndex
-            pageIndex = 1;
-            // 请求数据
-            setTimeout(function () {
-                initAjax();
-            }, 1000);
-        });
-        // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
-        mui.init({
-            pullRefresh: {
-                container: "#refreshContainer",
-                down: {
-                    style: "circle",
-                    color: "#0091ff",
-                    callback: pulldown,
-                },
-                up: {
-                    contentrefresh: "正在加载...",
-                    contentnomore: "没有更多内容啦",
-                    callback: pullup,
-                },
-            },
-        });
-        // 每页请求的条数
-        let pageSize = 10;
-        // 请求的页数
-        let pageIndex = 1;
-        // 总的数据条数
-        let pageCount = 30;
-        // 下拉刷新
-        function pulldown() {
-            console.log("下拉刷新");
-            setTimeout(() => {
-                mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
-                // 重置请求的页数
-                pageIndex = 1;
-                $("#content_list .village_lists").html("");
-                /*执行请求*/
-                initAjax();
-                // 关闭上拉加载
-                mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+        function initData(topH) {
+            // 给关注按钮绑定点击事件
+            mui("#content_list").on("tap", ".focus_not", function () {
+                console.log(25544)
+                $(this).html('<span class="mui-spinner"></span>');
+                let _this = this;
                 setTimeout(function () {
-                    // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
-                    if (pageCount > 0) {
-                        mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
-                        mui("#refreshContainer").pullRefresh().endPullupToRefresh();
-                    }
-                }, 1000);
-            }, 1000);
-        }
-        // 上拉加载
-        function pullup() {
-            setTimeout(() => {
-                // 当总请求条数已经请求完毕
-                if ((pageIndex - 1) * pageSize >= pageCount) {
-                    this.endPullupToRefresh(true); //没有数据
-                    return;
-                }
-                /*执行请求*/
-                initAjax();
-                this.endPullupToRefresh(false);
-            }, 1000);
-        }
-        // 初始化请求----这里是请求函数
-        function initAjax() {
-            // 关闭loading
-            $("#loading").hide();
-            // 打开数据列表
-            $("#content_list").show();
-            $("#refreshContainer .data_not").hide();
-            // 如果初始化请求没有一条数据的情况，显示暂无数据
-            if (pageCount <= 0) {
-                $("#content_list").hide();
-                $("#refreshContainer .data_not").show();
-                // 关闭上拉加载
-                setTimeout(function () {
+                    $(_this).html("已关注");
+                    $(_this).removeClass("focus_not");
+                    $(_this).addClass("focus_yes");
+                }, 500);
+            });
+            //监听tab事件，解决a标签不能跳转的问题
+            mui('body').on('tap', 'a', function () {
+                document.location.href = this.href;
+            });
+            // 列表横向滚动
+            var swiper = new Swiper('.swiper-container', {
+                scrollbar: '.swiper-scrollbar',
+                scrollbarHide: true,
+                slidesPerView: 'auto',
+                centeredSlides: false,
+            });
+            // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+            mui.init({
+                pullRefresh: {
+                    container: "#refreshContainer",
+                    down: {
+                        style: "circle",
+                        color: "#0091ff",
+                        height: refreshH,
+                        offset: topH,
+                        callback: pulldown,
+                    },
+                    up: {
+                        contentrefresh: "正在加载...",
+                        contentnomore: "没有更多内容啦",
+                        callback: pullup,
+                    },
+                },
+            });
+            // 每页请求的条数
+            let pageSize = 10;
+            // 请求的页数
+            let pageIndex = 1;
+            // 总的数据条数
+            let pageCount = 30;
+            // 下拉刷新
+            function pulldown() {
+                console.log("下拉刷新");
+                setTimeout(() => {
+                    mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+                    // 重置请求的页数
+                    pageIndex = 1;
+                    $("#content_list .village_lists").html("");
+                    /*执行请求*/
+                    initAjax();
+                    // 关闭上拉加载
                     mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                    setTimeout(function () {
+                        // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
+                        if (pageCount > 0) {
+                            mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                            mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+                        }
+                    }, 1000);
                 }, 1000);
-            } else {
-                mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
-                mui("#refreshContainer").pullRefresh().endPullupToRefresh();
             }
-            // 这里模拟请求
-            for (
-                let i = (pageIndex - 1) * pageSize;
-                i < pageIndex * pageSize;
-                i++
-            ) {
-                // dom模板
-                let str = '<div class="list"><a href="#" class="img_text"><img src="../../../images/content_imgs/Bitmap-4.png" alt="">' +
-                    '<div class="texts"><div class="title">桥头吴家村</div><div class="nums"><span>关注&nbsp;1万</span><span>帖子&nbsp;12万</span>' +
-                    '</div><div class="overOne">促进海南和谐繁荣发展</div></div></a><div class="focus_yes">已关注</div></div>';
-                $("#content_list .village_lists").append($(str));
+            // 上拉加载
+            function pullup() {
+                setTimeout(() => {
+                    // 当总请求条数已经请求完毕
+                    if ((pageIndex - 1) * pageSize >= pageCount) {
+                        this.endPullupToRefresh(true); //没有数据
+                        return;
+                    }
+                    /*执行请求*/
+                    initAjax();
+                    this.endPullupToRefresh(false);
+                }, 1000);
             }
-            pageIndex++;
+            // 初始化请求----这里是请求函数
+            function initAjax() {
+                // 关闭loading
+                $("#loading").hide();
+                // 打开数据列表
+                $(".consult_cnt").show();
+                $("#refreshContainer .data_not").hide();
+                // 如果初始化请求没有一条数据的情况，显示暂无数据
+                if (pageCount <= 0) {
+                    $("#content_list .village_lists").hide();
+                    $("#refreshContainer .data_not").show();
+                    // 关闭上拉加载
+                    setTimeout(function () {
+                        mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                    }, 1000);
+                } else {
+                    mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                    mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+                }
+                // 这里模拟请求
+                for (
+                    let i = (pageIndex - 1) * pageSize;
+                    i < pageIndex * pageSize;
+                    i++
+                ) {
+                    // dom模板
+                    let str = '<div class="list"><a href="#" class="img_text"><img src="../../../images/content_imgs/Bitmap-4.png" alt="">' +
+                        '<div class="texts"><div class="title">桥头吴家村</div><div class="nums"><span>关注&nbsp;1万</span><span>帖子&nbsp;12万</span>' +
+                        '</div><div class="overOne">促进海南和谐繁荣发展</div></div></a><div class="focus_not">关注</div></div>';
+                    $("#content_list .village_lists").append($(str));
+                }
+                pageIndex++;
+            }
+            // 初始化数据
+            mui.ready(function () {
+                // 隐藏数据列表
+                $(".consult_cnt").hide();
+                // 打开loading
+                $("#loading").show();
+                // 将存放数据的div设置为空
+                $("#refreshContainer .village_lists").html("");
+                // 重置pageIndex
+                pageIndex = 1;
+                // 请求数据
+                setTimeout(function () {
+                    initAjax();
+                }, 1000);
+            });
         }
     </script>
 </body>

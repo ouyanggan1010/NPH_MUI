@@ -11,6 +11,8 @@
     <script src="../../../js/mui.min.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../../js/mycommon.js"></script>
     <!-- mui-css -->
     <link rel="stylesheet" href="../../../css/mui.min.css" />
     <!-- 字体图标 -->
@@ -26,9 +28,9 @@
 <body>
     <!-- header -->
     <div class="nav_bar">
-        <a href="javascript:history.back();" class="left_bar">
+        <div onclick="mui.back()" class="left_bar">
             <span class="iconfont icon-icon_arrow_left"></span>
-        </a>
+        </div>
         <div class="right_bar iconfont icon-31shoucangxuanzhong" id="collection"></div>
     </div>
     <!-- 内容部分 -->

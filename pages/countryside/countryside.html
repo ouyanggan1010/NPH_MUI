@@ -11,6 +11,8 @@
   <script src="../../js/mui.min.js"></script>
   <!-- 引入jQuery -->
   <script src="../../js/jquery-3.1.1.min.js"></script>
+  <!-- 公用的js -->
+  <script src="../../js/mycommon.js"></script>
   <!-- mui-css -->
   <link rel="stylesheet" href="../../css/mui.min.css" />
   <!-- 字体图标 -->
@@ -51,34 +53,34 @@
       <!-- 图标十宫格 -->
       <div class="iconFlex_card">
         <div class="list">
-          <a href="./counselingCenter/consultCenter.html">
+          <div onclick="openWindow({url:'./counselingCenter/consultCenter.html',id:'consultCenter'})">
             <div class="layout">
               <div class="img_or_icon">
                 <span class="myicon-zixunzhongxin"></span>
               </div>
               <div class="text">咨询中心</div>
             </div>
-          </a>
+          </div>
         </div>
         <div class="list">
-          <a href="./onlineAggie/onlineAggie.html">
+          <div onclick="openWindow({url:'./onlineAggie/onlineAggie.html',id:'onlineAggie'})">
             <div class="layout">
               <div class="img_or_icon">
                 <span class="myicon-zaixiannongxiao"></span>
               </div>
               <div class="text">在线农校</div>
             </div>
-          </a>
+          </div>
         </div>
         <div class="list">
-          <a href="#">
+          <div onclick="openWindow({url:'../index/plantAssistant/task.html',id:'plantAssistant'})">
             <div class="layout">
               <div class="img_or_icon">
                 <span class="myicon-zhongzhizhushou"></span>
               </div>
               <div class="text">种植助手</div>
             </div>
-          </a>
+          </div>
         </div>
         <div class="list">
           <a href="#">
@@ -311,14 +313,14 @@
           </a>
         </div>
         <div class="list">
-          <a href="./myVillage/myVillage_recommend.html">
+          <div onclick="openWindow({url:'./myVillage/myVillage_recommend.html',id:'myVillage'})">
             <div class="layout">
               <div class="img_or_icon">
                 <span class="myicon-wodecunzi"></span>
               </div>
               <div class="text">我的村子</div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -395,6 +397,7 @@
     });
   </script>
   <script>
+
     // 监听滚动事件
     $(window).scroll(function () {
       if ($(this).scrollTop() > 0) {

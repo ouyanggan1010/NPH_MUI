@@ -1034,6 +1034,7 @@ a:link, a:visited, a:hover, a:active {
   font-size: 0;
 }
 
+.iconFlex_card .list > div,
 .iconFlex_card .list > a {
   display: inline-block;
   max-width: 100%;

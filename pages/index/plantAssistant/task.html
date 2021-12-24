@@ -13,6 +13,8 @@
   <script src="../../../js/mui.picker.min.js"></script>
   <!-- 引入jQuery -->
   <script src="../../../js/jquery-3.1.1.min.js"></script>
+  <!-- 公用的js -->
+  <script src="../../../js/mycommon.js"></script>
   <!-- mui-css -->
   <link rel="stylesheet" href="../../../css/mui.min.css" />
   <!-- mui-picker -->
@@ -29,9 +31,9 @@
 
 <body>
   <div class="nav_bar">
-    <a href="javascript:history.back();" class="left_bar">
+    <div class="left_bar" onclick="mui.back()">
       <span class="iconfont icon-icon_arrow_left"></span>
-    </a>
+    </div>
     <div class="center_cnt">种植助手</div>
   </div>
   <!-- 任务时间/切换栏 -->
@@ -70,22 +72,22 @@
     <div class="task_lists">
       <div class="pull_lists">
         <!-- 循环列表 -->
-        <!-- <a href="#" class="task_chunk pic_card">
-                    <div class="task_btn">
-                        <div class="time_text">
-                            <p class="time">2021-05-29&nbsp;14:30:29</p>
-                            <p class="text">任务要求：采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝</p>
-                        </div>
-                        <button type="button" class="status blue">领取</button>
-                        <button type="button" class="status white">已被领取</button>
-                        <button type="button" class="status orange">完成</button>
-                        <button type="button" class="status gray">已完成</button>
-                    </div>
-                    <div class="time_slot">
-                        <p>2021-05-29&nbsp;19:00&nbsp;开始</p>
-                        <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
-                    </div>
-                </a> -->
+        <a href="#" class="task_chunk pic_card">
+          <div class="task_btn">
+            <div class="time_text">
+              <p class="time">2021-05-29&nbsp;14:30:29</p>
+              <p class="text">任务要求：采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝</p>
+            </div>
+            <button type="button" class="status blue">领取</button>
+            <button type="button" class="status white">已被领取</button>
+            <button type="button" class="status orange">完成</button>
+            <button type="button" class="status gray">已完成</button>
+          </div>
+          <div class="time_slot">
+            <p>2021-05-29&nbsp;19:00&nbsp;开始</p>
+            <p>2021-05-29&nbsp;19:00&nbsp;结束</p>
+          </div>
+        </a>
       </div>
       <!-- 数据为空 -->
       <div class="data_not">
@@ -95,11 +97,11 @@
         </div>
       </div>
     </div>
-    <!-- 加载中 -->
-    <div class="loading_data" id="loading">
-      <span class="mui-spinner"></span>
-      <div>加载中...</div>
-    </div>
+  </div>
+  <!-- 加载中 -->
+  <div class="loading_data" id="loading">
+    <span class="mui-spinner"></span>
+    <div>加载中...</div>
   </div>
   <!-- 公用的尾部 -->
   <div id="footer"></div>
@@ -111,6 +113,20 @@
     });
   </script>
   <script>
+    function initData(index) {
+      // 隐藏数据列表
+      $(".consult_cnt").hide();
+      // 打开loading
+      $("#loading").show();
+      // 将存放数据的div设置为空
+      $("#refreshContainer .pull_lists").html("");
+      // 重置pageIndex
+      pageIndex = 1;
+      // 请求数据
+      setTimeout(function () {
+        initAjax();
+      }, 1000);
+    }
     // tab切换
     mui("#tabSwitch").on("tap", ".tab", function (e) {
       $(this).addClass("active");
@@ -119,20 +135,7 @@
       let index = $(this).index();
       let startDate = $("#startDate").val();
       let endDate = $("#endDate").val();
-      // 隐藏数据列表
-      $(".task_lists").hide();
-      // 打开loading
-      $("#loading").show();
-      // 将存放数据的div设置为空
-      $("#refreshContainer .pull_lists").html("");
-      // 重置pageIndex
-      pageIndex = 1;
-      // 关闭上拉加载
-      mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-      // 请求数据
-      setTimeout(function () {
-        initAjax();
-      }, 1000);
+      initData(index);
     });
     // 时间弹框
     mui(".select_time").on("tap", "input", function (e) {
@@ -158,12 +161,15 @@
       );
     });
     // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+    let topH = $(".nav_bar").outerHeight() + $(".time_and_switch").outerHeight();
     mui.init({
       pullRefresh: {
         container: "#refreshContainer",
         down: {
           style: "circle",
           color: "#0091ff",
+          height: refreshH,
+          offset: topH,
           callback: pulldown,
         },
         up: {
@@ -181,7 +187,7 @@
     let pageCount = 30;
     // 下拉刷新
     function pulldown() {
-      console.log("下拉刷新");
+      console.log("下拉刷新task");
       setTimeout(() => {
         mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
         // 重置请求的页数
@@ -218,7 +224,7 @@
       // 关闭loading
       $("#loading").hide();
       // 打开数据列表
-      $(".task_lists").show();
+      $(".consult_cnt").show();
       $("#refreshContainer .pull_lists").show();
       $("#refreshContainer .data_not").hide();
       // 如果初始化请求没有一条数据的情况，显示暂无数据
@@ -251,7 +257,7 @@
     }
     // 执行初始化请求函数
     mui.ready(function () {
-      initAjax();
+      initData(0);
     });
   </script>
 </body>
