@@ -18,8 +18,6 @@
   <script src="../../js/jquery-3.1.1.min.js"></script>
   <!-- 公用的js -->
   <script src="../../js/mycommon.js"></script>
-  <!-- 瀑布流-js -->
-  <script src="../../js/waterfall.js"></script>
   <!-- mui-css -->
   <link rel="stylesheet" href="../../css/mui.min.css" />
   <!-- swiper-css -->
@@ -210,7 +208,7 @@
               <div class="text">限时抢购</div>
               <div class="time_icon">
                 <span class="myicon-naozhongRed"></span>
-                <div>00:15:12</div>
+                <div id="dateTimeDowm">00:15:12</div>
               </div>
             </div>
           </div>
@@ -219,8 +217,9 @@
             <div class="list">
               <a href="#">
                 <div class="layout">
+                  <span class="mark myicon-huomiao"></span>
                   <div class="img_or_icon">
-                    <img src="../../images/content_imgs/rqd.png" alt="" />
+                    <img src="../../images/content_imgs/001.png" alt="" />
                   </div>
                   <div class="text"><span class="small">¥</span>19.6</div>
                 </div>
@@ -229,8 +228,9 @@
             <div class="list">
               <a href="#">
                 <div class="layout">
+                  <span class="mark myicon-huomiao"></span>
                   <div class="img_or_icon">
-                    <img src="../../images/content_imgs/slsg.png" alt="" />
+                    <img src="../../images/content_imgs/002.png" alt="" />
                   </div>
                   <div class="text"><span class="small">¥</span>19.6</div>
                 </div>
@@ -239,8 +239,9 @@
             <div class="list">
               <a href="#">
                 <div class="layout">
+                  <span class="mark myicon-huomiao"></span>
                   <div class="img_or_icon">
-                    <img src="../../images/content_imgs/scdl.png" alt="" />
+                    <img src="../../images/content_imgs/003.png" alt="" />
                   </div>
                   <div class="text"><span class="small">¥</span>19.6</div>
                 </div>
@@ -483,8 +484,27 @@
     });
   </script>
   <script>
+    // 限时抢购，按多少小时计算
+    function flashSale(hour) {
+      let times = hour * 60 * 60 * 1000;
+      let setInt = setInterval(() => {
+        times -= 1000;
+        let h = Math.floor(times / (1000 * 60 * 60) % 24);  //计算小时数
+        h = h >= 10 ? h : "0" + h;
+        let m = Math.floor(times / (1000 * 60) % 60);  //计算分钟数
+        m = m >= 10 ? m : "0" + m;
+        let s = Math.floor(times / 1000 % 60);  //计算秒数
+        s = s >= 10 ? s : "0" + s;
+        $("#dateTimeDowm").html(h + ":" + m + ":" + s)
+      }, 1000);
+      if (times <= 0) {
+        clearInterval(setInt)
+      }
+    }
     // 加载事件
     $(window).on("load", function () {
+      // 倒计时
+      flashSale(0.2);
       // 瀑布流函数
       waterFall("shop_box_content");
       // 重置loading与空div的高度
@@ -568,7 +588,7 @@
     // 请求的页数
     let pageIndex = 1;
     // 总的数据条数
-    let pageCount = 0;
+    let pageCount = 20;
     // 下拉刷新
     function pulldown() {
       console.log("下拉刷新task");

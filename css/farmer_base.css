@@ -936,6 +936,7 @@ a:link, a:visited, a:hover, a:active {
   align-items: center;
   width: auto;
   height: 14.8718vw;
+  position: relative;
 }
 
 .iconFlex_card .list .layout .img_or_icon {
@@ -943,6 +944,12 @@ a:link, a:visited, a:hover, a:active {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.iconFlex_card .list .layout .mark {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .iconFlex_card .list .text {
@@ -1757,4 +1764,41 @@ a:link, a:visited, a:hover, a:active {
 .select_time .input_text > div {
   box-sizing: border-box;
   padding: 0 2.5641vw;
+}
+
+.link_text_lists > .list {
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 3.5897vw 0;
+  border-top: 0.2564vw solid #f6f6f6;
+  line-height: 7.6923vw;
+}
+
+.link_text_lists > .list:nth-child(1) {
+  border-top: none;
+}
+
+.link_text_lists > .list > .title_icon {
+  font-size: 3.5897vw;
+  color: #282828;
+  display: flex;
+  align-items: center;
+}
+
+.link_text_lists > .list > .title_icon > div {
+  margin-left: 2.5641vw;
+}
+
+.link_text_lists > .list > .right_icon_text {
+  display: flex;
+  align-items: center;
+  font-size: 6.4103vw;
+  color: #9b9b9b;
+}
+
+.link_text_lists > .list > .right_icon_text > .tip {
+  font-size: 3.0769vw;
 }

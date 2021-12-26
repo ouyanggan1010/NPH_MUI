@@ -1,0 +1,126 @@
+body {
+  background-image: linear-gradient(to left top, #0091ff, #27d5ff);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% 50.2564vw;
+  background-color: #f6f6f6;
+  padding-top: 11.5385vw;
+}
+
+.nav_bar {
+  background-image: linear-gradient(to left top, #0091ff, #27d5ff);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% 50.2564vw;
+}
+
+.nav_bar .left_bar .iconfont {
+  color: #fff !important;
+}
+
+.nav_bar .center_cnt {
+  color: #fff !important;
+}
+
+.common_cnt {
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  padding-top: 3.8462vw;
+}
+
+.common_cnt .cnt_title {
+  font-size: 3.5897vw;
+  color: #282828;
+  box-sizing: border-box;
+  padding: 2.5641vw 0;
+  line-height: 5.1282vw;
+}
+
+.chart_card {
+  width: 100%;
+}
+
+.chart_card #echarts_div {
+  width: 100%;
+  height: 56.4103vw;
+}
+
+.chart_card .div_titles {
+  box-sizing: border-box;
+  padding: 3.0769vw 2.5641vw 0 3.5897vw;
+}
+
+.chart_card .div_titles > div:nth-child(1) {
+  font-size: 3.5897vw;
+  color: #0091ff;
+  line-height: 5.1282vw;
+}
+
+.chart_card .div_titles > div:nth-child(2) {
+  margin-top: 1.2821vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 7.6923vw;
+}
+
+.chart_card .div_titles > div:nth-child(2) > p:nth-child(1) {
+  font-size: 6.6667vw;
+  color: #0091ff;
+  font-weight: bold;
+  text-shadow: 0 0.7692vw 1.5385vw rgba(39, 213, 255, 0.6);
+}
+
+.chart_card .div_titles > div:nth-child(2) > p:nth-child(2) {
+  font-size: 3.0769vw;
+  color: #0091ff;
+}
+
+.sales_amount {
+  margin-top: 2.5641vw;
+}
+
+.sales_amount .link_text_lists {
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+}
+
+.sales_amount > .sales {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sales_amount > .sales > div {
+  width: 48%;
+  height: 24.8718vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 5.1282vw;
+}
+
+.sales_amount > .sales > div .div_title {
+  font-size: 3.5897vw;
+  color: #282828;
+}
+
+.sales_amount > .sales > div .div_num {
+  font-size: 6.6667vw;
+  font-weight: bold;
+  color: #9b9b9b;
+}
+
+.sales_amount > .sales > div:nth-child(2) {
+  box-shadow: 0vw 0.7692vw 0.7692vw rgba(0, 145, 255, 0.08);
+  background-image: linear-gradient(#27d5ff, #0091ff);
+}
+
+.sales_amount > .sales > div:nth-child(2) .div_title {
+  color: #fff;
+}
+
+.sales_amount > .sales > div:nth-child(2) .div_num {
+  color: #fff;
+}

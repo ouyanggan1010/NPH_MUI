@@ -158,36 +158,5 @@ $paddingLR: 3.8462vw;
   }
   > .link_text_lists {
     margin-top: 3.8462vw;
-    > .list {
-      display: block;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-sizing: border-box;
-      padding: 3.5897vw 0;
-      border-top: 0.2564vw solid map-get($colors, "gray_f6");
-      line-height: 7.6923vw;
-      &:nth-child(1) {
-        border-top: none;
-      }
-      > .title_icon {
-        font-size: 3.5897vw;
-        color: map-get($colors, "black_28");
-        display: flex;
-        align-items: center;
-        > div {
-          margin-left: 2.5641vw;
-        }
-      }
-      > .right_icon_text {
-        display: flex;
-        align-items: center;
-        font-size: 6.4103vw;
-        color: map-get($colors, "gray_9B");
-        > .tip {
-          font-size: 3.0769vw;
-        }
-      }
-    }
   }
 }

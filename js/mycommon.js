@@ -17,3 +17,27 @@ function openWindow(params) {
 function replaceHtml(url) {
   location.replace(url);
 }
+// 计算瀑布流
+function waterFall(id) {
+  var $boxs = $(`#${id}>div`);
+  var w = $boxs.eq(0).outerWidth();
+  var cols = 2;
+  var hArr = [];
+  $boxs.each(function (index) {
+    var h = $(this).outerHeight();
+    if (index < cols) {
+      hArr[index] = h;
+    } else {
+      var minH = Math.min.apply(null, hArr);
+      var minHIndex = $.inArray(minH, hArr);
+      $(this).css({
+        position: "absolute",
+        top: minH + "px",
+        left: minHIndex * w + "px",
+      });
+      hArr[minHIndex] += h;
+    }
+  });
+  // 计算div的总高度
+  $(`#${id}`).height(Math.min.apply(null, hArr) + 5 + "px");
+}

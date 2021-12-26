@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>数据上报</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- 引入图表echarts -->
+    <script src="../../../js/echarts.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../../js/mycommon.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../../css/mui.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../../css/farmer_dataReported.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <!-- header -->
+    <div class="nav_bar">
+        <div onclick="history.back()" class="left_bar">
+            <span class="iconfont icon-icon_arrow_left"></span>
+        </div>
+        <div class="center_cnt">数据上报</div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="common_cnt">
+        <!-- 图表 -->
+        <div class="pic_card chart_card">
+            <div class="div_titles">
+                <div>农作物总产</div>
+                <div>
+                    <p id="totalOutput">2435.50</p>
+                    <p>单位/吨</p>
+                </div>
+            </div>
+            <div id="echarts_div"></div>
+        </div>
+        <!-- 销售金额 -->
+        <div class="sales_amount">
+            <div class="cnt_title">销售金额</div>
+            <div class="sales">
+                <div class="pic_card">
+                    <div class="div_title">累计销售量</div>
+                    <div class="div_num">2398.87</div>
+                </div>
+                <div class="pic_card">
+                    <div class="div_title">当月销售量</div>
+                    <div class="div_num">2398.87</div>
+                </div>
+            </div>
+        </div>
+        <!-- 农作物类别 -->
+        <div class="sales_amount">
+            <div class="cnt_title">销售金额</div>
+            <!-- 跳转文字列表 -->
+            <div class="pic_card link_text_lists">
+                <a href="#" class="list">
+                    <div class="title_icon">
+                        <div>白糖罂荔枝</div>
+                    </div>
+                    <div class="right_icon_text">
+                        <span class="iconfont icon-icon_arrow_right"></span>
+                    </div>
+                </a>
+                <a href="#" class="list">
+                    <div class="title_icon">
+                        <div>妃子笑荔枝</div>
+                    </div>
+                    <div class="right_icon_text">
+                        <span class="iconfont icon-icon_arrow_right"></span>
+                    </div>
+                </a>
+                <a href="#" class="list">
+                    <div class="title_icon">
+                        <div>桥头地瓜</div>
+                    </div>
+                    <div class="right_icon_text">
+                        <span class="iconfont icon-icon_arrow_right"></span>
+                    </div>
+                </a>
+                <a href="#" class="list">
+                    <div class="title_icon">
+                        <div>文昌香水菠萝</div>
+                    </div>
+                    <div class="right_icon_text">
+                        <span class="iconfont icon-icon_arrow_right"></span>
+                    </div>
+                </a>
+                <a href="#" class="list">
+                    <div class="title_icon">
+                        <div>千禧圣女果/樱桃番茄</div>
+                    </div>
+                    <div class="right_icon_text">
+                        <span class="iconfont icon-icon_arrow_right"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- 这个是底线 -->
+        <div class="dead_line">没有更多内容啦</div>
+    </div>
+    <script>
+        // 图表
+        var myChart = echarts.init(document.getElementById('echarts_div'));
+        const objNums = [820, 932, 901, 934, 1290, 1330, 1320];
+        let selIndex = objNums.length - 1;
+        option = {
+            grid: {
+                show: true,
+                left: "5%",
+                top: "10%",
+                right: "5%",
+                bottom: "5%",
+                containLabel: true,
+                borderColor: "#ffffff"
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                triggerEvent: true,
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                axisLine: {
+                    lineStyle: {
+                        color: "#9B9B9B"
+                    }
+                },
+                axisLabel: {
+                    interval: "0"
+                }
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: { // y轴刻度
+                    show: false
+                },
+            },
+            series: [
+                {
+                    data: objNums,
+                    type: 'line',
+                    triggerLineEvent: true,
+                    symbol: function (value, params) {
+                        if (params.dataIndex == selIndex) {
+                            return "emptyCircle"
+                        } else {
+                            return "none"
+                        }
+                    },
+                    symbolSize: 8,
+                    itemStyle: {
+                        color: function (params) {
+                            if (params.dataIndex == selIndex) {
+                                return '#0091FF'
+                            }
+                        }
+                    },
+                    lineStyle: {
+                        color: "#0091FF"
+                    },
+                    areaStyle: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{        // 1代表上面
+                            offset: 0,
+                            color: 'rgba(39,213,255,0.49)'
+                        }, {
+                            offset: 1,
+                            color: 'rgba(0,145,255,0.03)'
+                        }]),
+                        opacity: 1
+                    },
+                }
+            ]
+        };
+        myChart.setOption(option);
+        $("#totalOutput").html(objNums[selIndex]);
+        myChart.getZr().on('click', params => {
+            const pointInPixel = [params.offsetX, params.offsetY]
+            if (myChart.containPixel('grid', pointInPixel)) {
+                let pointInGrid = myChart.convertFromPixel({ seriesIndex: 0 }, pointInPixel)
+                if(pointInGrid[0] > (objNums.length - 1)){
+                    selIndex = objNums.length - 1;
+                }else{
+                    selIndex = pointInGrid[0];
+                }
+                myChart.setOption(option);
+                $("#totalOutput").html(objNums[selIndex]);
+            }
+        });
+    </script>
+</body>
+
+</html>

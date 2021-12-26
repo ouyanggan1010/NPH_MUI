@@ -256,11 +256,17 @@ $paddingLR: 3.8462vw;
       align-items: center;
       width: auto;
       height: 14.8718vw;
+      position: relative;
       .img_or_icon {
         height: 9.2308vw;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+      .mark{
+        position: absolute;
+        top: 0;
+        right: 0;
       }
     }
     .text {
@@ -963,6 +969,40 @@ $paddingLR: 3.8462vw;
     > div {
       box-sizing: border-box;
       padding: 0 2.5641vw;
+    }
+  }
+}
+// 右向文字列表链接
+.link_text_lists {
+  > .list {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 3.5897vw 0;
+    border-top: 0.2564vw solid map-get($colors, "gray_f6");
+    line-height: 7.6923vw;
+    &:nth-child(1) {
+      border-top: none;
+    }
+    > .title_icon {
+      font-size: 3.5897vw;
+      color: map-get($colors, "black_28");
+      display: flex;
+      align-items: center;
+      > div {
+        margin-left: 2.5641vw;
+      }
+    }
+    > .right_icon_text {
+      display: flex;
+      align-items: center;
+      font-size: 6.4103vw;
+      color: map-get($colors, "gray_9B");
+      > .tip {
+        font-size: 3.0769vw;
+      }
     }
   }
 }
