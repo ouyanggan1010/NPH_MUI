@@ -1,0 +1,115 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+
+body {
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  background-color: map-get($colors, "gray_f6");
+  box-sizing: border-box;
+  padding-top: 11.5385vw;
+}
+// 头部
+.nav_bar {
+  background-color: transparent;
+  border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
+  border-bottom: 0.2564vw solid transparent;
+  .left_bar {
+    .iconfont {
+      color: map-get($colors, "white") !important;
+    }
+  }
+  .center_cnt {
+    display: none;
+  }
+  &.fixed {
+    background-color: map-get($colors, "white");
+    .center_cnt {
+      display: block;
+    }
+    .left_bar {
+      .iconfont {
+        color: map-get($colors, "gray_4A") !important;
+      }
+    }
+  }
+}
+// 内容块
+.cnt_chunk {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 $paddingLR;
+  .financial_recommended {
+    margin-top: 30.7692vw;
+    box-sizing: border-box;
+    padding: 5.1282vw $paddingLR $paddingLR $paddingLR;
+    .financial {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .text_img {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 45%;
+        .texts {
+          > p {
+            font-size: 4.1026vw;
+            color: map-get($colors, "gray_4A");
+            font-weight: bold;
+            line-height: 6.1538vw;
+          }
+          > span {
+            display: block;
+            font-size: 3.5897vw;
+            color: map-get($colors, "black_28");
+            margin-top: 1.0256vw;
+          }
+        }
+        .pic {
+          width: 12.8205vw;
+          height: 12.8205vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+    .title_link_imgs {
+      margin-top: 6.4103vw;
+      > .title {
+        font-size: 3.5897vw;
+        font-weight: bold;
+        color: map-get($colors, "black_28");
+        text-align: center;
+      }
+      > .link_imgs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 3.0769vw;
+        .pic {
+          width: 32%;
+          height: 16.4103vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          border-radius: 1.2821vw;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1.2821vw;
+          }
+          [class^="myicon-"] {
+            position: absolute;
+            top: -0.7692vw;
+            left: -0.2564vw;
+          }
+        }
+      }
+    }
+  }
+}

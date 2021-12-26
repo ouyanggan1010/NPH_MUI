@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>金融保险</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../../js/jquery-3.1.1.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../../js/mycommon.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../../css/mui.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../../css/farmer_financialInsurance.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body style="background-image: url(../../../images/content_imgs/slider1.jpg);">
+    <!-- header -->
+    <div class="nav_bar">
+        <div onclick="history.back()" class="left_bar">
+            <span class="iconfont icon-icon_arrow_left"></span>
+        </div>
+        <div class="center_cnt">金融保险</div>
+    </div>
+    <!-- 内容块 -->
+    <div class="cnt_chunk">
+        <!-- 理财 -->
+        <div class="pic_card financial_recommended">
+            <div class="financial">
+                <a href="#" class="text_img">
+                    <div class="texts">
+                        <p>稳健理财</p>
+                        <span>理财新手入门</span>
+                    </div>
+                    <div class="pic"><span class="myicon-wenjianlicai"></span></div>
+                </a>
+                <a href="#" class="text_img">
+                    <div class="texts">
+                        <p>进阶理财</p>
+                        <span>追求更高收益</span>
+                    </div>
+                    <div class="pic"><span class="myicon-jinjielicai"></span></div>
+                </a>
+            </div>
+            <div class="title_link_imgs">
+                <div class="title">推荐农业保险</div>
+                <div class="link_imgs">
+                    <a href="#" class="pic">
+                        <span class="myicon-newOrange"></span>
+                        <img src="../../../images/content_imgs/Bitmap-1.png" alt="">
+                    </a>
+                    <a href="#" class="pic">
+                        <span class="myicon-newOrange"></span>
+                        <img src="../../../images/content_imgs/Bitmap-2.png" alt="">
+                    </a>
+                    <a href="#" class="pic">
+                        <span class="myicon-newOrange"></span>
+                        <img src="../../../images/content_imgs/Bitmap-3.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 这个是底线 -->
+        <div class="dead_line">没有更多内容啦</div>
+    </div>
+    <script>
+        $("#footer").load("../../components/footer.html", function () {
+            let nowFoot = $(this).find(".footer_index>.list").eq(3);
+            nowFoot.addClass("active");
+            nowFoot.siblings(".list").removeClass("active");
+        });
+    </script>
+    <script>
+        // 监听滚动事件
+        $(window).scroll(function () {
+            let h = $(".nav_bar").height();
+            if ($(this).scrollTop() > h) {
+                $(".nav_bar").fadeIn("fast");
+            } else {
+                $(".nav_bar").fadeOut("fast");
+            }
+        });
+    </script>
+</body>
+
+</html>

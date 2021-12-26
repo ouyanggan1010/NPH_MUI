@@ -1,0 +1,122 @@
+body {
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100% auto;
+  background-color: #f6f6f6;
+  box-sizing: border-box;
+  padding-top: 11.5385vw;
+}
+
+.nav_bar {
+  background-color: transparent;
+  border-bottom: 0.2564vw solid #f6f6f6;
+  border-bottom: 0.2564vw solid transparent;
+}
+
+.nav_bar .left_bar .iconfont {
+  color: #fff !important;
+}
+
+.nav_bar .center_cnt {
+  display: none;
+}
+
+.nav_bar.fixed {
+  background-color: #fff;
+}
+
+.nav_bar.fixed .center_cnt {
+  display: block;
+}
+
+.nav_bar.fixed .left_bar .iconfont {
+  color: #4a4a4a !important;
+}
+
+.cnt_chunk {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+}
+
+.cnt_chunk .financial_recommended {
+  margin-top: 30.7692vw;
+  box-sizing: border-box;
+  padding: 5.1282vw 3.8462vw 3.8462vw 3.8462vw;
+}
+
+.cnt_chunk .financial_recommended .financial {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cnt_chunk .financial_recommended .financial .text_img {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+}
+
+.cnt_chunk .financial_recommended .financial .text_img .texts > p {
+  font-size: 4.1026vw;
+  color: #4a4a4a;
+  font-weight: bold;
+  line-height: 6.1538vw;
+}
+
+.cnt_chunk .financial_recommended .financial .text_img .texts > span {
+  display: block;
+  font-size: 3.5897vw;
+  color: #282828;
+  margin-top: 1.0256vw;
+}
+
+.cnt_chunk .financial_recommended .financial .text_img .pic {
+  width: 12.8205vw;
+  height: 12.8205vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cnt_chunk .financial_recommended .title_link_imgs {
+  margin-top: 6.4103vw;
+}
+
+.cnt_chunk .financial_recommended .title_link_imgs > .title {
+  font-size: 3.5897vw;
+  font-weight: bold;
+  color: #282828;
+  text-align: center;
+}
+
+.cnt_chunk .financial_recommended .title_link_imgs > .link_imgs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3.0769vw;
+}
+
+.cnt_chunk .financial_recommended .title_link_imgs > .link_imgs .pic {
+  width: 32%;
+  height: 16.4103vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 1.2821vw;
+}
+
+.cnt_chunk .financial_recommended .title_link_imgs > .link_imgs .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.2821vw;
+}
+
+.cnt_chunk .financial_recommended .title_link_imgs > .link_imgs .pic [class^="myicon-"] {
+  position: absolute;
+  top: -0.7692vw;
+  left: -0.2564vw;
+}

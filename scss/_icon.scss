@@ -92,6 +92,14 @@
 .myicon-zhiboTips {
   @include appicon(-17.6923vw, -47.9487vw, 11.5385vw, 5.8974vw);
 }
+//金融保险-稳健理财
+.myicon-wenjianlicai {
+  @include appicon(-50.7692vw, -166.9231vw, 9.2308vw, 11.0256vw);
+}
+//金融保险-进阶理财
+.myicon-jinjielicai {
+  @include appicon(-63.3333vw, -166.9231vw, 10.2564vw, 11.7949vw);
+}
 // ---------------------------------------------------------我的
 //我关注的
 .myicon-woguanzhu {
