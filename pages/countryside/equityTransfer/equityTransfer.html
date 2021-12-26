@@ -9,6 +9,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!-- mui-js -->
     <script src="../../../js/mui.min.js"></script>
+    <!-- 下拉刷新-上拉加载 -->
+    <script src="../../../js/mui.pullToRefresh.js"></script>
+    <script src="../../../js/mui.pullToRefresh.material.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
     <!-- 公用的js -->
@@ -27,7 +30,7 @@
 
 <body>
     <div class="nav_bar">
-        <div onclick="mui.back()" class="left_bar">
+        <div onclick="history.back()" class="left_bar">
             <span class="iconfont icon-icon_arrow_left"></span>
         </div>
         <div class="center_cnt tabs_switch" id="tabSwitch">
@@ -49,21 +52,21 @@
             </div>
         </div>
     </div>
-    <div class="consult_cnt">
-        <div>
+    <div class="mui-content mui-scroll-wrapper" id="refreshContainer">
+        <div class="mui-scroll">
             <div class="pull_lists">
                 <!-- 循环列表 -->
                 <a href="#" class="task_chunk">
                     <div class="title_allPrice">
-                        <div class="font_16">出海捕捞众筹项目</div>
-                        <div class="font_14">
+                        <div class="title">出海捕捞众筹项目</div>
+                        <div class="price">
                             <span class="color_orange">10</span>
                             <span>万元</span>
                         </div>
                     </div>
                     <div class="img_detail">
-                        <img src="../../../images/content_imgs/Bitmap-2.png" alt="">
-                        <div>
+                        <div class="div_img"><img src="../../../images/content_imgs/Bitmap-3.png" alt=""></div>
+                        <div class="div_detail">
                             <p class="hiddenFour">海口文昌渔民阳天亮，有一艘500吨渔船，拟众筹10万元用于出海资金，捕获海产按市场价出售，回报率150%。士大夫豆腐干都是个顶个</p>
                         </div>
                     </div>
@@ -85,15 +88,15 @@
                 </a>
                 <a href="#" class="task_chunk">
                     <div class="title_allPrice">
-                        <div class="font_16">出海捕捞众筹项目</div>
-                        <div class="font_14">
+                        <div class="title">出海捕捞众筹项目</div>
+                        <div class="price">
                             <span class="color_orange">10</span>
                             <span>万元</span>
                         </div>
                     </div>
                     <div class="img_detail">
-                        <img src="../../../images/content_imgs/Bitmap-1.png" alt="">
-                        <div>
+                        <div class="div_img"><img src="../../../images/content_imgs/Bitmap-2.png" alt=""></div>
+                        <div class="div_detail">
                             <p class="hiddenFour">海口文昌渔民阳天亮，有一艘500吨渔船，拟众筹10万元用于出海资金，捕获海产按市场价出售，回报率150%。士大夫豆腐干都是个顶个</p>
                         </div>
                     </div>
@@ -129,7 +132,128 @@
         <div>加载中...</div>
     </div>
     <script>
-
+        function initData(index) {
+            // 隐藏数据列表
+            $(".mui-content").hide();
+            // 打开loading
+            $("#loading").show();
+            // 将存放数据的div设置为空
+            $("#refreshContainer .pull_lists").html("");
+            // 重置pageIndex
+            pageIndex = 1;
+            // 请求数据
+            setTimeout(function () {
+                initAjax();
+            }, 1000);
+        }
+        // tab切换
+        mui("#tabSwitch").on("tap", ".tab", function (e) {
+            $(this).addClass("active");
+            $(this).siblings(".tab").removeClass("active");
+            // 让滚动条滚动到顶部
+            muiScroll.scrollTo(0, 0, 10);
+            // ---------------------需要使用的数据
+            let index = $(this).index();
+            initData(index);
+        });
+        // 下拉刷新，上拉加载---------------------------------------------------------
+        let topH = $(".nav_bar").outerHeight();
+        let muiScroll = mui("#refreshContainer").pullRefresh({
+            down: {
+                style: "circle",
+                color: "#0091ff",
+                height: refreshH,
+                offset: topH,
+                callback: pulldown,
+            },
+            up: {
+                contentrefresh: "正在加载...",
+                contentnomore: "没有更多内容啦",
+                callback: pullup,
+            },
+        });
+        // 每页请求的条数
+        let pageSize = 10;
+        // 请求的页数
+        let pageIndex = 1;
+        // 总的数据条数
+        let pageCount = 20;
+        // 下拉刷新
+        function pulldown() {
+            console.log("下拉刷新task");
+            setTimeout(() => {
+                mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+                // 重置请求的页数
+                pageIndex = 1;
+                $("#refreshContainer .pull_lists").html("");
+                /*执行请求*/
+                initAjax();
+                // 关闭上拉加载
+                mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                setTimeout(function () {
+                    // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
+                    if (pageCount > 0) {
+                        mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                        mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+                    }
+                }, 1000);
+            }, 1000);
+        }
+        // 上拉加载
+        function pullup() {
+            setTimeout(() => {
+                // 当总请求条数已经请求完毕
+                if ((pageIndex - 1) * pageSize >= pageCount) {
+                    this.endPullupToRefresh(true); //没有数据
+                    return;
+                }
+                /*执行请求*/
+                initAjax();
+                this.endPullupToRefresh(false);
+            }, 1000);
+        }
+        // 初始化请求----这里是请求函数
+        function initAjax() {
+            // 关闭loading
+            $("#loading").hide();
+            // 打开数据列表
+            $(".mui-content").show();
+            $("#refreshContainer .pull_lists").show();
+            $("#refreshContainer .data_not").hide();
+            // 如果初始化请求没有一条数据的情况，显示暂无数据
+            if (pageCount <= 0) {
+                $("#refreshContainer .pull_lists").hide();
+                $("#refreshContainer .data_not").show();
+                // 关闭上拉加载
+                setTimeout(function () {
+                    mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+                }, 1000);
+            } else {
+                mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+                mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+            }
+            // 这里模拟请求
+            for (
+                let i = (pageIndex - 1) * pageSize;
+                i < pageIndex * pageSize;
+                i++
+            ) {
+                // dom模板
+                let str ='<a href="#" class="task_chunk"><div class="title_allPrice"><div class="title">出海捕捞众筹项目</div>'+
+                    '<div class="price"><span class="color_orange">10</span><span>万元</span></div></div><div class="img_detail">'+
+                    '<div class="div_img"><img src="../../../images/content_imgs/Bitmap-2.png" alt=""></div><div class="div_detail">'+
+                    '<p class="hiddenFour">海口文昌渔民阳天亮，有一艘500吨渔船，拟众筹10万元用于出海资金，捕获海产按市场价出售，回报率150%。士大夫豆腐干都是个顶个</p>'+
+                    '</div></div><div class="now_progress"><div class="div_one"><span>¥53235</span><span>&nbsp;/&nbsp;100000</span></div>'+
+                    '<div class="div_two"><span>215</span><span>人支持</span></div><div class="div_three"><span>剩余&nbsp;</span><span>15</span>'+
+                    '<span>&nbsp;天</span></div></div></a>';
+                $("#refreshContainer .pull_lists").append($(str));
+            }
+            pageIndex++;
+        }
+        // 执行初始化请求函数
+        mui.ready(function () {
+            // initData(0);
+        });
     </script>
 </body>
 

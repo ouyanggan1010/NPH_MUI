@@ -9,6 +9,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!-- mui-js -->
     <script src="../../../js/mui.min.js"></script>
+    <!-- 下拉刷新-上拉加载 -->
+    <script src="../../../js/mui.pullToRefresh.js"></script>
+    <script src="../../../js/mui.pullToRefresh.material.js"></script>
     <!-- 引入jQuery -->
     <script src="../../../js/jquery-3.1.1.min.js"></script>
     <!-- swiper -->
@@ -33,8 +36,8 @@
     <!-- 公用的尾部 -->
     <div id="header"></div>
     <!-- 内容部分 -->
-    <div class="consult_cnt" id="refreshContainer">
-        <div id="content_list">
+    <div class="mui-content mui-scroll-wrapper" id="refreshContainer">
+        <div id="content_list" class="mui-scroll">
             <!-- 为你推荐 -->
             <div class="recommend_you">
                 <div class="card_title">
@@ -235,10 +238,6 @@
                     $(_this).addClass("focus_yes");
                 }, 500);
             });
-            //监听tab事件，解决a标签不能跳转的问题
-            mui('body').on('tap', 'a', function () {
-                document.location.href = this.href;
-            });
             // 列表横向滚动
             var swiper = new Swiper('.swiper-container', {
                 scrollbar: '.swiper-scrollbar',
@@ -247,21 +246,18 @@
                 centeredSlides: false,
             });
             // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
-            mui.init({
-                pullRefresh: {
-                    container: "#refreshContainer",
-                    down: {
-                        style: "circle",
-                        color: "#0091ff",
-                        height: refreshH,
-                        offset: topH,
-                        callback: pulldown,
-                    },
-                    up: {
-                        contentrefresh: "正在加载...",
-                        contentnomore: "没有更多内容啦",
-                        callback: pullup,
-                    },
+            let muiScroll = mui("#refreshContainer").pullRefresh({
+                down: {
+                    style: "circle",
+                    color: "#0091ff",
+                    height: refreshH,
+                    offset: topH,
+                    callback: pulldown,
+                },
+                up: {
+                    contentrefresh: "正在加载...",
+                    contentnomore: "没有更多内容啦",
+                    callback: pullup,
                 },
             });
             // 每页请求的条数
@@ -309,7 +305,7 @@
                 // 关闭loading
                 $("#loading").hide();
                 // 打开数据列表
-                $(".consult_cnt").show();
+                $(".mui-content").show();
                 // $("#refreshContainer .data_not").hide();
                 // 如果初始化请求没有一条数据的情况
                 if (pageCount <= 0) {
@@ -342,7 +338,7 @@
             // 初始化数据
             mui.ready(function () {
                 // 隐藏数据列表
-                $(".consult_cnt").hide();
+                $(".mui-content").hide();
                 // 打开loading
                 $("#loading").show();
                 // 将存放数据的div设置为空

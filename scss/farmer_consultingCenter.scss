@@ -1,7 +1,12 @@
 @charset "utf-8";
 @import "_color";
 $paddingLR: 3.8462vw;
-
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 body {
   padding-top: 11.5385vw;
   position: relative;
@@ -43,13 +48,18 @@ body {
   }
 }
 // 内容
-.consult_cnt {
-  box-sizing: border-box;
-  padding: 0 $paddingLR;
+.mui-scroll-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: map-get($colors, "white");
 }
 .data_not {
   background-color: map-get($colors, "white");
+}
+.task_lists{
+  box-sizing: border-box;
+  padding: 0 $paddingLR;
 }
 // 图片文字列表
 .text_img_lists {

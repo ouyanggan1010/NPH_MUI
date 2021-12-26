@@ -1,22 +1,39 @@
 @charset "utf-8";
 @import "_color";
 $paddingLR: 3.8462vw;
-
-.shop_body {
-  background-color: map-get($colors, "body_bg");
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  box-sizing: border-box;
+  padding-bottom: 15.3846vw;
+  padding-top: 25.3769vw;
   background-image: linear-gradient(#19bcff, #f6f6f6);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: 100% 58.9744vw;
-  box-sizing: border-box;
-  padding-bottom: 15.3846vw;
+  background-color: map-get($colors, "gray_f6");
+}
+.mui-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.mui-scroll {
+  background-color: transparent;
 }
 // 搜索框
 .shop_search {
   box-sizing: border-box;
   padding: $paddingLR $paddingLR 2.5641vw $paddingLR;
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 9;
   &.fixed {
     background-image: linear-gradient(#19bcff, #f6f6f6);
@@ -140,13 +157,16 @@ $paddingLR: 3.8462vw;
   width: 100%;
   height: 10.2564vw;
   background-color: transparent;
-  position: sticky;
-  top: 25.3769vw;
-  z-index: 9;
   .tab {
     line-height: 9.4872vw;
   }
-  &.fixed {
+  &.tabs_fixed {
+    display: none;
+    position: absolute;
+    top: 25.3769vw;
+    box-sizing: border-box;
+    padding: 0 $paddingLR;
+    z-index: 9;
     background-color: map-get($colors, "white");
   }
 }

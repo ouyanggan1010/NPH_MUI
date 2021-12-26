@@ -9,6 +9,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <!-- mui-js -->
   <script src="../../../js/mui.min.js"></script>
+  <!-- 下拉刷新-上拉加载 -->
+  <script src="../../../js/mui.pullToRefresh.js"></script>
+  <script src="../../../js/mui.pullToRefresh.material.js"></script>
   <!-- mui-picker -->
   <script src="../../../js/mui.picker.min.js"></script>
   <!-- 引入jQuery -->
@@ -31,7 +34,7 @@
 
 <body>
   <div class="nav_bar">
-    <div class="left_bar" onclick="mui.back()">
+    <div class="left_bar" onclick="history.back()">
       <span class="iconfont icon-icon_arrow_left"></span>
     </div>
     <div class="center_cnt">种植助手</div>
@@ -68,15 +71,17 @@
     </div>
   </div>
   <!-- 内容部分 -->
-  <div class="consult_cnt" id="refreshContainer">
-    <div class="task_lists">
+  <div class="mui-content mui-scroll-wrapper" id="refreshContainer">
+    <div class="mui-scroll task_lists">
       <div class="pull_lists">
         <!-- 循环列表 -->
         <a href="#" class="task_chunk pic_card">
           <div class="task_btn">
             <div class="time_text">
               <p class="time">2021-05-29&nbsp;14:30:29</p>
-              <p class="text">任务要求：采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝</p>
+              <p class="text">
+                任务要求：采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝采购10斤荔枝
+              </p>
             </div>
             <button type="button" class="status blue">领取</button>
             <button type="button" class="status white">已被领取</button>
@@ -115,7 +120,7 @@
   <script>
     function initData(index) {
       // 隐藏数据列表
-      $(".consult_cnt").hide();
+      $(".mui-content").hide();
       // 打开loading
       $("#loading").show();
       // 将存放数据的div设置为空
@@ -131,6 +136,8 @@
     mui("#tabSwitch").on("tap", ".tab", function (e) {
       $(this).addClass("active");
       $(this).siblings(".tab").removeClass("active");
+      // 让滚动条滚动到顶部
+      muiScroll.scrollTo(0,0,10);
       // ---------------------需要使用的数据
       let index = $(this).index();
       let startDate = $("#startDate").val();
@@ -139,7 +146,6 @@
     });
     // 时间弹框
     mui(".select_time").on("tap", "input", function (e) {
-      mui("#refreshContainer").pullRefresh().setStopped(true);
       let _this = this;
       let dtPicker = new mui.DtPicker({
         type: "date",
@@ -147,36 +153,26 @@
       });
       dtPicker.show(
         function (selectItems) {
-          console.log("55555555555");
-          mui("#refreshContainer").pullRefresh().setStopped(false);
           $(_this).val(selectItems.text);
           startDate = selectItems.text;
-        },
-        function () {
-          mui("#refreshContainer").pullRefresh().setStopped(false);
-          // 关闭上拉加载
-          mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
-          console.log("关闭函数====");
         }
       );
     });
-    // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
-    let topH = $(".nav_bar").outerHeight() + $(".time_and_switch").outerHeight();
-    mui.init({
-      pullRefresh: {
-        container: "#refreshContainer",
-        down: {
-          style: "circle",
-          color: "#0091ff",
-          height: refreshH,
-          offset: topH,
-          callback: pulldown,
-        },
-        up: {
-          contentrefresh: "正在加载...",
-          contentnomore: "没有更多内容啦",
-          callback: pullup,
-        },
+    // 下拉刷新，上拉加载---------------------------------------------------------
+    let topH =
+      $(".nav_bar").outerHeight() + $(".time_and_switch").outerHeight();
+    let muiScroll = mui("#refreshContainer").pullRefresh({
+      down: {
+        style: "circle",
+        color: "#0091ff",
+        height: refreshH,
+        offset: topH,
+        callback: pulldown,
+      },
+      up: {
+        contentrefresh: "正在加载...",
+        contentnomore: "没有更多内容啦",
+        callback: pullup,
       },
     });
     // 每页请求的条数
@@ -184,7 +180,7 @@
     // 请求的页数
     let pageIndex = 1;
     // 总的数据条数
-    let pageCount = 30;
+    let pageCount = 20;
     // 下拉刷新
     function pulldown() {
       console.log("下拉刷新task");
@@ -224,7 +220,7 @@
       // 关闭loading
       $("#loading").hide();
       // 打开数据列表
-      $(".consult_cnt").show();
+      $(".mui-content").show();
       $("#refreshContainer .pull_lists").show();
       $("#refreshContainer .data_not").hide();
       // 如果初始化请求没有一条数据的情况，显示暂无数据

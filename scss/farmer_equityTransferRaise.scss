@@ -1,6 +1,12 @@
 @charset "utf-8";
 @import "_color";
 $paddingLR: 3.8462vw;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 body {
   padding-top: 11.5385vw;
   position: relative;
@@ -35,11 +41,15 @@ body {
   }
 }
 // 内容
-.consult_cnt {
-  width: 100%;
+.mui-scroll-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: map-get($colors, "white");
 }
 .pull_lists {
+  box-sizing: border-box;
+  padding-top: 2.5641vw;
   background-color: map-get($colors, "white");
   .data_not {
     background-color: map-get($colors, "white");
@@ -49,6 +59,9 @@ body {
     padding: 0 3.8462vw;
     margin-top: 2.5641vw;
     display: block;
+    &:nth-child(1){
+      margin-top: 0;
+    }
     .title_allPrice {
       display: flex;
       align-items: center;
@@ -56,6 +69,12 @@ body {
       box-sizing: border-box;
       padding: 2.5641vw 3.8462vw;
       color: map-get($colors, "black_28");
+      .title {
+        font-size: 4.1026vw;
+      }
+      .price {
+        font-size: 3.5897vw;
+      }
       .color_orange {
         color: map-get($colors, "orange_fe");
         margin-right: 1.2821vw;
@@ -65,17 +84,36 @@ body {
       display: flex;
       box-sizing: border-box;
       padding: 0 3.8462vw;
-      > img {
+      > .div_img {
         width: 30.7692vw;
         height: 21.5385vw;
         border-radius: 1.2821vw;
         margin-right: 2.5641vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 1.2821vw;
+          object-fit: cover;
+        }
       }
-      > div {
+      > .div_detail {
         flex: 1;
         width: 0;
-        font-size: 3.5897vw;
-        color: map-get($colors, "black_28");
+        > p {
+          line-height: 5.641vw;
+          font-size: 3.5897vw;
+          color: map-get($colors, "black_28");
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          /* autoprefixer: off */
+          -webkit-box-orient: vertical;
+          /* autoprefixer: on */
+        }
       }
     }
     .now_progress {

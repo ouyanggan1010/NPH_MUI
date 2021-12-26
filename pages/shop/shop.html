@@ -9,6 +9,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <!-- mui-js -->
   <script src="../../js/mui.min.js"></script>
+  <!-- 下拉刷新-上拉加载 -->
+  <script src="../../js/mui.pullToRefresh.js"></script>
+  <script src="../../js/mui.pullToRefresh.material.js"></script>
   <!-- swiper-js -->
   <script src="../../js/swiper.min.js"></script>
   <!-- 引入jQuery -->
@@ -31,8 +34,8 @@
   <base target="_self" />
 </head>
 
-<body class="shop_body">
-  <!-- 通用的搜索框 -->
+<body>
+  <!-- 搜索框 -->
   <div class="shop_search" id="search_scroll">
     <div class="icons_city_weather">
       <div class="city_weather">
@@ -56,381 +59,413 @@
       <button type="button" class="btn">搜索</button>
     </div>
   </div>
-  <!-- 内容块 -->
-  <div class="cnt_chunk">
-    <!-- 轮播 -->
-    <div class="shop_swiper">
-      <div class="swiper-container swiper-container-horizontal">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
-          </div>
-        </div>
-      </div>
-      <!-- Add Pagination -->
-      <div class="
-            swiper-pagination
-            swiper-pagination-clickable
-            swiper-pagination-bullets
-          ">
-        <span class="swiper-pagination-bullet"></span>
-        <span class="swiper-pagination-bullet"></span>
-        <span class="swiper-pagination-bullet"></span>
-      </div>
+  <!-- tab切换 -->
+  <div class="tabs_switch tabs_fixed">
+    <div class="tab active">
+      <p>全部</p>
+      <div class="line"></div>
     </div>
-    <!-- 产品分类 -->
-    <div class="pic_card titleCnt_card">
-      <div class="iconFlex_card">
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/rqd.png" alt="" />
-              </div>
-              <div class="text">肉禽蛋</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/slsg.png" alt="" />
-              </div>
-              <div class="text">时令水果</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/scdl.png" alt="" />
-              </div>
-              <div class="text">蔬菜豆类</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/hxsc.png" alt="" />
-              </div>
-              <div class="text">海鲜水产</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/nfcp.png" alt="" />
-              </div>
-              <div class="text">牛副产品</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/zfcp.png" alt="" />
-              </div>
-              <div class="text">猪副产品</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/jm.png" alt="" />
-              </div>
-              <div class="text">鸡苗</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/sl.png" alt="" />
-              </div>
-              <div class="text">饲料</div>
-            </div>
-          </a>
-        </div>
-      </div>
+    <div class="tab">
+      <p>海产品</p>
+      <div class="line"></div>
     </div>
-    <!-- 限时抢购 -->
-    <div class="pic_card titleCnt_card">
-      <!-- title -->
-      <div class="card_title">
-        <div class="countdown">
-          <div class="text">限时抢购</div>
-          <div class="time_icon">
-            <span class="myicon-naozhongRed"></span>
-            <div>00:15:12</div>
-          </div>
-        </div>
-      </div>
-      <!-- N宫格 -->
-      <div class="iconFlex_card">
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/rqd.png" alt="" />
-              </div>
-              <div class="text"><span class="small">¥</span>19.6</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/slsg.png" alt="" />
-              </div>
-              <div class="text"><span class="small">¥</span>19.6</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <img src="../../images/content_imgs/scdl.png" alt="" />
-              </div>
-              <div class="text"><span class="small">¥</span>19.6</div>
-            </div>
-          </a>
-        </div>
-      </div>
+    <div class="tab">
+      <p>渔产品</p>
+      <div class="line"></div>
+    </div>
+    <div class="tab">
+      <p>瓜果</p>
+      <div class="line"></div>
+    </div>
+    <div class="tab">
+      <p>畜禽</p>
+      <div class="line"></div>
+    </div>
+    <div class="tab">
+      <p>花卉</p>
+      <div class="line"></div>
     </div>
   </div>
-  <!-- 商品列表 -->
-  <div class="shop_goods_lists" id="good_lists">
-    <!-- tab -->
-    <div class="tabs_switch" id="tabSwitch">
-      <div class="tab active">
-        <p>全部</p>
-        <div class="line"></div>
-      </div>
-      <div class="tab">
-        <p>海产品</p>
-        <div class="line"></div>
-      </div>
-      <div class="tab">
-        <p>渔产品</p>
-        <div class="line"></div>
-      </div>
-      <div class="tab">
-        <p>瓜果</p>
-        <div class="line"></div>
-      </div>
-      <div class="tab">
-        <p>畜禽</p>
-        <div class="line"></div>
-      </div>
-      <div class="tab">
-        <p>花卉</p>
-        <div class="line"></div>
-      </div>
-    </div>
-    <!-- 商品列表 -->
-    <div class="shop_lists_box">
-      <div id="refreshContainer">
-        <div class="pull_dowm_lists">
-          <div class="shop_slide" id="shop_box_content">
-            <div class="box" id="id_001">
-              <a href="#" class="item">
-                <!-- 图片 -->
-                <div class="div_img">
-                  <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
-                </div>
-                <div class="price_title_tips">
-                  <!-- 标题 -->
-                  <div class="title_tips">
-                    <p class="title">
-                      1猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                    </p>
+  <!-- 滚动区域 -->
+  <div class="mui-content mui-scroll-wrapper" id="refreshContainer">
+    <div class="mui-scroll">
+      <!-- 内容块 -->
+      <div class="cnt_chunk">
+        <!-- 轮播 -->
+        <div class="shop_swiper">
+          <div class="swiper-container swiper-container-horizontal">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="
+        swiper-pagination
+        swiper-pagination-clickable
+        swiper-pagination-bullets
+      ">
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+          </div>
+        </div>
+        <!-- 产品分类 -->
+        <div class="pic_card titleCnt_card">
+          <div class="iconFlex_card">
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/rqd.png" alt="" />
                   </div>
-                  <!-- 特价 -->
-                  <div class="mark">
-                    <span class="myicon-tejiaRed"></span>
-                  </div>
-                  <!-- 价格与购物车 -->
-                  <div class="price_num_cart">
-                    <div class="price_num">
-                      <span class="small_red">¥</span>
-                      <span class="big_red">39.00</span>
-                      <span class="big_gray">/箱</span>
-                      <span class="small_gray">¥59.9</span>
-                    </div>
-                    <!-- 显示购物车按钮 -->
-                    <div class="shop_cart_btn">
-                      <span class="iconfont icon-gouwuche"></span>
-                    </div>
-                  </div>
+                  <div class="text">肉禽蛋</div>
                 </div>
               </a>
             </div>
-            <div class="box" id="id_002">
-              <a href="#" class="item">
-                <div class="div_img">
-                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
-                </div>
-                <div class="price_title_tips">
-                  <!-- 标题 -->
-                  <div class="title_tips">
-                    <p class="title">
-                      2猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                    </p>
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/slsg.png" alt="" />
                   </div>
-                  <!-- 特价 -->
-                  <div class="mark">
-                    <span class="myicon-tejiaRed"></span>
-                  </div>
-                  <!-- 价格与购物车 -->
-                  <div class="price_num_cart">
-                    <div class="price_num">
-                      <span class="small_red">¥</span>
-                      <span class="big_red">39.00</span>
-                      <span class="big_gray">/箱</span>
-                      <span class="small_gray">¥59.9</span>
-                    </div>
-                    <div class="shop_cart_btn">
-                      <span class="iconfont icon-gouwuche"></span>
-                    </div>
-                  </div>
+                  <div class="text">时令水果</div>
                 </div>
               </a>
             </div>
-            <div class="box" id="id_003">
-              <a href="#" class="item">
-                <div class="div_img">
-                  <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
-                </div>
-                <div class="price_title_tips">
-                  <!-- 标题 -->
-                  <div class="title_tips">
-                    <p class="title">
-                      3猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                    </p>
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/scdl.png" alt="" />
                   </div>
-                  <!-- 特价 -->
-                  <div class="mark">
-                    <span class="myicon-tejiaRed"></span>
-                  </div>
-                  <!-- 价格与购物车 -->
-                  <div class="price_num_cart">
-                    <div class="price_num">
-                      <span class="small_red">¥</span>
-                      <span class="big_red">39.00</span>
-                      <span class="big_gray">/箱</span>
-                      <span class="small_gray">¥59.9</span>
-                    </div>
-                    <div class="shop_cart_btn">
-                      <span class="iconfont icon-gouwuche"></span>
-                    </div>
-                  </div>
+                  <div class="text">蔬菜豆类</div>
                 </div>
               </a>
             </div>
-            <div class="box" id="id_004">
-              <a href="#" class="item">
-                <div class="div_img">
-                  <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/hxsc.png" alt="" />
+                  </div>
+                  <div class="text">海鲜水产</div>
                 </div>
               </a>
             </div>
-            <div class="box" id="id_005">
-              <a href="#" class="item">
-                <div class="div_img">
-                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/nfcp.png" alt="" />
+                  </div>
+                  <div class="text">牛副产品</div>
                 </div>
               </a>
             </div>
-            <div class="box" id="id_006">
-              <a href="#" class="item">
-                <div class="div_img">
-                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
-                </div>
-                <div class="price_title_tips">
-                  <!-- 标题 -->
-                  <div class="title_tips">
-                    <p class="title">
-                      6猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                    </p>
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/zfcp.png" alt="" />
                   </div>
-                  <!-- 特价 -->
-                  <div class="mark">
-                    <span class="myicon-tejiaRed"></span>
-                  </div>
-                  <!-- 价格与购物车 -->
-                  <div class="price_num_cart">
-                    <div class="price_num">
-                      <span class="small_red">¥</span>
-                      <span class="big_red">39.00</span>
-                      <span class="big_gray">/箱</span>
-                      <span class="small_gray">¥59.9</span>
-                    </div>
-                    <div class="shop_cart_btn">
-                      <span class="iconfont icon-gouwuche"></span>
-                    </div>
-                  </div>
+                  <div class="text">猪副产品</div>
                 </div>
               </a>
             </div>
-            <div class="box" id="id_007">
-              <a href="#" class="item">
-                <div class="div_img">
-                  <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/jm.png" alt="" />
+                  </div>
+                  <div class="text">鸡苗</div>
                 </div>
-                <div class="price_title_tips">
-                  <!-- 标题 -->
-                  <div class="title_tips">
-                    <p class="title">
-                      7猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-                    </p>
+              </a>
+            </div>
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/sl.png" alt="" />
                   </div>
-                  <!-- 价格与购物车 -->
-                  <div class="price_num_cart">
-                    <div class="price_num">
-                      <span class="small_red">¥</span>
-                      <span class="big_red">39.00</span>
-                      <span class="big_gray">/箱</span>
-                      <span class="small_gray">¥59.9</span>
-                    </div>
-                    <div class="shop_cart_btn">
-                      <span class="iconfont icon-gouwuche"></span>
-                    </div>
-                  </div>
+                  <div class="text">饲料</div>
                 </div>
               </a>
             </div>
           </div>
-          <!-- 数据为空 -->
-          <div class="data_not">
-            <div>
-              <span class="iconfont icon-kongshuju1"></span>
-              <div>暂无数据</div>
+        </div>
+        <!-- 限时抢购 -->
+        <div class="pic_card titleCnt_card">
+          <!-- title -->
+          <div class="card_title">
+            <div class="countdown">
+              <div class="text">限时抢购</div>
+              <div class="time_icon">
+                <span class="myicon-naozhongRed"></span>
+                <div>00:15:12</div>
+              </div>
+            </div>
+          </div>
+          <!-- N宫格 -->
+          <div class="iconFlex_card">
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/rqd.png" alt="" />
+                  </div>
+                  <div class="text"><span class="small">¥</span>19.6</div>
+                </div>
+              </a>
+            </div>
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/slsg.png" alt="" />
+                  </div>
+                  <div class="text"><span class="small">¥</span>19.6</div>
+                </div>
+              </a>
+            </div>
+            <div class="list">
+              <a href="#">
+                <div class="layout">
+                  <div class="img_or_icon">
+                    <img src="../../images/content_imgs/scdl.png" alt="" />
+                  </div>
+                  <div class="text"><span class="small">¥</span>19.6</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <!-- 加载中 -->
-      <div class="loading_data" id="loading">
-        <span class="mui-spinner"></span>
-        <div>加载中...</div>
+      <!-- 商品列表 -->
+      <div class="shop_goods_lists" id="good_lists">
+        <!-- tab -->
+        <div class="tabs_switch" id="tabSwitch">
+          <div class="tab active">
+            <p>全部</p>
+            <div class="line"></div>
+          </div>
+          <div class="tab">
+            <p>海产品</p>
+            <div class="line"></div>
+          </div>
+          <div class="tab">
+            <p>渔产品</p>
+            <div class="line"></div>
+          </div>
+          <div class="tab">
+            <p>瓜果</p>
+            <div class="line"></div>
+          </div>
+          <div class="tab">
+            <p>畜禽</p>
+            <div class="line"></div>
+          </div>
+          <div class="tab">
+            <p>花卉</p>
+            <div class="line"></div>
+          </div>
+        </div>
+        <!-- 商品列表 -->
+        <div class="shop_lists_box">
+          <div id="shop_goods">
+            <div class="pull_dowm_lists">
+              <div class="shop_slide" id="shop_box_content">
+                <div class="box" id="id_001">
+                  <a href="#" class="item">
+                    <!-- 图片 -->
+                    <div class="div_img">
+                      <img src="../../images/content_imgs/Bitmap-3.png" alt="" />
+                    </div>
+                    <div class="price_title_tips">
+                      <!-- 标题 -->
+                      <div class="title_tips">
+                        <p class="title">
+                          1猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                        </p>
+                      </div>
+                      <!-- 特价 -->
+                      <div class="mark">
+                        <span class="myicon-tejiaRed"></span>
+                      </div>
+                      <!-- 价格与购物车 -->
+                      <div class="price_num_cart">
+                        <div class="price_num">
+                          <span class="small_red">¥</span>
+                          <span class="big_red">39.00</span>
+                          <span class="big_gray">/箱</span>
+                          <span class="small_gray">¥59.9</span>
+                        </div>
+                        <!-- 显示购物车按钮 -->
+                        <div class="shop_cart_btn">
+                          <span class="iconfont icon-gouwuche"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="box" id="id_002">
+                  <a href="#" class="item">
+                    <div class="div_img">
+                      <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                    </div>
+                    <div class="price_title_tips">
+                      <!-- 标题 -->
+                      <div class="title_tips">
+                        <p class="title">
+                          2猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                        </p>
+                      </div>
+                      <!-- 特价 -->
+                      <div class="mark">
+                        <span class="myicon-tejiaRed"></span>
+                      </div>
+                      <!-- 价格与购物车 -->
+                      <div class="price_num_cart">
+                        <div class="price_num">
+                          <span class="small_red">¥</span>
+                          <span class="big_red">39.00</span>
+                          <span class="big_gray">/箱</span>
+                          <span class="small_gray">¥59.9</span>
+                        </div>
+                        <div class="shop_cart_btn">
+                          <span class="iconfont icon-gouwuche"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="box" id="id_003">
+                  <a href="#" class="item">
+                    <div class="div_img">
+                      <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
+                    </div>
+                    <div class="price_title_tips">
+                      <!-- 标题 -->
+                      <div class="title_tips">
+                        <p class="title">
+                          3猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                        </p>
+                      </div>
+                      <!-- 特价 -->
+                      <div class="mark">
+                        <span class="myicon-tejiaRed"></span>
+                      </div>
+                      <!-- 价格与购物车 -->
+                      <div class="price_num_cart">
+                        <div class="price_num">
+                          <span class="small_red">¥</span>
+                          <span class="big_red">39.00</span>
+                          <span class="big_gray">/箱</span>
+                          <span class="small_gray">¥59.9</span>
+                        </div>
+                        <div class="shop_cart_btn">
+                          <span class="iconfont icon-gouwuche"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="box" id="id_004">
+                  <a href="#" class="item">
+                    <div class="div_img">
+                      <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+                <div class="box" id="id_005">
+                  <a href="#" class="item">
+                    <div class="div_img">
+                      <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                    </div>
+                  </a>
+                </div>
+                <div class="box" id="id_006">
+                  <a href="#" class="item">
+                    <div class="div_img">
+                      <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                    </div>
+                    <div class="price_title_tips">
+                      <!-- 标题 -->
+                      <div class="title_tips">
+                        <p class="title">
+                          6猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                        </p>
+                      </div>
+                      <!-- 特价 -->
+                      <div class="mark">
+                        <span class="myicon-tejiaRed"></span>
+                      </div>
+                      <!-- 价格与购物车 -->
+                      <div class="price_num_cart">
+                        <div class="price_num">
+                          <span class="small_red">¥</span>
+                          <span class="big_red">39.00</span>
+                          <span class="big_gray">/箱</span>
+                          <span class="small_gray">¥59.9</span>
+                        </div>
+                        <div class="shop_cart_btn">
+                          <span class="iconfont icon-gouwuche"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="box" id="id_007">
+                  <a href="#" class="item">
+                    <div class="div_img">
+                      <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+                    </div>
+                    <div class="price_title_tips">
+                      <!-- 标题 -->
+                      <div class="title_tips">
+                        <p class="title">
+                          7猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                        </p>
+                      </div>
+                      <!-- 价格与购物车 -->
+                      <div class="price_num_cart">
+                        <div class="price_num">
+                          <span class="small_red">¥</span>
+                          <span class="big_red">39.00</span>
+                          <span class="big_gray">/箱</span>
+                          <span class="small_gray">¥59.9</span>
+                        </div>
+                        <div class="shop_cart_btn">
+                          <span class="iconfont icon-gouwuche"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- 数据为空 -->
+              <div class="data_not">
+                <div>
+                  <span class="iconfont icon-kongshuju1"></span>
+                  <div>暂无数据</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 加载中 -->
+          <div class="loading_data" id="loading">
+            <span class="mui-spinner"></span>
+            <div>加载中...</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -469,7 +504,7 @@
       let imgSrc = $(this).parents(".box").find(".div_img>img").attr("src");
       let Pw = $(this).width() / 2;
       let Cw = $(".add_cart_pos_img").width() / 2;
-      let top = $(this).offset().top - $(window).scrollTop() + 2;
+      let top = $(this).offset().top + 2;
       let right = $(window).width() - $(this).offset().left - Cw - Pw;
       $(".add_cart_pos_img>img").attr("src", imgSrc);
       $(".add_cart_pos_img").css({
@@ -494,69 +529,17 @@
       );
       e.stopPropagation();
     });
-    // 监听滚动事件
-    $(window).scroll(function () {
-      let scrollTop = $(this).scrollTop();
-      let scrollHeight = $(document).height();
-      let windowHeight = $(this).height();
-      let searchHeight = $("#search_scroll").outerHeight();
-      let tabHeight = $("#tabSwitch").outerHeight();
-      let footHeight = $(".footer_index").outerHeight();
-      console.log("windowHeight==============");
-      // 搜索框
-      let tabTop =
-        $(".shop_goods_lists").offset().top -
-        $("#search_scroll").outerHeight();
-      if (scrollTop > 0) {
-        $("#search_scroll").addClass("fixed");
-      } else {
-        $("#search_scroll").removeClass("fixed");
-      }
-      // 商品列表分类头部
-      if (scrollTop > tabTop) {
-        $("#tabSwitch").addClass("fixed");
-      } else {
-        tabTop =
-          $(".shop_goods_lists").offset().top -
-          $("#search_scroll").outerHeight();
-        $("#tabSwitch").removeClass("fixed");
-      }
-      // 判断滚动到底部了
-      if (scrollTop + windowHeight >= scrollHeight) {
-        console.log("已经滚动到底部了");
-      }
-    });
     // 图片轮播
     let swiper_img = new Swiper(".shop_swiper .swiper-container", {
       pagination: ".swiper-pagination",
       loop: true,
       autoplay: 3000,
     });
-    // 商品列表切换
-    mui("#tabSwitch").on("tap", ".tab", function (e) {
-      // 重置滚动条
-      if ($("#tabSwitch").hasClass("fixed")) {
-        let tabTop =
-          $(".shop_goods_lists").offset().top -
-          $("#search_scroll").outerHeight();
-        $(window).scrollTop(tabTop + 1);
-      }
-      // 防止重复点击
-      if ($(this).hasClass("active")) {
-        console.log("重复点击");
-      } else {
-        $(this).addClass("active");
-        $(this).siblings(".tab").removeClass("active");
-        let index = $(this).index();
-        // 每一次切换都重新请求列表数据
-        initData(index);
-      }
-    });
     function initData(index) {
       // 打开加载loading
       $("#good_lists #loading").show();
       // 关闭存放数据的div
-      $("#refreshContainer").hide();
+      $("#shop_goods").hide();
       // 将存放数据的div设置为空
       $("#shop_box_content").html("");
       // 重置pageIndex
@@ -566,15 +549,18 @@
         initAjax();
       }, 1000);
     }
-    // --------------------------------------------------------上拉加载
-    mui.init({
-      pullRefresh: {
-        container: "#refreshContainer",
-        up: {
-          contentrefresh: "正在加载...",
-          contentnomore: "没有更多内容啦",
-          callback: pullup,
-        },
+    // 下拉刷新，上拉加载---------------------------------------------------------
+    let muiScroll = mui("#refreshContainer").pullRefresh({
+      down: {
+        style: "circle",
+        color: "#0091ff",
+        height: refreshH,
+        callback: pulldown,
+      },
+      up: {
+        contentrefresh: "正在加载...",
+        contentnomore: "没有更多内容啦",
+        callback: pullup,
       },
     });
     // 每页请求的条数
@@ -582,7 +568,28 @@
     // 请求的页数
     let pageIndex = 1;
     // 总的数据条数
-    let pageCount = 30;
+    let pageCount = 0;
+    // 下拉刷新
+    function pulldown() {
+      console.log("下拉刷新task");
+      setTimeout(() => {
+        mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
+        // 重置请求的页数
+        pageIndex = 1;
+        $("#shop_box_content").html("");
+        /*执行请求*/
+        initAjax();
+        // 关闭上拉加载
+        mui("#refreshContainer").pullRefresh().disablePullupToRefresh();
+        setTimeout(function () {
+          // 这里判断在初始化请求的时候后台是否返回数据，有数据便打开上拉加载
+          if (pageCount > 0) {
+            mui("#refreshContainer").pullRefresh().enablePullupToRefresh();
+            mui("#refreshContainer").pullRefresh().endPullupToRefresh();
+          }
+        }, 1000);
+      }, 1000);
+    }
     // 上拉加载
     function pullup() {
       setTimeout(() => {
@@ -601,7 +608,7 @@
       // 关闭加载loading
       $("#good_lists #loading").hide();
       // 开启数据列表区域
-      $("#refreshContainer").show();
+      $("#shop_goods").show();
       $("#shop_box_content").show();
       $("#refreshContainer .data_not").hide();
       // 如果初始化请求没有一条数据的情况，显示暂无数据
@@ -639,6 +646,44 @@
     // 执行初始化请求函数
     mui.ready(function () {
       initData(0);
+    });
+    // 商品列表切换
+    mui(".tabs_switch").on("tap", ".tab", function (e) {
+      // 重置滚动条
+      if ($("#tabSwitch").hasClass("fixed")) {
+        let tabTop =
+          $(".shop_goods_lists").offset().top -
+          $("#search_scroll").outerHeight();
+        let tabPositionTop = $("#tabSwitch").position().top + 0.5;
+        muiScroll.scrollTo(0, -tabPositionTop, 10);
+      }
+      // 防止重复点击
+      if ($(this).hasClass("active")) {
+        console.log("重复点击");
+      } else {
+        let index = $(this).index();
+        $(".tabs_switch").each(function () {
+          let tab = $(this).find(".tab").eq(index);
+          tab.siblings(".tab").removeClass("active");
+          tab.addClass("active");
+        });
+        // 每一次切换都重新请求列表数据
+        initData(index);
+      }
+    });
+    // 监听滚动事件
+    $('.mui-scroll-wrapper').scroll(function (e) {
+      let searchHeight = $("#search_scroll").outerHeight();
+      // 搜索框
+      let tabTop = $(".shop_goods_lists").offset().top;
+      // 商品列表分类头部
+      if (tabTop <= searchHeight) {
+        $(".tabs_fixed").css("display", "flex");
+        $("#tabSwitch").addClass("fixed");
+      } else {
+        $(".tabs_fixed").hide();
+        $("#tabSwitch").removeClass("fixed");
+      }
     });
   </script>
 </body>

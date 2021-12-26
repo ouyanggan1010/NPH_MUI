@@ -1,555 +1,581 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../js/mui.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../js/mycommon.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../css/farmer_index.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>首页</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <!-- mui-js -->
-  <script src="../../js/mui.min.js"></script>
-  <!-- 引入jQuery -->
-  <script src="../../js/jquery-3.1.1.min.js"></script>
-  <!-- 公用的js -->
-  <script src="../../js/mycommon.js"></script>
-  <!-- mui-css -->
-  <link rel="stylesheet" href="../../css/mui.min.css" />
-  <!-- 字体图标 -->
-  <link rel="stylesheet" href="../../fonts/iconfont.css" />
-  <!-- 一些通用的样式 -->
-  <link rel="stylesheet" href="../../css/farmer_base.css" />
-  <!-- 本页面的css -->
-  <link rel="stylesheet" href="../../css/farmer_index.css" />
-  <!-- 声明所有连接都在当前窗口打开 -->
-  <base target="_self" />
-</head>
-
-<body class="index_body">
-  <!-- 通用的搜索框 -->
-  <div class="search_box" id="search_scroll">
-    <div class="mui-input-row mui-search mui-plus-visible">
-      <input id="search" type="search" class="mui-input-speech mui-input-clear" placeholder="搜索" />
-    </div>
-  </div>
-  <!-- 定位与时间 -->
-  <div class="position_time">
-    <div id="city">海口市</div>
-    <div class="line"></div>
-    <div id="date_week">2021.05.12 星期五</div>
-    <span class="iconfont icon-ditu_dingwei_o"></span>
-  </div>
-  <!-- 天气 -->
-  <div class="weather">
-    <div class="pic_img">
-      <img src="../../images/content_imgs/whear.png" alt="" />
-    </div>
-    <div class="text_list">
-      <div class="quality">
-        <div>阴&nbsp;21 ~ 30℃</div>
-      </div>
-      <div>南风3级&nbsp;&nbsp;湿度：58%</div>
-      <div>气压：1010hpa</div>
-    </div>
-    <div class="text_list">
-      <div class="quality">
-        <div>空气质量：</div>
-        <div class="mark">优</div>
-      </div>
-      <div>PM2.5</div>
-      <div>水温：20℃</div>
-    </div>
-  </div>
-  <!-- 内容块 -->
-  <div class="cnt_chunk">
-    <div class="pic_card index_textNum">
-      <a href="#" class="list">
-        <div class="text">众筹项目</div>
-        <div class="num">125</div>
-      </a>
-      <a href="#" class="list">
-        <div class="text">注册用户</div>
-        <div class="num">125</div>
-      </a>
-      <a href="#" class="list">
-        <div class="text">供应商</div>
-        <div class="num">125</div>
-      </a>
-    </div>
-    <!-- 图标八宫格 -->
-    <div class="pic_card titleCnt_card">
-      <div class="iconFlex_card">
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-zonghezixun"></span>
-              </div>
-              <div class="text">综合资讯</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-nongjifuwu"></span>
-              </div>
-              <div class="text">农机服务</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-nonghuoshengchan"></span>
-              </div>
-              <div class="text">农活生产</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <div onclick="openWindow({url:'./agricultural/consult.html',id:'consult'})">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-nongwuzixun"></span>
-              </div>
-              <div class="text">农务咨询</div>
-            </div>
-          </div>
-        </div>
-        <div class="list">
-          <div onclick="openWindow({url:'./plantAssistant/task.html',id:'plantAssistant'})">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-zhongzhizhushou"></span>
-              </div>
-              <div class="text">种植助手</div>
-            </div>
-          </div>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-shujushangbao"></span>
-              </div>
-              <div class="text">数据上报</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-zhongchouxiangmu"></span>
-              </div>
-              <div class="text">众筹项目</div>
-            </div>
-          </a>
-        </div>
-        <div class="list">
-          <a href="#">
-            <div class="layout">
-              <div class="img_or_icon">
-                <span class="myicon-jinrongchanp"></span>
-              </div>
-              <div class="text">金融产品</div>
-            </div>
-          </a>
-        </div>
+  <body class="index_body">
+    <!-- 通用的搜索框 -->
+    <div class="search_box" id="search_scroll">
+      <div class="mui-input-row mui-search mui-plus-visible">
+        <input
+          id="search"
+          type="search"
+          class="mui-input-speech mui-input-clear"
+          placeholder="搜索"
+        />
       </div>
     </div>
-    <!-- 益农信息社 -->
-    <div class="pic_card aiticle_text_img">
-      <!-- title -->
-      <div class="card_title">
-        <div class="only">益农信息社</div>
+    <!-- 定位与时间 -->
+    <div class="position_time">
+      <div id="city">海口市</div>
+      <div class="line"></div>
+      <div id="date_week">2021.05.12 星期五</div>
+      <span class="iconfont icon-ditu_dingwei_o"></span>
+    </div>
+    <!-- 天气 -->
+    <div class="weather">
+      <div class="pic_img">
+        <img src="../../images/content_imgs/whear.png" alt="" />
       </div>
-      <!-- 列表 -->
-      <div class="text_img_lists">
+      <div class="text_list">
+        <div class="quality">
+          <div>阴&nbsp;21 ~ 30℃</div>
+        </div>
+        <div>南风3级&nbsp;&nbsp;湿度：58%</div>
+        <div>气压：1010hpa</div>
+      </div>
+      <div class="text_list">
+        <div class="quality">
+          <div>空气质量：</div>
+          <div class="mark">优</div>
+        </div>
+        <div>PM2.5</div>
+        <div>水温：20℃</div>
+      </div>
+    </div>
+    <!-- 内容块 -->
+    <div class="cnt_chunk">
+      <div class="pic_card index_textNum">
         <a href="#" class="list">
-          <div class="text_oneImg">
-            <div class="div_text">
-              <div class="div_title">
-                市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
-              </div>
-              <div class="div_tips">
-                <div class="text_mark">
-                  <span>2021-12-12</span>
-                </div>
-              </div>
-            </div>
-            <div class="div_oneImg">
-              <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
-            </div>
-          </div>
+          <div class="text">众筹项目</div>
+          <div class="num">125</div>
+        </a>
+        <a href="#" class="list">
+          <div class="text">注册用户</div>
+          <div class="num">125</div>
+        </a>
+        <a href="#" class="list">
+          <div class="text">供应商</div>
+          <div class="num">125</div>
         </a>
       </div>
-    </div>
-    <!-- 品牌列表 -->
-    <div class="pic_card aiticle_text_img">
-      <!-- title -->
-      <div class="card_title">
-        <div class="brand">
-          <div class="text">品牌</div>
-          <div class="line"></div>
-          <span>有故事的好牌子</span>
+      <!-- 图标八宫格 -->
+      <div class="pic_card titleCnt_card">
+        <div class="iconFlex_card">
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-zonghezixun"></span>
+                </div>
+                <div class="text">综合资讯</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-nongjifuwu"></span>
+                </div>
+                <div class="text">农机服务</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-nonghuoshengchan"></span>
+                </div>
+                <div class="text">农活生产</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="./agricultural/consult.html">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-nongwuzixun"></span>
+                </div>
+                <div class="text">农务咨询</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="./plantAssistant/task.html">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-zhongzhizhushou"></span>
+                </div>
+                <div class="text">种植助手</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-shujushangbao"></span>
+                </div>
+                <div class="text">数据上报</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-zhongchouxiangmu"></span>
+                </div>
+                <div class="text">众筹项目</div>
+              </div>
+            </a>
+          </div>
+          <div class="list">
+            <a href="#">
+              <div class="layout">
+                <div class="img_or_icon">
+                  <span class="myicon-jinrongchanp"></span>
+                </div>
+                <div class="text">金融产品</div>
+              </div>
+            </a>
+          </div>
         </div>
-        <a href="#" class="more"><span>全部</span><span class="iconfont icon-icon_arrow_right"></span></a>
       </div>
-      <!-- 列表 -->
-      <div class="brand_img_lists">
-        <div class="list">
-          <a href="#" class="brand_story list_child">
-            <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
-            <div class="position">
-              <p>一骑红尘妃子笑</p>
-              <div class="tips">品牌故事</div>
-            </div>
-          </a>
-          <div class="brand_look list_child">
-            <a href="#" class="link_look">
+      <!-- 益农信息社 -->
+      <div class="pic_card aiticle_text_img">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">益农信息社</div>
+        </div>
+        <!-- 列表 -->
+        <div class="text_img_lists">
+          <a href="./information/informationDetail.html" class="list">
+            <div class="text_oneImg">
               <div class="div_text">
                 <div class="div_title">
                   市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
                 </div>
                 <div class="div_tips">
-                  <span>去看看</span>
-                  <span class="iconfont icon-jiantou_xiangyouliangci_o"></span>
+                  <div class="text_mark">
+                    <span>2021-12-12</span>
+                  </div>
                 </div>
               </div>
-            </a>
-            <a href="#" class="link_look">
               <div class="div_oneImg">
                 <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
               </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- 品牌列表 -->
+      <div class="pic_card aiticle_text_img">
+        <!-- title -->
+        <div class="card_title">
+          <div class="brand">
+            <div class="text">品牌</div>
+            <div class="line"></div>
+            <span>有故事的好牌子</span>
+          </div>
+          <a href="#" class="more"
+            ><span>全部</span
+            ><span class="iconfont icon-icon_arrow_right"></span
+          ></a>
+        </div>
+        <!-- 列表 -->
+        <div class="brand_img_lists">
+          <div class="list">
+            <a href="#" class="brand_story list_child">
+              <img src="../../images/content_imgs/Bitmap-2.png" alt="" />
+              <div class="position">
+                <p>一骑红尘妃子笑</p>
+                <div class="tips">品牌故事</div>
+              </div>
+            </a>
+            <div class="brand_look list_child">
+              <a href="#" class="link_look">
+                <div class="div_text">
+                  <div class="div_title">
+                    市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                  </div>
+                  <div class="div_tips">
+                    <span>去看看</span>
+                    <span
+                      class="iconfont icon-jiantou_xiangyouliangci_o"
+                    ></span>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="link_look">
+                <div class="div_oneImg">
+                  <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
+                </div>
+                <div class="div_text">
+                  <div class="div_title">
+                    市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                  </div>
+                  <div class="div_tips">
+                    <span>去看看</span>
+                    <span
+                      class="iconfont icon-jiantou_xiangyouliangci_o"
+                    ></span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 特色项目 -->
+      <div class="pic_card aiticle_text_img">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">特色项目</div>
+          <a href="#" class="more"
+            ><span>全部</span
+            ><span class="iconfont icon-icon_arrow_right"></span
+          ></a>
+        </div>
+        <!-- 列表 -->
+        <div class="features_lists">
+          <a href="#" class="list">
+            <div class="sort_icon">
+              <span>1</span>
+              <span>Top</span>
+            </div>
+            <div class="item_top">
+              <p>
+                军供食品生猪养殖项目军供食品生猪养殖项目军供食品生猪养殖项目
+              </p>
+              <div>&nbsp;&nbsp;目标&nbsp;20000元</div>
+              <div>剩余25天</div>
+            </div>
+          </a>
+          <a href="#" class="list">
+            <div class="sort_icon">
+              <span>2</span>
+              <span>Top</span>
+            </div>
+            <div class="item_top">
+              <p>
+                军供食品生猪养殖项目军供食品生猪养殖项目军供食品生猪养殖项目
+              </p>
+              <div>&nbsp;&nbsp;目标&nbsp;20000元</div>
+              <div>剩余25天</div>
+            </div>
+          </a>
+          <a href="#" class="list">
+            <div class="sort_icon">
+              <span>3</span>
+              <span>Top</span>
+            </div>
+            <div class="item_top">
+              <p>军供食品生猪养殖项目</p>
+              <div>&nbsp;&nbsp;目标&nbsp;20000元</div>
+              <div>剩余25天</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- 特色农产品 -->
+      <div class="pic_card aiticle_text_img">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">特色农产品</div>
+          <a href="#" class="more"
+            ><span>全部</span
+            ><span class="iconfont icon-icon_arrow_right"></span
+          ></a>
+        </div>
+        <!-- 列表 -->
+        <div class="features_agricultural">
+          <a href="#" class="list">
+            <div class="div_img">
+              <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
+            </div>
+            <div class="price_title_tips">
+              <div class="title_tips">
+                <!-- 红色的tip -->
+                <p class="title">
+                  猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
+                </p>
+                <!-- 蓝色的tip -->
+                <div class="tips font_red">附近3用户刚下单</div>
+                <!-- <div class="tips font_blue">半年内购买6次</div> -->
+              </div>
+              <div class="price_weight">
+                <div class="price">￥19</div>
+                <div class="line">/</div>
+                <div class="weight">500g</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- 金融服务 -->
+      <div class="pic_card aiticle_text_img">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">金融服务</div>
+          <a href="#" class="more"
+            ><span>全部</span
+            ><span class="iconfont icon-icon_arrow_right"></span
+          ></a>
+        </div>
+        <!-- 列表 -->
+        <div class="financial_services">
+          <a href="#" class="list">
+            <div class="radius"></div>
+            <div class="cnt">
+              <div class="text_top">
+                <div class="icon_text">
+                  <span class="iconfont icon-youhuiquan"></span>
+                  <span>丰收惠</span>
+                  <span class="iconfont icon-icon_arrow_right"></span>
+                </div>
+                <p>告别种植风险</p>
+              </div>
+              <div class="text_bottom">
+                <div>6.00%+</div>
+                <p>业绩比较基准</p>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="list">
+            <div class="radius"></div>
+            <div class="cnt">
+              <div class="text_top">
+                <div class="icon_text">
+                  <span class="iconfont icon-qianbao"></span>
+                  <span>惠农贷</span>
+                  <span class="iconfont icon-icon_arrow_right"></span>
+                </div>
+                <p>告别种植风险</p>
+              </div>
+              <div class="text_bottom">
+                <div>6.00%+</div>
+                <p>业绩比较基准</p>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="list">
+            <div class="radius"></div>
+            <div class="cnt">
+              <div class="text_top">
+                <div class="icon_text">
+                  <span class="iconfont icon-paichu1"></span>
+                  <span>丰收惠</span>
+                  <span class="iconfont icon-icon_arrow_right"></span>
+                </div>
+                <p>告别种植风险</p>
+              </div>
+              <div class="text_bottom">
+                <div>6.00%+</div>
+                <p>业绩比较基准</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- 乡村文旅 -->
+      <div class="pic_card aiticle_text_img">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">乡村文旅</div>
+        </div>
+        <!-- 列表 -->
+        <div class="text_img_lists">
+          <a href="#" class="list">
+            <div class="imgs_top">
+              <img
+                src="../../images/content_imgs/Bitmap-4.png"
+                class="one_big_img"
+                alt=""
+              />
+            </div>
+            <div class="text_oneImg">
               <div class="div_text">
                 <div class="div_title">
                   市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
                 </div>
                 <div class="div_tips">
-                  <span>去看看</span>
-                  <span class="iconfont icon-jiantou_xiangyouliangci_o"></span>
+                  <div class="text_mark">
+                    <span>2021-12-12</span>
+                  </div>
                 </div>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-    <!-- 特色项目 -->
-    <div class="pic_card aiticle_text_img">
-      <!-- title -->
-      <div class="card_title">
-        <div class="only">特色项目</div>
-        <a href="#" class="more"><span>全部</span><span class="iconfont icon-icon_arrow_right"></span></a>
-      </div>
-      <!-- 列表 -->
-      <div class="features_lists">
-        <a href="#" class="list">
-          <div class="sort_icon">
-            <span>1</span>
-            <span>Top</span>
-          </div>
-          <div class="item_top">
-            <p>
-              军供食品生猪养殖项目军供食品生猪养殖项目军供食品生猪养殖项目
-            </p>
-            <div>&nbsp;&nbsp;目标&nbsp;20000元</div>
-            <div>剩余25天</div>
-          </div>
-        </a>
-        <a href="#" class="list">
-          <div class="sort_icon">
-            <span>2</span>
-            <span>Top</span>
-          </div>
-          <div class="item_top">
-            <p>
-              军供食品生猪养殖项目军供食品生猪养殖项目军供食品生猪养殖项目
-            </p>
-            <div>&nbsp;&nbsp;目标&nbsp;20000元</div>
-            <div>剩余25天</div>
-          </div>
-        </a>
-        <a href="#" class="list">
-          <div class="sort_icon">
-            <span>3</span>
-            <span>Top</span>
-          </div>
-          <div class="item_top">
-            <p>军供食品生猪养殖项目</p>
-            <div>&nbsp;&nbsp;目标&nbsp;20000元</div>
-            <div>剩余25天</div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- 特色农产品 -->
-    <div class="pic_card aiticle_text_img">
-      <!-- title -->
-      <div class="card_title">
-        <div class="only">特色农产品</div>
-        <a href="#" class="more"><span>全部</span><span class="iconfont icon-icon_arrow_right"></span></a>
-      </div>
-      <!-- 列表 -->
-      <div class="features_agricultural">
-        <a href="#" class="list">
-          <div class="div_img">
-            <img src="../../images/content_imgs/Bitmap-4.png" alt="" />
-          </div>
-          <div class="price_title_tips">
-            <div class="title_tips">
-              <!-- 红色的tip -->
-              <p class="title">
-                猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃猕猴桃
-              </p>
-              <!-- 蓝色的tip -->
-              <div class="tips font_red">附近3用户刚下单</div>
-              <!-- <div class="tips font_blue">半年内购买6次</div> -->
-            </div>
-            <div class="price_weight">
-              <div class="price">￥19</div>
-              <div class="line">/</div>
-              <div class="weight">500g</div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- 金融服务 -->
-    <div class="pic_card aiticle_text_img">
-      <!-- title -->
-      <div class="card_title">
-        <div class="only">金融服务</div>
-        <a href="#" class="more"><span>全部</span><span class="iconfont icon-icon_arrow_right"></span></a>
-      </div>
-      <!-- 列表 -->
-      <div class="financial_services">
-        <a href="#" class="list">
-          <div class="radius"></div>
-          <div class="cnt">
-            <div class="text_top">
-              <div class="icon_text">
-                <span class="iconfont icon-youhuiquan"></span>
-                <span>丰收惠</span>
-                <span class="iconfont icon-icon_arrow_right"></span>
-              </div>
-              <p>告别种植风险</p>
-            </div>
-            <div class="text_bottom">
-              <div>6.00%+</div>
-              <p>业绩比较基准</p>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="list">
-          <div class="radius"></div>
-          <div class="cnt">
-            <div class="text_top">
-              <div class="icon_text">
-                <span class="iconfont icon-qianbao"></span>
-                <span>惠农贷</span>
-                <span class="iconfont icon-icon_arrow_right"></span>
-              </div>
-              <p>告别种植风险</p>
-            </div>
-            <div class="text_bottom">
-              <div>6.00%+</div>
-              <p>业绩比较基准</p>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="list">
-          <div class="radius"></div>
-          <div class="cnt">
-            <div class="text_top">
-              <div class="icon_text">
-                <span class="iconfont icon-paichu1"></span>
-                <span>丰收惠</span>
-                <span class="iconfont icon-icon_arrow_right"></span>
-              </div>
-              <p>告别种植风险</p>
-            </div>
-            <div class="text_bottom">
-              <div>6.00%+</div>
-              <p>业绩比较基准</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- 乡村文旅 -->
-    <div class="pic_card aiticle_text_img">
-      <!-- title -->
-      <div class="card_title">
-        <div class="only">乡村文旅</div>
-      </div>
-      <!-- 列表 -->
-      <div class="text_img_lists">
-        <a href="#" class="list">
-          <div class="imgs_top">
-            <img src="../../images/content_imgs/Bitmap-4.png" class="one_big_img" alt="" />
-          </div>
-          <div class="text_oneImg">
-            <div class="div_text">
-              <div class="div_title">
-                市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
-              </div>
-              <div class="div_tips">
-                <div class="text_mark">
-                  <span>2021-12-12</span>
+      <!-- 掌上村务 -->
+      <div class="pic_card aiticle_text_img">
+        <!-- title -->
+        <div class="card_title">
+          <div class="only">掌上村务</div>
+        </div>
+        <!-- 列表 -->
+        <div class="text_img_lists">
+          <a href="#" class="list">
+            <div class="text_oneImg">
+              <div class="div_text">
+                <div class="div_title">
+                  市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                </div>
+                <div class="div_tips">
+                  <div class="text_mark">
+                    <span>2021-12-12</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- 掌上村务 -->
-    <div class="pic_card aiticle_text_img">
-      <!-- title -->
-      <div class="card_title">
-        <div class="only">掌上村务</div>
-      </div>
-      <!-- 列表 -->
-      <div class="text_img_lists">
-        <a href="#" class="list">
-          <div class="text_oneImg">
-            <div class="div_text">
-              <div class="div_title">
-                市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
-              </div>
-              <div class="div_tips">
-                <div class="text_mark">
-                  <span>2021-12-12</span>
-                </div>
+              <div class="div_oneImg">
+                <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
               </div>
             </div>
-            <div class="div_oneImg">
-              <img src="../../images/content_imgs/Bitmap-1.png" alt="" />
-            </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
+      <!-- 这个是底线 -->
+      <div class="dead_line">没有更多内容啦</div>
     </div>
-    <!-- 这个是底线 -->
-    <div class="dead_line">没有更多内容啦</div>
-  </div>
-  <!-- 公用的尾部 -->
-  <div id="footer"></div>
-  <script>
-    $("#footer").load("../../components/footer.html", function () {
-      let nowFoot = $(this).find(".footer_index>.list").eq(0);
-      nowFoot.addClass("active");
-      nowFoot.siblings(".list").removeClass("active");
-    });
-  </script>
-  <script>
-    // 获取当前位置的城市的坐标点
-    let la, lo;
-    // ---------------------------页面加载完成
-    mui.ready(function () {
-      showDate();
-    });
-    // ---------------------------mui
-    let topH = $(".search_box").outerHeight();
-    mui.init({
-      gestureConfig: {
-        longtap: true, //默认为false
-      },
-    });
-    // ---------------------------使用H5+APP的API
-    mui.plusReady(function () {
-      getLocation();
-      initNativeObjects();
-      showSoftInput();
-    });
-    //语音识别完成事件
-    document
-      .getElementById("search")
-      .addEventListener("recognized", function (e) {
-        console.log("语音识别完成事件-----", e.detail.value);
+    <!-- 公用的尾部 -->
+    <div id="footer"></div>
+    <script>
+      $("#footer").load("../../components/footer.html", function () {
+        let nowFoot = $(this).find(".footer_index>.list").eq(0);
+        nowFoot.addClass("active");
+        nowFoot.siblings(".list").removeClass("active");
       });
-    let nativeWebview, imm, InputMethodManager;
-    let initNativeObjects = function () {
-      if (mui.os.android) {
-        let main = plus.android.runtimeMainActivity();
-        let Context = plus.android.importClass("android.content.Context");
-        InputMethodManager = plus.android.importClass(
-          "android.view.inputmethod.InputMethodManager"
-        );
-        imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
-      } else {
-        nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
-      }
-    };
-    let showSoftInput = function () {
-      // if (mui.os.android) {
-      //   imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
-      // } else {
-      //   nativeWebview.plusCallMethod({
-      //     setKeyboardDisplayRequiresUserAction: false,
-      //   });
-      // }
-      // setTimeout(function () {
-      //   let inputElem = document.querySelector("input");
-      //   inputElem.focus();
-      //   inputElem.parentNode.classList.add("mui-active"); //第一个是search，加上激活样式
-      // }, 200);
-    };
-
-    // 监听滚动事件
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 0) {
-        $("#search_scroll").addClass("fixed");
-      } else {
-        $("#search_scroll").removeClass("fixed");
-      }
-    });
-    // ------------获取当前设备的位置信息
-    $("#city").click(getLocation);
-    function getLocation() {
-      plus.geolocation.getCurrentPosition(
-        function (p) {
-          $("#city").html(p.address.city);
-          la = p.coords.latitude;
-          lo = p.coords.longitude;
-          console.log(p.coords.latitude);
-          console.log(p.coords.longitude);
+    </script>
+    <script>
+      // 获取当前位置的城市的坐标点
+      let la, lo;
+      // ---------------------------页面加载完成
+      mui.ready(function () {
+        showDate();
+      });
+      // ---------------------------mui
+      mui.init({
+        gestureConfig: {
+          longtap: true, //默认为false
         },
-        function (e) {
-          $("#city").html("重新获取");
-          mui.toast(e.message);
-          console.log("=========", JSON.stringify(e));
+      });
+      // ---------------------------使用H5+APP的API
+      mui.plusReady(function () {
+        getLocation();
+        initNativeObjects();
+        showSoftInput();
+      });
+      //语音识别完成事件
+      document
+        .getElementById("search")
+        .addEventListener("recognized", function (e) {
+          console.log("语音识别完成事件-----", e.detail.value);
+        });
+      let nativeWebview, imm, InputMethodManager;
+      let initNativeObjects = function () {
+        if (mui.os.android) {
+          let main = plus.android.runtimeMainActivity();
+          let Context = plus.android.importClass("android.content.Context");
+          InputMethodManager = plus.android.importClass(
+            "android.view.inputmethod.InputMethodManager"
+          );
+          imm = main.getSystemService(Context.INPUT_METHOD_SERVICE);
+        } else {
+          nativeWebview = plus.webview.currentWebview().nativeInstanceObject();
         }
-      );
-    }
-    // ------------获取当前设备的日期
-    function showDate() {
-      let dDate = new Date(); /*获取手机的当前日期*/
-      // 格式化日期
-      let year = dDate.getFullYear();
-      let month = dDate.getMonth() + 1;
-      let date = dDate.getDate();
-      let day = dDate.getDay();
-      let weekArr = [
-        "星期天",
-        "星期一",
-        "星期二",
-        "星期三",
-        "星期四",
-        "星期五",
-        "星期六",
-      ];
-      let full = `${year}.${month < 10 ? "0" + month : month}.${date < 10 ? "0" + date : date
-        } ${weekArr[day]}`;
-      $("#date_week").html(full);
-      console.log("获取当前设备的日期=========", full);
-    }
-  </script>
-</body>
+      };
+      let showSoftInput = function () {
+        // if (mui.os.android) {
+        //   imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
+        // } else {
+        //   nativeWebview.plusCallMethod({
+        //     setKeyboardDisplayRequiresUserAction: false,
+        //   });
+        // }
+        // setTimeout(function () {
+        //   let inputElem = document.querySelector("input");
+        //   inputElem.focus();
+        //   inputElem.parentNode.classList.add("mui-active"); //第一个是search，加上激活样式
+        // }, 200);
+      };
 
+      // 监听滚动事件
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+          $("#search_scroll").addClass("fixed");
+        } else {
+          $("#search_scroll").removeClass("fixed");
+        }
+      });
+      // ------------获取当前设备的位置信息
+      $("#city").click(getLocation);
+      function getLocation() {
+        plus.geolocation.getCurrentPosition(
+          function (p) {
+            $("#city").html(p.address.city);
+            la = p.coords.latitude;
+            lo = p.coords.longitude;
+            console.log(p.coords.latitude);
+            console.log(p.coords.longitude);
+          },
+          function (e) {
+            $("#city").html("重新获取");
+            mui.toast(e.message);
+            console.log("=========", JSON.stringify(e));
+          }
+        );
+      }
+      // ------------获取当前设备的日期
+      function showDate() {
+        let dDate = new Date(); /*获取手机的当前日期*/
+        // 格式化日期
+        let year = dDate.getFullYear();
+        let month = dDate.getMonth() + 1;
+        let date = dDate.getDate();
+        let day = dDate.getDay();
+        let weekArr = [
+          "星期天",
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+        ];
+        let full = `${year}.${month < 10 ? "0" + month : month}.${
+          date < 10 ? "0" + date : date
+        } ${weekArr[day]}`;
+        $("#date_week").html(full);
+        console.log("获取当前设备的日期=========", full);
+      }
+    </script>
+  </body>
 </html>

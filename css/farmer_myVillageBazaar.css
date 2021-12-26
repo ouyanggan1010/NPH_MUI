@@ -1,3 +1,10 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   padding-top: 11.5385vw;
   position: relative;
@@ -40,15 +47,17 @@ body {
   display: block;
 }
 
-.consult_cnt {
+.mui-scroll-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
 }
 
 .swiper_imgs {
   width: 100%;
   background-color: #fff;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding-top: 2.5641vw;
   padding-bottom: 6.4103vw;
 }
@@ -61,8 +70,7 @@ body {
 .swiper_imgs .swiper-slide {
   width: 70%;
   margin: 0;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 1.2821vw;
 }
 
@@ -87,8 +95,7 @@ body {
   bottom: 1.2821vw;
   left: 0;
   width: 100%;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 2.5641vw;
   line-height: 5.1282vw;
 }
@@ -131,8 +138,7 @@ body {
   bottom: 1.2821vw;
   left: 0;
   width: 100%;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 2.5641vw;
   font-size: 3.5897vw;
   color: #fff;
@@ -157,20 +163,10 @@ body {
 }
 
 .recommend_list .more_article {
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
   padding: 2.5641vw 3.8462vw;
   background-color: #fff;
 }

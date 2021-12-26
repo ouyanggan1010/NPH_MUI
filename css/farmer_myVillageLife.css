@@ -1,3 +1,10 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   padding-top: 11.5385vw;
   position: relative;
@@ -40,8 +47,11 @@ body {
   display: block;
 }
 
-.consult_cnt {
+.mui-scroll-wrapper {
   position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
 }
 
 .recommend_list {
@@ -49,8 +59,7 @@ body {
 }
 
 .recommend_list .text_img_lists {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding-top: 2.5641vw;
   background-color: #f6f6f6;
 }
@@ -58,18 +67,9 @@ body {
 .recommend_list .text_img_lists .imgs_top {
   width: 100%;
   overflow: hidden;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: space-between;
-     -moz-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 1.2821vw !important;
   position: relative;
 }
@@ -77,8 +77,7 @@ body {
 .recommend_list .text_img_lists .imgs_top > .one_big_img {
   width: 100%;
   height: 46.1538vw;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .recommend_list .text_img_lists .imgs_top .mark {
@@ -88,8 +87,7 @@ body {
   min-width: 20.5128vw;
   height: 6.9231vw;
   line-height: 6.9231vw;
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 2.5641vw;
   font-size: 3.5897vw;
   color: #ffffff;
@@ -110,7 +108,6 @@ body {
 }
 
 .recommend_list .text_img_lists .div_text {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
+  box-sizing: border-box;
   padding: 1.2821vw 3.8462vw;
 }
