@@ -1,15 +1,16 @@
 body {
   background-repeat: no-repeat;
   background-position: top left;
-  background-size: 100% auto;
+  -o-background-size: 100% auto;
+     background-size: 100% auto;
   background-color: #f6f6f6;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-top: 11.5385vw;
 }
 
 .nav_bar {
   background-color: transparent;
-  border-bottom: 0.2564vw solid #f6f6f6;
   border-bottom: 0.2564vw solid transparent;
 }
 
@@ -22,6 +23,7 @@ body {
 }
 
 .nav_bar.fixed {
+  border-bottom: 0.2564vw solid #f6f6f6;
   background-color: #fff;
 }
 
@@ -35,26 +37,46 @@ body {
 
 .cnt_chunk {
   width: 100%;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 3.8462vw;
 }
 
 .cnt_chunk .financial_recommended {
   margin-top: 30.7692vw;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 5.1282vw 3.8462vw 3.8462vw 3.8462vw;
 }
 
 .cnt_chunk .financial_recommended .financial {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .cnt_chunk .financial_recommended .financial .text_img {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 45%;
 }
 
@@ -75,9 +97,18 @@ body {
 .cnt_chunk .financial_recommended .financial .text_img .pic {
   width: 12.8205vw;
   height: 12.8205vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cnt_chunk .financial_recommended .title_link_imgs {
@@ -92,18 +123,36 @@ body {
 }
 
 .cnt_chunk .financial_recommended .title_link_imgs > .link_imgs {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 3.0769vw;
 }
 
 .cnt_chunk .financial_recommended .title_link_imgs > .link_imgs .pic {
   width: 32%;
   height: 16.4103vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   border-radius: 1.2821vw;
 }
@@ -111,7 +160,8 @@ body {
 .cnt_chunk .financial_recommended .title_link_imgs > .link_imgs .pic img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 1.2821vw;
 }
 
@@ -119,4 +169,176 @@ body {
   position: absolute;
   top: -0.7692vw;
   left: -0.2564vw;
+}
+
+.cnt_chunk .large_card {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 3.8462vw 0;
+  margin-top: 3.8462vw;
+}
+
+.cnt_chunk .large_card > .cards {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 0 3.8462vw;
+  width: 100%;
+  display: block;
+}
+
+.cnt_chunk .large_card > .cards > img {
+  width: 100%;
+}
+
+.cnt_chunk .loan_list {
+  display: block;
+  margin-top: 3.8462vw;
+}
+
+.cnt_chunk .loan_list > .pic {
+  width: 100%;
+  height: 55.3846vw;
+  border-top-left-radius: 1.2821vw;
+  border-top-right-radius: 1.2821vw;
+}
+
+.cnt_chunk .loan_list > .pic > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 1.2821vw;
+  border-top-right-radius: 1.2821vw;
+}
+
+.cnt_chunk .loan_list > .texts_progress {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 3.8462vw 5.1282vw;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .title {
+  font-size: 5.3846vw;
+  color: #282828;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .amount_type {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #999999;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .amount_type > div:nth-child(1) {
+  font-size: 4.1026vw;
+  margin-right: 5.1282vw;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .amount_type > div:nth-child(1) > span {
+  font-size: 4.6154vw;
+  color: #f5a623;
+  display: inline-block;
+  padding: 0 1.2821vw;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .amount_type > div:nth-child(2) {
+  font-size: 3.0769vw;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .earnings_date {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2.5641vw;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .earnings_date > div {
+  width: 50%;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .earnings_date > div .nums {
+  font-size: 4.1026vw;
+  color: #999999;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .earnings_date > div .nums > span {
+  color: #f5a623;
+  font-size: 8.2051vw;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .earnings_date > div .text {
+  font-size: 4.1026vw;
+  color: #999999;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .progress {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .progress > .line_parent {
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #d8d8d8;
+  height: 2.0513vw;
+  border-radius: 2.0513vw;
+  position: relative;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .progress > .line_parent > .line_child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.0513vw;
+  border-radius: 2.0513vw;
+  background-color: #f5a623;
+}
+
+.cnt_chunk .loan_list > .texts_progress > .progress > span {
+  margin-left: 5.1282vw;
+  font-size: 4.1026vw;
+  color: #999999;
 }

@@ -247,7 +247,8 @@ $paddingLR: 3.8462vw;
     > a {
       display: inline-block;
       max-width: 100%;
-      overflow: hidden;
+      // overflow: hidden;
+      position: relative;
     }
     .layout {
       display: flex;
@@ -263,10 +264,10 @@ $paddingLR: 3.8462vw;
         align-items: center;
         justify-content: center;
       }
-      .mark{
+      .mark {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -5px;
+        right: -5px;
       }
     }
     .text {

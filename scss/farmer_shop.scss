@@ -84,6 +84,9 @@ body {
       .iconFlex_card {
         > .list {
           width: 33.33%;
+          > a {
+            overflow: visible;
+          }
           &:nth-child(-n + 3) {
             margin-top: 0;
           }

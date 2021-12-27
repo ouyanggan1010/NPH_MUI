@@ -37,7 +37,7 @@
 /*图标*/
 
 @mixin icon($url) {
-  [class^="myicon-"] {
+  [class*="myicon-"] {
     display: inline-block;
     background: url($url) no-repeat 0 0;
     // 两倍图780px的1/2=设计图的390px，保证清晰度

@@ -71,24 +71,82 @@
                 </div>
             </div>
         </div>
+        <!-- 大额高端卡 -->
+        <div class="pic_card large_card">
+            <!-- title -->
+            <div class="card_title">
+                <div class="only">大额高端卡</div>
+                <a href="#" class="more"><span class="iconfont icon-jiantou_xiangyouliangci_o"></span></a>
+            </div>
+            <!-- 卡 -->
+            <a href="#" class="cards">
+                <img src="../../../images/content_imgs/card1.png" alt="">
+            </a>
+        </div>
+        <!-- 贷款 -->
+        <a href="#" class="pic_card loan_list">
+            <div class="pic"><img src="../../../images/content_imgs/loan2.png" alt=""></div>
+            <div class="texts_progress">
+                <p class="title">平安贷 PA15091003</p>
+                <div class="amount_type">
+                    <div>总金额：<span>5000.00</span>元</div>
+                    <div>保障方式：100%本息保障</div>
+                </div>
+                <div class="earnings_date">
+                    <div>
+                        <div class="nums"><span>14.0</span>%</div>
+                        <div class="text">年化收益</div>
+                    </div>
+                    <div>
+                        <div class="nums"><span>7</span>天</div>
+                        <div class="text">项目期限</div>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="line_parent">
+                        <div class="line_child" style="width: 50%;"></div>
+                    </div>
+                    <span>50%</span>
+                </div>
+            </div>
+        </a>
+        <!-- 贷款 -->
+        <a href="#" class="pic_card loan_list">
+            <div class="pic"><img src="../../../images/content_imgs/loan3.png" alt=""></div>
+            <div class="texts_progress">
+                <p class="title">万家贷 WJD15091003</p>
+                <div class="amount_type">
+                    <div>总金额：<span>5000.00</span>元</div>
+                    <div>保障方式：100%本息保障</div>
+                </div>
+                <div class="earnings_date">
+                    <div>
+                        <div class="nums"><span>14.0</span>%</div>
+                        <div class="text">年化收益</div>
+                    </div>
+                    <div>
+                        <div class="nums"><span>7</span>天</div>
+                        <div class="text">项目期限</div>
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="line_parent">
+                        <div class="line_child" style="width: 50%;"></div>
+                    </div>
+                    <span>50%</span>
+                </div>
+            </div>
+        </a>
         <!-- 这个是底线 -->
         <div class="dead_line">没有更多内容啦</div>
     </div>
     <script>
-        $("#footer").load("../../components/footer.html", function () {
-            let nowFoot = $(this).find(".footer_index>.list").eq(3);
-            nowFoot.addClass("active");
-            nowFoot.siblings(".list").removeClass("active");
-        });
-    </script>
-    <script>
         // 监听滚动事件
         $(window).scroll(function () {
-            let h = $(".nav_bar").height();
-            if ($(this).scrollTop() > h) {
-                $(".nav_bar").fadeIn("fast");
+            if ($(this).scrollTop() > 0) {
+                $(".nav_bar").addClass("fixed");
             } else {
-                $(".nav_bar").fadeOut("fast");
+                $(".nav_bar").removeClass("fixed");
             }
         });
     </script>

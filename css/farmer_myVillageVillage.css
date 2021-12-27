@@ -61,10 +61,17 @@ body {
 }
 
 .mui-scroll-wrapper .search_inp {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #f6f6f6;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 3.0769vw 3.8462vw;
 }
 
@@ -84,6 +91,22 @@ body {
   background-color: #f6f6f6;
 }
 
+.mui-scroll-wrapper .search_inp input::-webkit-input-placeholder {
+  color: #9b9b9b;
+}
+
+.mui-scroll-wrapper .search_inp input:-moz-placeholder {
+  color: #9b9b9b;
+}
+
+.mui-scroll-wrapper .search_inp input::-moz-placeholder {
+  color: #9b9b9b;
+}
+
+.mui-scroll-wrapper .search_inp input:-ms-input-placeholder {
+  color: #9b9b9b;
+}
+
 .mui-scroll-wrapper .search_inp input::placeholder {
   color: #9b9b9b;
 }
@@ -95,18 +118,21 @@ body {
 
 .mui-scroll-wrapper .aready_village {
   background-color: #fff;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 3.0769vw 3.8462vw;
 }
 
 .mui-scroll-wrapper .recommend_village {
   background-color: #fff;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding-top: 3.0769vw;
 }
 
 .mui-scroll-wrapper .recommend_village .top_text {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 3.8462vw;
 }
 
@@ -115,18 +141,37 @@ body {
 }
 
 .mui-scroll-wrapper .village_lists > .list {
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 2.5641vw 3.8462vw;
   border-bottom: 0.2564vw solid #f6f6f6;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .mui-scroll-wrapper .village_lists > .list > .img_text {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex: 1;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .mui-scroll-wrapper .village_lists > .list > .img_text > img {
@@ -138,7 +183,10 @@ body {
 .mui-scroll-wrapper .village_lists > .list > .img_text .texts {
   font-size: 3.0769vw;
   color: #4a4a4a;
-  flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 0;
 }
 
@@ -148,8 +196,14 @@ body {
 }
 
 .mui-scroll-wrapper .village_lists > .list > .img_text .texts .nums {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mui-scroll-wrapper .village_lists > .list > .img_text .texts .nums > span:first-child {
@@ -161,7 +215,8 @@ body {
   border: none;
   height: 7.6923vw;
   width: 16.6667vw;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 0 2.5641vw;
   font-size: 3.5897vw;
   border-radius: 1.2821vw;
@@ -171,9 +226,18 @@ body {
   border: 0.2564vw solid #4a4a4a;
   color: #4a4a4a;
   margin-left: 3.8462vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .mui-scroll-wrapper .village_lists > .list > .focus_not .mui-spinner,
@@ -188,7 +252,8 @@ body {
 
 .div_scroll {
   width: 100%;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
   padding: 2.5641vw 0;
 }
 
@@ -198,7 +263,9 @@ body {
 
 .div_scroll .swiper-slide {
   margin-left: 1.2821vw;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
   text-align: center;
   max-width: 18.4615vw;
   display: block;

@@ -13,7 +13,6 @@ body {
 // 头部
 .nav_bar {
   background-color: transparent;
-  border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
   border-bottom: 0.2564vw solid transparent;
   .left_bar {
     .iconfont {
@@ -24,6 +23,7 @@ body {
     display: none;
   }
   &.fixed {
+    border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
     background-color: map-get($colors, "white");
     .center_cnt {
       display: block;
@@ -108,6 +108,113 @@ body {
             top: -0.7692vw;
             left: -0.2564vw;
           }
+        }
+      }
+    }
+  }
+  .large_card {
+    box-sizing: border-box;
+    padding: 3.8462vw 0;
+    margin-top: 3.8462vw;
+    > .cards {
+      box-sizing: border-box;
+      padding: 0 3.8462vw;
+      width: 100%;
+      display: block;
+      > img {
+        width: 100%;
+      }
+    }
+  }
+  .loan_list {
+    display: block;
+    margin-top: 3.8462vw;
+    > .pic {
+      width: 100%;
+      height: 55.3846vw;
+      border-top-left-radius: 1.2821vw;
+      border-top-right-radius: 1.2821vw;
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 1.2821vw;
+        border-top-right-radius: 1.2821vw;
+      }
+    }
+    > .texts_progress {
+      box-sizing: border-box;
+      padding: 3.8462vw 5.1282vw;
+      > .title {
+        font-size: 5.3846vw;
+        color: map-get($colors, "black_28");
+      }
+      > .amount_type {
+        display: flex;
+        align-items: center;
+        color: map-get($colors, "gray_99");
+        > div:nth-child(1) {
+          font-size: 4.1026vw;
+          margin-right: 5.1282vw;
+          > span {
+            font-size: 4.6154vw;
+            color: map-get($colors, "orange_F5");
+            display: inline-block;
+            padding: 0 1.2821vw;
+          }
+        }
+        > div:nth-child(2) {
+          font-size: 3.0769vw;
+        }
+      }
+      > .earnings_date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2.5641vw;
+        > div {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .nums {
+            font-size: 4.1026vw;
+            color: map-get($colors, "gray_99");
+            > span {
+              color: map-get($colors, "orange_F5");
+              font-size: 8.2051vw;
+            }
+          }
+          .text {
+            font-size: 4.1026vw;
+            color: map-get($colors, "gray_99");
+          }
+        }
+      }
+      > .progress {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > .line_parent {
+          flex: 1;
+          background-color: map-get($colors, "gray_d8");
+          height: 2.0513vw;
+          border-radius: 2.0513vw;
+          position: relative;
+          > .line_child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 2.0513vw;
+            border-radius: 2.0513vw;
+            background-color: map-get($colors, "orange_F5");
+          }
+        }
+        > span {
+          margin-left: 5.1282vw;
+          font-size: 4.1026vw;
+          color: map-get($colors, "gray_99");
         }
       }
     }
