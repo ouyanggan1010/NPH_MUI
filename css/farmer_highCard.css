@@ -1,0 +1,104 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  padding-top: 11.5385vw;
+  position: relative;
+  background-color: #f6f6f6;
+}
+
+.nav_bar {
+  background-color: #fff;
+}
+
+.mui-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+}
+
+.common_lists {
+  width: 100%;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 5.1282vw 3.8462vw 0 3.8462vw;
+  background-color: #f6f6f6;
+}
+
+.common_lists > .item_list {
+  margin-top: 3.8462vw;
+  display: block;
+  background-color: #fff;
+  border-radius: 1.2821vw;
+  border: 1px solid #ededed;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 3.8462vw;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.common_lists > .item_list:first-child {
+  margin-top: 0;
+}
+
+.common_lists > .item_list > .img {
+  width: 30.7692vw;
+  height: 19.2308vw;
+}
+
+.common_lists > .item_list > .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.common_lists > .item_list > .texts_link {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding-left: 3.8462vw;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 0;
+  position: relative;
+}
+
+.common_lists > .item_list > .texts_link > .title {
+  font-size: 4.1026vw;
+  color: #282828;
+  line-height: 5.1282vw;
+}
+
+.common_lists > .item_list > .texts_link > .describe {
+  font-size: 3.5897vw;
+  color: #4a4a4a;
+  line-height: 4.6154vw;
+  margin-top: 1.2821vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+
+.common_lists > .item_list > .texts_link > .link {
+  font-size: 3.5897vw;
+  color: #fb560a;
+  display: block;
+  position: absolute;
+  bottom: -1.5385vw;
+  right: 0;
+  line-height: 4.6154vw;
+}

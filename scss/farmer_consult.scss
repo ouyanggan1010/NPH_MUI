@@ -5,6 +5,7 @@ body {
   background-color: map-get($colors, "white");
   padding-top: 11.5385vw;
   padding-bottom: 12.8205vw;
+  box-sizing: border-box;
 }
 
 .nav_bar {

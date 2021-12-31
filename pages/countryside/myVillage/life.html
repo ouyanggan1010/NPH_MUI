@@ -39,68 +39,66 @@
     <div class="mui-content mui-scroll-wrapper" id="refreshContainer">
         <div id="content_list" class="mui-scroll">
             <!-- 列表 -->
-            <div class="recommend_list">
-                <div class="text_img_lists">
-                    <a href="#" class="list">
-                        <div class="imgs_top">
-                            <img src="../../../images/content_imgs/Bitmap-4.png" class="one_big_img" alt="" />
-                            <div class="mark">走读海口</div>
-                        </div>
-                        <div class="text_oneImg">
-                            <div class="div_text">
-                                <div class="div_title">
-                                    市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
-                                </div>
-                                <div class="div_tips">
-                                    <div class="text_location">
-                                        <div class="location">
-                                            <span class="iconfont icon-ditu_dingwei_o"></span>
-                                            <span>海口日月广场</span>
-                                        </div>
-                                        <span>截至2022年11月3号</span>
-                                    </div>
-                                    <!-- <div class="text_aixin">
-                                        <span>123人</span>
-                                        <span class="iconfont icon-aixin02-mian"></span>
-                                    </div> -->
-                                    <div class="text_price">¥&nbsp;128&nbsp;起</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="list">
-                        <div class="imgs_top">
-                            <img src="../../../images/content_imgs/Bitmap-4.png" class="one_big_img" alt="" />
-                            <div class="mark">走读海口</div>
-                        </div>
-                        <div class="text_oneImg">
-                            <div class="div_text">
-                                <div class="div_title">
-                                    市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
-                                </div>
-                                <div class="div_tips">
-                                    <div class="text_location">
-                                        <div class="location">
-                                            <span class="iconfont icon-ditu_dingwei_o"></span>
-                                            <span>海口日月广场</span>
-                                        </div>
-                                        <span>截至2022年11月3号</span>
-                                    </div>
-                                    <div class="text_aixin">
-                                        <span>123人</span>
-                                        <span class="iconfont icon-aixin02-mian"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- 数据为空 -->
-                <div class="data_not">
-                    <div>
-                        <span class="iconfont icon-kongshuju1"></span>
-                        <div>暂无数据</div>
+            <div class="text_img_lists">
+                <a href="#" class="list">
+                    <div class="imgs_top">
+                        <img src="../../../images/content_imgs/Bitmap-4.png" class="one_big_img" alt="" />
+                        <div class="mark">走读海口</div>
                     </div>
+                    <div class="text_oneImg">
+                        <div class="div_text">
+                            <div class="div_title">
+                                市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                            </div>
+                            <div class="div_tips">
+                                <div class="text_location">
+                                    <div class="location">
+                                        <span class="iconfont icon-ditu_dingwei_o"></span>
+                                        <span>海口日月广场</span>
+                                    </div>
+                                    <span>截至2022年11月3号</span>
+                                </div>
+                                <!-- <div class="text_aixin">
+                                    <span>123人</span>
+                                    <span class="iconfont icon-aixin02-mian"></span>
+                                </div> -->
+                                <div class="text_price">¥&nbsp;128&nbsp;起</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list">
+                    <div class="imgs_top">
+                        <img src="../../../images/content_imgs/Bitmap-4.png" class="one_big_img" alt="" />
+                        <div class="mark">走读海口</div>
+                    </div>
+                    <div class="text_oneImg">
+                        <div class="div_text">
+                            <div class="div_title">
+                                市农业农村局召开迎接农村集体产权制度改革验收部署会议市农业农村局召开迎接农村集体产权制度改革验收部署会议
+                            </div>
+                            <div class="div_tips">
+                                <div class="text_location">
+                                    <div class="location">
+                                        <span class="iconfont icon-ditu_dingwei_o"></span>
+                                        <span>海口日月广场</span>
+                                    </div>
+                                    <span>截至2022年11月3号</span>
+                                </div>
+                                <div class="text_aixin">
+                                    <span>123人</span>
+                                    <span class="iconfont icon-aixin02-mian"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- 数据为空 -->
+            <div class="data_not">
+                <div>
+                    <span class="iconfont icon-kongshuju1"></span>
+                    <div>暂无数据</div>
                 </div>
             </div>
         </div>
@@ -141,7 +139,7 @@
                 slidesPerView: 'auto',
                 centeredSlides: false,
             });
-            // 下拉刷新，上拉加载---------------------------------------------------------只展示全部任务的效果，其他是一样的方式
+            // 下拉刷新，上拉加载---------------------------------------------------------
             let muiScroll = mui("#refreshContainer").pullRefresh({
                 down: {
                     style: "circle",

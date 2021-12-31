@@ -2,6 +2,8 @@ body {
   background-color: #fff;
   padding-top: 11.5385vw;
   padding-bottom: 12.8205vw;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
 }
 
 .nav_bar {

@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  padding-top: 11.5385vw + 9.4872vw;
+  position: relative;
+  background-color: map-get($colors, "gray_f6");
+}
+.nav_bar {
+  border-bottom: 0.2564vw solid map-get($colors, "gray_f6");
+  background-color: map-get($colors, "white");
+  > .center_cnt {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100vw - 12.8205vw);
+    left: 8.9744vw;
+    transform: translate(0, -50%);
+    > .div_input {
+      flex: 1;
+      height: 9.2308vw;
+      border-radius: 9.2308vw;
+      display: flex;
+      align-items: center;
+      border: 1px solid map-get($colors, "blue_00");
+      box-sizing: border-box;
+      padding: 0 3.8462vw;
+      position: relative;
+      > input[type="text"] {
+        flex: 1;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        margin-right: 2.5641vw;
+        font-size: 4.1026vw;
+        color: map-get($colors, "black_28");
+        &::placeholder {
+          color: map-get($colors, "gray_9B");
+        }
+      }
+      > input[type="file"] {
+        position: absolute;
+        top: 50%;
+        right: 3.8462vw;
+        transform: translateY(-50%);
+        width: 5.3846vw;
+        height: 4.8718vw;
+        opacity: 0;
+      }
+    }
+    > .search_btn {
+      width: 12.8205vw;
+      height: 6.1538vw;
+      border-radius: 6.1538vw;
+      border: none;
+      background-image: linear-gradient(#27d5ff, #0091ff);
+      box-shadow: 0 0.7692vw 1.5385vw rgba(39, 213, 255, 0.3);
+      color: map-get($colors, "white");
+      font-size: 3.5897vw;
+      cursor: pointer;
+      margin-left: 2.0513vw;
+    }
+  }
+}
+.tabs_switch {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  position: fixed;
+  top: 11.5385vw;
+  left: 0;
+}
+// 内容
+.mui-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: map-get($colors, "gray_f6");
+}
+// 列表
+.pull_dowm_lists {
+  box-sizing: border-box;
+  padding: 0 2.5641vw;
+  padding-top: 3.8462vw;
+  background-color: map-get($colors, "gray_f6");
+}
+.shop_slide {
+  margin-top: 0;
+}

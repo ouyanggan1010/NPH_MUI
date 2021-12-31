@@ -1,0 +1,221 @@
+@charset "utf-8";
+@import "_color";
+$paddingLR: 3.8462vw;
+
+body {
+  background-color: map-get($colors, "white");
+  padding-top: 11.5385vw;
+  padding-bottom: 15.3846vw;
+}
+// 头部
+.nav_bar {
+  background-color: map-get($colors, "white");
+  .left_bar {
+    .iconfont.icon-icon_arrow_left {
+      color: map-get($colors, "gray_9B");
+    }
+  }
+  .right_bar {
+    display: flex;
+    align-items: center;
+    height: 6.1538vw;
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 6.1538vw;
+      margin-left: 3.8462vw;
+      position: relative;
+      &:first-child {
+        margin-left: 0;
+      }
+      .my-badge-num {
+        display: none;
+        left: unset;
+        right: -1.9231vw;
+      }
+    }
+    .iconfont {
+      display: inline-block;
+      font-size: 6.1538vw;
+      height: auto;
+      color: map-get($colors, "gray_9B");
+    }
+  }
+}
+// 尾部
+.footer_shop_detail {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 15.3846vw;
+  width: 100%;
+  background-color: map-get($colors, "white");
+  box-sizing: border-box;
+  padding: 0 3.8462vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > .icons {
+    display: flex;
+    align-items: center;
+    > .chunk {
+      height: 10.2564vw;
+      margin-left: 5.1282vw;
+      &:first-child {
+        margin-left: 0;
+      }
+      .iconfont {
+        font-size: 6.1538vw;
+        color: map-get($colors, "gray_9B");
+      }
+      > div {
+        height: 6.1538vw;
+        display: flex;
+        align-items: center;
+      }
+      p {
+        font-size: 3.0769vw;
+        color: map-get($colors, "gray_9B");
+        line-height: 4.1026vw;
+        margin-top: 1.0256vw;
+      }
+    }
+  }
+  > .btn {
+    width: 61.5385vw;
+    height: 10.2564vw;
+    border-radius: 10.2564vw;
+    color: map-get($colors, "white");
+    font-size: 4.6154vw;
+    line-height: 10.2564vw;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #27d5ff, #0091ff);
+    box-shadow: 0 0.7692vw 1.5385vw rgba(39, 213, 255, 0.5);
+  }
+}
+// 内容部分
+.content {
+  width: 100%;
+  > .outer_layer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 3.8462vw;
+    margin-top: 3.8462vw;
+    &:first-child {
+      margin-top: 7.6923vw;
+    }
+    > .child_pic {
+      border: 0.2564vw solid map-get($colors, "gray_ED");
+      border-radius: 1.2821vw;
+      box-sizing: border-box;
+      padding: 3.8462vw 2.5641vw;
+      > .price {
+        font-size: 6.1538vw;
+        color: map-get($colors, "red_D0");
+        line-height: 7.6923vw;
+      }
+      > .weight {
+        font-size: 4.6154vw;
+        color: map-get($colors, "black_28");
+        line-height: 6.1538vw;
+        margin-top: 1.2821vw;
+      }
+      > .introduce {
+        display: flex;
+        justify-content: space-between;
+        line-height: 4.6154vw;
+        margin-top: 1.2821vw;
+        > p {
+          flex: 3;
+          font-size: 3.5897vw;
+          color: map-get($colors, "gray_9B");
+        }
+        > div {
+          flex: 1;
+          font-size: 3.5897vw;
+          color: map-get($colors, "black_28");
+          text-align: right;
+          > span:last-child {
+            color: map-get($colors, "red_D0");
+          }
+        }
+      }
+      > .instructions {
+        display: flex;
+        line-height: 4.6154vw;
+        width: 100%;
+        margin-top: 2.5641vw;
+        &:first-child {
+          margin-top: 0;
+        }
+        > p {
+          font-size: 3.5897vw;
+          margin: 0;
+          padding: 0;
+          &:nth-child(1) {
+            color: map-get($colors, "gray_9B");
+            width: 15.3846vw;
+          }
+          &:nth-child(2) {
+            flex: 1;
+            color: map-get($colors, "black_28");
+          }
+        }
+      }
+    }
+  }
+  > .cnt_detail {
+    width: 100%;
+    margin-top: 12.8205vw;
+    box-sizing: border-box;
+    padding-bottom: 5.1282vw;
+    img {
+      width: 100%;
+    }
+  }
+}
+// 轮播
+.shop_swiper {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 7.1795vw;
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89.7436vw;
+    box-sizing: border-box;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .swiper-pagination {
+    bottom: 1.2821vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    .swiper-pagination-bullet {
+      width: 2.0513vw;
+      height: 2.0513vw;
+      margin: 0 0.7692vw;
+      background-color: map-get($colors, "blue_00");
+      opacity: 0.3;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: map-get($colors, "blue_00");
+      opacity: 1;
+    }
+  }
+}

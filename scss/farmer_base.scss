@@ -16,6 +16,9 @@
 $paddingLR: 3.8462vw;
 
 // -----------------------------------------------------------这里放通用的样式
+body {
+  box-sizing: border-box;
+}
 // 首页会公用的搜索框
 .base_searchOne {
   width: 100%;
@@ -694,142 +697,142 @@ $paddingLR: 3.8462vw;
     padding: 0 3.8462vw;
     box-sizing: border-box;
   }
-  .shop_lists_box {
-    padding: 0 2.5641vw;
+}
+.shop_lists_box {
+  padding: 0 2.5641vw;
+  box-sizing: border-box;
+}
+.shop_slide {
+  width: 100%;
+  position: relative;
+  @include clearfix;
+  margin-top: 3.8462vw;
+  > .box {
+    width: 50%;
+    height: auto;
     box-sizing: border-box;
-  }
-  .shop_slide {
-    width: 100%;
-    position: relative;
-    @include clearfix;
-    margin-top: 3.8462vw;
-    > .box {
-      width: 50%;
-      height: auto;
-      box-sizing: border-box;
-      padding: 1.2821vw;
-      float: left;
-      > .item {
+    padding: 1.2821vw;
+    float: left;
+    > .item {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: map-get($colors, "white");
+      box-shadow: 0 0.7692vw 1.5385vw rgba(0, 0, 0, 0.05);
+      border-radius: 1.2821vw;
+      overflow: hidden;
+      .div_img {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 1.2821vw;
+        border-top-left-radius: 1.2821vw;
+        > img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .price_title_tips {
+        box-sizing: border-box;
+        padding: 3.3333vw 2.5641vw 4.1026vw 2.5641vw;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        background-color: map-get($colors, "white");
-        box-shadow: 0 0.7692vw 1.5385vw rgba(0, 0, 0, 0.05);
-        border-radius: 1.2821vw;
-        overflow: hidden;
-        .div_img {
-          width: 100%;
+      }
+      .title_tips {
+        margin-bottom: 2.5641vw;
+        .title {
+          font-size: 4.1026vw;
+          color: map-get($colors, "black_28");
+          line-height: 5.641vw;
           overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          /* autoprefixer: off */
+          -webkit-box-orient: vertical;
+          /* autoprefixer: on */
+        }
+      }
+      .mark {
+        display: flex;
+        align-items: center;
+      }
+      .price_num_cart {
+        display: flex;
+        justify-content: space-between;
+        > .price_num {
+          position: relative;
+          display: flex;
+          align-items: center;
+          .small_red {
+            font-size: 3.0769vw;
+            color: map-get($colors, "red_D0");
+          }
+          .big_red {
+            font-size: 4.1026vw;
+            color: map-get($colors, "red_D0");
+          }
+          .big_gray {
+            font-size: 4.1026vw;
+            color: map-get($colors, "gray_9B");
+          }
+          .small_gray {
+            font-size: 3.0769vw;
+            color: map-get($colors, "gray_9B");
+            text-decoration: line-through;
+            margin-left: 1.2821vw;
+          }
+        }
+        > .shop_cart_btn {
+          width: 6.1538vw;
+          height: 6.1538vw;
+          border-radius: 50%;
+          background-image: linear-gradient(#27d5ff, #0091ff);
           display: flex;
           align-items: center;
           justify-content: center;
-          border-top-right-radius: 1.2821vw;
-          border-top-left-radius: 1.2821vw;
-          > img {
-            width: 100%;
-            object-fit: cover;
-          }
-        }
-        .price_title_tips {
-          box-sizing: border-box;
-          padding: 3.3333vw 2.5641vw 4.1026vw 2.5641vw;
-          display: flex;
-          flex-direction: column;
-        }
-        .title_tips {
-          margin-bottom: 2.5641vw;
-          .title {
+          .iconfont {
             font-size: 4.1026vw;
-            color: map-get($colors, "black_28");
-            line-height: 5.641vw;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            /* autoprefixer: off */
-            -webkit-box-orient: vertical;
-            /* autoprefixer: on */
+            color: map-get($colors, "white");
           }
         }
-        .mark {
+      }
+      .add_cut_btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 1.2821vw;
+        display: none;
+        .add,
+        .cut {
+          width: 3.8462vw;
+          height: 3.8462vw;
+          border-radius: 0.7692vw;
           display: flex;
           align-items: center;
-        }
-        .price_num_cart {
-          display: flex;
-          justify-content: space-between;
-          > .price_num {
-            position: relative;
-            display: flex;
-            align-items: center;
-            .small_red {
-              font-size: 3.0769vw;
-              color: map-get($colors, "red_D0");
-            }
-            .big_red {
-              font-size: 4.1026vw;
-              color: map-get($colors, "red_D0");
-            }
-            .big_gray {
-              font-size: 4.1026vw;
-              color: map-get($colors, "gray_9B");
-            }
-            .small_gray {
-              font-size: 3.0769vw;
-              color: map-get($colors, "gray_9B");
-              text-decoration: line-through;
-              margin-left: 1.2821vw;
-            }
-          }
-          > .shop_cart_btn {
-            width: 6.1538vw;
-            height: 6.1538vw;
-            border-radius: 50%;
-            background-image: linear-gradient(#27d5ff, #0091ff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .iconfont {
-              font-size: 4.1026vw;
-              color: map-get($colors, "white");
-            }
+          justify-content: center;
+          .iconfont {
+            font-size: 2.5641vw;
+            color: map-get($colors, "black");
           }
         }
-        .add_cut_btn {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          margin-top: 1.2821vw;
-          display: none;
-          .add,
-          .cut {
-            width: 3.8462vw;
-            height: 3.8462vw;
-            border-radius: 0.7692vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .iconfont {
-              font-size: 2.5641vw;
-              color: map-get($colors, "black");
-            }
+        .add {
+          background-color: map-get($colors, "blue_00");
+          .iconfont {
+            color: map-get($colors, "white");
           }
-          .add {
-            background-color: map-get($colors, "blue_00");
-            .iconfont {
-              color: map-get($colors, "white");
-            }
-          }
-          .cut {
-            border: 0.2564vw solid map-get($colors, "blue_00");
-          }
-          .num {
-            font-size: 3.0769vw;
-            box-sizing: border-box;
-            padding: 0 1.2821vw;
-            min-width: 10.2564vw;
-            text-align: center;
-          }
+        }
+        .cut {
+          border: 0.2564vw solid map-get($colors, "blue_00");
+        }
+        .num {
+          font-size: 3.0769vw;
+          box-sizing: border-box;
+          padding: 0 1.2821vw;
+          min-width: 10.2564vw;
+          text-align: center;
         }
       }
     }

@@ -54,18 +54,18 @@ body {
   background-color: #f6f6f6;
 }
 
-.recommend_list {
+.mui-scroll {
   width: 100%;
 }
 
-.recommend_list .text_img_lists {
+.mui-scroll .text_img_lists {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
   padding-top: 2.5641vw;
   background-color: #f6f6f6;
 }
 
-.recommend_list .text_img_lists .imgs_top {
+.mui-scroll .text_img_lists .imgs_top {
   width: 100%;
   overflow: hidden;
   display: -webkit-flex;
@@ -84,14 +84,14 @@ body {
   position: relative;
 }
 
-.recommend_list .text_img_lists .imgs_top > .one_big_img {
+.mui-scroll .text_img_lists .imgs_top > .one_big_img {
   width: 100%;
   height: 46.1538vw;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.recommend_list .text_img_lists .imgs_top .mark {
+.mui-scroll .text_img_lists .imgs_top .mark {
   position: absolute;
   top: 0;
   left: 0;
@@ -109,17 +109,17 @@ body {
   border-bottom-right-radius: 2.5641vw;
 }
 
-.recommend_list .text_img_lists > .list {
+.mui-scroll .text_img_lists > .list {
   display: block;
   background-color: #fff;
   margin-top: 2.5641vw;
 }
 
-.recommend_list .text_img_lists > .list:nth-child(1) {
+.mui-scroll .text_img_lists > .list:nth-child(1) {
   margin-top: 0;
 }
 
-.recommend_list .text_img_lists .div_text {
+.mui-scroll .text_img_lists .div_text {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
   padding: 1.2821vw 3.8462vw;

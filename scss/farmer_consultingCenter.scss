@@ -11,6 +11,7 @@ body {
   padding-top: 11.5385vw;
   position: relative;
   background-color: map-get($colors, "white");
+  box-sizing: border-box;
 }
 .nav_bar {
   background-color: map-get($colors, "white");
@@ -57,7 +58,7 @@ body {
 .data_not {
   background-color: map-get($colors, "white");
 }
-.task_lists{
+.task_lists {
   box-sizing: border-box;
   padding: 0 $paddingLR;
 }

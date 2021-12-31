@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>商品详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- mui-js -->
+    <script src="../../js/mui.min.js"></script>
+    <!-- swiper-js -->
+    <script src="../../js/swiper.min.js"></script>
+    <!-- 引入jQuery -->
+    <script src="../../js/jquery-3.1.1.min.js"></script>
+    <!-- 公用的js -->
+    <script src="../../js/mycommon.js"></script>
+    <!-- mui-css -->
+    <link rel="stylesheet" href="../../css/mui.min.css" />
+    <!-- swiper-css -->
+    <link rel="stylesheet" href="../../css/swiper.min.css" />
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="../../fonts/iconfont.css" />
+    <!-- 一些通用的样式 -->
+    <link rel="stylesheet" href="../../css/farmer_base.css" />
+    <!-- 本页面的css -->
+    <link rel="stylesheet" href="../../css/farmer_shopDetail.css" />
+    <!-- 声明所有连接都在当前窗口打开 -->
+    <base target="_self" />
+</head>
+
+<body>
+    <!-- header -->
+    <div class="nav_bar">
+        <div onclick="history.back()" class="left_bar">
+            <span class="iconfont icon-icon_arrow_left"></span>
+        </div>
+        <div class="right_bar">
+            <a href="#">
+                <span class="iconfont icon-gouwuche"></span>
+                <!-- 这里是购物车的数量，默认是隐藏的 -->
+                <span class="my-badge-num">1</span>
+            </a>
+            <a href="#"><span class="iconfont icon-fenxiang"></span></a>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer_shop_detail">
+        <div class="icons">
+            <div class="chunk">
+                <div><span class="iconfont icon-31shoucang"></span></div>
+                <p>收藏</p>
+            </div>
+            <a href="#" class="chunk">
+                <div><span class="iconfont icon-zixun1"></span></div>
+                <p>咨询</p>
+            </a>
+        </div>
+        <button type="button" class="btn">加入购物车</button>
+    </div>
+    <!-- 内容块 -->
+    <div class="content">
+        <!-- 轮播 -->
+        <div class="shop_swiper">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../../images/content_imgs/001.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../../images/content_imgs/002.png" alt="" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../../images/content_imgs/003.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="
+          swiper-pagination
+          swiper-pagination-clickable
+          swiper-pagination-bullets
+        ">
+                <span class="swiper-pagination-bullet"></span>
+                <span class="swiper-pagination-bullet"></span>
+                <span class="swiper-pagination-bullet"></span>
+            </div>
+        </div>
+        <!-- 价格与介绍 -->
+        <div class="outer_layer">
+            <div class="child_pic">
+                <div class="price">￥13.30</div>
+                <div class="weight">水果玉米 500g</div>
+                <div class="introduce">
+                    <p>海南直供，自然健康的好味道</p>
+                    <div>
+                        <span>销量：</span>
+                        <span>9999</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 价格与介绍 -->
+        <div class="outer_layer">
+            <div class="child_pic">
+                <div class="instructions">
+                    <p>配送</p>
+                    <p>现在下单，最快7月2日14: 00前送货</p>
+                </div>
+                <div class="instructions">
+                    <p>运费</p>
+                    <p>运费10元，满39元减运费</p>
+                </div>
+                <div class="instructions">
+                    <p>服务</p>
+                    <p>品质保证，享受7天无理由退货</p>
+                </div>
+            </div>
+        </div>
+        <!-- 详情内容 -->
+        <div class="cnt_detail">
+            <img src="../../images/content_imgs/003.png" alt="">
+        </div>
+    </div>
+    <script>
+        // 图片轮播
+        let swiper_img = new Swiper(".shop_swiper .swiper-container", {
+            pagination: ".swiper-pagination",
+            loop: true,
+            autoplay: 3000,
+        });
+    </script>
+</body>
+
+</html>

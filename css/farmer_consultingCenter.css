@@ -9,6 +9,8 @@ body {
   padding-top: 11.5385vw;
   position: relative;
   background-color: #fff;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
 }
 
 .nav_bar {
